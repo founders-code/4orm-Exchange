@@ -3,651 +3,1128 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>4ormEx — The 4orm Exchange · Institutional RWA Trading Platform</title>
-<meta name="description" content="4ormEx is the institutional trading platform of 4orm Finance: tokenized real-world asset issuance, marketplace, atomic settlement, qualified custody, and regulatory reporting on one regulated rail." />
+<title>4ormEx — Canadian Market Overview · Institutional RWA Exchange</title>
+<meta name="description" content="4ormEx is Canada's institutional rail for tokenized real-world assets: tokenized deposits, government debt, private credit, real estate and commodities — settled atomically against W-CAD and qualified Canadian custody. All amounts in CAD." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <style>
-/* Design tokens — identical to 4orm landing */
+/* =========================================================
+   4orm Finance · 4ormEx · Canadian Market Overview (v3)
+   ========================================================= */
+
+/* --- Tokens (locked to 4orm Finance) --- */
 :root{
-  --bg:#FFFFFF;--bg-2:#F4F7FB;--surface:#FFFFFF;--surface-2:#F4F7FB;--surface-3:#EAEFF6;
-  --border:#E3E9F2;--border-strong:#CCD6E4;
-  --text:#142036;--text-2:#46556E;--text-3:#5E6E88;
-  --brand:#2E6BF2;--brand-600:#1F57D6;--brand-700:#1B4ABE;--brand-50:#EAF1FE;--brand-100:#CFE0FD;
-  --gold:#E7C76C;--gold-2:#C49A3A;--gold-ink:#8A6712;--gold-50:#FBF3DC;--gold-100:#F1E2B4;
-  --success:#0E8A5F;--success-bg:#E3F6EE;--warn:#8F5C12;--warn-bg:#FBF1DC;
-  --danger:#D6334E;--danger-bg:#FCE6EA;--info:#1B7BB5;--info-bg:#E3F2FB;
-  --r-xs:6px;--r-sm:9px;--r:13px;--r-lg:18px;--r-xl:26px;
-  --shadow-sm:0 1px 2px rgba(16,32,64,.06);--shadow:0 8px 26px rgba(16,32,64,.09);--shadow-lg:0 20px 52px rgba(16,32,64,.13);
+  --bg:#FFFFFF;--bg-2:#F4F7FB;--bg-3:#EAEFF6;
+  --surface:#FFFFFF;--surface-2:#F7F9FC;--surface-3:#EEF2F8;
+  --border:#E3E9F2;--border-strong:#CCD6E4;--border-soft:#EFF2F7;
+
+  --text:#0E1A2F;--text-2:#3E4E6B;--text-3:#6A7790;--text-4:#94A2B8;
+
+  --brand:#2E6BF2;--brand-600:#1F57D6;--brand-700:#1B4ABE;
+  --brand-50:#EAF1FE;--brand-100:#CFE0FD;--brand-200:#9BBEFA;
+
+  --gold:#E7C76C;--gold-2:#C49A3A;--gold-ink:#8A6712;
+  --gold-50:#FBF3DC;--gold-100:#F1E2B4;
+
+  --navy-900:#070C16;--navy-800:#0B1220;--navy-700:#15233F;--navy-600:#1F3CA8;
+
+  --success:#0E8A5F;--success-bg:#E3F6EE;
+  --warn:#8F5C12;--warn-bg:#FBF1DC;
+  --danger:#D6334E;--danger-bg:#FCE6EA;
+  --info:#1B7BB5;--info-bg:#E3F2FB;
+  --pilot:#7B4DBE;--pilot-bg:#EFE6FB;
+
+  --r-xs:6px;--r-sm:9px;--r:12px;--r-lg:16px;--r-xl:22px;
+  --shadow-sm:0 1px 2px rgba(16,32,64,.05);
+  --shadow:0 4px 14px rgba(16,32,64,.06);
+  --shadow-lg:0 14px 34px rgba(16,32,64,.10);
+
   --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  --font-mono:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;
-  --maxw:1240px;
+  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+
+  --sidebar-w:248px;
+  --topbar-h:64px;
+  --herotape-h:auto;
+  --maxw:1480px;
 }
+
 *{box-sizing:border-box}
+html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font-sans);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color-scheme:light}
+body{
+  font-family:var(--font-sans);color:var(--text);background:var(--bg);line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color-scheme:light;
+  font-feature-settings:"ss01","cv11";
+}
 img,svg{display:block;max-width:100%}
-h1,h2,h3,h4{font-family:var(--font-sans);line-height:1.18;margin:0 0 .5em;letter-spacing:-.02em;font-weight:750;color:var(--text)}
-h1{font-size:clamp(2rem,4.4vw,3.3rem);letter-spacing:-.03em}
-h2{font-size:clamp(1.5rem,2.8vw,2.1rem)}
-h3{font-size:1.22rem}
-h4{font-size:1rem}
-p{margin:0 0 1em;color:var(--text-2)}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);line-height:1.18;margin:0 0 .4em;letter-spacing:-.02em;font-weight:750;color:var(--text)}
+h1{font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-.03em;font-weight:800}
+h2{font-size:clamp(1.25rem,1.9vw,1.6rem);font-weight:750}
+h3{font-size:1.05rem;font-weight:700}
+h4{font-size:.92rem;font-weight:700;letter-spacing:-.005em}
+p{margin:0 0 .8em;color:var(--text-2)}
 a{color:var(--brand);text-decoration:none}
 a:hover{color:var(--brand-700)}
 .muted{color:var(--text-3)}
-.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
-.h-it{color:var(--brand);font-weight:800}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.mono{font-family:var(--font-mono)}
+.eye{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);font-weight:600}
 
-/* Status banner */
-.sbx-banner{background:var(--brand-50);border-bottom:1px solid var(--border);font-size:.82rem;color:var(--text-2);text-align:center;padding:9px 16px}
-.sbx-banner b{color:var(--brand-700)}
-
-/* Top nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:var(--maxw);margin:0 auto;padding:10px 28px;min-height:74px;display:flex;align-items:center;gap:12px 18px;flex-wrap:nowrap}
-@media (max-width:560px){.nav-inner{flex-wrap:wrap}}
-.brand{display:flex;align-items:center;gap:12px;flex:none;color:var(--text)}
-.brand:hover{color:var(--text)}
-.brand-logo{height:42px;width:auto;display:block}
-@media (max-width:760px){.brand-logo{height:34px}}
-.brand .sub{font-weight:600;font-size:.72rem;color:var(--text-3);letter-spacing:.18em;text-transform:uppercase;padding-left:12px;border-left:1px solid var(--border)}
-@media (max-width:680px){.brand .sub{display:none}}
-.nav-links{display:flex;margin-left:auto;gap:14px;justify-content:flex-end;align-items:center;flex-wrap:nowrap}
-.nav-links a{padding:7px 8px;border-radius:8px;color:var(--text-2);white-space:nowrap;font-weight:600;font-size:.92rem;transition:background .15s,color .15s}
-.nav-links a:hover{background:var(--surface-2);color:var(--text)}
-.nav-sep{width:1px;height:18px;background:var(--border);margin:0 5px;flex:none}
-.nav-links a.nav-auth{
-  margin-left:auto;
-  padding:9px 18px;border-radius:99px;border:1px solid var(--brand-100);
-  background:var(--brand-50);color:var(--brand-700);font-weight:700;font-size:.9rem;
+/* ==========================================
+   TOP BAR (rwa.xyz-inspired utility nav)
+   ========================================== */
+.topbar{
+  position:sticky;top:0;z-index:60;height:var(--topbar-h);
+  background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--border);
 }
-.nav-links a.nav-auth:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
-.nav-links a.nav-exchange{
-  order:-2;margin-left:6px;margin-right:0;
-  display:inline-flex;flex-direction:column;align-items:center;gap:2px;
-  padding:12px 22px 13px;border-radius:14px;line-height:1;
-  border:1.5px solid var(--gold-2);
-  background:linear-gradient(180deg,#FFE39E 0%,var(--gold) 38%,var(--gold-2) 100%);
-  color:#15233F;
-  box-shadow:0 3px 10px rgba(196,154,58,.32),inset 0 1px 0 rgba(255,255,255,.5);
-  transition:all .15s ease;
+.topbar-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 22px;height:100%;
+  display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;
 }
-.nav-links a.nav-exchange:hover{background:linear-gradient(180deg,var(--gold-2) 0%,var(--gold) 60%,#FFE39E 100%);transform:translateY(-1px);box-shadow:0 5px 16px rgba(196,154,58,.45),inset 0 1px 0 rgba(255,255,255,.5)}
-.nav-links a.nav-exchange .ex-eye{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink);font-weight:800;margin-bottom:2px}
-.nav-links a.nav-exchange .ex-main{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:#15233F;display:inline-flex;align-items:center;gap:4px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);flex:none}
+.brand img{height:34px;width:auto}
+.brand .sub{
+  font-weight:600;font-size:.66rem;color:var(--text-3);letter-spacing:.18em;text-transform:uppercase;
+  padding-left:12px;border-left:1px solid var(--border);max-width:11ch;line-height:1.2;
+}
+@media (max-width:860px){.brand .sub{display:none}}
 
-/* Exchange sub-nav */
-.subnav{background:#0B1220;border-bottom:1px solid #1c2740;position:sticky;top:74px;z-index:49}
-.subnav-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
-.subnav-inner::-webkit-scrollbar{display:none}
-.subnav-inner a{
+/* Search (CMD-K style, decorative) */
+.search{
+  display:flex;align-items:center;gap:10px;background:var(--surface-2);border:1px solid var(--border);
+  border-radius:10px;padding:8px 12px;color:var(--text-3);font-size:.86rem;min-width:0;max-width:560px;
+}
+.search svg{width:16px;height:16px;flex:none;opacity:.7}
+.search input{
+  flex:1;border:none;background:transparent;outline:none;font-family:inherit;
+  font-size:.88rem;color:var(--text);min-width:0;
+}
+.search input::placeholder{color:var(--text-3)}
+.search .kbd{
+  font-family:var(--font-mono);font-size:.66rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:6px;padding:3px 7px;color:var(--text-3);letter-spacing:.04em;flex:none;
+}
+@media (max-width:780px){.search{display:none}}
+
+.utility{display:flex;align-items:center;gap:6px;flex:none}
+.utility > a, .utility > .menu{
+  font-size:.85rem;font-weight:600;color:var(--text-2);padding:8px 10px;border-radius:8px;
+  text-decoration:none;transition:background .12s,color .12s;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.utility > a:hover, .utility > .menu:hover{background:var(--surface-2);color:var(--text)}
+.utility .menu .car{font-size:.7rem;opacity:.55;margin-left:1px}
+.utility .new{
+  font-family:var(--font-mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;
+  background:linear-gradient(135deg,#FFD9A8,#E7C76C);color:#3C2A05;padding:2px 6px;border-radius:99px;margin-left:5px;
+}
+.utility .back{
+  font-family:var(--font-mono);font-size:.74rem;color:var(--text-3);padding:7px 10px;
+  border-radius:8px;border:1px solid var(--border);background:var(--surface);font-weight:600;
+}
+.utility .back:hover{color:var(--text);background:var(--surface-2);border-color:var(--border-strong)}
+.utility .cta{
+  background:var(--brand);color:#fff;padding:9px 16px;border-radius:99px;font-weight:700;font-size:.84rem;
+  box-shadow:0 1px 0 rgba(255,255,255,.18) inset, 0 2px 8px rgba(46,107,242,.22);
+}
+.utility .cta:hover{background:var(--brand-600);color:#fff}
+@media (max-width:1080px){
+  .utility a:nth-child(-n+3){display:none}
+}
+
+/* ==========================================
+   HERO STRIP (institutional · 2-column · dark)
+   ========================================== */
+.herostrip{
+  background:linear-gradient(180deg,#070C16 0%,#0B1220 55%,#15233F 100%);
+  color:#fff;border-bottom:1px solid var(--navy-700);
+  padding:44px 0 32px;position:relative;overflow:hidden;
+}
+.herostrip::before{
+  content:"";position:absolute;top:-60%;right:-8%;width:54vw;height:54vw;max-width:780px;max-height:780px;
+  background:radial-gradient(circle,rgba(231,199,108,.12) 0%,rgba(231,199,108,0) 60%);pointer-events:none;
+}
+.herostrip::after{
+  content:"";position:absolute;bottom:-50%;left:-8%;width:48vw;height:48vw;max-width:660px;max-height:660px;
+  background:radial-gradient(circle,rgba(46,107,242,.16) 0%,rgba(46,107,242,0) 60%);pointer-events:none;
+}
+.herostrip .wrap{max-width:var(--maxw);margin:0 auto;padding:0 36px;position:relative;z-index:1}
+.herostrip-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:64px;align-items:end}
+@media (max-width:980px){.herostrip-grid{grid-template-columns:1fr;gap:40px;align-items:start}}
+.herostrip .reg-line{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;color:#FFD9A8;font-weight:600;
+  text-transform:uppercase;margin-bottom:18px;opacity:.85;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.herostrip .reg-line .dot{width:6px;height:6px;border-radius:50%;background:#FFD9A8;box-shadow:0 0 0 4px rgba(255,217,168,.14);flex:none}
+.herostrip .reg-line .sep{opacity:.35}
+.herostrip h1{
+  color:#fff;margin:0 0 14px;font-size:clamp(1.35rem,1.85vw,1.7rem);font-weight:750;letter-spacing:-.025em;
+  max-width:20ch;line-height:1.16;
+}
+.herostrip h1 .accent{color:#FFD9A8;font-weight:800}
+.herostrip p.hero-sub{color:rgba(255,255,255,.7);font-size:.95rem;max-width:48em;margin:0;line-height:1.55}
+/* At-a-glance stats column */
+.herostrip-stats{display:flex;flex-direction:column;gap:20px}
+@media (min-width:981px){.herostrip-stats{border-left:1px solid rgba(255,217,168,.20);padding-left:36px}}
+.herostrip-stats .stats-eye{
+  font-family:var(--font-mono);font-size:.6rem;letter-spacing:.18em;color:rgba(255,255,255,.45);
+  font-weight:700;text-transform:uppercase;margin-bottom:-6px;
+}
+.hs-stat{display:flex;flex-direction:column;gap:3px}
+.hs-stat .hs-label{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;color:rgba(255,255,255,.5);
+  font-weight:600;text-transform:uppercase;
+}
+.hs-stat .hs-v{
+  color:#fff;font-size:1.35rem;font-weight:800;line-height:1.08;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;
+}
+.hs-stat .hs-v .cur{color:rgba(255,255,255,.55);font-weight:700;font-size:.92rem;margin-right:4px}
+.hs-stat .hs-v .frac{color:rgba(255,255,255,.5);font-weight:600;font-size:.95rem}
+.hs-stat .hs-d{font-family:var(--font-mono);font-size:.72rem;font-weight:700;margin-top:1px;color:#7BE0A8;display:inline-flex;align-items:center;gap:6px}
+.hs-stat .hs-d.dn{color:#FF8A99}
+.hs-stat .hs-d .ago{color:rgba(255,255,255,.5);font-weight:500}
+
+/* Product nav (9-section · sticky · replaces regulatory chip rail) */
+.productnav{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  position:sticky;top:var(--topbar-h);z-index:55;
+}
+.productnav-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 36px;
+  display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;
+}
+.productnav-inner::-webkit-scrollbar{display:none}
+.productnav a{
   display:inline-flex;align-items:center;gap:8px;
-  padding:14px 18px;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:600;
-  border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s ease;
+  padding:14px 16px;color:var(--text-2);font-size:.84rem;font-weight:600;
+  border-bottom:2px solid transparent;white-space:nowrap;transition:all .12s ease;text-decoration:none;
 }
-.subnav-inner a:hover{color:#fff;background:rgba(255,255,255,.04)}
-.subnav-inner a.active{color:#FFD9A8;border-bottom-color:#FFD9A8}
-.subnav-inner .sn-num{font-family:var(--font-mono);font-size:.66rem;color:rgba(255,217,168,.6);letter-spacing:.1em;font-weight:700}
-.subnav-inner a.active .sn-num{color:#FFD9A8}
+.productnav a:hover{color:var(--text);background:var(--surface-2)}
+.productnav a.active{color:var(--text);border-bottom-color:var(--gold-2);font-weight:700;background:linear-gradient(180deg,transparent 0%,var(--gold-50) 100%)}
+.productnav a .pn-num{font-family:var(--font-mono);font-size:.62rem;color:var(--text-3);letter-spacing:.12em;font-weight:700}
+.productnav a:hover .pn-num{color:var(--text-2)}
+.productnav a.active .pn-num{color:var(--gold-2)}
+@media (max-width:680px){.productnav-inner{padding:0 18px}.productnav a{padding:12px 14px;font-size:.78rem}}
 
-/* Dark hero */
-.dhero{background:linear-gradient(135deg,#0B1220 0%,#15233F 45%,#1F3CA8 100%);color:#fff;padding:80px 0 72px;position:relative;overflow:hidden}
-.dhero::before{content:'';position:absolute;top:-40%;right:-12%;width:60vw;height:60vw;max-width:780px;max-height:780px;background:radial-gradient(circle,rgba(247,196,102,.18) 0%,rgba(247,196,102,0) 60%);pointer-events:none}
-.dhero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:50vw;height:50vw;max-width:640px;max-height:640px;background:radial-gradient(circle,rgba(46,107,242,.25) 0%,rgba(46,107,242,0) 60%);pointer-events:none}
-.dhero-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
-.dhero-eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;color:#FFD9A8;font-weight:800;margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
-.dhero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#FFD9A8;box-shadow:0 0 0 4px rgba(255,217,168,.18)}
-.dhero h1{color:#fff;margin:0 0 18px;font-size:clamp(2.2rem,4.2vw,3.2rem);line-height:1.06;letter-spacing:-.03em;max-width:22em;font-weight:800}
-.dhero h1 .accent{color:#FFD9A8}
-.dhero p.dhero-sub{color:rgba(255,255,255,.82);font-size:clamp(1rem,1.3vw,1.12rem);line-height:1.55;max-width:56em;margin:0 0 26px}
-.dhero p.dhero-sub strong{color:#fff;font-weight:700}
-.dhero-pills{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
-.dhero-pill{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);color:#fff;font-weight:700;font-size:.78rem;padding:6px 14px;border-radius:99px;letter-spacing:.02em}
-.dhero-pill.gold{background:rgba(255,217,168,.16);border-color:rgba(255,217,168,.45);color:#FFD9A8}
-.dhero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
-.dhero-btn{padding:13px 22px;border-radius:10px;font-weight:800;font-size:.9rem;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s, box-shadow .15s, background .15s}
-.dhero-btn.gold{background:#FFD9A8;color:#0B1220;box-shadow:0 4px 16px rgba(255,217,168,.4)}
-.dhero-btn.gold:hover{transform:translateY(-1px);background:#FFCB87}
-.dhero-btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.30)}
-.dhero-btn.ghost:hover{background:rgba(255,255,255,.14)}
+/* NYSE-style ticker tape */
+.tape{background:var(--navy-900);border-top:1px solid rgba(255,255,255,.06);overflow:hidden;position:relative}
+.tape::before,.tape::after{content:"";position:absolute;top:0;bottom:0;width:50px;z-index:3;pointer-events:none}
+.tape::before{left:0;background:linear-gradient(90deg,var(--navy-900),transparent)}
+.tape::after{right:0;background:linear-gradient(-90deg,var(--navy-900),transparent)}
+.tape .track{display:flex;gap:0;padding:8px 0;white-space:nowrap;animation:slide 90s linear infinite;font-family:var(--font-mono);font-size:.78rem;color:#fff;font-weight:600}
+.tape .ti{display:inline-flex;align-items:center;gap:8px;padding:0 22px;border-right:1px solid rgba(255,255,255,.07)}
+.tape .ti .t{color:#FFD9A8;font-weight:700}
+.tape .ti .p{color:#fff;font-variant-numeric:tabular-nums}
+.tape .ti .c{font-size:.7rem;font-weight:700}
+.tape .ti .c.u{color:#7BE0A8}
+.tape .ti .c.d{color:#FF8A99}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* KPI strip */
-.kpis{background:#fff;border-bottom:1px solid var(--border);padding:28px 0}
-.kpis .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.kpi{display:flex;flex-direction:column;gap:2px}
-.kpi .label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);font-weight:700;margin-bottom:4px}
-.kpi .v{font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-.02em;line-height:1.05;font-variant-numeric:tabular-nums}
-.kpi .v .u{color:var(--brand);font-weight:800}
-.kpi .delta{font-family:var(--font-mono);font-size:.78rem;color:var(--success);font-weight:700;margin-top:4px}
+/* ==========================================
+   DASHBOARD SHELL (sidebar + main)
+   ========================================== */
+.dash{
+  display:grid;grid-template-columns:var(--sidebar-w) 1fr;
+  max-width:var(--maxw);margin:0 auto;
+  min-height:calc(100vh - var(--topbar-h));
+}
+@media (max-width:980px){.dash{grid-template-columns:1fr}}
+
+/* --- Sidebar --- */
+.sidebar{
+  border-right:1px solid var(--border);background:var(--surface);
+  padding:22px 14px 28px;position:sticky;top:var(--topbar-h);align-self:start;
+  max-height:calc(100vh - var(--topbar-h));overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--border-strong) transparent;
+}
+.sidebar::-webkit-scrollbar{width:6px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:3px}
+@media (max-width:980px){
+  .sidebar{position:relative;top:0;max-height:none;border-right:none;border-bottom:1px solid var(--border)}
+}
+
+.sb-group{margin-bottom:24px}
+.sb-group h6{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.18em;color:var(--text-4);
+  text-transform:uppercase;margin:0 12px 8px;font-weight:700;
+}
+.sb-group ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.sb-group a{
+  display:flex;align-items:center;gap:10px;padding:7px 12px;border-radius:7px;
+  color:var(--text-2);font-size:.88rem;font-weight:500;text-decoration:none;
+  transition:background .12s,color .12s;
+}
+.sb-group a:hover{background:var(--surface-2);color:var(--text)}
+.sb-group a.active{background:var(--brand-50);color:var(--brand-700);font-weight:700}
+.sb-group a.active::before{
+  content:"";width:3px;height:14px;background:var(--brand);border-radius:2px;margin-left:-15px;margin-right:7px;
+}
+.sb-group a .ic{width:16px;height:16px;flex:none;opacity:.75;color:currentColor}
+.sb-group a:hover .ic, .sb-group a.active .ic{opacity:1}
+.sb-group a .new{
+  margin-left:auto;font-family:var(--font-mono);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;
+  background:linear-gradient(135deg,#FFD9A8,#E7C76C);color:#3C2A05;padding:2px 6px;border-radius:99px;
+}
+.sb-group a .start{
+  margin-left:auto;font-family:var(--font-mono);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;
+  background:var(--brand);color:#fff;padding:2px 6px;border-radius:99px;
+}
+
+.sb-cta{
+  margin-top:12px;padding:18px 14px;background:linear-gradient(180deg,#FBF3DC 0%,#F1E2B4 100%);
+  border:1px solid var(--gold-100);border-radius:var(--r);
+}
+.sb-cta h6{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;color:var(--gold-ink);
+  text-transform:uppercase;margin:0 0 6px;font-weight:800;
+}
+.sb-cta p{font-size:.78rem;color:#5C4310;margin:0 0 10px;line-height:1.45}
+.sb-cta .start-btn{
+  display:inline-flex;align-items:center;gap:6px;background:#0B1220;color:#FFD9A8;
+  font-weight:700;font-size:.78rem;padding:8px 14px;border-radius:99px;text-decoration:none;
+  border:1px solid #15233F;font-family:var(--font-sans);
+}
+.sb-cta .start-btn:hover{background:#15233F;color:#fff}
+
+/* --- Main pane --- */
+.pane{padding:36px 44px 80px;min-width:0}
+@media (max-width:680px){.pane{padding:26px 20px 64px}}
+
+.pane-head{margin-bottom:30px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px}
+.pane-head h1{margin:0 0 6px;font-size:clamp(1.4rem,2.2vw,1.85rem)}
+.pane-head .pane-lede{color:var(--text-2);font-size:.95rem;margin:0;max-width:62ch}
+.pane-head .pane-meta{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;color:var(--text-3);
+  text-transform:uppercase;display:flex;align-items:center;gap:14px;
+}
+.pane-head .pane-meta .dot{width:7px;height:7px;background:var(--success);border-radius:50%;display:inline-block;box-shadow:0 0 0 4px rgba(14,138,95,.16);margin-right:5px}
+
+/* KPI strip (5-up) */
+.kpis{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:32px;
+}
+@media (max-width:1240px){.kpis{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:680px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  padding:16px 18px;display:flex;flex-direction:column;gap:4px;
+  transition:border-color .15s,box-shadow .15s;
+}
+.kpi:hover{border-color:var(--border-strong);box-shadow:var(--shadow)}
+.kpi .label{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-3);font-weight:600;margin-bottom:4px;display:inline-flex;align-items:center;gap:5px;
+}
+.kpi .label .q{
+  width:13px;height:13px;border-radius:50%;background:var(--surface-3);
+  display:inline-grid;place-items:center;font-family:var(--font-sans);font-size:.6rem;color:var(--text-3);font-weight:700;cursor:help;
+}
+.kpi .v{
+  font-size:1.65rem;font-weight:800;color:var(--text);letter-spacing:-.025em;line-height:1.1;
+  font-variant-numeric:tabular-nums;
+}
+.kpi .v .cur{color:var(--text-3);font-weight:700;font-size:1rem;margin-right:4px}
+.kpi .v .frac{color:var(--text-3);font-weight:600;font-size:.95rem;font-variant-numeric:tabular-nums}
+.kpi .delta{font-family:var(--font-mono);font-size:.72rem;font-weight:700;margin-top:2px;display:inline-flex;align-items:center;gap:4px}
+.kpi .delta.up{color:var(--success)}
 .kpi .delta.dn{color:var(--danger)}
-@media (max-width:880px){.kpis .wrap{grid-template-columns:repeat(2,1fr);gap:22px}}
+.kpi .delta .ago{color:var(--text-3);font-weight:500}
 
-/* Section */
-.section{padding:88px 0}
-.section.tight{padding:56px 0}
-.section.band{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.shead{margin-bottom:42px;max-width:60ch}
-.shead.row{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:end;max-width:none}
-@media (max-width:900px){.shead.row{grid-template-columns:1fr;gap:18px}}
-.shead .s-eye{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
-.shead .s-eye .tick{width:30px;height:1px;background:var(--gold-2);flex:none}
-.shead .s-eye .txt{font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brand)}
-.shead h2{margin:0}
-.shead p{margin:14px 0 0;font-size:1.02rem;color:var(--text-2);max-width:60ch}
-
-/* Persona switcher */
-.personas{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-@media (max-width:1080px){.personas{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:640px){.personas{grid-template-columns:1fr 1fr}}
-.persona{
-  display:flex;flex-direction:column;gap:10px;
+/* Chart card */
+.card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:22px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow-sm);
-  transition:all .18s ease;
+  padding:26px 28px;box-shadow:var(--shadow-sm);
 }
-.persona:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand-100)}
-.persona .pico{width:42px;height:42px;border-radius:11px;background:var(--brand-50);color:var(--brand);display:grid;place-items:center}
-.persona .pico svg{width:22px;height:22px}
-.persona.gold .pico{background:var(--gold-50);color:var(--gold-ink)}
-.persona .pn{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);font-weight:700}
-.persona h4{margin:0;font-size:1.02rem;font-weight:800;letter-spacing:-.01em}
-.persona .who{font-size:.85rem;color:var(--text-2);line-height:1.45}
-.persona .pgo{margin-top:auto;padding-top:10px;font-size:.78rem;font-weight:700;color:var(--brand);display:inline-flex;align-items:center;gap:6px;transition:gap .15s}
-.persona:hover .pgo{gap:10px;color:var(--brand-700)}
+.card.tight{padding:18px 20px}
+.chart-card{margin-bottom:22px}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:18px;flex-wrap:wrap}
+.chart-head .title-block{display:flex;flex-direction:column;gap:10px}
+.chart-head h3{margin:0;font-size:1.18rem;font-weight:800;letter-spacing:-.015em}
+.chart-head h3 .cur{color:var(--text-3);font-weight:600;font-size:.95rem;margin-left:4px}
+.chart-tabs{display:inline-flex;background:var(--surface-3);border-radius:9px;padding:3px;gap:2px;align-self:flex-start}
+.chart-tabs span{
+  font-size:.78rem;font-weight:600;padding:5px 14px;border-radius:7px;color:var(--text-2);cursor:pointer;
+  transition:background .12s,color .12s;user-select:none;
+}
+.chart-tabs span.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow-sm);font-weight:700}
+.chart-metric{
+  display:inline-flex;gap:12px;align-items:center;font-family:var(--font-mono);font-size:.74rem;font-weight:600;
+  color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;
+}
+.chart-metric span{padding:6px 0;border-bottom:2px solid transparent;cursor:pointer;transition:color .12s,border-color .12s}
+.chart-metric span.active{color:var(--text);border-bottom-color:var(--brand)}
+.chart-metric span:hover{color:var(--text)}
+.chart-canvas-wrap{position:relative;height:340px;margin-top:6px}
+@media (max-width:680px){.chart-canvas-wrap{height:280px}}
+.chart-foot{
+  margin-top:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  font-family:var(--font-mono);font-size:.7rem;color:var(--text-3);
+}
+.chart-foot .toggle{display:inline-flex;align-items:center;gap:6px}
+.chart-foot input[type="checkbox"]{accent-color:var(--brand);width:13px;height:13px}
+.chart-foot .source{letter-spacing:.06em}
 
-/* Module grid */
-.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
-@media (max-width:980px){.modules{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.modules{grid-template-columns:1fr}}
-.module{background:var(--surface);padding:30px 28px;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;transition:background .15s ease}
-.module:hover{background:var(--surface-2)}
-.module .mhead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
-.module .mn{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;color:var(--brand);font-weight:700;text-transform:uppercase}
-.module .mst{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:99px}
-.module .mst.live{color:var(--success);background:var(--success-bg)}
-.module .mst.dev{color:var(--gold-ink);background:var(--gold-50);border:1px solid var(--gold-100)}
-.module h3{margin:0;font-size:1.15rem;font-weight:800;letter-spacing:-.01em}
-.module p{margin:0;font-size:.92rem;color:var(--text-2);line-height:1.55}
-.module ul{margin:6px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
-.module ul li{font-size:.82rem;color:var(--text-2);display:flex;align-items:center;gap:6px}
-.module ul li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--brand);flex:none}
-.module .mgo{margin-top:auto;padding-top:14px;font-size:.82rem;font-weight:700;color:var(--brand);display:inline-flex;align-items:center;gap:6px;transition:gap .15s}
-.module:hover .mgo{gap:10px;color:var(--brand-700)}
+/* Asset-class legend bar */
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px}
+.legend .li{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text-2);font-weight:600}
+.legend .sw{width:11px;height:11px;border-radius:3px;flex:none}
 
-/* Listed assets snapshot */
-.assets-table{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
-.assets-table table{width:100%;border-collapse:collapse;font-size:.9rem}
-.assets-table th{text-align:left;padding:14px 18px;background:var(--bg-2);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3);font-weight:700;border-bottom:1px solid var(--border)}
-.assets-table th.r,.assets-table td.r{text-align:right;font-variant-numeric:tabular-nums}
-.assets-table td{padding:14px 18px;border-bottom:1px solid var(--border);color:var(--text-2)}
-.assets-table tr:last-child td{border-bottom:none}
-.assets-table tr:hover td{background:var(--bg-2)}
-.assets-table .ticker{font-family:var(--font-mono);font-weight:800;color:var(--text)}
-.assets-table .name{color:var(--text);font-weight:600}
-.assets-table .price{font-weight:700;color:var(--text)}
-.assets-table .chg.up{color:var(--success);font-weight:700}
-.assets-table .chg.dn{color:var(--danger);font-weight:700}
-.assets-table .pill{display:inline-block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:99px;font-weight:700;color:var(--brand-700);background:var(--brand-50)}
-.assets-table .pill.gold{color:var(--gold-ink);background:var(--gold-50)}
+/* 2-column rows */
+.row2{display:grid;grid-template-columns:1fr 1.4fr;gap:22px;margin-bottom:28px}
+.row2.equal{grid-template-columns:1fr 1fr}
+.row2.right-heavy{grid-template-columns:1fr 1.8fr}
+@media (max-width:1100px){.row2{grid-template-columns:1fr !important}}
+
+.card h4{margin:0 0 12px;font-size:1rem;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.card h4 .meta{
+  font-family:var(--font-mono);font-size:.66rem;font-weight:600;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;
+}
+.card h4 a.more{font-size:.78rem;font-weight:700;color:var(--brand);text-decoration:none;font-family:var(--font-sans);letter-spacing:0}
+.card h4 a.more:hover{color:var(--brand-700)}
+
+/* Donut + legend split */
+.donut-block{display:grid;grid-template-columns:230px 1fr;gap:22px;align-items:center}
+@media (max-width:560px){.donut-block{grid-template-columns:1fr;gap:14px}}
+.donut-block .donut-wrap{position:relative;width:230px;height:230px;margin:0 auto}
+.donut-block .donut-center{
+  position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none;
+}
+.donut-block .donut-center .v{font-size:1.4rem;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.donut-block .donut-center .l{font-family:var(--font-mono);font-size:.62rem;color:var(--text-3);letter-spacing:.14em;text-transform:uppercase;margin-top:2px;font-weight:600}
+.donut-legend{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:.86rem}
+.donut-legend li{display:grid;grid-template-columns:11px 1fr auto auto;gap:10px;align-items:center;padding:5px 0;border-bottom:1px solid var(--border-soft)}
+.donut-legend li:last-child{border-bottom:none}
+.donut-legend .sw{width:11px;height:11px;border-radius:3px}
+.donut-legend .n{font-weight:600;color:var(--text)}
+.donut-legend .vv{font-variant-numeric:tabular-nums;font-weight:700;color:var(--text);font-family:var(--font-mono);font-size:.78rem}
+.donut-legend .pct{font-variant-numeric:tabular-nums;color:var(--text-3);font-size:.76rem;font-family:var(--font-mono);min-width:46px;text-align:right}
+
+/* Tables */
+.tbl{width:100%;border-collapse:collapse;font-size:.85rem}
+.tbl th{
+  text-align:left;padding:8px 10px 10px;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3);font-weight:700;border-bottom:1px solid var(--border);
+}
+.tbl th.r,.tbl td.r{text-align:right;font-variant-numeric:tabular-nums}
+.tbl td{padding:10px;border-bottom:1px solid var(--border-soft);color:var(--text-2)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:var(--surface-2)}
+.tbl .ticker{font-family:var(--font-mono);font-weight:700;color:var(--text)}
+.tbl .name{color:var(--text);font-weight:600}
+.tbl .price{font-weight:700;color:var(--text);font-family:var(--font-mono)}
+.tbl .ch{font-family:var(--font-mono);font-weight:700;font-size:.8rem}
+.tbl .ch.u{color:var(--success)}
+.tbl .ch.d{color:var(--danger)}
+.tbl .pill{
+  display:inline-block;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 8px;border-radius:99px;font-weight:700;
+}
+.tbl .pill.b{color:var(--brand-700);background:var(--brand-50)}
+.tbl .pill.g{color:var(--gold-ink);background:var(--gold-50)}
+.tbl .pill.s{color:var(--success);background:var(--success-bg)}
+.tbl .pill.v{color:var(--pilot);background:var(--pilot-bg)}
+.tbl .stat{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.tbl .stat .d{width:7px;height:7px;border-radius:50%}
+.tbl .stat.live .d{background:var(--success);box-shadow:0 0 0 3px rgba(14,138,95,.15)}
+.tbl .stat.pilot .d{background:var(--pilot);box-shadow:0 0 0 3px rgba(123,77,190,.15)}
+.tbl .stat.coming .d{background:var(--text-4);box-shadow:0 0 0 3px rgba(148,162,184,.18)}
+.tbl .stat.live{color:var(--success)}
+.tbl .stat.pilot{color:var(--pilot)}
+.tbl .stat.coming{color:var(--text-3)}
+
+/* Bars (mini horizontal bars in tables) */
+.minibar{position:relative;height:6px;background:var(--bg-3);border-radius:3px;overflow:hidden}
+.minibar > span{position:absolute;left:0;top:0;bottom:0;background:var(--brand);border-radius:3px}
+.minibar.gold > span{background:var(--gold-2)}
+.minibar.green > span{background:var(--success)}
+
+/* Issuance volume mini-chart */
+.iss-card{display:grid;grid-template-columns:1fr;gap:14px}
+.iss-bars{display:flex;align-items:flex-end;gap:3px;height:120px;padding:6px 0;border-bottom:1px solid var(--border-soft)}
+.iss-bars .bar{flex:1;background:linear-gradient(180deg,var(--brand-200) 0%,var(--brand) 100%);border-radius:3px 3px 0 0;min-height:4px;position:relative;transition:opacity .15s}
+.iss-bars .bar.gold{background:linear-gradient(180deg,var(--gold) 0%,var(--gold-2) 100%)}
+.iss-bars .bar:hover{opacity:.78}
+.iss-axis{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:.62rem;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;margin-top:5px}
+
+/* Reg row */
+.reg-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:32px 0 32px;
+}
+@media (max-width:1100px){.reg-row{grid-template-columns:repeat(2,1fr)}}
+.reg{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;
+  display:flex;flex-direction:column;gap:4px;
+}
+.reg .label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);font-weight:600}
+.reg .v{font-size:.92rem;font-weight:800;color:var(--text);letter-spacing:-.005em}
+.reg .v .sub{color:var(--text-3);font-weight:600}
+.reg .desc{font-size:.74rem;color:var(--text-3);line-height:1.45;margin-top:2px}
 
 /* Footer */
-.footer{border-top:1px solid var(--border);background:var(--bg-2);padding:48px 0 28px}
-.footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
-.footer h6{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.16em;color:var(--text);text-transform:uppercase;margin:0 0 14px;font-weight:700}
-.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-.footer a{color:var(--text-2);font-weight:500}
+.footer{border-top:1px solid var(--border);background:var(--bg-2);padding:42px 0 24px;margin-top:24px}
+.footer .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.footer h6{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;color:var(--text);text-transform:uppercase;margin:0 0 12px;font-weight:700}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.footer a{color:var(--text-2);font-weight:500;font-size:.85rem}
 .footer a:hover{color:var(--brand)}
-.footer .brand-blk h5{font-size:1.2rem;font-weight:800;color:var(--text);margin:0 0 8px;letter-spacing:-.02em}
-.footer .brand-blk p{margin:0;font-size:.92rem;line-height:1.6;max-width:42ch;color:var(--text-2)}
-.footer .lr{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;color:var(--text-3)}
-.footer .disclaim{margin-top:14px;font-size:.76rem;color:var(--text-3);max-width:90ch;line-height:1.65}
+.footer .brand-blk h5{font-size:1.05rem;font-weight:800;color:var(--text);margin:0 0 8px;letter-spacing:-.02em}
+.footer .brand-blk p{margin:0;font-size:.85rem;line-height:1.55;max-width:42ch;color:var(--text-2)}
+.footer .lr{margin-top:30px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.04em;color:var(--text-3)}
+.footer .disclaim{margin-top:12px;font-size:.72rem;color:var(--text-3);max-width:92ch;line-height:1.6}
 @media (max-width:880px){.footer .grid{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.footer .grid{grid-template-columns:1fr}}
 
 ::selection{background:var(--brand);color:#fff}
-/* NYSE-style ticker tape attached to bottom of dark hero */
-.tape{background:#070C16;border-top:1px solid rgba(255,255,255,.08);overflow:hidden;position:relative;z-index:2}
-.tape::before,.tape::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:3;pointer-events:none}
-.tape::before{left:0;background:linear-gradient(90deg,#070C16,transparent)}
-.tape::after{right:0;background:linear-gradient(-90deg,#070C16,transparent)}
-.tape .tape-track{display:flex;gap:0;padding:10px 0;white-space:nowrap;animation:tape-slide 80s linear infinite;font-family:var(--font-mono);font-size:.84rem;color:#fff;font-weight:600}
-.tape .tk-item{display:inline-flex;align-items:center;gap:8px;padding:0 22px;border-right:1px solid rgba(255,255,255,.08)}
-.tape .tk-item .tk{color:#FFD9A8;font-weight:800;letter-spacing:-.01em}
-.tape .tk-item .px{color:#fff;font-variant-numeric:tabular-nums}
-.tape .tk-item .ch{font-size:.78rem;font-weight:700}
-.tape .tk-item .ch.up{color:#5dd6a0}
-.tape .tk-item .ch.dn{color:#ff7a8a}
-.tape .tk-item .ar{font-size:.7rem;opacity:.6}
-@keyframes tape-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-/* Hero feature row */
-.hero-feature{background:#0B1220;border-bottom:1px solid var(--border);padding:34px 0;position:relative;z-index:1}
-.hero-feature .wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media (max-width:780px){.hero-feature .wrap{grid-template-columns:1fr}}
-.hero-feature a{text-decoration:none;color:inherit;display:flex;gap:20px;align-items:center;border-radius:var(--r-lg);padding:24px;transition:transform .15s,box-shadow .2s ease,background .2s}
-.hero-feature .feat-gold{background:linear-gradient(135deg,#FFD9A8,#E7C76C);color:#0B1220;box-shadow:0 4px 20px rgba(255,217,168,.25)}
-.hero-feature .feat-gold:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,217,168,.4)}
-.hero-feature .feat-blue{background:linear-gradient(135deg,#15233F,#1F3CA8);color:#fff;box-shadow:0 4px 20px rgba(31,60,168,.25)}
-.hero-feature .feat-blue:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(31,60,168,.45)}
-.hero-feature .feat-ico{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;font-size:1.9rem;font-weight:800;flex:none}
-.hero-feature .feat-gold .feat-ico{background:rgba(11,18,32,.18);color:#0B1220}
-.hero-feature .feat-blue .feat-ico{background:rgba(255,217,168,.22);color:#FFD9A8}
-.hero-feature .feat-eye{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:4px;opacity:.85}
-.hero-feature .feat-blue .feat-eye{color:#FFD9A8;opacity:1}
-.hero-feature h3{margin:0 0 6px;font-size:1.18rem;font-weight:800;letter-spacing:-.01em;color:inherit}
-.hero-feature p{margin:0;font-size:.86rem;line-height:1.5;opacity:.85}
-.hero-feature .feat-go{margin-top:10px;font-size:.85rem;font-weight:800;display:inline-flex;align-items:center;gap:4px}
-
 </style>
 </head>
 <body>
 
-<div class="sbx-banner"><b>4ormEx · Sandbox preview</b> · Simulated institutional environment · All amounts in CAD · Not a live trading venue</div>
-
-<!-- Top nav -->
-<header class="nav">
-  <div class="nav-inner">
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
+<header class="topbar">
+  <div class="topbar-inner">
     <a href="https://4ormfinance.com" class="brand" aria-label="4orm Finance home">
-      <img src="/assets/4orm-logo.png" alt="4orm Finance" class="brand-logo" />
+      <img src="/assets/4orm-logo.png" alt="4orm Finance" />
       <span class="sub">4ormEx · The Exchange</span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-            <a href="https://4ormfinance.com" class="nav-back" aria-label="Back to 4orm Finance">← 4orm Finance</a>
-      <a href="/" class="nav-exchange" aria-current="page">
-        <span class="ex-main">4ormEx</span>
-        <span class="ex-eye">Exchange</span>
-      </a>
-      <a href="https://4ormfinance.com/#waitlist" class="nav-auth">Request access</a>
+    <label class="search" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="search" placeholder="Search any asset, issuer, ticker, or entity…" />
+      <span class="kbd">⌘ K</span>
+    </label>
+    <nav class="utility" aria-label="Primary">
+      <a class="menu" href="#issuers">For issuers <span class="car">▾</span></a>
+      <a href="#data-api">Data API <span class="new">New</span></a>
+      <a href="#book-demo">Book a demo</a>
+      <a class="back" href="https://4ormfinance.com">← 4orm Finance</a>
+      <a class="cta" href="https://4ormfinance.com/#waitlist">Request access</a>
     </nav>
   </div>
 </header>
 
-<!-- Exchange sub-nav -->
-<div class="subnav">
-  <div class="subnav-inner">
-    <a href="./" class="active"><span class="sn-num">01</span> Overview</a>
-    <a href="/marketplace.html"><span class="sn-num">02</span> Marketplace</a>
-    <a href="/tokenize.html"><span class="sn-num">03</span> Tokenize</a>
-    <a href="/lifecycle.html"><span class="sn-num">04</span> Lifecycle</a>
-    <a href="/issuer.html"><span class="sn-num">05</span> Issuer Portal</a>
-    <a href="/investor.html"><span class="sn-num">06</span> Investor Portal</a>
-    <a href="/compliance.html"><span class="sn-num">07</span> Compliance</a>
-    <a href="/settlement.html"><span class="sn-num">08</span> Settlement</a>
-    <a href="/admin.html"><span class="sn-num">09</span> Admin &amp; Audit</a>
-  </div>
-</div>
+<!-- =========================================================
+     HERO STRIP · 2-column institutional
+     ========================================================= -->
+<section class="herostrip">
+  <div class="wrap herostrip-grid">
 
-<!-- Dark hero -->
-<section class="dhero">
-  <div class="dhero-inner">
-    <div class="dhero-eyebrow"><span class="dot"></span> 4ormEx · Institutional RWA Trading Platform</div>
-    <h1>Institution-grade <span class="accent">trading, settlement &amp; custody</span> for tokenized real-world assets.</h1>
-    <p class="dhero-sub">
-      <strong>4ormEx</strong> is the institutional trading layer of 4orm Finance: a fully regulated venue for tokenized securities, real estate, infrastructure, and private credit
-      with T+0 atomic settlement, qualified Canadian custody, and embedded compliance — under one regulated rail.
-    </p>
-    <div class="dhero-pills">
-      <span class="dhero-pill gold">Sandbox Preview · v0.1</span>
-      <span class="dhero-pill">NI 45-106 compliant</span>
-      <span class="dhero-pill">Data residency · Canada</span>
-      <span class="dhero-pill">CIRO custody framework</span>
+    <div class="herostrip-msg">
+      <div class="reg-line">
+        <span class="dot"></span>
+        <span>The Canadian Settlement Network</span>
+        <span class="sep">·</span>
+        <span>CIRO · CSA · OSFI · FINTRAC · Bank of Canada</span>
+      </div>
+      <h1>The institutional rail for <span class="accent">tokenized Canadian assets.</span></h1>
+      <p class="hero-sub">
+        Settlement, custody and compliance for tokenized deposits, government and provincial debt, private credit, real estate, infrastructure, commodities — and the process and identity layers underneath them. One regulated corridor, every Canadian bank.
+      </p>
     </div>
-    <div class="dhero-actions">
-      <a class="dhero-btn gold" href="./marketplace.html">Enter the marketplace →</a>
-      <a class="dhero-btn ghost" href="./tokenize.html">⚙ Tokenize an asset</a>
-      <a class="dhero-btn ghost" href="./lifecycle.html">⚡ Run the lifecycle</a>
-      <a class="dhero-btn ghost" href="../">← Back to 4orm Finance</a>
-    </div>
+
+    <aside class="herostrip-stats" aria-label="At a glance">
+      <span class="stats-eye">At a glance · 24h</span>
+      <div class="hs-stat">
+        <span class="hs-label">Tokenized value · distributed</span>
+        <span class="hs-v"><span class="cur">C$</span>852.6M</span>
+        <span class="hs-d">▲ 3.24% <span class="ago">· 30d</span></span>
+      </div>
+      <div class="hs-stat">
+        <span class="hs-label">Bank corridor</span>
+        <span class="hs-v">3<span class="frac"> / 7 Big-7</span></span>
+        <span class="hs-d">+ 1 <span class="ago">· this quarter</span></span>
+      </div>
+      <div class="hs-stat">
+        <span class="hs-label">Issuers on the rail</span>
+        <span class="hs-v">23</span>
+        <span class="hs-d">▲ 14 <span class="ago">· 30d</span></span>
+      </div>
+    </aside>
+
   </div>
 </section>
 
-<!-- NYSE-style ticker tape -->
+<!-- Ticker tape -->
 <div class="tape" aria-hidden="true">
-  <div class="tape-track">
-    <span class="tk-item"><span class="tk">tGCB</span><span class="px">C$ 99.82</span><span class="ch up">▲ 0.03%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tABP28</span><span class="px">C$ 102.41</span><span class="ch up">▲ 0.18%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tACP-VII</span><span class="px">C$ 1,041.20</span><span class="ch up">▲ 4.12%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tPMP-A</span><span class="px">C$ 1.0400</span><span class="ch up">▲ 0.42%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tAUC</span><span class="px">C$ 96.18</span><span class="ch dn">▼ 0.27%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tCRE-CGY1</span><span class="px">C$ 524.00</span><span class="ch up">▲ 1.12%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">QCAD</span><span class="px">C$ 1.0000</span><span class="ch up">▲ 0.00%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tMMF-RBC</span><span class="px">C$ 10.0021</span><span class="ch up">▲ 0.01%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tEDC25</span><span class="px">C$ 101.18</span><span class="ch up">▲ 0.07%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tCRE-EDM2</span><span class="px">C$ 287.50</span><span class="ch up">▲ 0.62%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tAGL-SK1</span><span class="px">C$ 1,200.00</span><span class="ch up">▲ 0.08%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tHQI32</span><span class="px">C$ 99.91</span><span class="ch dn">▼ 0.04%</span><span class="ar">|</span></span>
-    <!-- duplicate for seamless loop -->
-    <span class="tk-item"><span class="tk">tGCB</span><span class="px">C$ 99.82</span><span class="ch up">▲ 0.03%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tABP28</span><span class="px">C$ 102.41</span><span class="ch up">▲ 0.18%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tACP-VII</span><span class="px">C$ 1,041.20</span><span class="ch up">▲ 4.12%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tPMP-A</span><span class="px">C$ 1.0400</span><span class="ch up">▲ 0.42%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tAUC</span><span class="px">C$ 96.18</span><span class="ch dn">▼ 0.27%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tCRE-CGY1</span><span class="px">C$ 524.00</span><span class="ch up">▲ 1.12%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">QCAD</span><span class="px">C$ 1.0000</span><span class="ch up">▲ 0.00%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tMMF-RBC</span><span class="px">C$ 10.0021</span><span class="ch up">▲ 0.01%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tEDC25</span><span class="px">C$ 101.18</span><span class="ch up">▲ 0.07%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tCRE-EDM2</span><span class="px">C$ 287.50</span><span class="ch up">▲ 0.62%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tAGL-SK1</span><span class="px">C$ 1,200.00</span><span class="ch up">▲ 0.08%</span><span class="ar">|</span></span>
-    <span class="tk-item"><span class="tk">tHQI32</span><span class="px">C$ 99.91</span><span class="ch dn">▼ 0.04%</span><span class="ar">|</span></span>
+  <div class="track">
+    <span class="ti"><span class="t">tGCB</span><span class="p">C$ 99.82</span><span class="c u">▲ 0.03%</span></span>
+    <span class="ti"><span class="t">tABP28</span><span class="p">C$ 102.41</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tACP-VII</span><span class="p">C$ 1,041.20</span><span class="c u">▲ 4.12%</span></span>
+    <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
+    <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
+    <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
+    <span class="ti"><span class="t">QCAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tMMF-RBC</span><span class="p">C$ 10.0021</span><span class="c u">▲ 0.01%</span></span>
+    <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
+    <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
+    <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
+    <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
+    <span class="ti"><span class="t">tRBCD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tTDD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">W-CAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">RVNSI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
+    <span class="ti"><span class="t">tPMS-CGY40</span><span class="p">C$ 2.10M</span><span class="c u">▲ paid</span></span>
+    <!-- dup for loop -->
+    <span class="ti"><span class="t">tGCB</span><span class="p">C$ 99.82</span><span class="c u">▲ 0.03%</span></span>
+    <span class="ti"><span class="t">tABP28</span><span class="p">C$ 102.41</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tACP-VII</span><span class="p">C$ 1,041.20</span><span class="c u">▲ 4.12%</span></span>
+    <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
+    <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
+    <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
+    <span class="ti"><span class="t">QCAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tMMF-RBC</span><span class="p">C$ 10.0021</span><span class="c u">▲ 0.01%</span></span>
+    <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
+    <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
+    <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
+    <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
+    <span class="ti"><span class="t">tRBCD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tTDD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">W-CAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">RVNSI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
+    <span class="ti"><span class="t">tPMS-CGY40</span><span class="p">C$ 2.10M</span><span class="c u">▲ paid</span></span>
   </div>
 </div>
 
-<!-- Hero feature row: Tokenize + Lifecycle (the two interactive workflows) -->
-<section class="hero-feature">
-  <div class="wrap">
-    <a href="/tokenize.html" class="feat-gold">
-      <div class="feat-ico">⚙</div>
+<!-- =========================================================
+     PRODUCT NAV · 9 sections, sticky
+     ========================================================= -->
+<nav class="productnav" aria-label="4ormEx product surface">
+  <div class="productnav-inner">
+    <a href="/" class="active"><span class="pn-num">01</span> Market Overview</a>
+    <a href="/marketplace.html"><span class="pn-num">02</span> Marketplace</a>
+    <a href="/tokenize.html"><span class="pn-num">03</span> Tokenize</a>
+    <a href="/lifecycle.html"><span class="pn-num">04</span> Lifecycle</a>
+    <a href="/issuer.html"><span class="pn-num">05</span> Issuer Portal</a>
+    <a href="/investor.html"><span class="pn-num">06</span> Investor Portal</a>
+    <a href="/compliance.html"><span class="pn-num">07</span> Compliance</a>
+    <a href="/settlement.html"><span class="pn-num">08</span> Settlement</a>
+    <a href="/admin.html"><span class="pn-num">09</span> Admin &amp; Audit</a>
+  </div>
+</nav>
+
+<!-- =========================================================
+     DASHBOARD
+     ========================================================= -->
+<div class="dash">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Market navigation">
+
+    <section class="sb-group">
+      <h6>Latest</h6>
+      <ul>
+        <li><a href="/" class="active">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          Market Overview
+        </a></li>
+        <li><a href="/marketplace.html">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          Asset Screener
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+          New Listing Monitor <span class="new">New</span>
+        </a></li>
+      </ul>
+    </section>
+
+    <section class="sb-group">
+      <h6>Asset Classes</h6>
+      <ul>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V3l9 4 9-4v18"/><path d="M3 12h18M3 16.5h18"/></svg>
+          Tokenized Bank Deposits
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c0-3 4-3 4-6 0-1.5-1-2-2-2M12 16v1"/></svg>
+          Stablecoins
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><circle cx="13" cy="15" r="3.2"/><path d="M11.6 15.2l1 1 2.2-2.4"/></svg>
+          Corporate NFTs <span class="new">New</span>
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V3"/><path d="M4 5l10-2v7L4 12z"/><path d="M16 11h5l-2 4 2 4h-5"/></svg>
+          Project Milestones <span class="new">New</span>
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="6.5" width="12" height="10" rx="1"/><path d="M13.5 9.5h4.5l3 3v4h-7.5z"/><circle cx="6" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/><path d="M4.5 11l1.8 1.8 3-3"/></svg>
+          Verified Delivery <span class="new">New</span>
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21V13h6v8"/></svg>
+          Government of Canada
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4-1.5 8.5L12 22l-7.5-7.5L3 6z"/></svg>
+          Provincial &amp; Sub-Sovereign
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 12h20"/><circle cx="7" cy="15" r="1"/></svg>
+          Private Credit
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+          Real Estate
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M8 9h6a2 2 0 010 4H8M8 13h7a2 2 0 010 4H8"/></svg>
+          Commodities
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21V12h6v9"/></svg>
+          Infrastructure
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M14 7h7v7"/></svg>
+          Equities (CDR-style)
+        </a></li>
+      </ul>
+    </section>
+
+    <section class="sb-group">
+      <h6>Network</h6>
+      <ul>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V21h18V9"/><path d="M3 9l9-6 9 6"/><path d="M9 21V12h6v9"/></svg>
+          Canadian Banks
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          Qualified Custodians
+        </a></li>
+        <li><a href="#" >
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="16" r="3"/><path d="M11 8h2a3 3 0 013 3v2"/></svg>
+          Issuers &amp; Originators
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h6l3-9 3 18 3-9h3"/></svg>
+          Settlement Operators
+        </a></li>
+      </ul>
+    </section>
+
+    <section class="sb-group">
+      <h6>Tools</h6>
+      <ul>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8-4 8 4M4 7v10l8 4 8-4V7M4 7l8 4 8-4M12 11v10"/></svg>
+          Data API <span class="new">New</span>
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18M15 3v18"/></svg>
+          Data Catalog
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+          Documentation
+        </a></li>
+        <li><a href="#">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M9 13h2M9 17h6"/></svg>
+          Research
+        </a></li>
+        <li><a href="/admin.html">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v6H3z"/><path d="M3 13h18v8H3z"/><path d="M7 5h.01M7 15h.01"/></svg>
+          Audit &amp; Citations
+        </a></li>
+      </ul>
+    </section>
+
+    <section class="sb-cta">
+      <h6>For Issuers &amp; Banks</h6>
+      <p>Onboard a Canadian asset to the regulated rail or join the bank corridor.</p>
+      <a class="start-btn" href="/tokenize.html">Register your asset →</a>
+    </section>
+
+  </aside>
+
+  <!-- MAIN PANE -->
+  <main class="pane">
+
+    <header class="pane-head">
       <div>
-        <div class="feat-eye">Tokenization Engine</div>
-        <h3>Create a new tokenized asset</h3>
-        <p>5-step wizard · asset details → economics → distribution rules → compliance → mint. ERC-3643. CCO sign-off.</p>
-        <div class="feat-go">Open the wizard →</div>
+        <h1>Canadian Market Overview</h1>
+        <p class="pane-lede">
+          The institutional view of tokenized real-world assets settling on 4ormEx. Discover every Canadian-issued tokenized asset, the banks operating the corridor, and the issuers and custodians on the regulated rail. All amounts in CAD.
+        </p>
       </div>
-    </a>
-    <a href="/lifecycle.html" class="feat-blue">
-      <div class="feat-ico">⚡</div>
-      <div>
-        <div class="feat-eye">Transaction Lifecycle</div>
-        <h3>Run the 8-step atomic flow</h3>
-        <p>KYC → AML → Tokenize → Trade → Attestation → Settle → Audit → Report. End-to-end in 12 seconds, sandboxed.</p>
-        <div class="feat-go">Run the lifecycle →</div>
+      <div class="pane-meta">
+        <span><span class="dot"></span> Sandbox · Live data</span>
+        <span>Updated 14:22 ET</span>
       </div>
-    </a>
-  </div>
-</section>
+    </header>
 
-<!-- KPI strip -->
-<section class="kpis">
-  <div class="wrap">
-    <div class="kpi">
-      <div class="label">Total value locked</div>
-      <div class="v">C$<span class="u">852.6M</span></div>
-      <div class="delta">+ C$14.2M · 24h</div>
-    </div>
-    <div class="kpi">
-      <div class="label">Listed assets</div>
-      <div class="v">12<span class="u" style="font-size:1.1rem;margin-left:6px">issuers</span></div>
-      <div class="delta">+ 2 new · this week</div>
-    </div>
-    <div class="kpi">
-      <div class="label">Settlement time</div>
-      <div class="v"><span class="u">T+0</span></div>
-      <div class="delta">~ 12 sec atomic DvP</div>
-    </div>
-    <div class="kpi">
-      <div class="label">Compliance pass rate</div>
-      <div class="v">100<span class="u">%</span></div>
-      <div class="delta">All checks · 30d</div>
-    </div>
-  </div>
-</section>
-
-<!-- Personas -->
-<section class="section">
-  <div class="wrap">
-    <div class="shead">
-      <div class="s-eye"><span class="tick"></span><span class="txt">Explore as</span></div>
-      <h2>Step into the platform <span class="h-it">as any participant.</span></h2>
-      <p>The sandbox preview is open-access. Each persona below is a curated view of 4ormEx as that participant — pre-loaded with realistic Canadian data and the workflows they actually run.</p>
-    </div>
-
-    <div class="personas">
-      <a class="persona gold" href="./issuer.html">
-        <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
-        <div class="pn">01 · Issuer</div>
-        <h4>Alpha Capital</h4>
-        <div class="who">Tokenized private credit issuer, Toronto · Exempt Market Dealer</div>
-        <div class="pgo">Open issuer portal →</div>
-      </a>
-      <a class="persona" href="./investor.html">
-        <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V10M9 20V6M13 20V13M17 20V8M21 20V4"/></svg></div>
-        <div class="pn">02 · Investor</div>
-        <h4>Bay Street Investments</h4>
-        <div class="who">Multi-strategy asset manager · institutional accredited</div>
-        <div class="pgo">Open investor portal →</div>
-      </a>
-      <a class="persona" href="./compliance.html">
-        <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4-1.5 8.5L12 22l-7.5-7.5L3 6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <div class="pn">03 · Compliance</div>
-        <h4>Compliance Officer</h4>
-        <div class="who">CIRO/CSA registered · KYC, AML, NI 45-106 oversight</div>
-        <div class="pgo">Open compliance console →</div>
-      </a>
-      <a class="persona" href="./settlement.html">
-        <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4"/><path d="M3 7h18"/><path d="M7 21l-4-4 4-4"/><path d="M21 17H3"/></svg></div>
-        <div class="pn">04 · Custodian</div>
-        <h4>Tetra Trust</h4>
-        <div class="who">Qualified digital asset custodian · settlement counterparty</div>
-        <div class="pgo">Open settlement ledger →</div>
-      </a>
-      <a class="persona" href="./admin.html">
-        <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <div class="pn">05 · Admin</div>
-        <h4>Platform Admin</h4>
-        <div class="who">4ormEx operations · audit logs, reporting, supervision</div>
-        <div class="pgo">Open admin console →</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Six modules -->
-<section class="section band">
-  <div class="wrap">
-    <div class="shead row">
-      <div>
-        <div class="s-eye"><span class="tick"></span><span class="txt">The 4ormEx Platform</span></div>
-        <p>Six integrated services on one regulated rail. Each is independently navigable; together they form a complete institutional lifecycle from issuance to audit.</p>
+    <!-- KPI strip -->
+    <section class="kpis" aria-label="Headline metrics">
+      <div class="kpi">
+        <div class="label">Distributed Tokenized Value <span class="q" title="Distributed = tokens issued and held by end-investors">?</span></div>
+        <div class="v"><span class="cur">C$</span>852.6M</div>
+        <div class="delta up">▲ 3.24% <span class="ago">from 30d ago</span></div>
       </div>
-      <h2>Six services. <span class="h-it">One regulated rail.</span></h2>
-    </div>
-
-    <div class="modules">
-      <a href="/issuer.html" class="module">
-        <div class="mhead">
-          <span class="mn">01 · Issuance</span>
-          <span class="mst dev">Sandbox</span>
-        </div>
-        <h3>Issuance Service</h3>
-        <p>Create and manage tokenized securities with regulatory compliance built into the token from mint.</p>
-        <ul>
-          <li>Token creation (ERC-3643)</li>
-          <li>Offering management</li>
-          <li>Jurisdiction rules</li>
-          <li>Distribution controls</li>
-        </ul>
-        <span class="mgo">Open issuer portal →</span>
-      </a>
-
-      <a href="/compliance.html" class="module">
-        <div class="mhead">
-          <span class="mn">02 · Compliance</span>
-          <span class="mst live">Live</span>
-        </div>
-        <h3>Compliance Engine</h3>
-        <p>KYC/AML verification, accreditation validation under NI 45-106, and pre-trade compliance checks on every order.</p>
-        <ul>
-          <li>KYC verification</li>
-          <li>NI 45-106 accreditation</li>
-          <li>Pre-trade checks</li>
-          <li>Regulatory reporting</li>
-        </ul>
-        <span class="mgo">Open compliance console →</span>
-      </a>
-
-      <a href="/marketplace.html" class="module">
-        <div class="mhead">
-          <span class="mn">03 · Marketplace</span>
-          <span class="mst live">Live</span>
-        </div>
-        <h3>Marketplace Service</h3>
-        <p>Central limit order book with real-time matching, depth-of-book transparency, and institutional trading controls.</p>
-        <ul>
-          <li>Limit &amp; market orders</li>
-          <li>Order book depth</li>
-          <li>Trade matching</li>
-          <li>Price discovery</li>
-        </ul>
-        <span class="mgo">Open marketplace →</span>
-      </a>
-
-      <a href="/settlement.html" class="module">
-        <div class="mhead">
-          <span class="mn">04 · Settlement</span>
-          <span class="mst dev">Sandbox</span>
-        </div>
-        <h3>Settlement Service</h3>
-        <p>T+0 atomic settlement with delivery-versus-payment guarantees in tokenized CAD — bank deposits or QCAD.</p>
-        <ul>
-          <li>DvP atomic settlement</li>
-          <li>T+0 finality</li>
-          <li>Netting &amp; reconciliation</li>
-          <li>Multi-bank corridors</li>
-        </ul>
-        <span class="mgo">Open settlement ledger →</span>
-      </a>
-
-      <a href="/investor.html" class="module">
-        <div class="mhead">
-          <span class="mn">05 · Custody</span>
-          <span class="mst dev">Sandbox</span>
-        </div>
-        <h3>Custody Adapter</h3>
-        <p>Unified interface to qualified Canadian custodians and wallet infrastructure. Multi-custodian, single view.</p>
-        <ul>
-          <li>Tetra · Balance · Brane</li>
-          <li>Balance management</li>
-          <li>Transfer controls</li>
-          <li>Audit trail</li>
-        </ul>
-        <span class="mgo">Open investor portal →</span>
-      </a>
-
-      <a href="/admin.html" class="module">
-        <div class="mhead">
-          <span class="mn">06 · Audit</span>
-          <span class="mst live">Live</span>
-        </div>
-        <h3>Audit &amp; Reporting</h3>
-        <p>Immutable audit logs on the 4orm-EVM permissioned network and one-click regulatory reporting.</p>
-        <ul>
-          <li>Immutable ledger</li>
-          <li>Regulatory reports</li>
-          <li>Real-time monitoring</li>
-          <li>Export to CSV/PDF</li>
-        </ul>
-        <span class="mgo">Open admin console →</span>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- Listed assets snapshot -->
-<section class="section">
-  <div class="wrap">
-    <div class="shead row">
-      <div>
-        <div class="s-eye"><span class="tick"></span><span class="txt">Live listings · sandbox</span></div>
-        <p>A snapshot of assets currently listed in the sandbox. Click into the marketplace for the full order book and trade execution.</p>
+      <div class="kpi">
+        <div class="label">Represented Asset Value <span class="q" title="Represented = on-chain notional plus backing assets in custody">?</span></div>
+        <div class="v"><span class="cur">C$</span>1.94B</div>
+        <div class="delta up">▲ 12.10% <span class="ago">from 30d ago</span></div>
       </div>
-      <h2>Listed assets <span class="h-it">on 4ormEx.</span></h2>
-    </div>
+      <div class="kpi">
+        <div class="label">Total Asset Holders</div>
+        <div class="v">847</div>
+        <div class="delta up">▲ 14 <span class="ago">from 30d ago</span></div>
+      </div>
+      <div class="kpi">
+        <div class="label">QCAD &amp; W-CAD in Circulation</div>
+        <div class="v"><span class="cur">C$</span>168.4M</div>
+        <div class="delta up">▲ 2.12% <span class="ago">from 30d ago</span></div>
+      </div>
+      <div class="kpi">
+        <div class="label">Bank Partners</div>
+        <div class="v">3<span class="frac"> / 7</span></div>
+        <div class="delta up">+ 1 <span class="ago">this quarter</span></div>
+      </div>
+    </section>
 
-    <div class="assets-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Ticker</th>
-            <th>Asset</th>
-            <th>Class</th>
-            <th class="r">Last</th>
-            <th class="r">24h change</th>
-            <th class="r">24h volume</th>
-            <th class="r">Issuer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="ticker">tGCB</span></td>
-            <td><span class="name">Gov. of Canada T-Bill · 90d</span></td>
-            <td><span class="pill">Sovereign</span></td>
-            <td class="r price">C$99.82</td>
-            <td class="r chg up">+ 0.03 %</td>
-            <td class="r">C$ 24.1M</td>
-            <td class="r">Bank of Canada</td>
-          </tr>
-          <tr>
-            <td><span class="ticker">tABP28</span></td>
-            <td><span class="name">Province of Alberta Bond 2028</span></td>
-            <td><span class="pill">Sub-sovereign</span></td>
-            <td class="r price">C$102.41</td>
-            <td class="r chg up">+ 0.18 %</td>
-            <td class="r">C$ 11.7M</td>
-            <td class="r">Province of Alberta</td>
-          </tr>
-          <tr>
-            <td><span class="ticker">tPMP-A</span></td>
-            <td><span class="name">Pineapple Mortgage Pool · Series A</span></td>
-            <td><span class="pill gold">Private credit</span></td>
-            <td class="r price">C$ 1.04</td>
-            <td class="r chg up">+ 0.42 %</td>
-            <td class="r">C$ 8.3M</td>
-            <td class="r">Pineapple Financial</td>
-          </tr>
-          <tr>
-            <td><span class="ticker">tAUC</span></td>
-            <td><span class="name">AuCan Tokenized Gold Bullion · 1g</span></td>
-            <td><span class="pill gold">Commodity</span></td>
-            <td class="r price">C$ 96.18</td>
-            <td class="r chg dn">− 0.27 %</td>
-            <td class="r">C$ 5.4M</td>
-            <td class="r">AuCan Gold</td>
-          </tr>
-          <tr>
-            <td><span class="ticker">tCRE-CGY1</span></td>
-            <td><span class="name">Calgary CRE Tower · Fractional Equity</span></td>
-            <td><span class="pill gold">Real estate</span></td>
-            <td class="r price">C$ 524.00</td>
-            <td class="r chg up">+ 1.12 %</td>
-            <td class="r">C$ 3.1M</td>
-            <td class="r">Ocree Capital</td>
-          </tr>
-          <tr>
-            <td><span class="ticker">QCAD</span></td>
-            <td><span class="name">Stablecorp QCAD · Settlement Currency</span></td>
-            <td><span class="pill">Stablecoin</span></td>
-            <td class="r price">C$ 1.0000</td>
-            <td class="r chg up">+ 0.00 %</td>
-            <td class="r">C$ 42.6M</td>
-            <td class="r">Stablecorp</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <!-- Stacked area chart -->
+    <section class="card chart-card" aria-label="Total tokenized value">
+      <div class="chart-head">
+        <div class="title-block">
+          <h3>Total Tokenized Value <span class="cur">· C$</span></h3>
+          <div class="chart-tabs" role="tablist">
+            <span class="active" role="tab" aria-selected="true">Distributed</span>
+            <span role="tab">Represented</span>
+            <span role="tab">All</span>
+          </div>
+        </div>
+        <div class="chart-metric" role="tablist">
+          <span class="active">Total Value</span>
+          <span>Asset Holders</span>
+          <span>Active Wallets</span>
+          <span>Transfer Volume</span>
+        </div>
+      </div>
+      <div class="chart-canvas-wrap">
+        <canvas id="rwaChart"></canvas>
+      </div>
+      <div class="legend" id="rwaLegend"></div>
+      <div class="chart-foot">
+        <label class="toggle"><input type="checkbox" /> Include stablecoins</label>
+        <span class="source">Source · 4ormEx sandbox · simulated</span>
+      </div>
+    </section>
 
-    <p class="muted" style="margin-top:18px;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.06em">
-      Sandbox data · simulated identifiers, hashes and balances · not a live trading venue · figures illustrative.
-    </p>
-  </div>
-</section>
+    <!-- Reg row -->
+    <section class="reg-row" aria-label="Regulatory anchors">
+      <div class="reg">
+        <span class="label">Regulator stack</span>
+        <span class="v">CIRO · CSA</span>
+        <span class="desc">Joint Notice 21-329; Notice 21-332 pre-registration undertakings.</span>
+      </div>
+      <div class="reg">
+        <span class="label">Custody framework</span>
+        <span class="v">CIRO Tier 1–4 <span class="sub">· Feb 2026</span></span>
+        <span class="desc">4-tier digital asset custodian framework; capital min. C$10M–$150M.</span>
+      </div>
+      <div class="reg">
+        <span class="label">Bank capital</span>
+        <span class="v">OSFI Group 2 <span class="sub">· 5% Tier 1</span></span>
+        <span class="desc">Raised from 1% Oct 2025; effective Nov 2025 / Jan 2026.</span>
+      </div>
+      <div class="reg">
+        <span class="label">Settlement asset</span>
+        <span class="v">W-CAD ready</span>
+        <span class="desc">Project Samara · C$100M EDC tokenized bond settled March 2025.</span>
+      </div>
+    </section>
 
-<!-- Footer -->
+    <!-- Donut + new listings -->
+    <section class="row2">
+      <div class="card">
+        <h4>Asset class breakdown <a class="more" href="#">See all →</a></h4>
+        <div class="donut-block">
+          <div class="donut-wrap">
+            <canvas id="donutChart" width="230" height="230"></canvas>
+            <div class="donut-center">
+              <div>
+                <div class="v">C$ 852.6M</div>
+                <div class="l">Distributed</div>
+              </div>
+            </div>
+          </div>
+          <ul class="donut-legend">
+            <li><span class="sw" style="background:#2E6BF2"></span><span class="n">Tokenized Bank Deposits</span><span class="vv">C$ 324.0M</span><span class="pct">38.0%</span></li>
+            <li><span class="sw" style="background:#E7C76C"></span><span class="n">Private Credit</span><span class="vv">C$ 187.6M</span><span class="pct">22.0%</span></li>
+            <li><span class="sw" style="background:#1B4ABE"></span><span class="n">Government of Canada</span><span class="vv">C$ 127.9M</span><span class="pct">15.0%</span></li>
+            <li><span class="sw" style="background:#7B4DBE"></span><span class="n">Provincial &amp; Sub-Sov.</span><span class="vv">C$ 76.7M</span><span class="pct">9.0%</span></li>
+            <li><span class="sw" style="background:#0E8A5F"></span><span class="n">Real Estate</span><span class="vv">C$ 68.2M</span><span class="pct">8.0%</span></li>
+            <li><span class="sw" style="background:#C49A3A"></span><span class="n">Commodities</span><span class="vv">C$ 42.6M</span><span class="pct">5.0%</span></li>
+            <li><span class="sw" style="background:#1B7BB5"></span><span class="n">Infrastructure</span><span class="vv">C$ 25.6M</span><span class="pct">3.0%</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>New listings · last 30 days <a class="more" href="/marketplace.html">Marketplace →</a></h4>
+        <table class="tbl">
+          <thead>
+            <tr><th>Asset</th><th>Class</th><th class="r">Issued</th><th class="r">Listed</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ticker">tRBCD</span> <span class="name">· RBC Tokenized Deposit</span></td>
+              <td><span class="pill b">Bank deposit</span></td>
+              <td class="r price">C$ 54.0M</td>
+              <td class="r">May 22, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">tEDC25</span> <span class="name">· Export Development Canada Bond 2025</span></td>
+              <td><span class="pill v">Sovereign agency</span></td>
+              <td class="r price">C$ 100.0M</td>
+              <td class="r">May 19, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">tCRE-EDM2</span> <span class="name">· Edmonton CRE Tower II</span></td>
+              <td><span class="pill g">Real estate</span></td>
+              <td class="r price">C$ 18.4M</td>
+              <td class="r">May 14, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">RVNSI</span> <span class="name">· Raven Silica · per-ton delivery</span></td>
+              <td><span class="pill s">Verified delivery</span></td>
+              <td class="r price">C$ 6.2M</td>
+              <td class="r">May 12, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">tCNFT-ALPHA</span> <span class="name">· Alpha Capital · Corporate NFT</span></td>
+              <td><span class="pill v">Corporate identity</span></td>
+              <td class="r price">—</td>
+              <td class="r">May 10, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">tPMS-CGY40</span> <span class="name">· Calgary 40-unit Infill · Milestone 03</span></td>
+              <td><span class="pill v">Project milestone</span></td>
+              <td class="r price">C$ 2.1M</td>
+              <td class="r">May 09, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">tACP-VII</span> <span class="name">· Alpha Capital Private Credit VII</span></td>
+              <td><span class="pill g">Private credit</span></td>
+              <td class="r price">C$ 24.2M</td>
+              <td class="r">May 09, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">tAGL-SK1</span> <span class="name">· Saskatchewan Agricultural Land Pool 1</span></td>
+              <td><span class="pill g">Commodity</span></td>
+              <td class="r price">C$ 12.8M</td>
+              <td class="r">May 02, 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticker">tHQI32</span> <span class="name">· Hydro-Québec Infrastructure 2032</span></td>
+              <td><span class="pill b">Infrastructure</span></td>
+              <td class="r price">C$ 25.6M</td>
+              <td class="r">Apr 28, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Top banks + top issuers -->
+    <section class="row2 equal">
+      <div class="card">
+        <h4>Bank corridor · partners <a class="more" href="#">Network →</a></h4>
+        <table class="tbl">
+          <thead>
+            <tr><th>Bank</th><th>Tokenized deposit</th><th class="r">In circulation</th><th class="r">Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="name">RBC Royal Bank</span></td>
+              <td><span class="ticker">tRBCD</span></td>
+              <td class="r price">C$ 54.0M</td>
+              <td class="r"><span class="stat live"><span class="d"></span>Live</span></td>
+            </tr>
+            <tr>
+              <td><span class="name">TD Bank Group</span></td>
+              <td><span class="ticker">tTDD</span></td>
+              <td class="r price">C$ 41.2M</td>
+              <td class="r"><span class="stat live"><span class="d"></span>Live</span></td>
+            </tr>
+            <tr>
+              <td><span class="name">BMO</span></td>
+              <td><span class="ticker">tBMOD</span></td>
+              <td class="r price">C$ 18.6M</td>
+              <td class="r"><span class="stat pilot"><span class="d"></span>Pilot</span></td>
+            </tr>
+            <tr>
+              <td><span class="name">CIBC</span></td>
+              <td><span class="ticker">tCIBD</span></td>
+              <td class="r price">—</td>
+              <td class="r"><span class="stat coming"><span class="d"></span>Onboarding</span></td>
+            </tr>
+            <tr>
+              <td><span class="name">Scotiabank</span></td>
+              <td><span class="ticker">tBNSD</span></td>
+              <td class="r price">—</td>
+              <td class="r"><span class="stat coming"><span class="d"></span>Q3 2026</span></td>
+            </tr>
+            <tr>
+              <td><span class="name">National Bank</span></td>
+              <td><span class="ticker">tNAD</span></td>
+              <td class="r price">—</td>
+              <td class="r"><span class="stat coming"><span class="d"></span>Q3 2026</span></td>
+            </tr>
+            <tr>
+              <td><span class="name">Desjardins</span></td>
+              <td><span class="ticker">tDSJD</span></td>
+              <td class="r price">—</td>
+              <td class="r"><span class="stat coming"><span class="d"></span>Q4 2026</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h4>Top issuers · by value <a class="more" href="#">All issuers →</a></h4>
+        <table class="tbl">
+          <thead>
+            <tr><th>Issuer</th><th>Type</th><th>Share</th><th class="r">Value</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="name">Export Development Canada</span></td>
+              <td><span class="pill v">Sov. agency</span></td>
+              <td><div class="minibar"><span style="width:62%"></span></div></td>
+              <td class="r price">C$ 100.0M</td>
+            </tr>
+            <tr>
+              <td><span class="name">RBC Royal Bank</span></td>
+              <td><span class="pill b">Bank</span></td>
+              <td><div class="minibar"><span style="width:34%"></span></div></td>
+              <td class="r price">C$ 54.0M</td>
+            </tr>
+            <tr>
+              <td><span class="name">TD Bank Group</span></td>
+              <td><span class="pill b">Bank</span></td>
+              <td><div class="minibar"><span style="width:26%"></span></div></td>
+              <td class="r price">C$ 41.2M</td>
+            </tr>
+            <tr>
+              <td><span class="name">Province of Alberta</span></td>
+              <td><span class="pill v">Sub-sov.</span></td>
+              <td><div class="minibar gold"><span style="width:22%"></span></div></td>
+              <td class="r price">C$ 35.4M</td>
+            </tr>
+            <tr>
+              <td><span class="name">Pineapple Financial</span></td>
+              <td><span class="pill g">Pvt credit</span></td>
+              <td><div class="minibar gold"><span style="width:18%"></span></div></td>
+              <td class="r price">C$ 28.9M</td>
+            </tr>
+            <tr>
+              <td><span class="name">Ocree Capital</span></td>
+              <td><span class="pill g">Real est.</span></td>
+              <td><div class="minibar green"><span style="width:14%"></span></div></td>
+              <td class="r price">C$ 22.4M</td>
+            </tr>
+            <tr>
+              <td><span class="name">Hydro-Québec</span></td>
+              <td><span class="pill b">Infra</span></td>
+              <td><div class="minibar"><span style="width:16%"></span></div></td>
+              <td class="r price">C$ 25.6M</td>
+            </tr>
+            <tr>
+              <td><span class="name">AuCan Gold</span></td>
+              <td><span class="pill g">Commodity</span></td>
+              <td><div class="minibar gold"><span style="width:11%"></span></div></td>
+              <td class="r price">C$ 17.2M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- New issuance volume + custodian roster -->
+    <section class="row2 equal">
+      <div class="card iss-card">
+        <h4>New issuance volume · last 12 months <span class="meta">C$ · monthly</span></h4>
+        <div class="iss-bars" aria-hidden="true">
+          <span class="bar" style="height:18%" title="Jun 2025 · C$ 22M"></span>
+          <span class="bar" style="height:24%" title="Jul 2025 · C$ 31M"></span>
+          <span class="bar gold" style="height:28%" title="Aug 2025 · C$ 38M"></span>
+          <span class="bar" style="height:34%" title="Sep 2025 · C$ 47M"></span>
+          <span class="bar" style="height:41%" title="Oct 2025 · C$ 56M"></span>
+          <span class="bar" style="height:48%" title="Nov 2025 · C$ 64M"></span>
+          <span class="bar gold" style="height:62%" title="Dec 2025 · C$ 86M"></span>
+          <span class="bar" style="height:54%" title="Jan 2026 · C$ 73M"></span>
+          <span class="bar" style="height:71%" title="Feb 2026 · C$ 98M"></span>
+          <span class="bar" style="height:78%" title="Mar 2026 · C$ 112M"></span>
+          <span class="bar gold" style="height:92%" title="Apr 2026 · C$ 134M"></span>
+          <span class="bar" style="height:100%" title="May 2026 · C$ 168M"></span>
+        </div>
+        <div class="iss-axis">
+          <span>Jun '25</span><span>Sep '25</span><span>Dec '25</span><span>Mar '26</span><span>May '26</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Qualified custodians <a class="more" href="#">All custodians →</a></h4>
+        <table class="tbl">
+          <thead>
+            <tr><th>Custodian</th><th>Tier</th><th>Assets under custody</th><th class="r">Share</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="name">Tetra Trust</span></td>
+              <td><span class="pill s">Tier 1</span></td>
+              <td><div class="minibar"><span style="width:64%"></span></div></td>
+              <td class="r price">52.1%</td>
+            </tr>
+            <tr>
+              <td><span class="name">Balance Trust</span></td>
+              <td><span class="pill s">Tier 2</span></td>
+              <td><div class="minibar"><span style="width:32%"></span></div></td>
+              <td class="r price">26.0%</td>
+            </tr>
+            <tr>
+              <td><span class="name">Brane Trust</span></td>
+              <td><span class="pill s">Tier 2</span></td>
+              <td><div class="minibar"><span style="width:21%"></span></div></td>
+              <td class="r price">17.4%</td>
+            </tr>
+            <tr>
+              <td><span class="name">CIBC Mellon (pilot)</span></td>
+              <td><span class="pill v">Tier 1 · pending</span></td>
+              <td><div class="minibar gold"><span style="width:6%"></span></div></td>
+              <td class="r price">4.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 <footer class="footer">
   <div class="wrap">
     <div class="grid">
       <div class="brand-blk">
         <h5>4ormEx · The 4orm Exchange</h5>
-        <p>The institutional trading layer of 4orm Finance. Canadian-regulated marketplace for tokenized real-world assets. Sandbox preview · v0.1.</p>
+        <p>The institutional settlement and trading layer of 4orm Finance. Canadian-regulated rail for tokenized real-world assets. Sandbox preview · v0.1.</p>
       </div>
       <div>
         <h6>Exchange</h6>
         <ul>
-          <li><a href="./">Overview</a></li>
+          <li><a href="/">Market Overview</a></li>
           <li><a href="/marketplace.html">Marketplace</a></li>
           <li><a href="/issuer.html">Issuer portal</a></li>
           <li><a href="/investor.html">Investor portal</a></li>
@@ -659,12 +1136,13 @@ a:hover{color:var(--brand-700)}
           <li><a href="/compliance.html">Compliance</a></li>
           <li><a href="/settlement.html">Settlement</a></li>
           <li><a href="/admin.html">Admin &amp; audit</a></li>
+          <li><a href="/tokenize.html">Tokenization wizard</a></li>
         </ul>
       </div>
       <div>
         <h6>4orm Finance</h6>
         <ul>
-          <li><a href="../">Main site</a></li>
+          <li><a href="https://4ormfinance.com">Main site</a></li>
           <li><a href="https://4ormfinance.com/regulatory.html">Regulatory posture</a></li>
           <li><a href="https://4ormfinance.com/#waitlist">Request access</a></li>
           <li><a href="mailto:founders@kcs-capital.com">founders@kcs-capital.com</a></li>
@@ -680,6 +1158,120 @@ a:hover{color:var(--brand-700)}
     </p>
   </div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+/* =========================================================
+   Stacked area chart · Total Tokenized Value (C$)
+   Mock Canadian-asset growth, June 2024 → May 2026 (24 months)
+   ========================================================= */
+(function(){
+  const labels = ['Jun \'24','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'25','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'26','Feb','Mar','Apr','May'];
+
+  // Asset-class growth curves (C$ millions)
+  // Tokenized Bank Deposits (the strategic core — explosive growth post-OSFI Group 2 5%)
+  const deposits = [0,0,0,0,0,2,4,8,14,22,32,46,62,84,108,138,170,204,238,268,294,310,318,324];
+  // Private Credit
+  const pvtCredit = [12,16,22,28,34,42,52,62,72,84,96,108,118,128,138,148,158,166,172,178,182,184,186,187.6];
+  // Government of Canada (T-Bills + tEDC25 bond)
+  const goc       = [0,0,0,0,0,0,0,0,0,0,0,12,18,24,32,42,54,68,82,96,108,118,124,127.9];
+  // Provincial / Sub-Sovereign
+  const provincial= [4,6,8,12,16,22,28,32,36,42,48,52,56,60,62,64,66,68,70,72,74,75,76,76.7];
+  // Real Estate
+  const realEstate= [8,10,14,18,22,26,30,34,38,42,46,50,52,54,56,58,60,62,63,64,65,66,67,68.2];
+  // Commodities
+  const commodities=[2,4,6,8,10,12,16,20,22,24,26,28,30,32,34,36,38,40,40,41,42,42,42,42.6];
+  // Infrastructure (tHQI32 bond drives most of this)
+  const infra     = [0,0,0,0,0,0,0,0,0,2,4,6,8,10,12,14,16,18,20,22,24,24,25,25.6];
+
+  const data = {
+    labels,
+    datasets:[
+      { label:'Tokenized Bank Deposits', data:deposits,    backgroundColor:'rgba(46,107,242,0.78)',  borderColor:'#2E6BF2', borderWidth:1.5, pointRadius:0, fill:'origin', tension:.35 },
+      { label:'Private Credit',          data:pvtCredit,   backgroundColor:'rgba(231,199,108,0.78)', borderColor:'#E7C76C', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
+      { label:'Government of Canada',    data:goc,         backgroundColor:'rgba(27,74,190,0.78)',   borderColor:'#1B4ABE', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
+      { label:'Provincial / Sub-Sov.',   data:provincial,  backgroundColor:'rgba(123,77,190,0.78)',  borderColor:'#7B4DBE', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
+      { label:'Real Estate',             data:realEstate,  backgroundColor:'rgba(14,138,95,0.78)',   borderColor:'#0E8A5F', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
+      { label:'Commodities',             data:commodities, backgroundColor:'rgba(196,154,58,0.78)',  borderColor:'#C49A3A', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
+      { label:'Infrastructure',          data:infra,       backgroundColor:'rgba(27,123,181,0.78)',  borderColor:'#1B7BB5', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
+    ]
+  };
+
+  const ctx = document.getElementById('rwaChart');
+  if(!ctx) return;
+  const chart = new Chart(ctx,{
+    type:'line',
+    data,
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      interaction:{ mode:'index', intersect:false },
+      plugins:{
+        legend:{ display:false },
+        tooltip:{
+          backgroundColor:'#0B1220', borderColor:'#15233F', borderWidth:1, padding:12, cornerRadius:8,
+          titleColor:'#FFD9A8', bodyColor:'#fff', titleFont:{ family:'JetBrains Mono', size:11, weight:'700' },
+          bodyFont:{ family:'Inter', size:12, weight:'500' },
+          callbacks:{
+            label:(ctx)=>{ const v = ctx.parsed.y; return ` ${ctx.dataset.label}: C$ ${v.toFixed(1)}M`; },
+            footer:(items)=>{ const total = items.reduce((s,i)=>s+i.parsed.y,0); return `Total: C$ ${total.toFixed(1)}M`; }
+          }
+        }
+      },
+      scales:{
+        x:{ grid:{ display:false }, ticks:{ color:'#6A7790', font:{ family:'JetBrains Mono', size:10 }, maxRotation:0, autoSkip:true, autoSkipPadding:14 } },
+        y:{
+          stacked:true,
+          grid:{ color:'#EEF2F8', drawBorder:false },
+          ticks:{ color:'#6A7790', font:{ family:'JetBrains Mono', size:10 },
+                  callback:(v)=> 'C$ '+ (v >= 1000 ? (v/1000).toFixed(1)+'B' : v+'M') }
+        }
+      },
+      elements:{ line:{ borderWidth:1.5 } }
+    }
+  });
+
+  // Build legend chips
+  const legend = document.getElementById('rwaLegend');
+  if(legend){
+    data.datasets.forEach((d,i)=>{
+      const li = document.createElement('span');
+      li.className = 'li';
+      li.innerHTML = `<span class="sw" style="background:${d.borderColor}"></span>${d.label}`;
+      legend.appendChild(li);
+    });
+  }
+})();
+
+/* =========================================================
+   Donut chart · asset class breakdown
+   ========================================================= */
+(function(){
+  const ctx = document.getElementById('donutChart');
+  if(!ctx) return;
+  new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      labels:['Tokenized Bank Deposits','Private Credit','Government of Canada','Provincial & Sub-Sov.','Real Estate','Commodities','Infrastructure'],
+      datasets:[{
+        data:[324.0, 187.6, 127.9, 76.7, 68.2, 42.6, 25.6],
+        backgroundColor:['#2E6BF2','#E7C76C','#1B4ABE','#7B4DBE','#0E8A5F','#C49A3A','#1B7BB5'],
+        borderColor:'#FFFFFF', borderWidth:2, hoverOffset:6, spacing:1
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, cutout:'72%',
+      plugins:{
+        legend:{ display:false },
+        tooltip:{
+          backgroundColor:'#0B1220', borderColor:'#15233F', borderWidth:1, padding:10, cornerRadius:8,
+          titleColor:'#FFD9A8', bodyColor:'#fff', titleFont:{ family:'JetBrains Mono', size:11 }, bodyFont:{ family:'Inter', size:12 },
+          callbacks:{ label:(ctx)=>` ${ctx.label}: C$ ${ctx.parsed.toFixed(1)}M` }
+        }
+      }
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
