@@ -95,17 +95,6 @@ a:hover{color:var(--brand-700)}
 @media (max-width:780px){.search{display:none}}
 
 .utility{display:flex;align-items:center;gap:6px;flex:none}
-.utility .markets-toggle{
-  display:inline-flex;align-items:center;gap:7px;font-family:inherit;cursor:pointer;
-  background:linear-gradient(180deg,#FFE39E 0%,var(--gold) 50%,var(--gold-2) 100%);
-  color:#15233F;font-weight:800;font-size:.84rem;letter-spacing:-.005em;
-  padding:8px 16px;border-radius:8px;border:1px solid var(--gold-2);
-  box-shadow:0 2px 6px rgba(196,154,58,.32),inset 0 1px 0 rgba(255,255,255,.45);
-  transition:transform .12s ease,box-shadow .15s ease;margin-right:6px;
-}
-.utility .markets-toggle:hover{background:linear-gradient(180deg,var(--gold-2) 0%,var(--gold) 60%,#FFE39E 100%);transform:translateY(-1px);box-shadow:0 4px 12px rgba(196,154,58,.45),inset 0 1px 0 rgba(255,255,255,.45)}
-.utility .markets-toggle .car{font-size:.74rem;opacity:.7;transition:transform .18s ease}
-.utility .markets-toggle.is-open .car{transform:rotate(180deg);opacity:1}
 .productnav.collapsed{display:none}
 .utility > a, .utility > .menu{
   font-size:.85rem;font-weight:600;color:var(--text-2);padding:8px 10px;border-radius:8px;
@@ -160,10 +149,10 @@ a:hover{color:var(--brand-700)}
   border-bottom:2px solid transparent;white-space:nowrap;transition:all .12s ease;text-decoration:none;
 }
 .productnav a:hover{color:var(--text);background:var(--surface-2)}
-.productnav a.active{color:var(--text);border-bottom-color:var(--gold-2);font-weight:700;background:linear-gradient(180deg,transparent 0%,var(--gold-50) 100%)}
+.productnav a.active{color:var(--brand-700);border-bottom-color:var(--brand);font-weight:700;background:linear-gradient(180deg,transparent 0%,var(--brand-50) 100%)}
 .productnav a .pn-num{font-family:var(--font-mono);font-size:.62rem;color:var(--text-3);letter-spacing:.12em;font-weight:700}
 .productnav a:hover .pn-num{color:var(--text-2)}
-.productnav a.active .pn-num{color:var(--gold-2)}
+.productnav a.active .pn-num{color:var(--brand)}
 .productnav .pn-cta{
   margin-left:auto;margin-right:4px;border-bottom:none;
   background:linear-gradient(180deg,#FFE39E 0%,var(--gold) 50%,var(--gold-2) 100%);

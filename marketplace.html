@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=7" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=10" />
 <style>
 /* ----- Marketplace-specific ----- */
 .market-strip{
@@ -121,7 +121,7 @@
       <input type="search" placeholder="Search any asset, issuer, ticker, or entity…" />
       <span class="kbd">⌘ K</span>
     </label>
-    <nav class="utility" aria-label="Primary"><button class="markets-toggle" type="button" aria-expanded="false" aria-controls="productnav-main">Markets <span class="car">▾</span></button><a class="menu" href="/for-issuers.html">For issuers <span class="car">▾</span></a>
+    <nav class="utility" aria-label="Primary"><a class="menu" href="/for-issuers.html">For issuers <span class="car">▾</span></a>
       <a href="/data-api.html">Data API</a>
       <a href="#book-demo">Book a demo</a>
       <a class="back" href="https://4ormfinance.com">← 4orm Finance</a>
@@ -131,7 +131,7 @@
 </header>
 
 <!-- ===== Ticker tape ===== -->
-<nav class="productnav collapsed" id="productnav-main" aria-label="4ormEx product surface">
+<nav class="productnav" id="productnav-main" aria-label="4ormEx product surface">
   <div class="productnav-inner">
     <a href="/"><span class="pn-num">01</span> Market Overview</a>
     <a href="/marketplace.html" class="active"><span class="pn-num">02</span> Marketplace</a>
@@ -526,6 +526,6 @@ renderAll();
 setInterval(()=>{const drift=(Math.random()-0.5)*(active.px<10?0.0005:0.02); active.px=+(active.px+drift).toFixed(active.px<10?4:2); renderHeader(); renderBook();},4000);
 setInterval(()=>{renderTrades();},7000);
 </script>
-<script src="/assets/4ormex-ui.js?v=7"></script>
+<script src="/assets/4ormex-ui.js?v=10"></script>
 </body>
 </html>
