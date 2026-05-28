@@ -20,8 +20,9 @@
           <span class="kbd">⌘ K</span>
         </label>
         <nav class="utility" aria-label="Primary">
+          <button class="markets-toggle" type="button" aria-expanded="false" aria-controls="productnav-main">Markets <span class="car">▾</span></button>
           <a class="menu" href="/for-issuers.html">For issuers <span class="car">▾</span></a>
-          <a href="#data-api">Data API <span class="new">New</span></a>
+          <a href="/data-api.html">Data API</a>
           <a href="#book-demo">Book a demo</a>
           <a class="back" href="https://4ormfinance.com">← 4orm Finance</a>
           <a class="cta" href="https://4ormfinance.com/#waitlist">Request access</a>
@@ -53,7 +54,7 @@
   const TICKER_HTML = `<div class="tape" aria-hidden="true"><div class="track">${tiHtml}${tiHtml}</div></div>`;
 
   const PRODUCTNAV_HTML = `
-    <nav class="productnav" aria-label="4ormEx product surface">
+    <nav class="productnav collapsed" id="productnav-main" aria-label="4ormEx product surface">
       <div class="productnav-inner">
         <a href="/" data-product="market-overview"><span class="pn-num">01</span> Market Overview</a>
         <a href="/marketplace.html" data-product="marketplace"><span class="pn-num">02</span> Marketplace</a>
