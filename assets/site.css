@@ -246,3 +246,13 @@ a.tile:hover .tile-link{gap:10px;color:var(--brand-700)}
 
 /* Selection */
 ::selection{background:var(--brand);color:#fff}
+
+/* Back-to-4orm-Finance link in 4ormEx nav */
+.nav-links a.nav-back{
+  font-family:var(--font-mono);font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);font-weight:700;
+  padding:6px 10px;border-radius:7px;
+  transition:color .15s,background .15s;
+}
+.nav-links a.nav-back:hover{color:var(--brand-700);background:var(--brand-50)}
