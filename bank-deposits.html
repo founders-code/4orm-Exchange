@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tokenized Bank Deposits · 4ormEx</title>
+<meta name="description" content="Tokenized Canadian bank deposits — Schedule I bank-issued, CDIC-eligible underlying, T+0 atomic settlement on 4ormEx." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=4" />
+<style>
+.chart-card{margin-bottom:24px}
+.chart-card .chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:14px;flex-wrap:wrap}
+.chart-card h3{margin:0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.chart-card .ch-tabs{display:inline-flex;background:var(--surface-3);border-radius:9px;padding:3px;gap:2px}
+.chart-card .ch-tabs span{font-size:.76rem;font-weight:600;padding:5px 12px;border-radius:7px;color:var(--text-2);cursor:pointer;user-select:none}
+.chart-card .ch-tabs span.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow-sm);font-weight:700}
+.chart-wrap{position:relative;height:280px}
+.info-card h4{margin:0 0 12px;font-size:.96rem;font-weight:800;letter-spacing:-.01em}
+.info-card p{font-size:.86rem;color:var(--text-2);line-height:1.6;margin:0 0 12px}
+.info-card .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.84rem;margin-top:12px}
+.info-card .kv .k{color:var(--text-3);font-family:var(--font-mono);font-size:.72rem}
+.info-card .kv .v{color:var(--text);font-weight:600;text-align:right}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px}
+.legend .li{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text-2);font-weight:600}
+.legend .sw{width:11px;height:11px;border-radius:3px;flex:none}
+</style>
+</head>
+<body data-sidebar="bank-deposits">
+
+<main class="pane">
+  <header class="pane-head">
+    <div>
+      <div class="ph-eye">Asset Class · 01</div>
+      <h1>Tokenized bank deposits <span class="accent">· Canadian Schedule I</span></h1>
+      <p class="ph-lede">Tokenized deposits issued by Canadian Schedule I banks against CDIC-eligible underlying deposits, redeemable 1:1 to bank CAD. The cash leg of the institutional rail — settles atomically against any tokenized asset on 4ormEx, with T+0 finality. Subject to OSFI Group 2 capital treatment under the October 2025 framework.</p>
+    </div>
+    <div class="ph-stats">
+      <div class="ph-stat"><span class="ps-l">In circulation</span><span class="ps-v"><span class="cur">C$</span>113.8M</span><span class="ps-d">▲ 4.1% · 30d</span></div>
+      <div class="ph-stat"><span class="ps-l">Banks live</span><span class="ps-v">3<span class="cur" style="margin-left:4px">/ 7</span></span><span class="ps-d">+ 1 Q2</span></div>
+      <div class="ph-stat"><span class="ps-l">Median redemption</span><span class="ps-v">12<span class="cur" style="margin-left:4px">s</span></span><span class="ps-d">atomic DvP</span></div>
+    </div>
+  </header>
+
+  <!-- KPIs -->
+  <section class="kpis">
+    <div class="kpi"><div class="label">Total tokenized</div><div class="v"><span class="cur">C$</span>113.8M</div><div class="delta">▲ 4.1% · 30d</div></div>
+    <div class="kpi"><div class="label">Banks live</div><div class="v">3 <span class="frac">of 7 Big-7</span></div><div class="delta">+ 1 · this Q</div></div>
+    <div class="kpi"><div class="label">24h volume</div><div class="v"><span class="cur">C$</span>32.6M</div><div class="delta">▲ 1.8%</div></div>
+    <div class="kpi"><div class="label">CDIC eligible share</div><div class="v">100<span class="cur">%</span></div><div class="delta neutral">all banks</div></div>
+    <div class="kpi"><div class="label">Median redemption</div><div class="v">12<span class="cur">s</span></div><div class="delta neutral">atomic DvP</div></div>
+  </section>
+
+  <!-- Chart -->
+  <section class="card chart-card">
+    <div class="chart-head">
+      <div>
+        <h3>Tokenized deposit supply · C$ <span style="color:var(--text-3);font-weight:500;font-size:.85em">by bank, last 24 months</span></h3>
+      </div>
+      <div class="ch-tabs">
+        <span class="active">By bank</span><span>Total</span><span>Daily volume</span>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="bdChart"></canvas></div>
+    <div class="legend" id="bdLegend"></div>
+  </section>
+
+  <!-- Bank corridor table -->
+  <section class="card" style="margin-bottom:24px">
+    <h4>Bank corridor · all 7 Big-7 status <a class="more" href="/network-banks.html">Network →</a></h4>
+    <table class="tbl">
+      <thead><tr><th>Bank</th><th>Ticker</th><th>Underlying</th><th class="r">In circulation</th><th class="r">24h vol</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">RBC Royal Bank</span><span class="sub">Royal Bank of Canada</span></td><td><span class="ticker">tRBCD</span></td><td>CDIC-eligible deposit</td><td class="r price">C$ 54.0M</td><td class="r price">C$ 18.4M</td><td><span class="stat live"><span class="d"></span>Live</span></td></tr>
+        <tr><td><span class="name">TD Bank Group</span><span class="sub">Toronto-Dominion</span></td><td><span class="ticker">tTDD</span></td><td>CDIC-eligible deposit</td><td class="r price">C$ 41.2M</td><td class="r price">C$ 14.2M</td><td><span class="stat live"><span class="d"></span>Live</span></td></tr>
+        <tr><td><span class="name">BMO Financial Group</span><span class="sub">Bank of Montreal</span></td><td><span class="ticker">tBMOD</span></td><td>CDIC-eligible deposit</td><td class="r price">C$ 18.6M</td><td class="r price">C$ 0.0M</td><td><span class="stat pilot"><span class="d"></span>Pilot</span></td></tr>
+        <tr><td><span class="name">CIBC</span><span class="sub">Canadian Imperial</span></td><td><span class="ticker">tCIBD</span></td><td>—</td><td class="r">—</td><td class="r">—</td><td><span class="stat coming"><span class="d"></span>Onboarding</span></td></tr>
+        <tr><td><span class="name">Scotiabank</span><span class="sub">Bank of Nova Scotia</span></td><td><span class="ticker">tBNSD</span></td><td>—</td><td class="r">—</td><td class="r">—</td><td><span class="stat coming"><span class="d"></span>Q3 2026</span></td></tr>
+        <tr><td><span class="name">National Bank</span><span class="sub">National Bank of Canada</span></td><td><span class="ticker">tNAD</span></td><td>—</td><td class="r">—</td><td class="r">—</td><td><span class="stat coming"><span class="d"></span>Q3 2026</span></td></tr>
+        <tr><td><span class="name">Desjardins Group</span><span class="sub">Mouvement Desjardins</span></td><td><span class="ticker">tDSJD</span></td><td>—</td><td class="r">—</td><td class="r">—</td><td><span class="stat coming"><span class="d"></span>Q4 2026</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 2-col info -->
+  <section class="row2 equal">
+    <div class="card info-card">
+      <h4>What is a tokenized bank deposit?</h4>
+      <p>A tokenized bank deposit is a permissioned token issued 1:1 against a Canadian dollar held at a Schedule I bank. It moves on the 4orm-EVM permissioned network with the same legal characteristics as the underlying deposit — CDIC coverage applies at the bank, and redemption is atomic. Unlike a stablecoin, the underlying is a regulated bank liability, not a money-market fund or commercial-paper basket.</p>
+      <p>On 4ormEx the tokenized deposit is the default cash leg for atomic delivery-versus-payment. Buyers and sellers settle in tokenized CAD at T+0 instead of waiting for CDS T+2. The token IS the payment — there's no separate wire to reconcile.</p>
+      <div class="cmp-strip ok" style="display:inline-flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>CDIC-eligible at the issuing bank · OSFI Group 2 compliant</div>
+    </div>
+    <div class="card info-card">
+      <h4>Regulatory framing</h4>
+      <div class="kv">
+        <div class="k">Bank treatment</div><div class="v">OSFI Group 2 (Oct '25)</div>
+        <div class="k">Capital limit</div><div class="v">≤ 5% of Tier 1</div>
+        <div class="k">Underlying</div><div class="v">CDIC-eligible deposit</div>
+        <div class="k">Custody</div><div class="v">Bank's own (Tier 1)</div>
+        <div class="k">Settlement</div><div class="v">T+0 atomic DvP</div>
+        <div class="k">CIRO Notice</div><div class="v">21-329 · CTP guidance</div>
+        <div class="k">AML</div><div class="v">FINTRAC — bank's existing program</div>
+        <div class="k">Settlement asset (BoC)</div><div class="v">W-CAD when productionized · Project Samara</div>
+      </div>
+      <p style="margin-top:14px;font-size:.78rem;color:var(--text-3);line-height:1.55">Bank-issued tokenized deposits are differentiated from stablecoins under OSFI's October 2025 framework because the underlying is the bank's own deposit liability, not a money-market reserve basket. This brings them into the bank's existing prudential perimeter rather than requiring separate Group 2 capital treatment — and gives investors the same CDIC protection that applies to the underlying deposit.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="/assets/4ormex-chrome.js?v=4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  const labels = ['Jun \'24','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'25','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'26','Feb','Mar','Apr','May'];
+  const rbc = [0,0,0,0,0,2,4,7,11,16,22,28,32,36,40,44,46,48,50,52,53,53.5,54,54];
+  const td  = [0,0,0,0,0,0,0,0,2,4,7,11,15,19,23,27,30,33,36,38,40,40.6,41,41.2];
+  const bmo = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,4,6,9,12,15,17,18,18.6];
+  const cibc= new Array(24).fill(0);
+  const data = {
+    labels,
+    datasets:[
+      { label:'RBC · tRBCD', data:rbc, backgroundColor:'rgba(46,107,242,0.78)', borderColor:'#2E6BF2', borderWidth:1.5, pointRadius:0, fill:'origin', tension:.32 },
+      { label:'TD · tTDD',   data:td,  backgroundColor:'rgba(231,199,108,0.78)', borderColor:'#E7C76C', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.32 },
+      { label:'BMO · tBMOD', data:bmo, backgroundColor:'rgba(123,77,190,0.78)', borderColor:'#7B4DBE', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.32 },
+    ]
+  };
+  const ctx = document.getElementById('bdChart');
+  new Chart(ctx,{ type:'line', data, options:{
+    responsive:true, maintainAspectRatio:false,
+    interaction:{ mode:'index', intersect:false },
+    plugins:{ legend:{display:false}, tooltip:{ backgroundColor:'#0B1220', titleColor:'#FFD9A8', bodyColor:'#fff', padding:10, cornerRadius:8, callbacks:{ label:(c)=>` ${c.dataset.label}: C$ ${c.parsed.y.toFixed(1)}M`, footer:(items)=>{const tot=items.reduce((s,i)=>s+i.parsed.y,0); return `Total: C$ ${tot.toFixed(1)}M`;} } } },
+    scales:{ x:{grid:{display:false},ticks:{color:'#6A7790',font:{family:'JetBrains Mono',size:10}}}, y:{stacked:true,grid:{color:'#EEF2F8'},ticks:{color:'#6A7790',font:{family:'JetBrains Mono',size:10},callback:(v)=>'C$ '+v+'M'}} }
+  }});
+  const legend = document.getElementById('bdLegend');
+  data.datasets.forEach(d=>{ const li=document.createElement('span'); li.className='li'; li.innerHTML=`<span class="sw" style="background:${d.borderColor}"></span>${d.label}`; legend.appendChild(li); });
+})();
+</script>
+</body>
+</html>

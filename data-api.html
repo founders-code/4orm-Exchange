@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Data API · 4ormEx · 4ormEx</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=4" />
+</head>
+<body data-sidebar="data-api">
+<main class="pane">
+  <header class="pane-head">
+    <div>
+      <div class="ph-eye">Tools · Data API</div>
+      <h1>Data API <span class='accent'>· programmatic access</span></h1>
+      <p class="ph-lede">REST and GraphQL endpoints into the live state of 4ormEx — assets, issuers, holders, settlements, audit log. Authentication via API key. Sandbox tier free for development; production tier requires institutional contract.</p>
+    </div>
+    <div class="ph-stats">
+      <div class="ph-stat"><span class="ps-l">Endpoints live</span><span class="ps-v">47</span><span class="ps-d">REST + GraphQL</span></div>
+      <div class="ph-stat"><span class="ps-l">Requests · 24h</span><span class="ps-v">284K</span><span class="ps-d">▲ 18%</span></div>
+      <div class="ph-stat"><span class="ps-l">p95 latency</span><span class="ps-v">82ms</span><span class="ps-d">edge-cached reads</span></div>
+    </div>
+  </header>
+  <section class="card" style="margin-bottom:24px"><h4>Endpoint reference · sample</h4>
+  <table class="tbl"><thead><tr><th>Method</th><th>Endpoint</th><th>Returns</th><th>Tier</th></tr></thead><tbody>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets</span></td><td>All listed assets · paginated</td><td><span class="pill s">Sandbox</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets/{ticker}</span></td><td>Single asset · full state</td><td><span class="pill s">Sandbox</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets/{ticker}/holders</span></td><td>Token holders · paginated</td><td><span class="pill b">Production</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets/{ticker}/orderbook</span></td><td>Live order book</td><td><span class="pill s">Sandbox</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/issuers/{id}</span></td><td>Issuer profile + Corporate NFT</td><td><span class="pill s">Sandbox</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/settlements/{tx}</span></td><td>Settlement record + receipt</td><td><span class="pill b">Production</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/audit</span></td><td>Anchored audit events · paginated</td><td><span class="pill b">Production</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/orders</span></td><td>Place a CLOB order</td><td><span class="pill b">Production</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/issuance</span></td><td>Submit a tokenization draft</td><td><span class="pill b">Production</span></td></tr>
+  </tbody></table></section>
+</main>
+<script src="/assets/4ormex-chrome.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Corporate NFTs · 4ormEx</title>
+<meta name="description" content="Corporate NFTs on 4ormEx — verified, regulator-aligned digital twins of Canadian operating entities. Cap table, KYB, beneficial ownership — queryable in real time." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=4" />
+<style>
+.chart-card{margin-bottom:24px}
+.chart-card .chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:14px;flex-wrap:wrap}
+.chart-card h3{margin:0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.chart-card .ch-tabs{display:inline-flex;background:var(--surface-3);border-radius:9px;padding:3px;gap:2px}
+.chart-card .ch-tabs span{font-size:.76rem;font-weight:600;padding:5px 12px;border-radius:7px;color:var(--text-2);cursor:pointer;user-select:none}
+.chart-card .ch-tabs span.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow-sm);font-weight:700}
+.chart-wrap{position:relative;height:280px}
+.info-card h4{margin:0 0 12px;font-size:.96rem;font-weight:800;letter-spacing:-.01em}
+.info-card p{font-size:.86rem;color:var(--text-2);line-height:1.6;margin:0 0 12px}
+.info-card .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.84rem;margin-top:12px}
+.info-card .kv .k{color:var(--text-3);font-family:var(--font-mono);font-size:.72rem}
+.info-card .kv .v{color:var(--text);font-weight:600;text-align:right}
+.thesis-box{background:linear-gradient(180deg,#FBF3DC 0%,#F1E2B4 100%);border:1px solid var(--gold-100);border-radius:var(--r-lg);padding:24px 26px;margin-bottom:24px}
+.thesis-box h4{color:var(--gold-ink);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;margin:0 0 12px;font-weight:800}
+.thesis-box p{color:#5C4310;font-size:.92rem;line-height:1.65;margin:0 0 10px}
+.thesis-box p:last-child{margin-bottom:0}
+.thesis-box strong{color:#3C2A05}
+</style>
+</head>
+<body data-sidebar="corporate-nfts">
+
+<main class="pane">
+  <header class="pane-head">
+    <div>
+      <div class="ph-eye">Asset Class · 03 · 4orm-Native</div>
+      <h1>Corporate NFTs <span class="accent">· verified entity twins</span></h1>
+      <p class="ph-lede">A Corporate NFT is a verified, regulator-aligned digital twin of a Canadian operating entity — incorporation status, beneficial-ownership register, share register, board composition, material-action history — issued as a non-fungible, transfer-restricted token under the entity's home statute and updated atomically with each corporate action. Onboard once, prove everywhere.</p>
+    </div>
+    <div class="ph-stats">
+      <div class="ph-stat"><span class="ps-l">NFTs minted</span><span class="ps-v">214</span><span class="ps-d">▲ 38 · 30d</span></div>
+      <div class="ph-stat"><span class="ps-l">KYB look-ups · 30d</span><span class="ps-v">3,847</span><span class="ps-d">▲ 22%</span></div>
+      <div class="ph-stat"><span class="ps-l">Avg onboarding saved</span><span class="ps-v">28<span class="cur" style="margin-left:4px">d</span></span><span class="ps-d">vs paper file</span></div>
+    </div>
+  </header>
+
+  <section class="kpis">
+    <div class="kpi"><div class="label">Total NFTs minted</div><div class="v">214</div><div class="delta">▲ 38 · 30d</div></div>
+    <div class="kpi"><div class="label">Verified entities</div><div class="v">214</div><div class="delta neutral">100% KYB pass</div></div>
+    <div class="kpi"><div class="label">Banks querying</div><div class="v">3<span class="frac">/7</span></div><div class="delta">+ 1 · this Q</div></div>
+    <div class="kpi"><div class="label">KYB look-ups · 30d</div><div class="v">3,847</div><div class="delta">▲ 22%</div></div>
+    <div class="kpi"><div class="label">Median verify time</div><div class="v">1.8<span class="cur">s</span></div><div class="delta neutral">ledger lookup</div></div>
+  </section>
+
+  <section class="card chart-card">
+    <div class="chart-head">
+      <div><h3>Corporate NFT mints · cumulative <span style="color:var(--text-3);font-weight:500;font-size:.85em">last 12 months</span></h3></div>
+      <div class="ch-tabs"><span class="active">Cumulative</span><span>By month</span><span>By entity type</span></div>
+    </div>
+    <div class="chart-wrap"><canvas id="nftChart"></canvas></div>
+  </section>
+
+  <div class="thesis-box">
+    <h4>KCS Thesis · Why Corporate NFTs are the foundational primitive</h4>
+    <p>For a Canadian bank, traditional institutional onboarding takes four to six weeks of paper — incorporation docs, beneficial ownership, cap table, board resolutions, counsel opinions. With a Corporate NFT it becomes a <strong>ledger lookup that resolves in under two seconds</strong>. The proof carries cryptographically signed attestations from the corporate secretary and the registrar; counterparties can verify in real time under FINTRAC beneficial-ownership rules without an inter-bank document chain.</p>
+    <p>For issuers listing on 4ormEx, the Corporate NFT becomes the <strong>root identity that authorizes every downstream issuance</strong> — bonds, tokenized deposits, project milestones, commodities — without re-papering the entity each time. Every Canadian operating company eventually needs a digital twin, and the regulator-aligned, multi-signature, audit-native version of that twin is the one that gets used by lenders, auditors, and counterparties.</p>
+  </div>
+
+  <section class="card" style="margin-bottom:24px">
+    <h4>Registered Corporate NFTs <span class="meta">214 · sandbox sample of 8</span></h4>
+    <table class="tbl">
+      <thead><tr><th>Entity</th><th>NFT</th><th>Jurisdiction</th><th>Statute</th><th class="r">Benef. owners</th><th>Last update</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">Alpha Capital Partners Inc.</span><span class="sub">Exempt Market Dealer · Toronto</span></td><td><span class="ticker">tCNFT-ALPHA</span><span class="sub">#00214</span></td><td>Ontario</td><td>OBCA</td><td class="r">4 / 4</td><td>May 26, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+        <tr><td><span class="name">Pineapple Financial</span><span class="sub">Mortgage origination · Toronto</span></td><td><span class="ticker">tCNFT-PINE</span><span class="sub">#00198</span></td><td>Ontario</td><td>OBCA</td><td class="r">6 / 6</td><td>May 24, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+        <tr><td><span class="name">Raven Silica Ltd.</span><span class="sub">Silica-sand producer · Saskatchewan</span></td><td><span class="ticker">tCNFT-RVN</span><span class="sub">#00207</span></td><td>Saskatchewan</td><td>BCA (SK)</td><td class="r">3 / 3</td><td>May 22, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+        <tr><td><span class="name">Ocree Capital</span><span class="sub">RWA tokenization · Vancouver</span></td><td><span class="ticker">tCNFT-OCREE</span><span class="sub">#00182</span></td><td>British Columbia</td><td>BCBCA</td><td class="r">5 / 5</td><td>May 20, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+        <tr><td><span class="name">Export Development Canada</span><span class="sub">Crown corporation · Ottawa</span></td><td><span class="ticker">tCNFT-EDC</span><span class="sub">#00146</span></td><td>Federal</td><td>EDC Act</td><td class="r">n/a · Crown</td><td>May 18, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+        <tr><td><span class="name">Hydro-Québec</span><span class="sub">Crown utility · Montréal</span></td><td><span class="ticker">tCNFT-HQ</span><span class="sub">#00159</span></td><td>Québec</td><td>QBCA · Crown</td><td class="r">n/a · Crown</td><td>May 15, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+        <tr><td><span class="name">Bay Street Investments</span><span class="sub">Asset manager · Toronto</span></td><td><span class="ticker">tCNFT-BSI</span><span class="sub">#00103</span></td><td>Ontario</td><td>OBCA</td><td class="r">8 / 8</td><td>May 14, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+        <tr><td><span class="name">Cascade Pension Plan</span><span class="sub">Pension plan · Vancouver</span></td><td><span class="ticker">tCNFT-CPP</span><span class="sub">#00088</span></td><td>British Columbia</td><td>PBSA</td><td class="r">6 / 6</td><td>May 12, 2026</td><td><span class="stat live"><span class="d"></span>Verified</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="row2 equal">
+    <div class="card info-card">
+      <h4>What's in a Corporate NFT</h4>
+      <div class="kv">
+        <div class="k">Legal identity</div><div class="v">Incorporation #, statute, registry</div>
+        <div class="k">Beneficial ownership</div><div class="v">FINTRAC-compliant register</div>
+        <div class="k">Cap table</div><div class="v">Share classes, holdings</div>
+        <div class="k">Board</div><div class="v">Directors, signing authorities</div>
+        <div class="k">Material actions</div><div class="v">Resolutions, by-laws, filings</div>
+        <div class="k">Counsel</div><div class="v">Law firm, signing partner</div>
+        <div class="k">Auditor</div><div class="v">Audit firm, fiscal year</div>
+        <div class="k">Updates</div><div class="v">Atomic · on every corporate action</div>
+      </div>
+      <p style="margin-top:14px;font-size:.78rem;color:var(--text-3);line-height:1.55">Each field is cryptographically signed by the corporate secretary and time-stamped against the relevant registrar (Corporations Canada / provincial). The NFT is non-fungible, transfer-restricted to the entity itself, and queryable in real time by authorized counterparties.</p>
+    </div>
+    <div class="card info-card">
+      <h4>Use cases · downstream proof</h4>
+      <p><strong>Bank onboarding:</strong> KYB on a counterparty resolves from 4-6 weeks of paper to a sub-second ledger lookup that returns the current state of incorporation, ownership, and authority.</p>
+      <p><strong>Issuance authorization:</strong> Every tokenized issuance on 4ormEx checks the issuer's Corporate NFT for active good standing, board authorization, and signing authority before mint.</p>
+      <p><strong>Counterparty diligence:</strong> Lenders, auditors, and trading counterparties query the NFT instead of requesting fresh KYB packages. Cuts cycle time by orders of magnitude.</p>
+      <p><strong>Regulatory filings:</strong> Annual return data flows from the NFT directly to the registry, reducing administrative burden and registry-of-record drift.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="/assets/4ormex-chrome.js?v=4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  const labels = ['Jun \'25','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'26','Feb','Mar','Apr','May'];
+  const cumulative = [12,28,46,68,88,108,128,148,168,188,202,214];
+  new Chart(document.getElementById('nftChart'),{
+    type:'line', data:{ labels, datasets:[
+      { label:'Cumulative mints', data:cumulative, backgroundColor:'rgba(231,199,108,0.35)', borderColor:'#C49A3A', borderWidth:2, pointRadius:3, pointBackgroundColor:'#C49A3A', fill:true, tension:.32 }
+    ]},
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{ backgroundColor:'#0B1220', titleColor:'#FFD9A8', bodyColor:'#fff', padding:10, cornerRadius:8, callbacks:{ label:(c)=>` ${c.parsed.y} NFTs minted` }}},
+    scales:{ x:{grid:{display:false},ticks:{color:'#6A7790',font:{family:'JetBrains Mono',size:10}}}, y:{grid:{color:'#EEF2F8'},ticks:{color:'#6A7790',font:{family:'JetBrains Mono',size:10},stepSize:50}} }}
+  });
+})();
+</script>
+</body>
+</html>
