@@ -64,6 +64,7 @@
         <a href="/compliance.html" data-product="compliance"><span class="pn-num">07</span> Compliance</a>
         <a href="/settlement.html" data-product="settlement"><span class="pn-num">08</span> Settlement</a>
         <a href="/admin.html" data-product="admin"><span class="pn-num">09</span> Admin &amp; Audit</a>
+        <a href="/for-issuers.html" class="pn-cta">List your asset →</a>
       </div>
     </nav>`;
 
@@ -119,8 +120,8 @@
     </footer>`;
 
   function boot() {
-    // Inject topbar / ticker / productnav at the very top of body
-    document.body.insertAdjacentHTML('afterbegin', TOPBAR_HTML + TICKER_HTML + PRODUCTNAV_HTML);
+    // Inject topbar → productnav (2nd bar) → ticker at the very top of body
+    document.body.insertAdjacentHTML('afterbegin', TOPBAR_HTML + PRODUCTNAV_HTML + TICKER_HTML);
 
     // Wrap the existing .pane in a .dash + .sidebar shell
     const pane = document.querySelector('main.pane');

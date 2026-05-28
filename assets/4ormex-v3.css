@@ -123,11 +123,11 @@ a:hover{color:var(--brand-700)}
 .tape::before,.tape::after{content:"";position:absolute;top:0;bottom:0;width:50px;z-index:3;pointer-events:none}
 .tape::before{left:0;background:linear-gradient(90deg,var(--navy-900),transparent)}
 .tape::after{right:0;background:linear-gradient(-90deg,var(--navy-900),transparent)}
-.tape .track{display:flex;gap:0;padding:8px 0;white-space:nowrap;animation:slide 90s linear infinite;font-family:var(--font-mono);font-size:.78rem;color:#fff;font-weight:600}
-.tape .ti{display:inline-flex;align-items:center;gap:8px;padding:0 22px;border-right:1px solid rgba(255,255,255,.07)}
+.tape .track{display:flex;gap:0;padding:11px 0;white-space:nowrap;animation:slide 90s linear infinite;font-family:var(--font-mono);font-size:.9rem;color:#fff;font-weight:600}
+.tape .ti{display:inline-flex;align-items:center;gap:10px;padding:0 26px;border-right:1px solid rgba(255,255,255,.07)}
 .tape .ti .t{color:#FFD9A8;font-weight:700}
 .tape .ti .p{color:#fff;font-variant-numeric:tabular-nums}
-.tape .ti .c{font-size:.7rem;font-weight:700}
+.tape .ti .c{font-size:.78rem;font-weight:700}
 .tape .ti .c.u{color:#7BE0A8}
 .tape .ti .c.d{color:#FF8A99}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -138,13 +138,13 @@ a:hover{color:var(--brand-700)}
   position:sticky;top:var(--topbar-h);z-index:55;
 }
 .productnav-inner{
-  max-width:var(--maxw);margin:0 auto;padding:0 36px;
+  max-width:var(--maxw);margin:0 auto;padding:0 22px 0 22px;
   display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;
 }
 .productnav-inner::-webkit-scrollbar{display:none}
 .productnav a{
   display:inline-flex;align-items:center;gap:8px;
-  padding:14px 16px;color:var(--text-2);font-size:.84rem;font-weight:600;
+  padding:14px 14px;color:var(--text-2);font-size:.82rem;font-weight:600;
   border-bottom:2px solid transparent;white-space:nowrap;transition:all .12s ease;text-decoration:none;
 }
 .productnav a:hover{color:var(--text);background:var(--surface-2)}
@@ -152,7 +152,16 @@ a:hover{color:var(--brand-700)}
 .productnav a .pn-num{font-family:var(--font-mono);font-size:.62rem;color:var(--text-3);letter-spacing:.12em;font-weight:700}
 .productnav a:hover .pn-num{color:var(--text-2)}
 .productnav a.active .pn-num{color:var(--gold-2)}
-@media (max-width:680px){.productnav-inner{padding:0 18px}.productnav a{padding:12px 14px;font-size:.78rem}}
+.productnav .pn-cta{
+  margin-left:auto;margin-right:4px;border-bottom:none;
+  background:linear-gradient(180deg,#FFE39E 0%,var(--gold) 50%,var(--gold-2) 100%);
+  color:#15233F;font-weight:800;font-size:.78rem;letter-spacing:-.005em;
+  padding:8px 16px;border-radius:8px;border:1px solid var(--gold-2);
+  box-shadow:0 2px 6px rgba(196,154,58,.32),inset 0 1px 0 rgba(255,255,255,.45);
+  transition:transform .12s ease,box-shadow .15s ease;
+}
+.productnav .pn-cta:hover{background:linear-gradient(180deg,var(--gold-2) 0%,var(--gold) 60%,#FFE39E 100%);transform:translateY(-1px);color:#15233F;box-shadow:0 4px 12px rgba(196,154,58,.45),inset 0 1px 0 rgba(255,255,255,.45)}
+@media (max-width:680px){.productnav-inner{padding:0 18px}.productnav a{padding:12px 13px;font-size:.76rem}.productnav .pn-cta{padding:7px 12px;font-size:.74rem}}
 
 /* ---------- Dashboard shell ---------- */
 .dash{
