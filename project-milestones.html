@@ -18,20 +18,89 @@
       <p class="ph-lede">Smart-contract-defined construction checkpoints. Each milestone is a token whose release condition is multi-signature attestation by geotech, engineer, superintendent, and client. Final signature triggers 24-hour (typically minute-scale) payout in tokenized CAD. Solves the 60–90 day net-terms problem strangling Canadian subtrades.</p>
     </div>
     <div class="ph-stats">
-      <div class="ph-stat"><span class="ps-l">Active projects</span><span class="ps-v">12</span><span class="ps-d">▲ 3 · 30d</span></div>
-      <div class="ph-stat"><span class="ps-l">Milestones paid · 30d</span><span class="ps-v">47</span><span class="ps-d">C$ 18.4M</span></div>
-      <div class="ph-stat"><span class="ps-l">Median payout time</span><span class="ps-v">11 min</span><span class="ps-d">vs 60–90 days legacy</span></div>
+      <div class="ph-stat"><span class="ps-l">Active projects</span><span class="ps-v">13</span><span class="ps-d">▲ 3 · 30d</span></div>
+      <div class="ph-stat"><span class="ps-l">Milestones paid · 30d</span><span class="ps-v">49</span><span class="ps-d">C$ 22.4M / US$ 4.0M</span></div>
+      <div class="ph-stat"><span class="ps-l">Median payout time</span><span class="ps-v">11 min</span><span class="ps-d">vs 60–120 days legacy</span></div>
     </div>
   </header>
-  <section class="card" style="margin-bottom:24px"><h4>Active projects on the rail <span class="meta">Sandbox · 12 of 12 shown</span></h4>
+
+  <!-- Featured project · Energy Solar 5 MW solar -->
+  <section style="background:linear-gradient(135deg,#FBF3DC 0%,#F1E2B4 100%);border:1px solid var(--gold-100);border-radius:var(--r-lg);padding:24px 28px;margin-bottom:24px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center">
+    <div style="width:72px;height:72px;border-radius:16px;background:#0B1220;color:#FFD9A8;display:grid;place-items:center;font-size:2rem;font-weight:800;letter-spacing:-.02em;box-shadow:0 4px 14px rgba(11,18,32,.18)">☀</div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink);font-weight:800;margin-bottom:6px">Featured project · Energy &amp; infrastructure</div>
+      <h3 style="margin:0 0 6px;font-size:1.2rem;font-weight:800;letter-spacing:-.02em;color:#3C2A05">Energy Solar · 5 MW solar farm <span style="color:var(--gold-ink);font-weight:600">· West Texas · ERCOT</span></h3>
+      <p style="margin:0;font-size:.88rem;color:#5C4310;line-height:1.55;max-width:62ch">US$ 15M development tokenized as a milestone-based payout. Five smart-contract checkpoints from land &amp; permitting through grid commissioning, each released on multi-signature attestation by EPC, independent engineer, ERCOT interconnection authority, and the offtake counterparty. Payment settles in USDC against verified completion — same-day finality versus the 60–120 day net terms typical in US solar EPC.</p>
+    </div>
+    <div style="font-family:var(--font-mono);text-align:right;border-left:1px solid rgba(138,103,18,.22);padding-left:24px;font-size:.78rem;line-height:1.7">
+      <div style="color:var(--gold-ink);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px">At a glance</div>
+      <div style="color:#3C2A05"><strong style="font-weight:800">5.0 MW DC</strong> · solar PV</div>
+      <div style="color:#3C2A05"><strong style="font-weight:800">US$ 15.0M</strong> · total dev cost</div>
+      <div style="color:#3C2A05"><strong style="font-weight:800">5</strong> · milestone tokens</div>
+      <div style="color:#3C2A05"><strong style="font-weight:800">USDC</strong> · cash leg</div>
+      <div style="color:var(--gold-ink);margin-top:6px">Ticker · <strong style="font-weight:800;color:#3C2A05">tPMS-EE5MW</strong></div>
+    </div>
+  </section>
+
+  <!-- Milestone schedule for the featured project -->
+  <section class="card" style="margin-bottom:24px">
+    <h4>Energy Solar · 5 MW solar · milestone schedule <span class="meta">Tokenized · multi-sig payout</span></h4>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>Milestone</th><th>Sign-off quorum</th><th class="r">Payout</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><span class="ticker">01</span></td><td><span class="name">Land acquisition &amp; ERCOT interconnection LOI</span><span class="sub">~ 35 acres · pre-construction approvals</span></td><td>Counsel · ERCOT planning · developer · client</td><td class="r price">US$ 1.5M</td><td><span class="stat live"><span class="d"></span>Paid · Mar 12</span></td></tr>
+        <tr><td><span class="ticker">02</span></td><td><span class="name">Engineering &amp; permitting complete</span><span class="sub">EPC design, ERCOT IA executed, PUC filings</span></td><td>Indep. engineer · EPC · ERCOT · offtaker</td><td class="r price">US$ 2.5M</td><td><span class="stat live"><span class="d"></span>Paid · Apr 28</span></td></tr>
+        <tr><td><span class="ticker">03</span></td><td><span class="name">Equipment procurement &amp; delivery</span><span class="sub">Panels (Trina), inverters (SMA), racking, BoS</span></td><td>EPC · indep. engineer · insurer · client</td><td class="r price">US$ 5.0M</td><td><span class="stat pilot"><span class="d"></span>Pending · Q3 2026</span></td></tr>
+        <tr><td><span class="ticker">04</span></td><td><span class="name">Construction &amp; mechanical completion</span><span class="sub">Mechanical install, site civils, racking, wiring</span></td><td>EPC · superintendent · indep. engineer · client</td><td class="r price">US$ 4.0M</td><td><span class="stat coming"><span class="d"></span>Q4 2026</span></td></tr>
+        <tr><td><span class="ticker">05</span></td><td><span class="name">Commissioning &amp; ERCOT COD</span><span class="sub">Commercial operations date · grid energization</span></td><td>ERCOT · commissioning engr. · client · offtaker</td><td class="r price">US$ 2.0M</td><td><span class="stat coming"><span class="d"></span>Q1 2027</span></td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px;font-size:.78rem;color:var(--text-3);line-height:1.55;font-family:var(--font-mono)">Cash leg: USDC (Circle, US T-Bill backed). Cross-border issuance under OSC 91-401 sandbox. Indep. engineer: DNV. EPC: confidential. Offtaker: long-form PPA with ERCOT load-serving entity. Audit anchored on 4orm-EVM.</div>
+  </section>
+
+  <section class="card" style="margin-bottom:24px"><h4>Active projects on the rail <span class="meta">Sandbox · 13 of 13 shown</span></h4>
   <table class="tbl"><thead><tr><th>Project</th><th>Token</th><th>Developer</th><th class="r">Total value</th><th>Stage</th><th class="r">Last payout</th></tr></thead><tbody>
   <tr><td><span class="name">Calgary 40-unit Infill</span><span class="sub">Mission · 4 stories</span></td><td><span class="ticker">tPMS-CGY40</span></td><td>Stride Developments</td><td class="r price">C$ 21.0M</td><td><span class="pill v">Milestone 03 · framing</span></td><td class="r">May 09 · C$ 2.1M</td></tr>
   <tr><td><span class="name">Edmonton Mixed-Use Tower</span><span class="sub">Whyte Ave · 24 stories</span></td><td><span class="ticker">tPMS-EDM24</span></td><td>Beljan Development</td><td class="r price">C$ 96.0M</td><td><span class="pill b">Milestone 02 · foundation</span></td><td class="r">May 06 · C$ 8.4M</td></tr>
   <tr><td><span class="name">Vancouver Laneway · Phase II</span><span class="sub">14 units · 3 sites</span></td><td><span class="ticker">tPMS-VAN14</span></td><td>Smallworks</td><td class="r price">C$ 4.2M</td><td><span class="pill v">Milestone 04 · mechanical</span></td><td class="r">May 18 · C$ 0.6M</td></tr>
   <tr><td><span class="name">Saskatoon Industrial Park</span><span class="sub">Bay 1 · 60,000 sq ft</span></td><td><span class="ticker">tPMS-SKN60</span></td><td>Westcorp Industrial</td><td class="r price">C$ 18.4M</td><td><span class="pill s">Milestone 05 · finishing</span></td><td class="r">May 21 · C$ 3.2M</td></tr>
   <tr><td><span class="name">Halifax Waterfront · Block C</span><span class="sub">Mixed retail/resi · 12 stories</span></td><td><span class="ticker">tPMS-HFX12</span></td><td>Atlantic Land Co.</td><td class="r price">C$ 44.0M</td><td><span class="pill b">Milestone 01 · groundwork</span></td><td class="r">May 02 · C$ 4.4M</td></tr>
+  <tr><td><span class="name">Energy Solar · 5 MW solar</span><span class="sub">West Texas · ERCOT · cross-border (US)</span></td><td><span class="ticker">tPMS-EE5MW</span></td><td>Energy Solar</td><td class="r price">US$ 15.0M</td><td><span class="pill s">Milestone 02 · permitting complete</span></td><td class="r">Apr 28 · US$ 2.5M</td></tr>
   </tbody></table></section>
-  <section class="row2 equal"><div class="card"><h4>How a milestone settles</h4><div style="display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.86rem"><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">01</div><div>Contractor completes scope</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">02</div><div>Geotech / engineer / super / client sign on-chain</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">03</div><div>Smart contract verifies signature quorum</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">04</div><div>Tokenized CAD payout (QCAD / tRBCD / tTDD)</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">05</div><div>Audit anchor + lender draw release</div></div></div><div class="card"><h4>Regulatory framing</h4><div style="display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.86rem"><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Token type</div><div style="text-align:right;font-weight:600">Non-fungible · scope-bound</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Settlement asset</div><div style="text-align:right;font-weight:600">QCAD / tRBCD / tTDD</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Signature quorum</div><div style="text-align:right;font-weight:600">4-of-4 (configurable)</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Lender integration</div><div style="text-align:right;font-weight:600">Auto-draw on milestone</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Audit trail</div><div style="text-align:right;font-weight:600">Court-admissible</div></div></div></section>
+  <section class="row2 equal"><div class="card"><h4>How a milestone settles</h4><div style="display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.86rem"><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">01</div><div>Contractor completes scope</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">02</div><div>Geotech / engineer / super / client sign on-chain</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">03</div><div>Smart contract verifies signature quorum</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">04</div><div>Tokenized CAD payout (QCAD / tRBCD / tTDD)</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">05</div><div>Audit anchor + lender draw release</div></div></div><div class="card"><h4>Regulatory framing</h4><div style="display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.86rem"><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Token type</div><div style="text-align:right;font-weight:600">Non-fungible · scope-bound</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Settlement asset</div><div style="text-align:right;font-weight:600">QCAD / tRBCD / tTDD / USDC</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Signature quorum</div><div style="text-align:right;font-weight:600">4-of-4 (configurable)</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Lender integration</div><div style="text-align:right;font-weight:600">Auto-draw on milestone</div><div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Audit trail</div><div style="text-align:right;font-weight:600">Court-admissible</div></div></div></section>
+
+  <!-- Real-world references -->
+  <section class="card" style="margin-top:24px;margin-bottom:24px">
+    <h4>Where this pattern is already running <span class="meta">tokenized milestone &amp; project payouts · globally</span></h4>
+    <p style="font-size:.86rem;color:var(--text-2);line-height:1.6;margin:0 0 14px">Milestone-tokenized development is operating in production in several jurisdictions. The pattern works the same way: physical progress is verified by an independent third party, signed on-chain, and triggers atomic payout. Below: comparable programs we benchmark against.</p>
+    <div style="display:grid;grid-template-columns:1fr;gap:10px">
+      <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px">
+        <span style="font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);font-weight:700;background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:99px">Canada</span>
+        <div><strong style="display:block;font-size:.86rem;color:var(--text);font-weight:700">T-RIZE Group · Project Champfleury</strong><span style="font-size:.78rem;color:var(--text-2);line-height:1.45">C$300M tokenization deal for a 960-unit residential development on Canton Network. Closest Canadian precedent for milestone-based project tokenization at scale.</span></div>
+        <a href="https://www.t-rize.io/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.72rem;color:var(--brand);font-weight:700;text-decoration:none;white-space:nowrap">t-rize.io ↗</a>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px">
+        <span style="font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);font-weight:700;background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:99px">USA</span>
+        <div><strong style="display:block;font-size:.86rem;color:var(--text);font-weight:700">AspenCoin · St. Regis Aspen Resort</strong><span style="font-size:.78rem;color:var(--text-2);line-height:1.45">SEC-registered tokenized real estate. $18M raise. Milestone-based capital deployment with on-chain disclosure. Real precedent for tokenized development.</span></div>
+        <a href="https://www.aspendigital.io/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.72rem;color:var(--brand);font-weight:700;text-decoration:none;white-space:nowrap">Aspen Digital ↗</a>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px">
+        <span style="font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);font-weight:700;background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:99px">Singapore</span>
+        <div><strong style="display:block;font-size:.86rem;color:var(--text);font-weight:700">HSBC + Marketnode · trade-finance milestones</strong><span style="font-size:.78rem;color:var(--text-2);line-height:1.45">Tokenized trade-finance instrument with payment-on-event triggers. Demonstrates institutional milestone payout against verified document/event proof.</span></div>
+        <a href="https://www.marketnode.com/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.72rem;color:var(--brand);font-weight:700;text-decoration:none;white-space:nowrap">Marketnode ↗</a>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px">
+        <span style="font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);font-weight:700;background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:99px">Energy</span>
+        <div><strong style="display:block;font-size:.86rem;color:var(--text);font-weight:700">Energy Web Foundation · grid-asset tokenization</strong><span style="font-size:.78rem;color:var(--text-2);line-height:1.45">Energy Web Token rails for tokenized renewable-energy project finance. Used by Shell, EDF, Engie for distributed-energy asset payouts. Direct analog for the Energy Solar solar farm pattern.</span></div>
+        <a href="https://www.energyweb.org/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.72rem;color:var(--brand);font-weight:700;text-decoration:none;white-space:nowrap">energyweb.org ↗</a>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px">
+        <span style="font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);font-weight:700;background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:99px">EU</span>
+        <div><strong style="display:block;font-size:.86rem;color:var(--text);font-weight:700">Brickken · real-estate development tokenization</strong><span style="font-size:.78rem;color:var(--text-2);line-height:1.45">EU MiCA-aligned development tokenization with milestone-based disbursement. ~€200M tokenized to date across European real-estate developments.</span></div>
+        <a href="https://www.brickken.com/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.72rem;color:var(--brand);font-weight:700;text-decoration:none;white-space:nowrap">brickken.com ↗</a>
+      </div>
+    </div>
+  </section>
 </main>
 <script src="/assets/4ormex-chrome.js?v=4"></script>
 </body>

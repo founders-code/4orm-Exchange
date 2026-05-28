@@ -35,6 +35,83 @@
   <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/orders</span></td><td>Place a CLOB order</td><td><span class="pill b">Production</span></td></tr>
   <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/issuance</span></td><td>Submit a tokenization draft</td><td><span class="pill b">Production</span></td></tr>
   </tbody></table></section>
+
+  <!-- Example request / response -->
+  <section class="row2 equal" style="margin-bottom:24px">
+    <div class="card">
+      <h4>Example · GET /v1/assets/tRBCD</h4>
+      <pre style="margin:0;font-family:var(--font-mono);font-size:.78rem;background:var(--navy-900);color:#FFD9A8;padding:16px;border-radius:8px;line-height:1.6;overflow:auto"><span style="color:#9CE6BD">curl</span> https://api.4ormex.com/v1/assets/tRBCD \
+  -H <span style="color:#fff">"Authorization: Bearer $4ORMEX_API_KEY"</span> \
+  -H <span style="color:#fff">"Accept: application/json"</span></pre>
+    </div>
+    <div class="card">
+      <h4>Response · 200 OK</h4>
+      <pre style="margin:0;font-family:var(--font-mono);font-size:.74rem;background:var(--navy-900);color:#9CE6BD;padding:16px;border-radius:8px;line-height:1.55;overflow:auto">{
+  <span style="color:#FFD9A8">"ticker"</span>: <span style="color:#fff">"tRBCD"</span>,
+  <span style="color:#FFD9A8">"name"</span>: <span style="color:#fff">"RBC Tokenized Deposit"</span>,
+  <span style="color:#FFD9A8">"asset_class"</span>: <span style="color:#fff">"bank_deposit"</span>,
+  <span style="color:#FFD9A8">"issuer"</span>: <span style="color:#fff">"RBC Royal Bank"</span>,
+  <span style="color:#FFD9A8">"jurisdiction"</span>: <span style="color:#fff">"CA-ON"</span>,
+  <span style="color:#FFD9A8">"underlying"</span>: <span style="color:#fff">"CDIC-eligible deposit"</span>,
+  <span style="color:#FFD9A8">"supply"</span>: <span style="color:#fff">54000000.00</span>,
+  <span style="color:#FFD9A8">"currency"</span>: <span style="color:#fff">"CAD"</span>,
+  <span style="color:#FFD9A8">"last_price"</span>: <span style="color:#fff">1.0000</span>,
+  <span style="color:#FFD9A8">"volume_24h"</span>: <span style="color:#fff">18412000.00</span>,
+  <span style="color:#FFD9A8">"status"</span>: <span style="color:#fff">"live"</span>,
+  <span style="color:#FFD9A8">"compliance"</span>: {
+    <span style="color:#FFD9A8">"osfi_group"</span>: <span style="color:#fff">"2"</span>,
+    <span style="color:#FFD9A8">"ciro_tier"</span>: <span style="color:#fff">"1"</span>,
+    <span style="color:#FFD9A8">"distribution"</span>: <span style="color:#fff">"NI 45-106(2)(t)"</span>
+  },
+  <span style="color:#FFD9A8">"contract"</span>: <span style="color:#fff">"0x3F2A8e9B7C…1d4F"</span>,
+  <span style="color:#FFD9A8">"network"</span>: <span style="color:#fff">"4orm-evm-1"</span>
+}</pre>
+    </div>
+  </section>
+
+  <!-- Auth, rate limits, SDKs -->
+  <section class="row2 equal" style="margin-bottom:24px">
+    <div class="card">
+      <h4>Authentication</h4>
+      <p style="font-size:.86rem;color:var(--text-2);line-height:1.55;margin:0 0 12px">Every request is authenticated with a Bearer API key issued from the institutional console. Keys are scoped to a tier (sandbox or production) and an entity. All production-tier calls additionally require a signed Corporate NFT lookup so the API can resolve the calling entity's good-standing.</p>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.84rem">
+        <div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Header</div><div style="text-align:right"><span class="ticker">Authorization: Bearer …</span></div>
+        <div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Scope</div><div style="text-align:right;font-weight:600">read / trade / issue</div>
+        <div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Rotation</div><div style="text-align:right;font-weight:600">90 days · automatic</div>
+        <div style="color:var(--text-3);font-family:var(--font-mono);font-size:.72rem">Entity proof</div><div style="text-align:right;font-weight:600">Corporate NFT signed lookup</div>
+      </div>
+    </div>
+    <div class="card">
+      <h4>Rate limits</h4>
+      <table class="tbl" style="margin-top:4px">
+        <thead><tr><th>Tier</th><th>Reads / sec</th><th>Writes / sec</th><th>Concurrent</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill s">Sandbox</span></td><td>20</td><td>2</td><td>10</td></tr>
+          <tr><td><span class="pill b">Production · base</span></td><td>200</td><td>20</td><td>50</td></tr>
+          <tr><td><span class="pill v">Production · institutional</span></td><td>2,000</td><td>200</td><td>500</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.78rem;color:var(--text-3);margin:10px 0 0;line-height:1.55">Burst credits available on read endpoints. WebSocket streaming endpoints for orderbook + audit events (no rate limit, push model).</p>
+    </div>
+  </section>
+
+  <section class="card" style="margin-bottom:24px">
+    <h4>SDKs &amp; integration <span class="meta">first-party clients</span></h4>
+    <table class="tbl">
+      <thead><tr><th>Language</th><th>Package</th><th>Use case</th><th>Tier</th></tr></thead>
+      <tbody>
+        <tr><td><span class="name">TypeScript / Node</span></td><td><span class="ticker">@4ormex/sdk</span></td><td>Web + server apps · WebSocket streams · typed responses</td><td><span class="pill s">Sandbox + Prod</span></td></tr>
+        <tr><td><span class="name">Python</span></td><td><span class="ticker">4ormex-py</span></td><td>Quant / data science · pandas-native responses</td><td><span class="pill s">Sandbox + Prod</span></td></tr>
+        <tr><td><span class="name">Java / Kotlin</span></td><td><span class="ticker">com.4ormex.sdk</span></td><td>Bank back-office integrations · JVM-native</td><td><span class="pill b">Prod only</span></td></tr>
+        <tr><td><span class="name">Go</span></td><td><span class="ticker">github.com/4ormex/go-sdk</span></td><td>High-throughput integrators · concurrent</td><td><span class="pill b">Prod only</span></td></tr>
+        <tr><td><span class="name">GraphQL</span></td><td><span class="ticker">https://api.4ormex.com/graphql</span></td><td>Custom queries · subscription support</td><td><span class="pill s">Sandbox + Prod</span></td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn primary" href="mailto:compliance@kcs-capital.com?subject=4ormEx%20Data%20API%20%C2%B7%20institutional%20access">Request institutional API access →</a>
+      <a class="btn ghost" href="/documentation.html">Read the docs →</a>
+    </div>
+  </section>
 </main>
 <script src="/assets/4ormex-chrome.js?v=4"></script>
 </body>

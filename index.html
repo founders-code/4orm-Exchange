@@ -499,7 +499,7 @@ a:hover{color:var(--brand-700)}
       <span class="kbd">⌘ K</span>
     </label>
     <nav class="utility" aria-label="Primary">
-      <a class="menu" href="#issuers">For issuers <span class="car">▾</span></a>
+      <a class="menu" href="/for-issuers.html">For issuers <span class="car">▾</span></a>
       <a href="#data-api">Data API <span class="new">New</span></a>
       <a href="#book-demo">Book a demo</a>
       <a class="back" href="https://4ormfinance.com">← 4orm Finance</a>
@@ -1162,46 +1162,78 @@ a:hover{color:var(--brand-700)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 /* =========================================================
-   Stacked area chart · Total Tokenized Value (C$)
-   Mock Canadian-asset growth, June 2024 → May 2026 (24 months)
+   Interactive · Total Tokenized Value chart
+   Switches between Distributed/Represented/All × Total Value/Holders/Wallets/Volume
    ========================================================= */
 (function(){
   const labels = ['Jun \'24','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'25','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'26','Feb','Mar','Apr','May'];
 
-  // Asset-class growth curves (C$ millions)
-  // Tokenized Bank Deposits (the strategic core — explosive growth post-OSFI Group 2 5%)
-  const deposits = [0,0,0,0,0,2,4,8,14,22,32,46,62,84,108,138,170,204,238,268,294,310,318,324];
-  // Private Credit
-  const pvtCredit = [12,16,22,28,34,42,52,62,72,84,96,108,118,128,138,148,158,166,172,178,182,184,186,187.6];
-  // Government of Canada (T-Bills + tEDC25 bond)
-  const goc       = [0,0,0,0,0,0,0,0,0,0,0,12,18,24,32,42,54,68,82,96,108,118,124,127.9];
-  // Provincial / Sub-Sovereign
-  const provincial= [4,6,8,12,16,22,28,32,36,42,48,52,56,60,62,64,66,68,70,72,74,75,76,76.7];
-  // Real Estate
-  const realEstate= [8,10,14,18,22,26,30,34,38,42,46,50,52,54,56,58,60,62,63,64,65,66,67,68.2];
-  // Commodities
-  const commodities=[2,4,6,8,10,12,16,20,22,24,26,28,30,32,34,36,38,40,40,41,42,42,42,42.6];
-  // Infrastructure (tHQI32 bond drives most of this)
-  const infra     = [0,0,0,0,0,0,0,0,0,2,4,6,8,10,12,14,16,18,20,22,24,24,25,25.6];
+  // Asset-class growth curves (C$ M, Distributed baseline)
+  const CLASSES = [
+    { label:'Tokenized Bank Deposits', color:'#2E6BF2', bg:'rgba(46,107,242,0.78)',  d:[0,0,0,0,0,2,4,8,14,22,32,46,62,84,108,138,170,204,238,268,294,310,318,324] },
+    { label:'Private Credit',          color:'#E7C76C', bg:'rgba(231,199,108,0.78)', d:[12,16,22,28,34,42,52,62,72,84,96,108,118,128,138,148,158,166,172,178,182,184,186,187.6] },
+    { label:'Government of Canada',    color:'#1B4ABE', bg:'rgba(27,74,190,0.78)',   d:[0,0,0,0,0,0,0,0,0,0,0,12,18,24,32,42,54,68,82,96,108,118,124,127.9] },
+    { label:'Provincial / Sub-Sov.',   color:'#7B4DBE', bg:'rgba(123,77,190,0.78)',  d:[4,6,8,12,16,22,28,32,36,42,48,52,56,60,62,64,66,68,70,72,74,75,76,76.7] },
+    { label:'Real Estate',             color:'#0E8A5F', bg:'rgba(14,138,95,0.78)',   d:[8,10,14,18,22,26,30,34,38,42,46,50,52,54,56,58,60,62,63,64,65,66,67,68.2] },
+    { label:'Commodities',             color:'#C49A3A', bg:'rgba(196,154,58,0.78)',  d:[2,4,6,8,10,12,16,20,22,24,26,28,30,32,34,36,38,40,40,41,42,42,42,42.6] },
+    { label:'Infrastructure',          color:'#1B7BB5', bg:'rgba(27,123,181,0.78)',  d:[0,0,0,0,0,0,0,0,0,2,4,6,8,10,12,14,16,18,20,22,24,24,25,25.6] },
+  ];
 
-  const data = {
-    labels,
-    datasets:[
-      { label:'Tokenized Bank Deposits', data:deposits,    backgroundColor:'rgba(46,107,242,0.78)',  borderColor:'#2E6BF2', borderWidth:1.5, pointRadius:0, fill:'origin', tension:.35 },
-      { label:'Private Credit',          data:pvtCredit,   backgroundColor:'rgba(231,199,108,0.78)', borderColor:'#E7C76C', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
-      { label:'Government of Canada',    data:goc,         backgroundColor:'rgba(27,74,190,0.78)',   borderColor:'#1B4ABE', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
-      { label:'Provincial / Sub-Sov.',   data:provincial,  backgroundColor:'rgba(123,77,190,0.78)',  borderColor:'#7B4DBE', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
-      { label:'Real Estate',             data:realEstate,  backgroundColor:'rgba(14,138,95,0.78)',   borderColor:'#0E8A5F', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
-      { label:'Commodities',             data:commodities, backgroundColor:'rgba(196,154,58,0.78)',  borderColor:'#C49A3A', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
-      { label:'Infrastructure',          data:infra,       backgroundColor:'rgba(27,123,181,0.78)',  borderColor:'#1B7BB5', borderWidth:1.5, pointRadius:0, fill:'-1',     tension:.35 },
-    ]
-  };
+  // Distributed = end-investor held (default). Represented = full on-chain notional incl. unallocated. All = both.
+  const TYPE_SCALE = { 'Distributed': 1.0, 'Represented': 2.27, 'All': 3.27 };
+
+  let curType = 'Distributed';
+  let curMetric = 'Total Value';
+
+  function stackedDatasets(scale, factor){
+    factor = factor || 1;
+    return CLASSES.map((c, i) => ({
+      label: c.label,
+      data: c.d.map(v => +(v * scale * factor).toFixed(1)),
+      backgroundColor: c.bg, borderColor: c.color, borderWidth: 1.5,
+      pointRadius: 0, fill: i === 0 ? 'origin' : '-1', tension: .35
+    }));
+  }
+  function totalSeries(scale){
+    return CLASSES[0].d.map((_, i) =>
+      +(CLASSES.reduce((s, c) => s + c.d[i], 0) * scale).toFixed(1));
+  }
+  function buildConfig(type, metric){
+    const scale = TYPE_SCALE[type];
+    if (metric === 'Total Value') {
+      return { stacked:true, isCurrency:true,
+        datasets: stackedDatasets(scale, 1),
+        yFormatter:(v) => 'C$ ' + (v >= 1000 ? (v/1000).toFixed(1)+'B' : v + 'M') };
+    }
+    if (metric === 'Transfer Volume') {
+      return { stacked:true, isCurrency:true,
+        datasets: stackedDatasets(scale, 0.72),
+        yFormatter:(v) => 'C$ ' + (v >= 1000 ? (v/1000).toFixed(1)+'B' : v + 'M') };
+    }
+    if (metric === 'Asset Holders') {
+      const total = totalSeries(scale);
+      return { stacked:false, isCurrency:false,
+        datasets: [{ label:'Asset holders', data: total.map(v => Math.round(v * 1.4)),
+          backgroundColor:'rgba(46,107,242,0.22)', borderColor:'#2E6BF2', borderWidth:2,
+          pointRadius:2, pointBackgroundColor:'#2E6BF2', fill:true, tension:.35 }],
+        yFormatter:(v) => v.toLocaleString() };
+    }
+    if (metric === 'Active Wallets') {
+      const total = totalSeries(scale);
+      return { stacked:false, isCurrency:false,
+        datasets: [{ label:'Active wallets', data: total.map(v => Math.round(v * 1.18)),
+          backgroundColor:'rgba(196,154,58,0.22)', borderColor:'#C49A3A', borderWidth:2,
+          pointRadius:2, pointBackgroundColor:'#C49A3A', fill:true, tension:.35 }],
+        yFormatter:(v) => v.toLocaleString() };
+    }
+  }
 
   const ctx = document.getElementById('rwaChart');
   if(!ctx) return;
-  const chart = new Chart(ctx,{
+  const init = buildConfig(curType, curMetric);
+  const chart = new Chart(ctx, {
     type:'line',
-    data,
+    data: { labels, datasets: init.datasets },
     options:{
       responsive:true, maintainAspectRatio:false,
       interaction:{ mode:'index', intersect:false },
@@ -1209,37 +1241,71 @@ a:hover{color:var(--brand-700)}
         legend:{ display:false },
         tooltip:{
           backgroundColor:'#0B1220', borderColor:'#15233F', borderWidth:1, padding:12, cornerRadius:8,
-          titleColor:'#FFD9A8', bodyColor:'#fff', titleFont:{ family:'JetBrains Mono', size:11, weight:'700' },
+          titleColor:'#FFD9A8', bodyColor:'#fff',
+          titleFont:{ family:'JetBrains Mono', size:11, weight:'700' },
           bodyFont:{ family:'Inter', size:12, weight:'500' },
           callbacks:{
-            label:(ctx)=>{ const v = ctx.parsed.y; return ` ${ctx.dataset.label}: C$ ${v.toFixed(1)}M`; },
-            footer:(items)=>{ const total = items.reduce((s,i)=>s+i.parsed.y,0); return `Total: C$ ${total.toFixed(1)}M`; }
+            label:(c) => {
+              const v = c.parsed.y;
+              if (curMetric === 'Total Value' || curMetric === 'Transfer Volume') return ` ${c.dataset.label}: C$ ${v.toFixed(1)}M`;
+              return ` ${c.dataset.label}: ${v.toLocaleString()}`;
+            },
+            footer:(items) => {
+              if (curMetric !== 'Total Value' && curMetric !== 'Transfer Volume') return '';
+              const total = items.reduce((s,i) => s + i.parsed.y, 0);
+              return `Total: C$ ${total.toFixed(1)}M`;
+            }
           }
         }
       },
       scales:{
         x:{ grid:{ display:false }, ticks:{ color:'#6A7790', font:{ family:'JetBrains Mono', size:10 }, maxRotation:0, autoSkip:true, autoSkipPadding:14 } },
-        y:{
-          stacked:true,
-          grid:{ color:'#EEF2F8', drawBorder:false },
-          ticks:{ color:'#6A7790', font:{ family:'JetBrains Mono', size:10 },
-                  callback:(v)=> 'C$ '+ (v >= 1000 ? (v/1000).toFixed(1)+'B' : v+'M') }
-        }
+        y:{ stacked: init.stacked, grid:{ color:'#EEF2F8', drawBorder:false },
+            ticks:{ color:'#6A7790', font:{ family:'JetBrains Mono', size:10 }, callback: init.yFormatter } }
       },
       elements:{ line:{ borderWidth:1.5 } }
     }
   });
 
-  // Build legend chips
-  const legend = document.getElementById('rwaLegend');
-  if(legend){
-    data.datasets.forEach((d,i)=>{
-      const li = document.createElement('span');
-      li.className = 'li';
-      li.innerHTML = `<span class="sw" style="background:${d.borderColor}"></span>${d.label}`;
-      legend.appendChild(li);
-    });
+  function refresh(){
+    const c = buildConfig(curType, curMetric);
+    chart.data.datasets = c.datasets;
+    chart.options.scales.y.stacked = c.stacked;
+    chart.options.scales.y.ticks.callback = c.yFormatter;
+    chart.update();
+    // Rebuild legend
+    const legend = document.getElementById('rwaLegend');
+    if (legend) {
+      legend.innerHTML = '';
+      c.datasets.forEach(d => {
+        const li = document.createElement('span');
+        li.className = 'li';
+        li.innerHTML = `<span class="sw" style="background:${d.borderColor}"></span>${d.label}`;
+        legend.appendChild(li);
+      });
+    }
   }
+
+  // Wire type tabs (Distributed / Represented / All)
+  document.querySelectorAll('.chart-tabs span').forEach(tab => {
+    tab.addEventListener('click', () => {
+      tab.parentNode.querySelectorAll('span').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      curType = tab.textContent.trim();
+      refresh();
+    });
+  });
+  // Wire metric tabs (Total Value / Asset Holders / Active Wallets / Transfer Volume)
+  document.querySelectorAll('.chart-metric span').forEach(tab => {
+    tab.addEventListener('click', () => {
+      tab.parentNode.querySelectorAll('span').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      curMetric = tab.textContent.trim();
+      refresh();
+    });
+  });
+
+  refresh(); // initial legend population
 })();
 
 /* =========================================================
