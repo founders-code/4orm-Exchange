@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Model Source Documentation · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  /* =====================================================================
+     4ORM DATA ROOM — EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+     Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+     ===================================================================== */
+  :root {
+    --brand: #2E6BF2; --brand-50: #EAF1FE;
+    --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+    --rule: #142036; --hairline: #D7DEEA;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+  /* ----- black site nav ----- */
+  .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+  .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .docnav a { text-decoration: none; }
+  .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+  .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+  .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+  .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+  @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+  /* ----- document canvas ----- */
+  .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+  @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+  /* head */
+  .doc-rule { border-top: 3px solid var(--rule); }
+  .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+  .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+  .doc-headrow .r { color: var(--text-3); text-align: right; }
+  .conf { color: #C49A3A; }
+  .docnav .conf { color: #E7C76C; }
+  .doc-id { position: relative; }
+  .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+  .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+  h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+  .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+  .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+  .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+  .dm:last-child { border-right: none; margin-right: 0; }
+  .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+  .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+  .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+  .btn-pdf:hover { background: #1B4ABE; }
+  .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+  /* sections */
+  .doc-body { margin-top: 64px; }
+  .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+  .sec:first-child { margin-top: 0; }
+  .sec .marg { width: 120px; flex-shrink: 0; }
+  .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+  .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+  .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+  .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+  .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+  .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+  .sec p strong { color: var(--text); font-weight: 600; }
+  .sec ul { margin: 0 0 14px 18px; }
+  .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+  .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+  .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+  .entry { margin-bottom: 20px; }
+  .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+  .entry p { margin-bottom: 0; }
+  @media (max-width: 700px) {
+    .sec { flex-direction: column; gap: 10px; }
+    .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+  }
+
+  /* stat strip */
+  .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+  .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+  .stat:last-child { border-right: none; margin-right: 0; }
+  .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+  .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+  .stat.acc .n { color: var(--brand); }
+
+  /* swot grid */
+  .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+  @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+  .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+  .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+  .quad.s .ql, .quad.o .ql { color: var(--brand); }
+  .quad.w .ql, .quad.t .ql { color: var(--text); }
+  .quad ul { margin: 0 0 0 14px; }
+  .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+  /* weakness / threat tables */
+  table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+  table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+  table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+  table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+  table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+  table.wt .c1 { width: 42%; }
+  @media (max-width: 700px) {
+    table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+    table.wt thead { display: none; }
+    table.wt td { border-bottom: none; padding-right: 0; }
+    table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+    table.wt .c1 { width: 100%; }
+  }
+
+  /* data tables */
+  table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+  table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+  table.dt td:first-child { color: var(--text); font-weight: 600; }
+  table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+  table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+  /* benchmark tables (scorecard-style docs) */
+  table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+  table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+  table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+  table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+  .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+  .tag.open { color: var(--text); }
+  .tag.mid { color: var(--text-3); }
+  .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+  .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+  .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+  @media (max-width: 700px) {
+    table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+    table.bench thead { display: none; }
+    table.bench td { border-bottom: none; padding: 3px 0; }
+    table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+  }
+
+  /* footer */
+  .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+  .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+  <div class="docnav-inner">
+    <a class="back" href="../data-room.html">&larr; Data Room</a>
+    <div class="mid">05.5 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+    <div class="mid">VIEW ONLY</div>
+  </div>
+</nav>
+
+<div class="canvas">
+  <div class="doc-rule"></div>
+  <div class="doc-headrow">
+    <div>4ORM FINANCE</div>
+    <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+  </div>
+
+  <div class="doc-id">
+    <div class="docnum">05.5</div>
+    <div class="blue-sq"></div>
+    <h1>Model Source<br>Documentation</h1>
+    <p class="doc-sub">The receipts behind the five-year financial model: every salary figure, cost estimate, fee assumption, and market data point, each with its model value, observed market range, and primary source.</p>
+  </div>
+
+  <div class="doc-meta">
+    <div class="dm"><div class="k">PREPARED BY</div><div class="v">4orm Finance Holdings Inc.</div></div>
+    <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3M<br>Opens July 1, 2026</div></div>
+    <div class="dm"><div class="k">CATEGORY</div><div class="v">05 &middot; Financials<br>Document 05.5</div></div>
+    <div class="dm"><div class="k">BASIS</div><div class="v">April 2026 study<br>All figures CAD</div></div>
+  </div>
+
+  <div class="doc-body">
+    
+  <div class="sec">
+    <div class="marg"><div class="n">1.0</div><div class="l">PURPOSE &amp;<br>METHOD</div></div>
+    <div class="bod">
+      <h2>Why this document exists</h2>
+      <p class="lead">A financial model is only as credible as its inputs, so this document itemizes every assumption in the 4orm five-year financial model: each line shows the value used, the observed market range, and the primary source. Nothing in the model is asserted without a basis a reviewer can check.</p>
+      <p>The method, in brief: every compensation figure was cross-referenced against at least two independent sources (Glassdoor, PayScale, Indeed, LinkedIn Salary, Robert Half), targeting the 40th to 60th percentile for the Calgary and Alberta fintech market, adjusted for stage. Institutional deposit figures come from FY2024 annual reports. Regulatory cost estimates are built from published CIRO and CSA rule books with a contingency buffer; actual fees depend on registration category. Salaries escalate 3% annually with Canadian CPI; infrastructure escalates 5%; regulatory costs escalate 8% to reflect a growing compliance burden. All figures are CAD unless marked USD, converted at approximately 1.36 (Bank of Canada, April 2026).</p>
+      <p>Reference institutions in the model: ATB Financial, Servus Credit Union, Bow Valley Credit Union, and Vancity Credit Union, under a CIRO and CSA regulatory framework with provincial filings in Alberta and British Columbia.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">2.0</div><div class="l">TEAM<br>COMPENSATION</div></div>
+    <div class="bod wide">
+      <h2>Compensation, benchmarked role by role</h2>
+      <p>Executive salaries are benchmarked against the Calgary and Alberta fintech market for early-stage companies, and the founders take below these benchmarks by design (the reset is documented in the SWOT, document 10.4). The engineering plan assumes an AI-augmented build that reduces total headcount by roughly 35% against a traditional team.</p>
+      <h3>Executive</h3>
+      <table class="bench">
+        <thead><tr><th style="width:26%">ROLE</th><th style="width:18%">MODEL VALUE</th><th style="width:20%">MARKET RANGE</th><th>PRIMARY SOURCE</th></tr></thead>
+        <tr><td>CEO / Founder</td><td class="num">$175,000</td><td class="num">$160K&ndash;$220K</td><td>Glassdoor Canada, fintech CEO, Calgary</td></tr>
+        <tr><td>CTO</td><td class="num">$175,000</td><td class="num">$165K&ndash;$225K</td><td>PayScale Canada, CTO, Calgary tech</td></tr>
+        <tr><td>COO</td><td class="num">$165,000</td><td class="num">$150K&ndash;$200K</td><td>Glassdoor Canada, COO fintech</td></tr>
+        <tr><td>CCO (Compliance)</td><td class="num">$165,000</td><td class="num">$150K&ndash;$195K</td><td>Robert Half 2025 Salary Guide</td></tr>
+        <tr><td>CFO</td><td class="num">$160,000</td><td class="num">$145K&ndash;$200K</td><td>Indeed Canada, CFO fintech</td></tr>
+      </table>
+      <h3>Engineering</h3>
+      <table class="bench">
+        <thead><tr><th style="width:26%">ROLE</th><th style="width:18%">MODEL VALUE</th><th style="width:20%">MARKET RANGE</th><th>PRIMARY SOURCE</th></tr></thead>
+        <tr><td>Lead Blockchain Architect</td><td class="num">$170,000</td><td class="num">$155K&ndash;$200K</td><td>Glassdoor, blockchain architect, Canada</td></tr>
+        <tr><td>Security Engineer</td><td class="num">$150,000</td><td class="num">$135K&ndash;$175K</td><td>Glassdoor, security engineer, Canada</td></tr>
+        <tr><td>Sr. Full-Stack Developer</td><td class="num">$145,000</td><td class="num">$130K&ndash;$170K</td><td>LinkedIn Salary, Canada</td></tr>
+        <tr><td>Smart Contract Developer</td><td class="num">$145,000</td><td class="num">$130K&ndash;$175K</td><td>Indeed, Solidity developer, Canada</td></tr>
+        <tr><td>DevOps / Infrastructure</td><td class="num">$140,000</td><td class="num">$125K&ndash;$160K</td><td>PayScale, DevOps engineer, Calgary</td></tr>
+        <tr><td>QA / Test Engineer</td><td class="num">$105,000</td><td class="num">$90K&ndash;$125K</td><td>Indeed, QA engineer, Canada</td></tr>
+        <tr><td>Jr. Smart Contract Developer</td><td class="num">$90,000</td><td class="num">$80K&ndash;$110K</td><td>Indeed, junior blockchain developer</td></tr>
+        <tr><td>Jr. Full-Stack / Jr. DevOps</td><td class="num">$85,000</td><td class="num">$75K&ndash;$100K</td><td>Glassdoor / PayScale, Canada</td></tr>
+      </table>
+      <h3>Compliance, legal, and operations</h3>
+      <table class="bench">
+        <thead><tr><th style="width:26%">ROLE</th><th style="width:18%">MODEL VALUE</th><th style="width:20%">MARKET RANGE</th><th>PRIMARY SOURCE</th></tr></thead>
+        <tr><td>External Legal Counsel</td><td class="num">$150,000/yr</td><td class="num">$120K&ndash;$250K/yr</td><td>Canadian Lawyer, in-house counsel survey</td></tr>
+        <tr><td>Head of BD / Partnerships</td><td class="num">$140,000</td><td class="num">$125K&ndash;$170K</td><td>LinkedIn Salary, head of BD, Canada</td></tr>
+        <tr><td>Product Manager</td><td class="num">$130,000</td><td class="num">$115K&ndash;$155K</td><td>Glassdoor, product manager, Calgary</td></tr>
+        <tr><td>Compliance Manager</td><td class="num">$120,000</td><td class="num">$110K&ndash;$145K</td><td>Robert Half 2025</td></tr>
+        <tr><td>Marketing Lead</td><td class="num">$110,000</td><td class="num">$95K&ndash;$135K</td><td>Indeed, marketing manager, fintech</td></tr>
+        <tr><td>AML / KYC Specialist</td><td class="num">$95,000</td><td class="num">$80K&ndash;$115K</td><td>PayScale, AML analyst, Canada</td></tr>
+        <tr><td>Customer Success Lead</td><td class="num">$95,000</td><td class="num">$85K&ndash;$115K</td><td>PayScale, customer success manager</td></tr>
+        <tr><td>Compliance Analysts (2)</td><td class="num">$85,000 each</td><td class="num">$75K&ndash;$100K</td><td>Glassdoor / Indeed, Canada</td></tr>
+        <tr><td>Office / Admin</td><td class="num">$55,000</td><td class="num">$48K&ndash;$65K</td><td>Indeed, office administrator, Calgary</td></tr>
+        <tr><td>Employer burden</td><td class="num">18% of base</td><td class="num">16&ndash;20%</td><td>Canada.ca: CPP 5.95% + EI 2.3% + benefits + RRSP match</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">3.0</div><div class="l">REGULATORY &amp;<br>TECHNOLOGY</div></div>
+    <div class="bod wide">
+      <h2>What it costs to operate regulated and production-grade</h2>
+      <table class="bench">
+        <thead><tr><th style="width:30%">LINE ITEM</th><th style="width:18%">MODEL VALUE</th><th style="width:20%">MARKET RANGE</th><th>PRIMARY SOURCE</th></tr></thead>
+        <tr><td>CIRO dealer registration</td><td class="num">$500,000</td><td class="num">$300K&ndash;$750K</td><td>CIRO rule book, capital requirements</td></tr>
+        <tr><td>Provincial securities (4 provinces)</td><td class="num">$200,000</td><td class="num">$150K&ndash;$300K</td><td>ASC fee schedule</td></tr>
+        <tr><td>AWS / cloud hosting</td><td class="num">$180,000/yr</td><td class="num">$120K&ndash;$300K/yr</td><td>AWS pricing, fintech workload</td></tr>
+        <tr><td>Smart contract audit (per major release)</td><td class="num">$150,000</td><td class="num">$100K&ndash;$250K</td><td>OpenZeppelin audit pricing</td></tr>
+        <tr><td>Legal annual retainer</td><td class="num">$150,000/yr</td><td class="num">$120K&ndash;$250K/yr</td><td>Blakes / Osler fintech practice</td></tr>
+        <tr><td>AML / KYC platform</td><td class="num">$120,000/yr</td><td class="num">$80K&ndash;$180K/yr</td><td>Chainalysis / Elliptic enterprise pricing</td></tr>
+        <tr><td>Security / pen testing</td><td class="num">$100,000/yr</td><td class="num">$75K&ndash;$150K/yr</td><td>Cure53 / Trail of Bits</td></tr>
+        <tr><td>External audit (annual)</td><td class="num">$85,000</td><td class="num">$60K&ndash;$120K</td><td>CPA Canada audit fee survey 2024</td></tr>
+        <tr><td>Office rent (Calgary)</td><td class="num">$84,000/yr</td><td class="num">$54K&ndash;$126K/yr</td><td>Avison Young Calgary office report 2025</td></tr>
+        <tr><td>CSA registration filing</td><td class="num">$75,000</td><td class="num">$50K&ndash;$100K</td><td>CSA NI 31-103</td></tr>
+        <tr><td>Insurance (E&amp;O + cyber)</td><td class="num">$75,000/yr</td><td class="num">$50K&ndash;$120K/yr</td><td>Marsh Canada fintech insurance</td></tr>
+        <tr><td>Blockchain node infrastructure</td><td class="num">$60,000/yr</td><td class="num">$36K&ndash;$96K/yr</td><td>Infura / Alchemy enterprise pricing</td></tr>
+        <tr><td>Software licenses (dev tools)</td><td class="num">$60,000/yr</td><td class="num">$40K&ndash;$80K/yr</td><td>GitHub Enterprise, JetBrains, Jira</td></tr>
+        <tr><td>Monitoring and observability</td><td class="num">$36,000/yr</td><td class="num">$24K&ndash;$60K/yr</td><td>Datadog / Grafana pricing</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">4.0</div><div class="l">REVENUE<br>ASSUMPTIONS</div></div>
+    <div class="bod wide">
+      <h2>The demand side: deposits, fees, and the e-transfer rail</h2>
+      <p>Revenue is projected from 1% of the combined deposit base of the reference institutions in year one, across the five verticals: deposit tokenization, SaaS platform fees, e-transfer revenue share, AUA advisory fees, and data analytics.</p>
+      <table class="bench">
+        <thead><tr><th style="width:30%">LINE ITEM</th><th style="width:18%">MODEL VALUE</th><th style="width:20%">MARKET RANGE</th><th>PRIMARY SOURCE</th></tr></thead>
+        <tr><td>Total FI deposits (4 institutions)</td><td class="num">$108B+</td><td class="num">$100B&ndash;$120B</td><td>FY2024 annual reports, summed below</td></tr>
+        <tr><td>ATB Financial deposits</td><td class="num">$43.3B</td><td class="num">FY2024</td><td>ATB annual report</td></tr>
+        <tr><td>Vancity assets under administration</td><td class="num">$35.5B</td><td class="num">FY2024</td><td>Vancity annual report</td></tr>
+        <tr><td>Servus Credit Union assets</td><td class="num">$29.3B</td><td class="num">FY2024</td><td>Servus annual report; Canada's largest credit union</td></tr>
+        <tr><td>Bow Valley Credit Union</td><td class="num">Regional</td><td class="num">est. $1B&ndash;$3B</td><td>ABCUL directory, Alberta credit unions</td></tr>
+        <tr><td>Tokenized AUM, year 1 (1% of TAM)</td><td class="num">$450M</td><td class="num">0.5&ndash;2% adoption</td><td>BCG / Ripple tokenization trajectory</td></tr>
+        <tr><td>Deposit platform fee</td><td class="num">15 bps</td><td class="num">10&ndash;25 bps</td><td>Ondo Finance fee structure, RWA comps</td></tr>
+        <tr><td>SaaS fees per institution</td><td class="num">$240K&ndash;$480K/yr</td><td class="num">$200K&ndash;$600K</td><td>FIS / Finastra enterprise SaaS benchmarks</td></tr>
+        <tr><td>Interac e-Transfer annual volume</td><td class="num">$554B+ (2024)</td><td class="num">1.3B+ transactions</td><td>Interac 2024 annual report; Payments Canada</td></tr>
+        <tr><td>Wholesale e-transfer fee (new flat rate)</td><td class="num">$0.08/txn</td><td class="num">$0.05&ndash;$0.10</td><td>Interac wholesale fee announcement 2024</td></tr>
+        <tr><td>4orm e-transfer revenue share</td><td class="num">2&ndash;5 bps</td><td class="num">1&ndash;8 bps</td><td>Payment processor margin benchmarks</td></tr>
+        <tr><td>M2 money supply (CAD)</td><td class="num">$2.78T</td><td class="num">~3.4% CAGR</td><td>Bank of Canada / StatCan table 10-10-0116-01</td></tr>
+      </table>
+      <div class="callout">
+        <span class="ct">THE PRIMARY COMPARABLE</span>
+        <p>Ondo Finance is the model's primary comparable for team sizing, fee structure, and growth trajectory: roughly US$3.6B TVL on US$24M raised with a 50-to-100-person team, charging 15 bps management fees. The 1% year-one TAM capture is conservative against Ondo's trajectory and appropriate for a Canadian regulated-market entrant.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">5.0</div><div class="l">BUILD COSTS<br>&amp; OFFSETS</div></div>
+    <div class="bod wide">
+      <h2>The contracted build, the AI assumption, and the tax offsets</h2>
+      <p>The platform build is contracted to SPEER Technologies under a signed three-phase partnership agreement (Globe &amp; Mail Top Growing Companies 2024 and 2025; 40+ platforms shipped; clients include Air Canada, TD, and Rogers). Rates are from the contract's Schedule A, not estimates.</p>
+      <table class="bench">
+        <thead><tr><th style="width:30%">LINE ITEM</th><th style="width:22%">MODEL VALUE</th><th style="width:18%">TIMELINE / RANGE</th><th>SOURCE</th></tr></thead>
+        <tr><td>Phase 1, discovery</td><td class="num">$20.6K&ndash;$31.2K</td><td class="num">1&ndash;2 months</td><td>4orm-SPEER partnership agreement</td></tr>
+        <tr><td>Phase 2, MVP</td><td class="num">$62.4K&ndash;$93.6K</td><td class="num">3&ndash;5 months</td><td>4orm-SPEER partnership agreement</td></tr>
+        <tr><td>Phase 3, full development</td><td class="num">$104K&ndash;$156K</td><td class="num">3&ndash;6 months</td><td>4orm-SPEER partnership agreement</td></tr>
+        <tr><td>Total including 13% HST</td><td class="num">$211.3K&ndash;$317.3K</td><td class="num">7&ndash;13 months</td><td>Contracted</td></tr>
+        <tr><td>AI headcount reduction</td><td class="num">~35%</td><td class="num">25&ndash;45%</td><td>GitHub Copilot controlled study, Peng et al. 2023 (55% faster task completion)</td></tr>
+        <tr><td>AI-augmented team, year 3</td><td class="num">18.4 FTE</td><td class="num">vs. 28 traditional</td><td>4orm model, team roadmap; Ondo-benchmarked</td></tr>
+        <tr><td>SR&amp;ED combined credit</td><td class="num">Up to 35%</td><td class="num">$6M expenditure limit</td><td>CRA SR&amp;ED program; 2024 Fall Economic Statement; Alberta proposed 20%</td></tr>
+        <tr><td>IRAP grants (NRC)</td><td class="num">Up to $1M</td><td class="num">$50K&ndash;$1M</td><td>NRC IRAP program</td></tr>
+      </table>
+      <p class="note">Methodology and caveats: regulatory fee estimates depend on the final registration category (investment dealer versus restricted dealer) and include contingency; salary figures reflect April 2026 market conditions and may move; this document supports the five-year model in this category and is not an offering document. Full source links for every line item are preserved in the underlying study (April 2026) and available on request.</p>
+    </div>
+  </div>
+
+
+  </div>
+
+  <div class="doc-foot">
+    <div>DATA.4ORMFINANCE.COM</div>
+    <div>NOT FOR DISTRIBUTION</div>
+  </div>
+  <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance Holdings Inc. is the parent entity of 4orm OpCo, 4ormEx OpCo, and 4orm Trust Co; technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+</body>
+</html>
