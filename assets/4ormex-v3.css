@@ -342,6 +342,64 @@ a:hover{color:var(--brand-700)}
 
 ::selection{background:var(--brand);color:#fff}
 
+/* ---------- Demo gate (sandbox disclaimer modal) ---------- */
+body.demo-gate-active{overflow:hidden}
+.demo-gate-backdrop{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(7,12,22,.86);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  padding:32px;animation:demoFadeIn .25s ease;
+  transition:opacity .2s ease;
+}
+@keyframes demoFadeIn{from{opacity:0}to{opacity:1}}
+.demo-gate-card{
+  background:var(--surface);border:1px solid var(--gold-100);
+  border-radius:var(--r-lg);max-width:580px;width:100%;
+  padding:36px 40px;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 0 1px rgba(231,199,108,.18);
+  position:relative;
+}
+.demo-gate-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold-2) 0%,var(--gold) 50%,var(--gold-2) 100%);
+  border-radius:var(--r-lg) var(--r-lg) 0 0;
+}
+.demo-gate-eye{
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-2);font-weight:800;margin-bottom:16px;display:inline-flex;align-items:center;gap:10px;
+}
+.demo-gate-eye .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 0 4px rgba(196,154,58,.16);display:inline-block}
+.demo-gate-card h2{
+  margin:0 0 16px;font-size:1.55rem;font-weight:800;letter-spacing:-.025em;color:var(--text);line-height:1.18;
+}
+.demo-gate-card p{
+  font-size:.93rem;color:var(--text-2);line-height:1.62;margin:0 0 14px;
+}
+.demo-gate-card p strong{color:var(--text);font-weight:700}
+.demo-gate-fine{
+  font-family:var(--font-mono);font-size:.74rem;color:var(--text-3);line-height:1.55;
+  background:var(--surface-2);border:1px solid var(--border);border-radius:8px;
+  padding:13px 16px;margin:18px 0 24px;
+}
+.demo-gate-btn{
+  display:inline-flex;align-items:center;gap:10px;font-family:inherit;cursor:pointer;
+  background:linear-gradient(180deg,#FFE39E 0%,var(--gold) 50%,var(--gold-2) 100%);
+  color:#15233F;font-weight:800;font-size:.95rem;letter-spacing:-.005em;
+  padding:13px 28px;border-radius:10px;border:1px solid var(--gold-2);
+  box-shadow:0 4px 12px rgba(196,154,58,.32),inset 0 1px 0 rgba(255,255,255,.45);
+  transition:transform .12s ease,box-shadow .15s ease;
+}
+.demo-gate-btn:hover{
+  background:linear-gradient(180deg,var(--gold-2) 0%,var(--gold) 60%,#FFE39E 100%);
+  transform:translateY(-1px);
+  box-shadow:0 6px 16px rgba(196,154,58,.45),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.demo-gate-btn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+@media (max-width:520px){
+  .demo-gate-card{padding:28px 24px}
+  .demo-gate-card h2{font-size:1.3rem}
+}
+
 /* ---------- Common sidebar SVG icons (shared shape rules) ---------- */
 .sb-ic-corp,.sb-ic-mil,.sb-ic-del{stroke:currentColor}
 
