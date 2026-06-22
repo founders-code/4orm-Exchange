@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=13" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=15" />
 <style>
 /* ----- Marketplace-specific ----- */
 .market-strip{
@@ -107,78 +107,10 @@
 .trades-table .hash:hover{text-decoration:underline}
 </style>
 </head>
-<body>
+<body data-product="marketplace" data-sidebar="asset-screener">
 
 <!-- ===== Topbar ===== -->
-<header class="topbar">
-  <div class="topbar-inner">
-    <a href="https://4ormfinance.com" class="brand" aria-label="4orm Finance home">
-      <img src="/assets/4orm-logo.png" alt="4orm Finance" />
-      <span class="sub">4ormEx · The Exchange</span>
-    </a>
-    <label class="search" aria-label="Search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <input type="search" placeholder="Search any asset, issuer, ticker, or entity…" />
-      <span class="kbd">⌘ K</span>
-    </label>
-    <nav class="utility" aria-label="Primary"><a class="menu" href="/for-issuers.html">For issuers <span class="car">▾</span></a>
-      <a href="/data-api.html">Data API</a>
-      <a href="#book-demo">Book a demo</a>
-      <a class="back" href="https://4ormfinance.com">← 4orm Finance</a>
-      <a class="cta" href="https://4ormfinance.com/#waitlist">Request access</a>
-    </nav>
-  </div>
-</header>
-
 <!-- ===== Ticker tape ===== -->
-<nav class="productnav" id="productnav-main" aria-label="4ormEx product surface">
-  <div class="productnav-inner">
-    <a href="/"><span class="pn-num">01</span> Market Overview</a>
-    <a href="/marketplace.html" class="active"><span class="pn-num">02</span> Marketplace</a>
-    <a href="/tokenize.html"><span class="pn-num">03</span> Tokenize</a>
-    <a href="/lifecycle.html"><span class="pn-num">04</span> Lifecycle</a>
-    <a href="/issuer.html"><span class="pn-num">05</span> Issuer Portal</a>
-    <a href="/investor.html"><span class="pn-num">06</span> Investor Portal</a>
-    <a href="/compliance.html"><span class="pn-num">07</span> Compliance</a>
-    <a href="/settlement.html"><span class="pn-num">08</span> Settlement</a>
-    <a href="/admin.html"><span class="pn-num">09</span> Admin &amp; Audit</a>
-  <a href="/for-issuers.html" class="pn-cta">List your asset →</a></div>
-</nav>
-
-<div class="tape" aria-hidden="true">
-  <div class="track">
-    <span class="ti"><span class="t">tGCB</span><span class="p">C$ 99.82</span><span class="c u">▲ 0.03%</span></span>
-    <span class="ti"><span class="t">tABP28</span><span class="p">C$ 102.41</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tACP-VII</span><span class="p">C$ 1,041.20</span><span class="c u">▲ 4.12%</span></span>
-    <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
-    <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
-    <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
-    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
-    <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
-    <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
-    <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
-    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tPGV-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
-    <!-- dup -->
-    <span class="ti"><span class="t">tGCB</span><span class="p">C$ 99.82</span><span class="c u">▲ 0.03%</span></span>
-    <span class="ti"><span class="t">tABP28</span><span class="p">C$ 102.41</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tACP-VII</span><span class="p">C$ 1,041.20</span><span class="c u">▲ 4.12%</span></span>
-    <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
-    <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
-    <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
-    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
-    <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
-    <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
-    <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
-    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tPGV-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
-  </div>
-</div>
-
 <!-- ===== Product nav ===== -->
 
 
@@ -200,9 +132,9 @@
       <ul>
         <li><a href="/bank-deposits.html">Tokenized Deposit Receipts</a></li>
         <li><a href="/stablecoins.html">Stablecoins</a></li>
-        <li><a href="/corporate-nfts.html">Corporate NFTs <span class="new">New</span></a></li>
-        <li><a href="/project-milestones.html">Project Milestones <span class="new">New</span></a></li>
-        <li><a href="/verified-delivery.html">Verified Delivery <span class="new">New</span></a></li>
+        <li><a href="/">Corporate NFTs <span class="new">New</span></a></li>
+        <li><a href="/">Project Milestones <span class="new">New</span></a></li>
+        <li><a href="/">Verified Delivery <span class="new">New</span></a></li>
         <li><a href="/government-of-canada.html">Government of Canada</a></li>
         <li><a href="/provincial-sub-sovereign.html">Provincial &amp; Sub-Sovereign</a></li>
         <li><a href="/private-credit.html">Private Credit</a></li>
@@ -215,26 +147,26 @@
     <section class="sb-group">
       <h6>Network</h6>
       <ul>
-        <li><a href="/network-banks.html">Canadian Banks</a></li>
-        <li><a href="/network-custodians.html">Qualified Custodians</a></li>
-        <li><a href="/network-issuers.html">Issuers &amp; Originators</a></li>
-        <li><a href="/network-settlement.html">Settlement Operators</a></li>
+        <li><a href="/about.html">Canadian Banks</a></li>
+        <li><a href="/about.html">Qualified Custodians</a></li>
+        <li><a href="/about.html">Issuers &amp; Originators</a></li>
+        <li><a href="/about.html">Settlement Operators</a></li>
       </ul>
     </section>
     <section class="sb-group">
       <h6>Tools</h6>
       <ul>
         <li><a href="/data-api.html">Data API <span class="new">New</span></a></li>
-        <li><a href="/data-catalog.html">Data Catalog</a></li>
-        <li><a href="/documentation.html">Documentation</a></li>
-        <li><a href="/research.html">Research</a></li>
-        <li><a href="/admin.html">Audit &amp; Citations</a></li>
+        <li><a href="/data-api.html">Data Catalog</a></li>
+        <li><a href="/data-api.html">Documentation</a></li>
+        <li><a href="/about.html">Research</a></li>
+        <li><a href="/for-issuers.html">Audit &amp; Citations</a></li>
       </ul>
     </section>
     <section class="sb-cta">
       <h6>For Issuers &amp; Banks</h6>
       <p>Onboard a Canadian asset to the regulated rail or join the institution corridor.</p>
-      <a class="start-btn" href="/tokenize.html">Register your asset →</a>
+      <a class="start-btn" href="/for-issuers.html">Register your asset →</a>
     </section>
   </aside>
 
@@ -382,39 +314,23 @@
 </div>
 
 <!-- ===== Footer ===== -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="grid">
-      <div class="brand-blk">
-        <h5>4ormEx · The 4orm Exchange</h5>
-        <p>The trading venue (Pillar 02) of 4orm Finance. Canadian-regulated rail for tokenized real-world assets. Sandbox preview · v0.1.</p>
-      </div>
-      <div><h6>Exchange</h6><ul><li><a href="/">Market Overview</a></li><li><a href="/marketplace.html">Marketplace</a></li><li><a href="/issuer.html">Issuer portal</a></li><li><a href="/investor.html">Investor portal</a></li></ul></div>
-      <div><h6>Operations</h6><ul><li><a href="/compliance.html">Compliance</a></li><li><a href="/settlement.html">Settlement</a></li><li><a href="/admin.html">Admin &amp; audit</a></li><li><a href="/tokenize.html">Tokenization wizard</a></li></ul></div>
-      <div><h6>4orm Finance</h6><ul><li><a href="https://4ormfinance.com">Main site</a></li><li><a href="https://4ormfinance.com/regulatory.html">Regulatory posture</a></li><li><a href="https://4ormfinance.com/#waitlist">Request access</a></li><li><a href="mailto:compliance@kcs-capital.com">compliance@kcs-capital.com</a></li></ul></div>
-    </div>
-    <div class="lr"><div>© 2026 4orm Finance · 4orm Finance Holdings Inc.</div><div>Sandbox preview · simulated data only · not a live trading venue</div></div>
-    <p class="disclaim">4orm Finance is an early-stage platform in development. 4ormEx is a sandbox-stage institutional preview environment, not a licensed exchange or dealer. All identifiers, hashes, prices and balances on these pages are simulated and do not represent live systems, real assets or real counterparties. Educational only; not an offer or solicitation of securities and not financial, legal or tax advice.</p>
-  </div>
-</footer>
-
 <script>
 // Mock data
 const assets = [
   { tk:'tGCB',     nm:'Gov. of Canada T-Bill 90d', cls:'Sovereign',     px:99.82,  chg:+0.03, vol:'24.1M', tvl:'312.4M' },
-  { tk:'tABP28',   nm:'Western Province (illustrative) Bond 2028', cls:'Sub-sovereign', px:102.41, chg:+0.18, vol:'11.7M', tvl:'186.2M' },
-  { tk:'tACP-VII', nm:'Alpha Credit Pool VII',     cls:'Private credit', px:1041.20,chg:+4.12, vol:'8.3M',  tvl:'94.1M' },
-  { tk:'tPMP-A',   nm:'Crestview Mortgage (illustrative) Mortgage Pool A', cls:'Private credit', px:1.04,   chg:+0.42, vol:'8.3M',  tvl:'94.1M' },
-  { tk:'tAUC',     nm:'Klondike Gold (illustrative) Gold Bullion · 1g',   cls:'Commodity',      px:96.18,  chg:-0.27, vol:'5.4M',  tvl:'128.7M' },
+  { tk:'tABP28',   nm:'Western Canadian province (illustrative) Bond 2028', cls:'Sub-sovereign', px:102.41, chg:+0.18, vol:'11.7M', tvl:'186.2M' },
+  { tk:'tACP-VII', nm:'Private credit pool (illustrative) VII',     cls:'Private credit', px:1041.20,chg:+4.12, vol:'8.3M',  tvl:'94.1M' },
+  { tk:'tPMP-A',   nm:'Mortgage pool sponsor (illustrative) Mortgage Pool A', cls:'Private credit', px:1.04,   chg:+0.42, vol:'8.3M',  tvl:'94.1M' },
+  { tk:'tAUC',     nm:'Precious metals producer (illustrative) Gold Bullion · 1g',   cls:'Commodity',      px:96.18,  chg:-0.27, vol:'5.4M',  tvl:'128.7M' },
   { tk:'tCRE-CGY1',nm:'Calgary CRE Tower · Fractional', cls:'Real estate', px:524.00, chg:+1.12, vol:'3.1M',  tvl:'48.9M' },
-  { tk:'tCAD-MM (illustrative)',     nm:'QCorp (illustrative) tCAD-MM (illustrative)',           cls:'Stablecoin',     px:1.0000, chg:+0.00, vol:'42.6M', tvl:'82.3M' },
-  { tk:'tNWD-R',    nm:'Northwind (illustrative) Tokenized Deposit',     cls:'Bank deposit',   px:1.0000, chg:+0.00, vol:'18.4M', tvl:'54.0M' },
+  { tk:'tCAD-MM (illustrative)',     nm:'VRCA issuer (illustrative) tCAD-MM (illustrative)',           cls:'Stablecoin',     px:1.0000, chg:+0.00, vol:'42.6M', tvl:'82.3M' },
+  { tk:'tNWD-R',    nm:'Schedule I deposit-taking institution (illustrative) Tokenized Deposit',     cls:'Bank deposit',   px:1.0000, chg:+0.00, vol:'18.4M', tvl:'54.0M' },
   { tk:'tPGV-R',     nm:'TD Tokenized Deposit',      cls:'Bank deposit',   px:1.0000, chg:+0.00, vol:'14.2M', tvl:'41.2M' },
-  { tk:'tEDC25',   nm:'Federal Crown Export Agency (illustrative) Green Bond 2025',       cls:'Sov. agency',    px:101.18, chg:+0.07, vol:'1.6M',  tvl:'100.0M' },
-  { tk:'tHQI32',   nm:'Eastern Hydro Crown Corp (illustrative) Infra 2032',   cls:'Infrastructure', px:99.91,  chg:-0.04, vol:'1.2M',  tvl:'25.6M' },
+  { tk:'tEDC25',   nm:'Federal Crown agency (illustrative) Green Bond 2025',       cls:'Sov. agency',    px:101.18, chg:+0.07, vol:'1.6M',  tvl:'100.0M' },
+  { tk:'tHQI32',   nm:'Provincial Crown corporation (illustrative) Infra 2032',   cls:'Infrastructure', px:99.91,  chg:-0.04, vol:'1.2M',  tvl:'25.6M' },
   { tk:'tCRE-EDM2',nm:'Edmonton CRE Tower II',     cls:'Real estate',    px:287.50, chg:+0.62, vol:'1.9M',  tvl:'18.4M' },
   { tk:'tAGL-SK1', nm:'Saskatchewan Ag-Land Pool', cls:'Commodity',      px:1200.00,chg:+0.08, vol:'0.8M',  tvl:'12.8M' },
-  { tk:'BSMI',    nm:'Boreal Silica Mining (illustrative) · per-ton',    cls:'Verified delivery', px:42.50, chg:+0.18, vol:'0.6M', tvl:'6.2M' },
+  { tk:'BSMI',    nm:'Commodity producer (illustrative) · per-ton',    cls:'Verified delivery', px:42.50, chg:+0.18, vol:'0.6M', tvl:'6.2M' },
 ];
 
 let active = assets[0]; let side = 'buy';
@@ -492,6 +408,7 @@ renderAll();
 setInterval(()=>{const drift=(Math.random()-0.5)*(active.px<10?0.0005:0.02); active.px=+(active.px+drift).toFixed(active.px<10?4:2); renderHeader(); renderBook();},4000);
 setInterval(()=>{renderTrades();},7000);
 </script>
-<script src="/assets/4ormex-ui.js?v=13"></script>
+<script src="/assets/4ormex-chrome.js?v=15"></script>
+<script src="/assets/4ormex-ui.js?v=15"></script>
 </body>
 </html>

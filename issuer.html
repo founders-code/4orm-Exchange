@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Issuer Portal · 4ormEx — Alpha Capital</title>
-<meta name="description" content="4ormEx Issuer Portal — create and manage tokenized offerings, investor whitelists, and distribution controls. Persona: Alpha Capital." />
+<title>Issuer Portal · 4ormEx — Private credit sponsor (illustrative)</title>
+<meta name="description" content="4ormEx Issuer Portal — create and manage tokenized offerings, investor whitelists, and distribution controls. Persona: Private credit sponsor (illustrative)." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=13" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=15" />
 <style>
 .bar{position:relative;height:6px;background:var(--bg-3);border-radius:3px;overflow:hidden;margin-top:6px}
 .bar .fill{position:absolute;left:0;top:0;bottom:0;background:var(--brand);border-radius:3px}
@@ -35,92 +35,14 @@
 .panel-b.pad{padding:22px}
 </style>
 </head>
-<body>
+<body data-product="issuer" data-sidebar="issuer-view">
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <a href="https://4ormfinance.com" class="brand"><img src="/assets/4orm-logo.png" alt="4orm Finance" /><span class="sub">4ormEx · The Exchange</span></a>
-    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="search" placeholder="Search any asset, issuer, ticker, or entity…" /><span class="kbd">⌘ K</span></label>
-    <nav class="utility"><a class="menu" href="/for-issuers.html">For issuers <span class="car">▾</span></a><a href="/data-api.html">Data API</a><a href="#book-demo">Book a demo</a><a class="back" href="https://4ormfinance.com">← 4orm Finance</a><a class="cta" href="https://4ormfinance.com/#waitlist">Request access</a></nav>
-  </div>
-</header>
-
-<nav class="productnav" id="productnav-main">
-  <div class="productnav-inner">
-    <a href="/"><span class="pn-num">01</span> Market Overview</a>
-    <a href="/marketplace.html"><span class="pn-num">02</span> Marketplace</a>
-    <a href="/tokenize.html"><span class="pn-num">03</span> Tokenize</a>
-    <a href="/lifecycle.html"><span class="pn-num">04</span> Lifecycle</a>
-    <a href="/issuer.html" class="active"><span class="pn-num">05</span> Issuer Portal</a>
-    <a href="/investor.html"><span class="pn-num">06</span> Investor Portal</a>
-    <a href="/compliance.html"><span class="pn-num">07</span> Compliance</a>
-    <a href="/settlement.html"><span class="pn-num">08</span> Settlement</a>
-    <a href="/admin.html"><span class="pn-num">09</span> Admin &amp; Audit</a>
-  <a href="/for-issuers.html" class="pn-cta">List your asset →</a></div>
-</nav>
-
-<div class="tape" aria-hidden="true">
-  <div class="track">
-    <span class="ti"><span class="t">tGCB</span><span class="p">C$ 99.82</span><span class="c u">▲ 0.03%</span></span>
-    <span class="ti"><span class="t">tABP28</span><span class="p">C$ 102.41</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tACP-VII</span><span class="p">C$ 1,041.20</span><span class="c u">▲ 4.12%</span></span>
-    <span class="ti"><span class="t">tACP-VIII</span><span class="p">C$ 1,002.50</span><span class="c u">▲ 0.22%</span></span>
-    <span class="ti"><span class="t">tAIR-I</span><span class="p">C$ 100.40</span><span class="c u">▲ 0.04%</span></span>
-    <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
-    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
-    <span class="ti"><span class="t">tPMS-CGY40</span><span class="p">C$ 2.10M</span><span class="c u">▲ paid</span></span>
-    <!-- dup -->
-    <span class="ti"><span class="t">tGCB</span><span class="p">C$ 99.82</span><span class="c u">▲ 0.03%</span></span>
-    <span class="ti"><span class="t">tABP28</span><span class="p">C$ 102.41</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tACP-VII</span><span class="p">C$ 1,041.20</span><span class="c u">▲ 4.12%</span></span>
-    <span class="ti"><span class="t">tACP-VIII</span><span class="p">C$ 1,002.50</span><span class="c u">▲ 0.22%</span></span>
-    <span class="ti"><span class="t">tAIR-I</span><span class="p">C$ 100.40</span><span class="c u">▲ 0.04%</span></span>
-    <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
-    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
-    <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
-    <span class="ti"><span class="t">tPMS-CGY40</span><span class="p">C$ 2.10M</span><span class="c u">▲ paid</span></span>
-  </div>
-</div>
-
-
-
-<div class="dash">
-  <aside class="sidebar">
-    <section class="sb-group"><h6>Latest</h6><ul>
-      <li><a href="/"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Market Overview</a></li>
-      <li><a href="/marketplace.html"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Asset Screener</a></li>
-      <li><a href="/new-listings.html"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>New Listing Monitor <span class="new">New</span></a></li>
-    </ul></section>
-    <section class="sb-group"><h6>Asset Classes</h6><ul>
-      <li><a href="/bank-deposits.html">Tokenized Deposit Receipts</a></li><li><a href="/stablecoins.html">Stablecoins</a></li>
-      <li><a href="/corporate-nfts.html">Corporate NFTs <span class="new">New</span></a></li>
-      <li><a href="/project-milestones.html">Project Milestones <span class="new">New</span></a></li>
-      <li><a href="/verified-delivery.html">Verified Delivery <span class="new">New</span></a></li>
-      <li><a href="/government-of-canada.html">Government of Canada</a></li><li><a href="/provincial-sub-sovereign.html">Provincial &amp; Sub-Sovereign</a></li>
-      <li><a href="/private-credit.html">Private Credit</a></li><li><a href="/real-estate.html">Real Estate</a></li>
-      <li><a href="/commodities.html">Commodities</a></li><li><a href="/infrastructure.html">Infrastructure</a></li><li><a href="/equities-cdr.html">Equities (CDR-style)</a></li>
-    </ul></section>
-    <section class="sb-group"><h6>Network</h6><ul>
-      <li><a href="/network-banks.html">Canadian Banks</a></li><li><a href="/network-custodians.html">Qualified Custodians</a></li>
-      <li><a href="/network-issuers.html">Issuers &amp; Originators</a></li><li><a href="/network-settlement.html">Settlement Operators</a></li>
-    </ul></section>
-    <section class="sb-group"><h6>Tools</h6><ul>
-      <li><a href="/data-api.html">Data API <span class="new">New</span></a></li><li><a href="/data-catalog.html">Data Catalog</a></li>
-      <li><a href="/documentation.html">Documentation</a></li><li><a href="/research.html">Research</a></li>
-      <li><a href="/admin.html">Audit &amp; Citations</a></li>
-    </ul></section>
-    <section class="sb-cta"><h6>For Issuers &amp; Banks</h6><p>Onboard a Canadian asset to the regulated rail or join the institution corridor.</p><a class="start-btn" href="/tokenize.html">Register your asset →</a></section>
-  </aside>
-
-  <main class="pane">
+<main class="pane">
 
     <header class="pane-head">
       <div>
         <div class="ph-eye">Issuer Portal · Illustrative</div>
-        <h1>Alpha Capital Partners <span class="accent">Inc. (illustrative)</span></h1>
+        <h1>Private credit sponsor (illustrative) <span class="accent">Inc. (illustrative)</span></h1>
         <p class="ph-lede"><strong>Illustrative issuer profile.</strong> This page shows what an exempt-market issuer's view of 4ormEx would look like once 4ormEx is registered. The issuer, its EMD registration, KYB attestation, and counsel shown below are fictional and used for product-design illustration only. 4ormEx has filed no registration application and accepts no live issuer onboarding.</p>
       </div>
       <div class="ph-stats">
@@ -141,14 +63,14 @@
 
     <!-- Active offerings -->
     <div class="panel" style="margin-bottom:22px">
-      <div class="panel-h"><h3>Active offerings</h3><div class="ph-actions"><button class="btn ghost btn-sm">Filter</button><button class="btn ghost btn-sm">Export CSV</button><button class="btn primary btn-sm" onclick="window.location.href='/tokenize.html'">+ New offering</button></div></div>
+      <div class="panel-h"><h3>Active offerings</h3><div class="ph-actions"><button class="btn ghost btn-sm">Filter</button><button class="btn ghost btn-sm">Export CSV</button><button class="btn primary btn-sm" onclick="window.location.href='/for-issuers.html'">+ New offering</button></div></div>
       <div class="panel-b">
         <table class="tbl">
           <thead><tr><th>Ticker</th><th>Series</th><th>Class</th><th class="r">Target</th><th>Raised</th><th class="r">Subs</th><th>Close</th><th>Status</th><th></th></tr></thead>
           <tbody>
             <tr>
               <td><span class="ticker">tACP-VII</span></td>
-              <td><span class="name">Alpha Credit Pool VII</span><span class="sub">Senior secured private credit · 18 mo</span></td>
+              <td><span class="name">Private credit pool (illustrative) VII</span><span class="sub">Senior secured private credit · 18 mo</span></td>
               <td><span class="pill g">Private credit</span></td>
               <td class="r price">C$ 75.0M</td>
               <td><div style="font-family:var(--font-mono);font-weight:700;color:var(--text)">C$ 58.3M</div><div class="bar"><div class="fill" style="width:78%"></div></div></td>
@@ -159,7 +81,7 @@
             </tr>
             <tr>
               <td><span class="ticker">tACP-VIII</span></td>
-              <td><span class="name">Alpha Credit Pool VIII</span><span class="sub">Mezzanine RE credit · 24 mo</span></td>
+              <td><span class="name">Private credit pool (illustrative) VIII</span><span class="sub">Mezzanine RE credit · 24 mo</span></td>
               <td><span class="pill g">Private credit</span></td>
               <td class="r price">C$ 40.0M</td>
               <td><div style="font-family:var(--font-mono);font-weight:700;color:var(--text)">C$ 14.2M</div><div class="bar"><div class="fill" style="width:36%"></div></div></td>
@@ -181,25 +103,25 @@
             </tr>
             <tr>
               <td><span class="ticker">tACP-IX</span></td>
-              <td><span class="name">Alpha Credit Pool IX</span><span class="sub">Senior secured · 18 mo · draft</span></td>
+              <td><span class="name">Private credit pool (illustrative) IX</span><span class="sub">Senior secured · 18 mo · draft</span></td>
               <td><span class="pill v">Pending mint</span></td>
               <td class="r price">C$ 50.0M</td>
               <td><div style="font-family:var(--font-mono);font-weight:700;color:var(--text-3)">— draft</div></td>
               <td class="r">—</td>
               <td>—</td>
               <td><span class="stat warn"><span class="d"></span>CCO review</span></td>
-              <td><a href="/tokenize.html">Resume →</a></td>
+              <td><a href="/for-issuers.html">Resume →</a></td>
             </tr>
             <tr>
               <td><span class="ticker">tACP-VI</span></td>
-              <td><span class="name">Alpha Credit Pool VI</span><span class="sub">Senior secured · matured Jun 30</span></td>
+              <td><span class="name">Private credit pool (illustrative) VI</span><span class="sub">Senior secured · matured Jun 30</span></td>
               <td><span class="pill n">Closed</span></td>
               <td class="r price">C$ 65.0M</td>
               <td><div style="font-family:var(--font-mono);font-weight:700;color:var(--text)">C$ 65.0M</div></td>
               <td class="r">36</td>
               <td>Matured</td>
               <td><span class="stat illustrative"><span class="d"></span>Redeemed</span></td>
-              <td><a href="/admin.html">Audit →</a></td>
+              <td><a href="/for-issuers.html">Audit →</a></td>
             </tr>
           </tbody>
         </table>
@@ -245,12 +167,12 @@
           <table class="tbl">
             <thead><tr><th>When</th><th>Investor</th><th>Offering</th><th class="r">Amount</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td><span class="mono">2026-05-26 14:22</span></td><td><span class="name">Bay Street Investments</span><span class="sub">Asset Manager · ON</span></td><td><span class="ticker">tACP-VII</span></td><td class="r price">C$ 5,000,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
-              <tr><td><span class="mono">2026-05-26 11:08</span></td><td><span class="name">Mercer Family Office</span><span class="sub">MFO · BC</span></td><td><span class="ticker">tACP-VIII</span></td><td class="r price">C$ 1,200,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
+              <tr><td><span class="mono">2026-05-26 14:22</span></td><td><span class="name">Institutional asset manager (illustrative)</span><span class="sub">Asset Manager · ON</span></td><td><span class="ticker">tACP-VII</span></td><td class="r price">C$ 5,000,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
+              <tr><td><span class="mono">2026-05-26 11:08</span></td><td><span class="name">Family office (illustrative)</span><span class="sub">MFO · BC</span></td><td><span class="ticker">tACP-VIII</span></td><td class="r price">C$ 1,200,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
               <tr><td><span class="mono">2026-05-25 16:44</span></td><td><span class="name">Northern Trust CA</span><span class="sub">Pension · ON</span></td><td><span class="ticker">tACP-VII</span></td><td class="r price">C$ 10,000,000</td><td><span class="stat illustrative"><span class="d"></span>In review</span></td></tr>
-              <tr><td><span class="mono">2026-05-25 09:31</span></td><td><span class="name">Cascade Pension Plan</span><span class="sub">Pension · BC</span></td><td><span class="ticker">tACP-VIII</span></td><td class="r price">C$ 3,500,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
-              <tr><td><span class="mono">2026-05-24 13:17</span></td><td><span class="name">Athabasca Capital</span><span class="sub">EMD · AB</span></td><td><span class="ticker">tACP-VII</span></td><td class="r price">C$ 2,800,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
-              <tr><td><span class="mono">2026-05-23 10:55</span></td><td><span class="name">Granite (illustrative) Wealth · Private</span><span class="sub">Wealth · ON</span></td><td><span class="ticker">tACP-VII</span></td><td class="r price">C$ 7,500,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
+              <tr><td><span class="mono">2026-05-25 09:31</span></td><td><span class="name">Pension plan (illustrative)</span><span class="sub">Pension · BC</span></td><td><span class="ticker">tACP-VIII</span></td><td class="r price">C$ 3,500,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
+              <tr><td><span class="mono">2026-05-24 13:17</span></td><td><span class="name">Royalty asset sponsor (illustrative)</span><span class="sub">EMD · AB</span></td><td><span class="ticker">tACP-VII</span></td><td class="r price">C$ 2,800,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
+              <tr><td><span class="mono">2026-05-23 10:55</span></td><td><span class="name">Schedule I deposit-taking institution (illustrative) Wealth · Private</span><span class="sub">Wealth · ON</span></td><td><span class="ticker">tACP-VII</span></td><td class="r price">C$ 7,500,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
               <tr><td><span class="mono">2026-05-22 15:02</span></td><td><span class="name">Coastal Pension Fund</span><span class="sub">Pension · NS</span></td><td><span class="ticker">tACP-VIII</span></td><td class="r price">C$ 2,000,000</td><td><span class="stat warn"><span class="d"></span>KYC pending</span></td></tr>
               <tr><td><span class="mono">2026-05-21 14:11</span></td><td><span class="name">Yukon Reserves Mgmt</span><span class="sub">Sovereign · YT</span></td><td><span class="ticker">tAIR-I</span></td><td class="r price">C$ 8,000,000</td><td><span class="stat illustrative"><span class="d"></span>Settled</span></td></tr>
             </tbody>
@@ -260,21 +182,7 @@
 
     </section>
 
-  </main>
-</div>
-
-<footer class="footer">
-  <div class="wrap">
-    <div class="grid">
-      <div class="brand-blk"><h5>4ormEx · The 4orm Exchange</h5><p>Trading venue (Pillar 02) of 4orm Finance. Sandbox preview · v0.1.</p></div>
-      <div><h6>Exchange</h6><ul><li><a href="/">Market Overview</a></li><li><a href="/marketplace.html">Marketplace</a></li><li><a href="/issuer.html">Issuer portal</a></li><li><a href="/investor.html">Investor portal</a></li></ul></div>
-      <div><h6>Operations</h6><ul><li><a href="/compliance.html">Compliance</a></li><li><a href="/settlement.html">Settlement</a></li><li><a href="/admin.html">Admin &amp; audit</a></li><li><a href="/tokenize.html">Tokenization wizard</a></li></ul></div>
-      <div><h6>4orm Finance</h6><ul><li><a href="https://4ormfinance.com">Main site</a></li><li><a href="https://4ormfinance.com/regulatory.html">Regulatory posture</a></li><li><a href="https://4ormfinance.com/#waitlist">Request access</a></li></ul></div>
-    </div>
-    <div class="lr"><div>© 2026 4orm Finance</div><div>Sandbox · simulated</div></div>
-  </div>
-</footer>
-
-<script src="/assets/4ormex-ui.js?v=13"></script>
+  </main><script src="/assets/4ormex-chrome.js?v=15"></script>
+<script src="/assets/4ormex-ui.js?v=15"></script>
 </body>
 </html>
