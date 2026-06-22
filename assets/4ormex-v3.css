@@ -60,7 +60,13 @@ body{
   font-family:var(--font-sans);color:var(--text);background:var(--bg);line-height:1.55;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color-scheme:light;
   font-feature-settings:"ss01","cv11";
+  /* v15e · prevent unstyled content flash before chrome injects */
+  opacity:0;transition:opacity 60ms ease-out;
 }
+body.chrome-ready{opacity:1}
+/* Failsafe: if JS is disabled or chrome.js fails to load within 800ms, show body anyway */
+@keyframes chrome-failsafe{to{opacity:1}}
+body{animation:chrome-failsafe 0s linear 800ms forwards}
 img,svg{display:block;max-width:100%}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-sans);line-height:1.18;margin:0 0 .4em;letter-spacing:-.02em;font-weight:750;color:var(--text)}
 h1{font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-.03em;font-weight:800}

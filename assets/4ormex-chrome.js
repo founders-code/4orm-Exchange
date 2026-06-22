@@ -134,6 +134,10 @@
       const link = document.querySelector(`.sb-group a[data-key="${sidebarKey}"]`);
       if (link) link.classList.add('active');
     }
+
+    // v15e · reveal body now that chrome is hydrated. Eliminates the
+    // unstyled-content flash on page transitions.
+    document.body.classList.add('chrome-ready');
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);

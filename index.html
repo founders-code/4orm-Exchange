@@ -9,9 +9,32 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=18" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=19" />
 
 <style>
+/* v15e · Redesigned full-bleed hero. The H1 is the whole hero, not a sidebar. */
+.pane-head{
+  background:linear-gradient(180deg, #FFFFFF 0%, #FAFAFC 60%, #F5F5F7 100%);
+  border:1px solid var(--border);
+  border-radius:var(--r-xl);
+  padding:48px 48px 44px;
+  box-shadow:var(--shadow-sm);
+  margin-bottom:28px;
+  position:relative;
+  overflow:hidden;
+}
+.pane-head::before{
+  content:""; position:absolute; top:-20%; right:-10%; width:520px; height:520px;
+  background:radial-gradient(circle, rgba(46,107,242,.08) 0%, rgba(46,107,242,0) 60%);
+  pointer-events:none;
+}
+.pane-head::after{
+  content:""; position:absolute; bottom:-30%; left:-10%; width:520px; height:520px;
+  background:radial-gradient(circle, rgba(231,199,108,.06) 0%, rgba(231,199,108,0) 60%);
+  pointer-events:none;
+}
+.pane-head > *{ position:relative; z-index:1; }
+
 .hp-hero-eye{
   font-family:var(--font-mono);
   font-size:.72rem;
@@ -19,35 +42,46 @@
   text-transform:uppercase;
   color:var(--gold-ink);
   font-weight:700;
-  margin-bottom:14px;
+  margin-bottom:22px;
   display:inline-flex;
   align-items:center;
   gap:8px;
   padding:6px 12px;
   background:var(--gold-50);
+  border:1px solid var(--gold-100);
   border-radius:99px;
 }
 .hp-hero-eye .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold-2); }
+
 .pane-head h1{
-  font-size:2.8rem;
+  font-size:clamp(2.4rem, 4.2vw, 3.6rem);
   font-weight:800;
-  letter-spacing:-.035em;
-  line-height:1.05;
-  margin:0 0 16px;
+  letter-spacing:-.04em;
+  line-height:1.02;
+  margin:0 0 22px;
   color:var(--text);
-  max-width:840px;
 }
 .pane-head h1 .accent{ color:var(--brand); }
+.pane-head h1 .accent-gold{ color:var(--gold-2); }
+
 .pane-head p.lede{
-  font-size:1.04rem;
+  font-size:1.12rem;
   color:var(--text-2);
-  line-height:1.6;
+  line-height:1.55;
   margin:0;
-  max-width:720px;
+  max-width:780px;
+  font-weight:450;
 }
+
+.designed-within{
+  display:flex; flex-wrap:wrap; gap:8px; margin-top:28px;
+  padding-top:24px; border-top:1px solid var(--border);
+}
+
 @media (max-width:780px){
-  .pane-head h1{ font-size:1.85rem; }
-  .pane-head p.lede{ font-size:.96rem; }
+  .pane-head{ padding:30px 22px; border-radius:var(--r-lg); }
+  .pane-head h1{ font-size:2rem; }
+  .pane-head p.lede{ font-size:1rem; }
 }
 
 /* small "designed within" tag row */
@@ -98,43 +132,21 @@
 
 <main class="pane">
 
+  <!-- 1 · HERO (full-bleed, big H1) -->
   <header class="pane-head">
     <span class="hp-hero-eye"><span class="dot"></span>Pillar 02 · Trading venue · Design preview</span>
-    <h1>Canada's regulated <span class="accent">tokenized real-world asset</span> market, illustrated.</h1>
-    <p class="lede">4ormEx is the planned permissioned trading venue inside the 4orm Finance regulated control plane. This page shows the asset categories the venue is designed to support and what an institutional buyer or issuer would see once 4ormEx is registered. Today, every figure, identifier, counterparty and listing shown on this site is simulated and illustrative.</p>
+    <h1>Canada's regulated <span class="accent">tokenized real-world asset</span> market, <span class="accent-gold">illustrated.</span></h1>
+    <p class="lede">4ormEx is the planned permissioned trading venue inside the 4orm Finance regulated control plane. This page shows the asset categories the venue is designed to support and what an institutional buyer or issuer would see once 4ormEx is registered. Every figure, identifier, counterparty and listing on this site is simulated and illustrative.</p>
     <div class="designed-within">
       <span class="tag"><span class="x">Designed within ·</span>CIRO perimeter</span>
       <span class="tag"><span class="x">·</span>CSA framework</span>
-      <span class="tag"><span class="x">·</span>OSFI capital treatment reference</span>
+      <span class="tag"><span class="x">·</span>OSFI capital reference</span>
       <span class="tag"><span class="x">·</span>FINTRAC PCMLTFA</span>
       <span class="tag" style="background:#FFF;border-color:#F0D78A;color:#7A5A0A"><span class="x">Status ·</span>not registered · no applications filed</span>
     </div>
   </header>
 
-  <!-- Big hero stat: illustrative total tokenized value across all classes -->
-  <section class="hero-stat" aria-label="Illustrative total tokenized value">
-    <div class="hs-eye">Illustrative · total Canadian RWA on platform</div>
-    <div class="hs-num"><span class="cur">C$</span>1.42B</div>
-    <p class="hs-sub">Simulated total value across all ten asset categories the venue is designed to support. No real on-platform value exists; every number on this site is illustrative.</p>
-  </section>
-
-  <!-- Buyer / Issuer fork -->
-  <section class="fork" aria-label="Choose your path">
-    <a class="fork-tile buyer" href="/marketplace.html">
-      <span class="fork-eye">For institutional buyers</span>
-      <h3 class="fork-h">Explore the marketplace</h3>
-      <p class="fork-desc">See what the trading floor would look like for accredited Canadian investors: order book, asset profiles, pre-trade compliance, custody handoff to Pillar 03. Order entry is non-functional.</p>
-      <span class="fork-arrow">Open the marketplace <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-    </a>
-    <a class="fork-tile issuer" href="/for-issuers.html">
-      <span class="fork-eye">For Canadian issuers</span>
-      <h3 class="fork-h">List your asset</h3>
-      <p class="fork-desc">Tokenize a Canadian real-world asset on a regulated rail. Four-step illustrative path from intake to listing: scoping call, KYB and CCO sign-off, tokenization, listing. Express interest only; no live applications are accepted.</p>
-      <span class="fork-arrow">Start the intake <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-    </a>
-  </section>
-
-  <!-- rwa.xyz-style 10-tile asset class market grid -->
+  <!-- 2 · ILLUSTRATIVE ASSET CATEGORIES (the 10-tile market grid) -->
   <div class="sec-h">
     <h3>Illustrative asset categories on the venue</h3>
     <span class="meta">All values simulated · no real on-platform balance</span>
@@ -274,7 +286,30 @@
 
   </section>
 
-  <!-- Top movers strip · illustrative -->
+  <!-- 3 · ILLUSTRATIVE TOTAL CANADIAN RWA ON PLATFORM (the 1.42B stat) -->
+  <section class="hero-stat" aria-label="Illustrative total tokenized value">
+    <div class="hs-eye">Illustrative · total Canadian RWA on platform</div>
+    <div class="hs-num"><span class="cur">C$</span>1.42B</div>
+    <p class="hs-sub">Simulated total value across all ten asset categories the venue is designed to support. No real on-platform value exists; every number on this site is illustrative.</p>
+  </section>
+
+  <!-- 4 · BUYER / ISSUER FORK (Explore the marketplace · List your asset) -->
+  <section class="fork" aria-label="Choose your path">
+    <a class="fork-tile buyer" href="/marketplace.html">
+      <span class="fork-eye">For institutional buyers</span>
+      <h3 class="fork-h">Explore the marketplace</h3>
+      <p class="fork-desc">See what the trading floor would look like for accredited Canadian investors: order book, asset profiles, pre-trade compliance, custody handoff to Pillar 03. Order entry is non-functional.</p>
+      <span class="fork-arrow">Open the marketplace <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+    </a>
+    <a class="fork-tile issuer" href="/for-issuers.html">
+      <span class="fork-eye">For Canadian issuers</span>
+      <h3 class="fork-h">List your asset</h3>
+      <p class="fork-desc">Tokenize a Canadian real-world asset on a regulated rail. Four-step illustrative path from intake to listing: scoping call, KYB and CCO sign-off, tokenization, listing. Express interest only; no live applications are accepted.</p>
+      <span class="fork-arrow">Start the intake <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+    </a>
+  </section>
+
+  <!-- 5 · Top movers strip · illustrative -->
   <section class="movers" aria-label="Top movers (illustrative)">
     <h4>Top illustrative listings · 24h simulated</h4>
     <div class="movers-grid">
@@ -311,7 +346,7 @@
 
 </main>
 
-<script src="/assets/4ormex-chrome.js?v=18"></script>
-<script src="/assets/4ormex-ui.js?v=18"></script>
+<script src="/assets/4ormex-chrome.js?v=19"></script>
+<script src="/assets/4ormex-ui.js?v=19"></script>
 </body>
 </html>
