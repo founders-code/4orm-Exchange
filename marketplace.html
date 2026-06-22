@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=16" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=17" />
 <style>
 /* ----- Marketplace-specific ----- */
 .market-strip{
@@ -114,64 +114,7 @@
 <!-- ===== Product nav ===== -->
 
 
-<!-- ===== Dashboard ===== -->
-<div class="dash">
-
-  <!-- Sidebar -->
-  <aside class="sidebar" aria-label="Market navigation">
-    <section class="sb-group">
-      <h6>Latest</h6>
-      <ul>
-        <li><a href="/"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Market Overview</a></li>
-        <li><a href="/marketplace.html" class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Asset Screener</a></li>
-        <li><a href="/new-listings.html"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>New Listing Monitor <span class="new">New</span></a></li>
-      </ul>
-    </section>
-    <section class="sb-group">
-      <h6>Asset Classes</h6>
-      <ul>
-        <li><a href="/bank-deposits.html">Tokenized Deposit Receipts</a></li>
-        <li><a href="/stablecoins.html">Stablecoins</a></li>
-        <li><a href="/">Corporate NFTs <span class="new">New</span></a></li>
-        <li><a href="/">Project Milestones <span class="new">New</span></a></li>
-        <li><a href="/">Verified Delivery <span class="new">New</span></a></li>
-        <li><a href="/government-of-canada.html">Government of Canada</a></li>
-        <li><a href="/provincial-sub-sovereign.html">Provincial &amp; Sub-Sovereign</a></li>
-        <li><a href="/private-credit.html">Private Credit</a></li>
-        <li><a href="/real-estate.html">Real Estate</a></li>
-        <li><a href="/commodities.html">Commodities</a></li>
-        <li><a href="/infrastructure.html">Infrastructure</a></li>
-        <li><a href="/equities-cdr.html">Equities (CDR-style)</a></li>
-      </ul>
-    </section>
-    <section class="sb-group">
-      <h6>Network</h6>
-      <ul>
-        <li><a href="/about.html">Canadian Banks</a></li>
-        <li><a href="/about.html">Qualified Custodians</a></li>
-        <li><a href="/about.html">Issuers &amp; Originators</a></li>
-        <li><a href="/about.html">Settlement Operators</a></li>
-      </ul>
-    </section>
-    <section class="sb-group">
-      <h6>Tools</h6>
-      <ul>
-        <li><a href="/data-api.html">Data API <span class="new">New</span></a></li>
-        <li><a href="/data-api.html">Data Catalog</a></li>
-        <li><a href="/data-api.html">Documentation</a></li>
-        <li><a href="/about.html">Research</a></li>
-        <li><a href="/for-issuers.html">Audit &amp; Citations</a></li>
-      </ul>
-    </section>
-    <section class="sb-cta">
-      <h6>For Issuers &amp; Banks</h6>
-      <p>Onboard a Canadian asset to the regulated rail or join the institution corridor.</p>
-      <a class="start-btn" href="/for-issuers.html">Register your asset →</a>
-    </section>
-  </aside>
-
-  <!-- Main pane -->
-  <main class="pane">
+<main class="pane">
 
     <header class="pane-head">
       <div>
@@ -408,7 +351,7 @@ renderAll();
 setInterval(()=>{const drift=(Math.random()-0.5)*(active.px<10?0.0005:0.02); active.px=+(active.px+drift).toFixed(active.px<10?4:2); renderHeader(); renderBook();},4000);
 setInterval(()=>{renderTrades();},7000);
 </script>
-<script src="/assets/4ormex-chrome.js?v=16"></script>
-<script src="/assets/4ormex-ui.js?v=16"></script>
+<script src="/assets/4ormex-chrome.js?v=17"></script>
+<script src="/assets/4ormex-ui.js?v=17"></script>
 </body>
 </html>
