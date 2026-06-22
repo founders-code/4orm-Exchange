@@ -26,7 +26,7 @@
 .tabs button.active{color:var(--brand);border-bottom-color:var(--brand)}
 .tabs button:hover{color:var(--text)}
 </style>
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=11" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=13" />
 </head>
 <body class="app-body">
 
@@ -70,7 +70,7 @@
     </div>
     <div class="pact">
       <button class="switcher">↻ Switch persona</button>
-      <span class="status live" style="padding:6px 12px">● All systems nominal</span>
+      <span class="status illustrative" style="padding:6px 12px">● All systems nominal</span>
     </div>
   </div>
 
@@ -102,16 +102,16 @@
       <table>
         <thead><tr><th>Block</th><th>Time</th><th>Event</th><th>Actor</th><th>Subject</th><th>Hash</th><th>Anchor</th></tr></thead>
         <tbody id="audit-log-body">
-          <tr><td><span class="mono">#18,247,381</span></td><td><span class="mono">14:22:31</span></td><td><span class="nm">Settlement</span><span class="sub">DvP atomic · tACP-VII / QCAD</span></td><td>Bay Street ↔ Alpha</td><td>C$ 5,000,000</td><td><span class="hash">0x7a3f8e21…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
-          <tr><td><span class="mono">#18,247,378</span></td><td><span class="mono">14:22:14</span></td><td><span class="nm">Order placed</span><span class="sub">CLOB buy · tACP-VII</span></td><td>Bay Street</td><td>5,000 @ 1,000.00</td><td><span class="hash">0x9f12c4ab…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
-          <tr><td><span class="mono">#18,247,372</span></td><td><span class="mono">14:21:48</span></td><td><span class="nm">KYC verified</span><span class="sub">Onboarding · reusable credential</span></td><td>Compliance Officer</td><td>Coastal Pension Fund</td><td><span class="hash">0x4b88e092…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
-          <tr><td><span class="mono">#18,247,358</span></td><td><span class="mono">14:21:18</span></td><td><span class="nm">Settlement</span><span class="sub">DvP atomic · tGCB / QCAD</span></td><td>Bay Street ↔ Anonymous LP</td><td>C$ 2,495,250</td><td><span class="hash">0x5e1c2b94…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,381</span></td><td><span class="mono">14:22:31</span></td><td><span class="nm">Settlement</span><span class="sub">delivery-versus-payment · tACP-VII / tCAD-MM (illustrative)</span></td><td>Bay Street ↔ Alpha</td><td>C$ 5,000,000</td><td><span class="hash">0x7a3f8e21…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,378</span></td><td><span class="mono">14:22:14</span></td><td><span class="nm">Order placed</span><span class="sub">CLOB buy · tACP-VII</span></td><td>Bay Street</td><td>5,000 @ 1,000.00</td><td><span class="hash">0x9f12c4ab…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,372</span></td><td><span class="mono">14:21:48</span></td><td><span class="nm">KYC verified</span><span class="sub">Onboarding · reusable credential</span></td><td>Compliance Officer</td><td>Coastal Pension Fund</td><td><span class="hash">0x4b88e092…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,358</span></td><td><span class="mono">14:21:18</span></td><td><span class="nm">Settlement</span><span class="sub">delivery-versus-payment · tGCB / tCAD-MM (illustrative)</span></td><td>Bay Street ↔ Anonymous LP</td><td>C$ 2,495,250</td><td><span class="hash">0x5e1c2b94…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
           <tr><td><span class="mono">#18,247,344</span></td><td><span class="mono">14:21:08</span></td><td><span class="nm">Order blocked</span><span class="sub">Lockup violation · tCRE-CGY1</span></td><td>Northern Capital</td><td>SELL 100 · lockup 8mo remaining</td><td><span class="hash">0xc7a39125…</span></td><td><span class="status danger">⚠ Blocked</span></td></tr>
           <tr><td><span class="mono">#18,247,331</span></td><td><span class="mono">14:20:42</span></td><td><span class="nm">AML alert</span><span class="sub">PEP partial match · review queue</span></td><td>Compliance Engine</td><td>Toronto Holdings Ltd.</td><td><span class="hash">0xe821fa37…</span></td><td><span class="status warn">⚠ Flagged</span></td></tr>
-          <tr><td><span class="mono">#18,247,318</span></td><td><span class="mono">14:19:55</span></td><td><span class="nm">Settlement</span><span class="sub">DvP atomic · tABP28 / RBC tCAD</span></td><td>Cascade Pension ↔ Anonymous LP</td><td>C$ 102,410</td><td><span class="hash">0x9c44a311…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
-          <tr><td><span class="mono">#18,247,302</span></td><td><span class="mono">14:18:42</span></td><td><span class="nm">Settlement</span><span class="sub">DvP atomic · tAUC / QCAD</span></td><td>Mercer Family ↔ Bay Street</td><td>C$ 48,090</td><td><span class="hash">0x2f81d7e4…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
-          <tr><td><span class="mono">#18,247,287</span></td><td><span class="mono">14:17:48</span></td><td><span class="nm">Token mint</span><span class="sub">New offering tranche · tACP-VIII</span></td><td>Alpha Capital</td><td>14,200 tokens · CCO signed</td><td><span class="hash">0x6e30c8a2…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
-          <tr><td><span class="mono">#18,247,261</span></td><td><span class="mono">14:16:32</span></td><td><span class="nm">Distribution</span><span class="sub">Coupon payment · tABP28</span></td><td>Province of Alberta</td><td>C$ 246,400 to 318 holders</td><td><span class="hash">0xb472119c…</span></td><td><span class="status live">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,318</span></td><td><span class="mono">14:19:55</span></td><td><span class="nm">Settlement</span><span class="sub">delivery-versus-payment · tABP28 / Northwind (illustrative) tCAD</span></td><td>Cascade Pension ↔ Anonymous LP</td><td>C$ 102,410</td><td><span class="hash">0x9c44a311…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,302</span></td><td><span class="mono">14:18:42</span></td><td><span class="nm">Settlement</span><span class="sub">delivery-versus-payment · tAUC / tCAD-MM (illustrative)</span></td><td>Mercer Family ↔ Bay Street</td><td>C$ 48,090</td><td><span class="hash">0x2f81d7e4…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,287</span></td><td><span class="mono">14:17:48</span></td><td><span class="nm">Token mint</span><span class="sub">New offering tranche · tACP-VIII</span></td><td>Alpha Capital</td><td>14,200 tokens · CCO signed</td><td><span class="hash">0x6e30c8a2…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
+          <tr><td><span class="mono">#18,247,261</span></td><td><span class="mono">14:16:32</span></td><td><span class="nm">Distribution</span><span class="sub">Coupon payment · tABP28</span></td><td>Western Province (illustrative)</td><td>C$ 246,400 to 318 holders</td><td><span class="hash">0xb472119c…</span></td><td><span class="status illustrative">✓ Anchored</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -164,12 +164,12 @@
       <table>
         <thead><tr><th>User</th><th>Role</th><th>Organization</th><th>Last sign-in</th><th>Permissions</th><th>Status</th><th></th></tr></thead>
         <tbody>
-          <tr><td class="strong"><span class="nm">Chad Johnston</span><span class="sub">chad@kcs-capital.com</span></td><td><span class="status gold">Super admin</span></td><td>4orm Holdings · KCS</td><td><span class="mono">14:18 today</span></td><td>Full access · all entities</td><td><span class="status live">Active</span></td><td><a href="#">Manage →</a></td></tr>
-          <tr><td class="strong"><span class="nm">CCO · TBD</span><span class="sub">compliance@kcs-capital.com</span></td><td><span class="status pending">CCO</span></td><td>4orm OpCo</td><td><span class="mono">09:14 today</span></td><td>Compliance · audit · reports</td><td><span class="status live">Active</span></td><td><a href="#">Manage →</a></td></tr>
-          <tr><td class="strong"><span class="nm">CTO · TBD</span><span class="sub">cto@kcs-capital.com</span></td><td><span class="status pending">CTO</span></td><td>KCS Capital</td><td><span class="mono">11:42 today</span></td><td>Infrastructure · deployments</td><td><span class="status live">Active</span></td><td><a href="#">Manage →</a></td></tr>
-          <tr><td class="strong"><span class="nm">Alpha Capital · Admin</span><span class="sub">admin@alphacapital.ca</span></td><td><span class="status gold">Issuer admin</span></td><td>Alpha Capital</td><td><span class="mono">13:55 today</span></td><td>Manage own offerings · view subscribers</td><td><span class="status live">Active</span></td><td><a href="#">Manage →</a></td></tr>
-          <tr><td class="strong"><span class="nm">Bay Street · Treasurer</span><span class="sub">treasury@baystreet.ca</span></td><td><span class="status pending">Investor</span></td><td>Bay Street Investments</td><td><span class="mono">14:21 today</span></td><td>Portfolio · trading · subscriptions</td><td><span class="status live">Active</span></td><td><a href="#">Manage →</a></td></tr>
-          <tr><td class="strong"><span class="nm">Tetra Trust · Ops</span><span class="sub">ops@tetratrust.ca</span></td><td><span class="status pending">Custodian</span></td><td>Tetra Trust</td><td><span class="mono">12:33 today</span></td><td>Settlement · custody · reconciliation</td><td><span class="status live">Active</span></td><td><a href="#">Manage →</a></td></tr>
+          <tr><td class="strong"><span class="nm">Super admin (illustrative)</span><span class="sub">compliance@kcs-capital.com</span></td><td><span class="status gold">Super admin</span></td><td>4orm Finance Holdings Inc.</td><td><span class="mono">illustrative</span></td><td>Illustrative role · 4orm Finance Holdings is the parent</td><td><span class="status illustrative">Illustrative</span></td><td><a href="#" onclick="return false">Illustrative →</a></td></tr>
+          <tr><td class="strong"><span class="nm">CCO · TBD (illustrative)</span><span class="sub">compliance@kcs-capital.com</span></td><td><span class="status pending">CCO</span></td><td>4ormEx OpCo (planned CIRO member firm)</td><td><span class="mono">illustrative</span></td><td>Illustrative role · CCO sits at the exchange operator, not the holdco</td><td><span class="status illustrative">Illustrative</span></td><td><a href="#" onclick="return false">Illustrative →</a></td></tr>
+          <tr><td class="strong"><span class="nm">CTO · TBD (illustrative)</span><span class="sub">compliance@kcs-capital.com</span></td><td><span class="status pending">CTO</span></td><td>4ormEx OpCo</td><td><span class="mono">illustrative</span></td><td>Illustrative role · CTO sits at the exchange operator; technology built by KCS Capital (independent dev firm) under contract</td><td><span class="status illustrative">Illustrative</span></td><td><a href="#" onclick="return false">Illustrative →</a></td></tr>
+          <tr><td class="strong"><span class="nm">Alpha Capital · Admin (illustrative)</span><span class="sub">illustrative</span></td><td><span class="status gold">Issuer admin</span></td><td>Alpha Capital (illustrative)</td><td><span class="mono">illustrative</span></td><td>Illustrative · manage own offerings · view subscribers</td><td><span class="status illustrative">Illustrative</span></td><td><a href="#" onclick="return false">Illustrative →</a></td></tr>
+          <tr><td class="strong"><span class="nm">Bay Street · Treasurer (illustrative)</span><span class="sub">illustrative</span></td><td><span class="status pending">Investor</span></td><td>Bay Street Investments (illustrative)</td><td><span class="mono">illustrative</span></td><td>Illustrative · portfolio · trading · subscriptions</td><td><span class="status illustrative">Illustrative</span></td><td><a href="#" onclick="return false">Illustrative →</a></td></tr>
+          <tr><td class="strong"><span class="nm">Maple Custody Trust · Ops (illustrative)</span><span class="sub">illustrative</span></td><td><span class="status pending">Custodian</span></td><td>4orm Trust Co (sibling of 4ormEx)</td><td><span class="mono">illustrative</span></td><td>Illustrative · custody · settlement · operated by sibling Trust Co at the platform level</td><td><span class="status illustrative">Illustrative</span></td><td><a href="#" onclick="return false">Illustrative →</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -179,7 +179,7 @@
 <footer class="footer">
   <div class="wrap">
     <div class="grid">
-      <div class="brand-blk"><h5>4ormEx · The 4orm Exchange</h5><p>The institutional trading layer of 4orm Finance. Sandbox preview · v0.1.</p></div>
+      <div class="brand-blk"><h5>4ormEx · Pillar 02 of 4orm Finance</h5><p>Illustrative trading venue (Pillar 02 of six). Settlement, custody, reporting and supervision are operated at the 4orm Finance Holdings platform level. Design preview · v0.1.</p></div>
       <div><h6>Exchange</h6><ul><li><a href="./">Overview</a></li><li><a href="/marketplace.html">Marketplace</a></li><li><a href="/issuer.html">Issuer portal</a></li><li><a href="/investor.html">Investor portal</a></li></ul></div>
       <div><h6>Operations</h6><ul><li><a href="/compliance.html">Compliance</a></li><li><a href="/settlement.html">Settlement</a></li><li><a href="/admin.html">Admin &amp; audit</a></li></ul></div>
       <div><h6>4orm Finance</h6><ul><li><a href="../">Main site</a></li><li></li><li><a href="https://4ormfinance.com/#waitlist">Request access</a></li></ul></div>
@@ -223,6 +223,6 @@
 })();
 </script>
 
-<script src="/assets/4ormex-ui.js?v=11"></script>
+<script src="/assets/4ormex-ui.js?v=13"></script>
 </body>
 </html>

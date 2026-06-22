@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>4ormEx — Canadian Market Overview · Institutional RWA Exchange</title>
-<meta name="description" content="4ormEx is Canada's institutional rail for tokenized real-world assets: tokenized deposits, government debt, private credit, real estate and commodities — settled atomically against W-CAD and qualified Canadian custody. All amounts in CAD." />
+<meta name="description" content="4ormEx · design preview of the trading venue (Pillar 02 of six) inside the planned 4orm Finance regulated control plane. Not registered with any regulator. No applications filed. All counterparties, prices, balances and identifiers shown are simulated. Not an offer or solicitation." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,9 +47,26 @@
 
   --sidebar-w:248px;
   --topbar-h:64px;
+  --banner-h:42px;
   --herotape-h:auto;
   --maxw:1480px;
 }
+
+/* Persistent demonstration banner */
+.demo-banner{
+  position:sticky;top:0;z-index:90;
+  background:linear-gradient(180deg,#15233F 0%,#0B1220 100%);
+  border-bottom:1px solid #1F3CA8;
+  color:#fff;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;
+  padding:8px 22px;display:flex;align-items:center;justify-content:center;gap:10px;
+  text-align:center;line-height:1.45;min-height:var(--banner-h);
+}
+.demo-banner strong{color:#FFD9A8;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+.demo-banner .dot{display:inline-flex;flex:none;width:7px;height:7px;border-radius:50%;background:#FFD9A8;box-shadow:0 0 0 3px rgba(255,217,168,.18)}
+body:has(.demo-banner) .topbar{top:var(--banner-h)}
+body:has(.demo-banner) .productnav{top:calc(var(--banner-h) + var(--topbar-h))}
+body:has(.demo-banner) .sidebar{top:calc(var(--banner-h) + var(--topbar-h) + 46px);max-height:calc(100vh - var(--banner-h) - var(--topbar-h) - 46px)}
+@media (max-width:780px){.demo-banner{font-size:.66rem;padding:7px 16px;text-align:left}}
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -492,7 +509,7 @@ a:hover{color:var(--brand-700)}
 
 ::selection{background:var(--brand);color:#fff}
 </style>
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=11" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=13" />
 </head>
 <body>
 
@@ -542,32 +559,32 @@ a:hover{color:var(--brand-700)}
     <div class="herostrip-msg">
       <div class="reg-line">
         <span class="dot"></span>
-        <span>The Canadian Settlement Network</span>
+        <span>Design preview · Pillar 02 of six</span>
         <span class="sep">·</span>
-        <span>CIRO · CSA · OSFI · FINTRAC · Bank of Canada</span>
+        <span>Designed to operate within the CIRO / CSA / OSFI / FINTRAC perimeter · not registered with any of them</span>
       </div>
-      <h1>The institutional rail for <span class="accent">tokenized Canadian assets.</span></h1>
+      <h1>The trading venue inside the <span class="accent">4orm regulated control plane.</span></h1>
       <p class="hero-sub">
-        Settlement, custody and compliance for tokenized deposits, government and provincial debt, private credit, real estate, infrastructure, commodities — and the process and identity layers underneath them. One regulated corridor, every Canadian bank.
+        4ormEx is the planned permissioned trading venue (Pillar 02 of six) of 4orm Finance Holdings Inc. The canonical ledger and the other five pillars — Issuance, Settlement, Custody, Reporting and Supervision — operate at the platform level. This site is an illustrative design preview. No live trading occurs, no orders are accepted, no applications have been filed.
       </p>
     </div>
 
     <aside class="herostrip-stats" aria-label="At a glance">
-      <span class="stats-eye">At a glance · 24h</span>
+      <span class="stats-eye">Illustrative · simulated</span>
       <div class="hs-stat">
-        <span class="hs-label">Tokenized value · distributed</span>
+        <span class="hs-label">Illustrative tokenized value</span>
         <span class="hs-v"><span class="cur">C$</span>852.6M</span>
-        <span class="hs-d">▲ 3.24% <span class="ago">· 30d</span></span>
+        <span class="hs-d">simulated · 30d</span>
       </div>
       <div class="hs-stat">
-        <span class="hs-label">Bank corridor</span>
-        <span class="hs-v">3<span class="frac"> / 7 Big-7</span></span>
-        <span class="hs-d">+ 1 <span class="ago">· this quarter</span></span>
+        <span class="hs-label">Illustrative institution corridor</span>
+        <span class="hs-v">3<span class="frac"> / 7 illustrative seven</span></span>
+        <span class="hs-d">simulated</span>
       </div>
       <div class="hs-stat">
-        <span class="hs-label">Issuers on the rail</span>
+        <span class="hs-label">Illustrative issuers shown</span>
         <span class="hs-v">23</span>
-        <span class="hs-d">▲ 14 <span class="ago">· 30d</span></span>
+        <span class="hs-d">simulated · 30d</span>
       </div>
     </aside>
 
@@ -585,16 +602,14 @@ a:hover{color:var(--brand-700)}
     <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
     <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
     <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
-    <span class="ti"><span class="t">QCAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tMMF-RBC</span><span class="p">C$ 10.0021</span><span class="c u">▲ 0.01%</span></span>
+    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tMMF-Northwind (illustrative)</span><span class="p">C$ 10.0021</span><span class="c u">▲ 0.01%</span></span>
     <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
     <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
     <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
     <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
-    <span class="ti"><span class="t">tRBCD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tTDD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">W-CAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">RVNSI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tPGV-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
     <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
     <span class="ti"><span class="t">tPMS-CGY40</span><span class="p">C$ 2.10M</span><span class="c u">▲ paid</span></span>
     <!-- dup for loop -->
@@ -604,16 +619,14 @@ a:hover{color:var(--brand-700)}
     <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
     <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
     <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
-    <span class="ti"><span class="t">QCAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tMMF-RBC</span><span class="p">C$ 10.0021</span><span class="c u">▲ 0.01%</span></span>
+    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tMMF-Northwind (illustrative)</span><span class="p">C$ 10.0021</span><span class="c u">▲ 0.01%</span></span>
     <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
     <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
     <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
     <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
-    <span class="ti"><span class="t">tRBCD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tTDD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">W-CAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">RVNSI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tPGV-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
     <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
     <span class="ti"><span class="t">tPMS-CGY40</span><span class="p">C$ 2.10M</span><span class="c u">▲ paid</span></span>
   </div>
@@ -655,7 +668,7 @@ a:hover{color:var(--brand-700)}
       <ul>
         <li><a href="/bank-deposits.html">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V3l9 4 9-4v18"/><path d="M3 12h18M3 16.5h18"/></svg>
-          Tokenized Bank Deposits
+          Tokenized Deposit Receipts
         </a></li>
         <li><a href="/stablecoins.html">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c0-3 4-3 4-6 0-1.5-1-2-2-2M12 16v1"/></svg>
@@ -754,7 +767,7 @@ a:hover{color:var(--brand-700)}
 
     <section class="sb-cta">
       <h6>For Issuers &amp; Banks</h6>
-      <p>Onboard a Canadian asset to the regulated rail or join the bank corridor.</p>
+      <p>Onboard a Canadian asset to the regulated rail or join the institution corridor.</p>
       <a class="start-btn" href="/tokenize.html">Register your asset →</a>
     </section>
 
@@ -771,10 +784,18 @@ a:hover{color:var(--brand-700)}
         </p>
       </div>
       <div class="pane-meta">
-        <span><span class="dot"></span> Sandbox · Live data</span>
+        <span><span class="dot"></span> Demonstration · simulated data</span>
         <span>Updated 14:22 ET</span>
       </div>
     </header>
+
+  <section class="card" style="border-left:3px solid #E7C76C;background:#FDFAF1;margin-bottom:24px;padding:22px 24px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5A0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><h4 style="margin:0;color:#7A5A0A;font-size:1rem">What 4ormEx is, and is not</h4></div>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0 0 10px"><strong>4ormEx is a design preview of a planned permissioned trading venue (Pillar 02) inside the future 4orm Finance regulated control plane.</strong> Today, 4ormEx is software. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed.</p>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0 0 10px"><strong>Operating a marketplace for securities is a registrable activity in Canada</strong> under National Instruments 21-101, 23-101, 24-102 and 31-103. 4ormEx intends to seek marketplace recognition and dealer registration before operating any live trading. Until that registration exists, no order, custody, deposit, or payment is being offered, accepted, or solicited through this site.</p>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0"><strong>Every figure, identifier, price, balance, hash, and counterparty shown here is simulated, fictional, or illustrative.</strong> Where real institutions are named, they are external precedents only and are not partners, counterparties, or integrations of 4ormEx. Nothing on this site is an offer to sell or solicitation to buy securities, crypto assets, deposits, or any financial instrument, and nothing on this site is financial, legal, tax, or investment advice. Questions: <a href="mailto:compliance@kcs-capital.com" style="color:#7A5A0A;font-weight:700">compliance@kcs-capital.com</a>.</p>
+  </section>
+
 
     <!-- KPI strip -->
     <section class="kpis" aria-label="Headline metrics">
@@ -794,7 +815,7 @@ a:hover{color:var(--brand-700)}
         <div class="delta up">▲ 14 <span class="ago">from 30d ago</span></div>
       </div>
       <div class="kpi">
-        <div class="label">QCAD &amp; W-CAD in Circulation</div>
+        <div class="label">tCAD-MM (illustrative) in Circulation</div>
         <div class="v"><span class="cur">C$</span>168.4M</div>
         <div class="delta up">▲ 2.12% <span class="ago">from 30d ago</span></div>
       </div>
@@ -833,27 +854,27 @@ a:hover{color:var(--brand-700)}
       </div>
     </section>
 
-    <!-- Reg row -->
-    <section class="reg-row" aria-label="Regulatory anchors">
+    <!-- Reg row · what the platform is DESIGNED to operate within (not what it has filed) -->
+    <section class="reg-row" aria-label="Regulatory frameworks 4ormEx is designed to operate within">
       <div class="reg">
-        <span class="label">Regulator stack</span>
-        <span class="v">CIRO · CSA</span>
-        <span class="desc">Joint Notice 21-329; Notice 21-332 pre-registration undertakings.</span>
+        <span class="label">Designed to operate within</span>
+        <span class="v">CIRO / CSA perimeter</span>
+        <span class="desc">References to CSA Notice 21-332 and CIRO/CSA Joint Notice 21-329 for context only. 4ormEx is <strong>not registered</strong> and has filed no PRU or application.</span>
       </div>
       <div class="reg">
-        <span class="label">Custody framework</span>
+        <span class="label">Custody framework reference</span>
         <span class="v">CIRO Tier 1–4 <span class="sub">· Feb 2026</span></span>
-        <span class="desc">4-tier digital asset custodian framework; capital min. C$10M–$150M.</span>
+        <span class="desc">Public framework cited for context. Custody is operated by the sibling 4orm Trust Co at the platform level, not by 4ormEx.</span>
       </div>
       <div class="reg">
-        <span class="label">Bank capital</span>
+        <span class="label">Capital framework reference</span>
         <span class="v">OSFI Group 2 <span class="sub">· 5% Tier 1</span></span>
-        <span class="desc">Raised from 1% Oct 2025; effective Nov 2025 / Jan 2026.</span>
+        <span class="desc">Public OSFI framework cited for context. 4ormEx is not a federally regulated financial institution.</span>
       </div>
       <div class="reg">
         <span class="label">Settlement asset</span>
-        <span class="v">W-CAD ready</span>
-        <span class="desc">Project Samara · C$100M EDC tokenized bond settled March 2025.</span>
+        <span class="v">Designed for finality</span>
+        <span class="desc">Project Samara (external precedent · not 4ormEx) · C$100M Federal Crown Export Agency (illustrative) tokenized bond settled 2026.</span>
       </div>
     </section>
 
@@ -872,7 +893,7 @@ a:hover{color:var(--brand-700)}
             </div>
           </div>
           <ul class="donut-legend">
-            <li><span class="sw" style="background:#2E6BF2"></span><span class="n">Tokenized Bank Deposits</span><span class="vv">C$ 324.0M</span><span class="pct">38.0%</span></li>
+            <li><span class="sw" style="background:#2E6BF2"></span><span class="n">Tokenized Deposit Receipts</span><span class="vv">C$ 324.0M</span><span class="pct">38.0%</span></li>
             <li><span class="sw" style="background:#E7C76C"></span><span class="n">Private Credit</span><span class="vv">C$ 187.6M</span><span class="pct">22.0%</span></li>
             <li><span class="sw" style="background:#1B4ABE"></span><span class="n">Government of Canada</span><span class="vv">C$ 127.9M</span><span class="pct">15.0%</span></li>
             <li><span class="sw" style="background:#7B4DBE"></span><span class="n">Provincial &amp; Sub-Sov.</span><span class="vv">C$ 76.7M</span><span class="pct">9.0%</span></li>
@@ -891,13 +912,13 @@ a:hover{color:var(--brand-700)}
           </thead>
           <tbody>
             <tr>
-              <td><span class="ticker">tRBCD</span> <span class="name">· RBC Tokenized Deposit</span></td>
+              <td><span class="ticker">tNWD-R</span> <span class="name">· Northwind (illustrative) Tokenized Deposit</span></td>
               <td><span class="pill b">Bank deposit</span></td>
               <td class="r price">C$ 54.0M</td>
               <td class="r">May 22, 2026</td>
             </tr>
             <tr>
-              <td><span class="ticker">tEDC25</span> <span class="name">· Export Development Canada Bond 2025</span></td>
+              <td><span class="ticker">tEDC25</span> <span class="name">· Federal Crown Export Agency (illustrative) Bond 2025</span></td>
               <td><span class="pill v">Sovereign agency</span></td>
               <td class="r price">C$ 100.0M</td>
               <td class="r">May 19, 2026</td>
@@ -909,7 +930,7 @@ a:hover{color:var(--brand-700)}
               <td class="r">May 14, 2026</td>
             </tr>
             <tr>
-              <td><span class="ticker">RVNSI</span> <span class="name">· Raven Silica · per-ton delivery</span></td>
+              <td><span class="ticker">BSMI</span> <span class="name">· Boreal Silica Mining (illustrative) · per-ton delivery</span></td>
               <td><span class="pill s">Verified delivery</span></td>
               <td class="r price">C$ 6.2M</td>
               <td class="r">May 12, 2026</td>
@@ -939,7 +960,7 @@ a:hover{color:var(--brand-700)}
               <td class="r">May 02, 2026</td>
             </tr>
             <tr>
-              <td><span class="ticker">tHQI32</span> <span class="name">· Hydro-Québec Infrastructure 2032</span></td>
+              <td><span class="ticker">tHQI32</span> <span class="name">· Eastern Hydro Crown Corp (illustrative) Infrastructure 2032</span></td>
               <td><span class="pill b">Infrastructure</span></td>
               <td class="r price">C$ 25.6M</td>
               <td class="r">Apr 28, 2026</td>
@@ -959,46 +980,46 @@ a:hover{color:var(--brand-700)}
           </thead>
           <tbody>
             <tr>
-              <td><span class="name">RBC Royal Bank</span></td>
-              <td><span class="ticker">tRBCD</span></td>
+              <td><span class="name">Northwind Mutual (illustrative)</span></td>
+              <td><span class="ticker">tNWD-R</span></td>
               <td class="r price">C$ 54.0M</td>
-              <td class="r"><span class="stat live"><span class="d"></span>Live</span></td>
+              <td class="r"><span class="stat illustrative"><span class="d"></span>Illustrative</span></td>
             </tr>
             <tr>
-              <td><span class="name">TD Bank Group</span></td>
-              <td><span class="ticker">tTDD</span></td>
+              <td><span class="name">Pinegrove Group (illustrative)</span></td>
+              <td><span class="ticker">tPGV-R</span></td>
               <td class="r price">C$ 41.2M</td>
-              <td class="r"><span class="stat live"><span class="d"></span>Live</span></td>
+              <td class="r"><span class="stat illustrative"><span class="d"></span>Illustrative</span></td>
             </tr>
             <tr>
-              <td><span class="name">BMO</span></td>
-              <td><span class="ticker">tBMOD</span></td>
+              <td><span class="name">Cascade (illustrative)</span></td>
+              <td><span class="ticker">tCSC-R</span></td>
               <td class="r price">C$ 18.6M</td>
-              <td class="r"><span class="stat pilot"><span class="d"></span>Pilot</span></td>
+              <td class="r"><span class="stat illustrative"><span class="d"></span>Illustrative</span></td>
             </tr>
             <tr>
-              <td><span class="name">CIBC</span></td>
-              <td><span class="ticker">tCIBD</span></td>
+              <td><span class="name">Granite (illustrative)</span></td>
+              <td><span class="ticker">tGNT-R</span></td>
               <td class="r price">—</td>
-              <td class="r"><span class="stat coming"><span class="d"></span>Onboarding</span></td>
+              <td class="r"><span class="stat illustrative"><span class="d"></span>Illustrative</span></td>
             </tr>
             <tr>
-              <td><span class="name">Scotiabank</span></td>
-              <td><span class="ticker">tBNSD</span></td>
+              <td><span class="name">Boreal Cooperative (illustrative)</span></td>
+              <td><span class="ticker">tBRL-R</span></td>
               <td class="r price">—</td>
-              <td class="r"><span class="stat coming"><span class="d"></span>Q3 2026</span></td>
+              <td class="r"><span class="stat illustrative"><span class="d"></span>Q3 2026</span></td>
             </tr>
             <tr>
-              <td><span class="name">National Bank</span></td>
-              <td><span class="ticker">tNAD</span></td>
+              <td><span class="name">Saint-Laurent Mutual (illustrative)</span></td>
+              <td><span class="ticker">tSLM-R</span></td>
               <td class="r price">—</td>
-              <td class="r"><span class="stat coming"><span class="d"></span>Q3 2026</span></td>
+              <td class="r"><span class="stat illustrative"><span class="d"></span>Q3 2026</span></td>
             </tr>
             <tr>
-              <td><span class="name">Desjardins</span></td>
-              <td><span class="ticker">tDSJD</span></td>
+              <td><span class="name">Voyageur Cooperative (illustrative)</span></td>
+              <td><span class="ticker">tVYG-R</span></td>
               <td class="r price">—</td>
-              <td class="r"><span class="stat coming"><span class="d"></span>Q4 2026</span></td>
+              <td class="r"><span class="stat illustrative"><span class="d"></span>Q4 2026</span></td>
             </tr>
           </tbody>
         </table>
@@ -1012,49 +1033,49 @@ a:hover{color:var(--brand-700)}
           </thead>
           <tbody>
             <tr>
-              <td><span class="name">Export Development Canada</span></td>
+              <td><span class="name">Federal Crown Export Agency (illustrative)</span></td>
               <td><span class="pill v">Sov. agency</span></td>
               <td><div class="minibar"><span style="width:62%"></span></div></td>
               <td class="r price">C$ 100.0M</td>
             </tr>
             <tr>
-              <td><span class="name">RBC Royal Bank</span></td>
+              <td><span class="name">Northwind Mutual (illustrative)</span></td>
               <td><span class="pill b">Bank</span></td>
               <td><div class="minibar"><span style="width:34%"></span></div></td>
               <td class="r price">C$ 54.0M</td>
             </tr>
             <tr>
-              <td><span class="name">TD Bank Group</span></td>
+              <td><span class="name">Pinegrove Group (illustrative)</span></td>
               <td><span class="pill b">Bank</span></td>
               <td><div class="minibar"><span style="width:26%"></span></div></td>
               <td class="r price">C$ 41.2M</td>
             </tr>
             <tr>
-              <td><span class="name">Province of Alberta</span></td>
+              <td><span class="name">Western Province (illustrative)</span></td>
               <td><span class="pill v">Sub-sov.</span></td>
               <td><div class="minibar gold"><span style="width:22%"></span></div></td>
               <td class="r price">C$ 35.4M</td>
             </tr>
             <tr>
-              <td><span class="name">Pineapple Financial</span></td>
+              <td><span class="name">Crestview Mortgage (illustrative)</span></td>
               <td><span class="pill g">Pvt credit</span></td>
               <td><div class="minibar gold"><span style="width:18%"></span></div></td>
               <td class="r price">C$ 28.9M</td>
             </tr>
             <tr>
-              <td><span class="name">Ocree Capital</span></td>
+              <td><span class="name">RealCo Capital (illustrative)</span></td>
               <td><span class="pill g">Real est.</span></td>
               <td><div class="minibar green"><span style="width:14%"></span></div></td>
               <td class="r price">C$ 22.4M</td>
             </tr>
             <tr>
-              <td><span class="name">Hydro-Québec</span></td>
+              <td><span class="name">Eastern Hydro Crown Corp (illustrative)</span></td>
               <td><span class="pill b">Infra</span></td>
               <td><div class="minibar"><span style="width:16%"></span></div></td>
               <td class="r price">C$ 25.6M</td>
             </tr>
             <tr>
-              <td><span class="name">AuCan Gold</span></td>
+              <td><span class="name">Klondike Gold (illustrative) Gold</span></td>
               <td><span class="pill g">Commodity</span></td>
               <td><div class="minibar gold"><span style="width:11%"></span></div></td>
               <td class="r price">C$ 17.2M</td>
@@ -1095,25 +1116,25 @@ a:hover{color:var(--brand-700)}
           </thead>
           <tbody>
             <tr>
-              <td><span class="name">Tetra Trust</span></td>
+              <td><span class="name">Maple Custody Trust (illustrative)</span></td>
               <td><span class="pill s">Tier 1</span></td>
               <td><div class="minibar"><span style="width:64%"></span></div></td>
               <td class="r price">52.1%</td>
             </tr>
             <tr>
-              <td><span class="name">Balance Trust</span></td>
+              <td><span class="name">Cascade Custody (illustrative)</span></td>
               <td><span class="pill s">Tier 2</span></td>
               <td><div class="minibar"><span style="width:32%"></span></div></td>
               <td class="r price">26.0%</td>
             </tr>
             <tr>
-              <td><span class="name">Brane Trust</span></td>
+              <td><span class="name">Arctic Custody (illustrative)</span></td>
               <td><span class="pill s">Tier 2</span></td>
               <td><div class="minibar"><span style="width:21%"></span></div></td>
               <td class="r price">17.4%</td>
             </tr>
             <tr>
-              <td><span class="name">CIBC Mellon (pilot)</span></td>
+              <td><span class="name">Northern Securities Custody (illustrative) (pilot)</span></td>
               <td><span class="pill v">Tier 1 · pending</span></td>
               <td><div class="minibar gold"><span style="width:6%"></span></div></td>
               <td class="r price">4.5%</td>
@@ -1134,7 +1155,7 @@ a:hover{color:var(--brand-700)}
     <div class="grid">
       <div class="brand-blk">
         <h5>4ormEx · The 4orm Exchange</h5>
-        <p>The institutional settlement and trading layer of 4orm Finance. Canadian-regulated rail for tokenized real-world assets. Sandbox preview · v0.1.</p>
+        <p>The trading venue (Pillar 02) of 4orm Finance. Canadian-regulated rail for tokenized real-world assets. Sandbox preview · v0.1.</p>
       </div>
       <div>
         <h6>Exchange</h6>
@@ -1160,7 +1181,7 @@ a:hover{color:var(--brand-700)}
           <li><a href="https://4ormfinance.com">Main site</a></li>
           <li><a href="https://4ormfinance.com/regulatory.html">Regulatory posture</a></li>
           <li><a href="https://4ormfinance.com/#waitlist">Request access</a></li>
-          <li><a href="mailto:founders@kcs-capital.com">founders@kcs-capital.com</a></li>
+          <li><a href="mailto:compliance@kcs-capital.com">compliance@kcs-capital.com</a></li>
         </ul>
       </div>
     </div>
@@ -1185,7 +1206,7 @@ a:hover{color:var(--brand-700)}
 
   // Asset-class growth curves (C$ M, Distributed baseline)
   const CLASSES = [
-    { label:'Tokenized Bank Deposits', color:'#2E6BF2', bg:'rgba(46,107,242,0.78)',  d:[0,0,0,0,0,2,4,8,14,22,32,46,62,84,108,138,170,204,238,268,294,310,318,324] },
+    { label:'Tokenized Deposit Receipts', color:'#2E6BF2', bg:'rgba(46,107,242,0.78)',  d:[0,0,0,0,0,2,4,8,14,22,32,46,62,84,108,138,170,204,238,268,294,310,318,324] },
     { label:'Private Credit',          color:'#E7C76C', bg:'rgba(231,199,108,0.78)', d:[12,16,22,28,34,42,52,62,72,84,96,108,118,128,138,148,158,166,172,178,182,184,186,187.6] },
     { label:'Government of Canada',    color:'#1B4ABE', bg:'rgba(27,74,190,0.78)',   d:[0,0,0,0,0,0,0,0,0,0,0,12,18,24,32,42,54,68,82,96,108,118,124,127.9] },
     { label:'Provincial / Sub-Sov.',   color:'#7B4DBE', bg:'rgba(123,77,190,0.78)',  d:[4,6,8,12,16,22,28,32,36,42,48,52,56,60,62,64,66,68,70,72,74,75,76,76.7] },
@@ -1332,7 +1353,7 @@ a:hover{color:var(--brand-700)}
   new Chart(ctx,{
     type:'doughnut',
     data:{
-      labels:['Tokenized Bank Deposits','Private Credit','Government of Canada','Provincial & Sub-Sov.','Real Estate','Commodities','Infrastructure'],
+      labels:['Tokenized Deposit Receipts','Private Credit','Government of Canada','Provincial & Sub-Sov.','Real Estate','Commodities','Infrastructure'],
       datasets:[{
         data:[324.0, 187.6, 127.9, 76.7, 68.2, 42.6, 25.6],
         backgroundColor:['#2E6BF2','#E7C76C','#1B4ABE','#7B4DBE','#0E8A5F','#C49A3A','#1B7BB5'],
@@ -1354,6 +1375,6 @@ a:hover{color:var(--brand-700)}
 })();
 </script>
 
-<script src="/assets/4ormex-ui.js?v=11"></script>
+<script src="/assets/4ormex-ui.js?v=13"></script>
 </body>
 </html>

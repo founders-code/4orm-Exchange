@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Settlement Ledger — 4ormEx · Tetra Trust</title>
-<meta name="description" content="4ormEx Settlement Ledger — T+0 atomic DvP settlements, settlement corridors, immutable audit trail. Persona: Tetra Trust." />
+<title>Settlement View — 4orm Finance canonical ledger (illustrative)</title>
+<meta name="description" content="Illustrative settlement view of the 4orm Finance platform canonical ledger. Settlement (Pillar 03) and custody (Pillar 04) are operated at the platform level by sibling entities of 4ormEx OpCo. Simulated data only." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -28,11 +28,11 @@
 .corridor .end.r{text-align:right}
 .corridor .arr{font-family:var(--font-mono);font-size:.78rem;color:var(--brand);font-weight:700;display:flex;align-items:center;gap:8px}
 </style>
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=11" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=13" />
 </head>
 <body class="app-body">
 
-<div class="sbx-banner"><b>4ormEx · Sandbox preview</b> · Settlement Ledger · Persona: Tetra Trust · Simulated data only</div>
+<div class="sbx-banner"><b>4ormEx · Design preview</b> · Settlement view of the platform canonical ledger · Pillar 03 (Settlement) and Pillar 04 (Custody) are operated at the 4orm Finance Holdings platform level, not by 4ormEx · Simulated data only</div>
 
 <header class="nav">
   <div class="nav-inner">
@@ -64,15 +64,23 @@
 
 <div class="app">
   <div class="phead">
-    <div class="pavatar gold">TT</div>
+    <div class="pavatar gold">CL</div>
     <div class="pinfo">
-      <div class="role">08 · Settlement Ledger</div>
-      <h2>Tetra Trust</h2>
-      <div class="ctx">Qualified digital asset custodian · Calgary, AB · Settlement counterparty · CIRO Custody Framework Tier-2</div>
+      <div class="role">Settlement view · platform canonical ledger</div>
+      <h2>4orm Finance · canonical ledger (illustrative)</h2>
+      <div class="ctx">Settlement (Pillar 03) and qualified custody (Pillar 04) are operated by sibling entities of 4ormEx inside 4orm Finance Holdings Inc. 4ormEx is the trading venue (Pillar 02) only. Custodian persona shown below is illustrative.</div>
     </div>
+
+  <section class="card" style="border-left:3px solid #E7C76C;background:#FDFAF1;margin-bottom:24px;padding:22px 24px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5A0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><h4 style="margin:0;color:#7A5A0A;font-size:1rem">What 4ormEx is, and is not</h4></div>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0 0 10px"><strong>4ormEx is a design preview of a planned permissioned trading venue (Pillar 02) inside the future 4orm Finance regulated control plane.</strong> Today, 4ormEx is software. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed.</p>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0 0 10px"><strong>Operating a marketplace for securities is a registrable activity in Canada</strong> under National Instruments 21-101, 23-101, 24-102 and 31-103. 4ormEx intends to seek marketplace recognition and dealer registration before operating any live trading. Until that registration exists, no order, custody, deposit, or payment is being offered, accepted, or solicited through this site.</p>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0"><strong>Every figure, identifier, price, balance, hash, and counterparty shown here is simulated, fictional, or illustrative.</strong> Where real institutions are named, they are external precedents only and are not partners, counterparties, or integrations of 4ormEx. Nothing on this site is an offer to sell or solicitation to buy securities, crypto assets, deposits, or any financial instrument, and nothing on this site is financial, legal, tax, or investment advice. Questions: <a href="mailto:compliance@kcs-capital.com" style="color:#7A5A0A;font-weight:700">compliance@kcs-capital.com</a>.</p>
+  </section>
+
     <div class="pact">
       <button class="switcher">↻ Switch persona</button>
-      <span class="status live" style="padding:6px 12px">● Network online · 4orm-EVM</span>
+      <span class="status illustrative" style="padding:6px 12px">● Illustrative network status · simulated environment</span>
     </div>
   </div>
 
@@ -85,21 +93,21 @@
 
   <!-- DvP visualization for the most recent settlement -->
   <div class="panel" style="margin-bottom:16px">
-    <div class="panel-h"><h3>Latest atomic DvP · <span class="mono" style="color:var(--brand)">0x7a3f8e21…</span></h3><span class="ph-meta">Settled 14:22:31 EST · 11.7s</span></div>
+    <div class="panel-h"><h3>Latest delivery-versus-payment · <span class="mono" style="color:var(--brand)">0x7a3f8e21…</span></h3><span class="ph-meta">Illustrative settlement timing · simulated</span></div>
     <div class="panel-b">
       <div class="dvp">
         <div class="leg cash">
-          <div class="t">Cash leg · QCAD</div>
+          <div class="t">Cash leg · tCAD-MM (illustrative)</div>
           <div class="from"><strong>Bay Street Investments</strong></div>
           <div class="amt">C$ 5,000,000.00</div>
-          <div class="to">→ Alpha Capital · Tetra Trust</div>
+          <div class="to">→ Alpha Capital · Maple Custody Trust (illustrative)</div>
         </div>
         <div class="swap">⇄</div>
         <div class="leg asset">
           <div class="t">Asset leg · tACP-VII</div>
           <div class="from"><strong>Alpha Capital</strong></div>
           <div class="amt">5,000 tokens</div>
-          <div class="to">→ Bay Street · Tetra Trust</div>
+          <div class="to">→ Bay Street · Maple Custody Trust (illustrative)</div>
         </div>
       </div>
 
@@ -108,29 +116,29 @@
         <div class="step"><span class="sn">✓</span><div class="body"><h5>Order matched</h5><p>CLOB match · price discovery · limit order filled</p></div><div class="meta">+ 0.3s</div></div>
         <div class="step"><span class="sn">✓</span><div class="body"><h5>Settlement lock</h5><p>Both legs locked in escrow on 4orm-EVM</p></div><div class="meta">+ 2.1s</div></div>
         <div class="step"><span class="sn">✓</span><div class="body"><h5>Atomic swap</h5><p>DvP execution · cash and asset transferred simultaneously</p></div><div class="meta">+ 9.8s</div></div>
-        <div class="step"><span class="sn">✓</span><div class="body"><h5>Custody update</h5><p>Tetra Trust balances updated · audit record anchored</p></div><div class="meta">+ 11.4s</div></div>
+        <div class="step"><span class="sn">✓</span><div class="body"><h5>Custody update</h5><p>Maple Custody Trust (illustrative) balances updated · audit record anchored</p></div><div class="meta">+ 11.4s</div></div>
         <div class="step"><span class="sn">✓</span><div class="body"><h5>Compliance attestation</h5><p>Per-step receipt issued · LCTR not triggered</p></div><div class="meta">+ 11.7s</div></div>
       </div>
 
-      <div class="cmp-strip" style="margin-top:14px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>Atomic DvP completed in 11.7s · audit hash anchored to 4orm-EVM block #18,247,381</div>
+      <div class="cmp-strip" style="margin-top:14px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>Delivery-versus-payment completed in 11.7s · audit hash anchored to 4orm-EVM block #18,247,381</div>
     </div>
   </div>
 
   <!-- Recent settlements -->
   <div class="panel" style="margin-bottom:16px">
-    <div class="panel-h"><h3>Recent settlements</h3><span class="ph-meta">Today · live</span></div>
+    <div class="panel-h"><h3>Recent settlements</h3><span class="ph-meta">Illustrative · simulated activity</span></div>
     <div class="panel-b pad-0 dtable">
       <table>
         <thead><tr><th>Time</th><th>Asset</th><th>Cash leg</th><th class="r">Notional</th><th>Buyer custodian</th><th>Seller custodian</th><th class="r">Finality</th><th>Tx</th></tr></thead>
         <tbody>
-          <tr><td><span class="mono">14:22:31</span></td><td><span class="ticker">tACP-VII</span> · 5,000</td><td>QCAD</td><td class="r strong">C$ 5,000,000</td><td>Tetra Trust</td><td>Tetra Trust</td><td class="r"><span class="up">11.7s</span></td><td><span class="hash">0x7a3f8e…</span></td></tr>
-          <tr><td><span class="mono">14:21:18</span></td><td><span class="ticker">tGCB</span> · 25,000</td><td>QCAD</td><td class="r strong">C$ 2,495,250</td><td>Tetra Trust</td><td>Balance Trust</td><td class="r"><span class="up">9.4s</span></td><td><span class="hash">0x5e1c2b…</span></td></tr>
-          <tr><td><span class="mono">14:19:55</span></td><td><span class="ticker">tABP28</span> · 1,000</td><td>RBC tCAD deposit</td><td class="r strong">C$ 102,410</td><td>Tetra Trust</td><td>Tetra Trust</td><td class="r"><span class="up">12.1s</span></td><td><span class="hash">0x9c44a3…</span></td></tr>
-          <tr><td><span class="mono">14:18:42</span></td><td><span class="ticker">tAUC</span> · 500</td><td>QCAD</td><td class="r strong">C$ 48,090</td><td>Brane Trust</td><td>Tetra Trust</td><td class="r"><span class="up">10.8s</span></td><td><span class="hash">0x2f81d7…</span></td></tr>
-          <tr><td><span class="mono">14:17:11</span></td><td><span class="ticker">tEDC25</span> · 200</td><td>QCAD</td><td class="r strong">C$ 20,236</td><td>Balance Trust</td><td>Tetra Trust</td><td class="r"><span class="up">13.2s</span></td><td><span class="hash">0xa3e5f1…</span></td></tr>
-          <tr><td><span class="mono">14:15:48</span></td><td><span class="ticker">tACP-VIII</span> · 30</td><td>QCAD</td><td class="r strong">C$ 30,000</td><td>Tetra Trust</td><td>Tetra Trust</td><td class="r"><span class="up">11.0s</span></td><td><span class="hash">0x6b219a…</span></td></tr>
-          <tr><td><span class="mono">14:14:22</span></td><td><span class="ticker">tCRE-CGY1</span> · 100</td><td>BMO tCAD deposit</td><td class="r strong">C$ 52,400</td><td>Balance Trust</td><td>Balance Trust</td><td class="r"><span class="up">14.6s</span></td><td><span class="hash">0xd8f02e…</span></td></tr>
-          <tr><td><span class="mono">14:12:55</span></td><td><span class="ticker">tPMP-A</span> · 5,000</td><td>QCAD</td><td class="r strong">C$ 5,200</td><td>Brane Trust</td><td>Brane Trust</td><td class="r"><span class="up">9.1s</span></td><td><span class="hash">0x4a7e93…</span></td></tr>
+          <tr><td><span class="mono">14:22:31</span></td><td><span class="ticker">tACP-VII</span> · 5,000</td><td>tCAD-MM (illustrative)</td><td class="r strong">C$ 5,000,000</td><td>Maple Custody Trust (illustrative)</td><td>Maple Custody Trust (illustrative)</td><td class="r"><span class="up">11.7s</span></td><td><span class="hash">0x7a3f8e…</span></td></tr>
+          <tr><td><span class="mono">14:21:18</span></td><td><span class="ticker">tGCB</span> · 25,000</td><td>tCAD-MM (illustrative)</td><td class="r strong">C$ 2,495,250</td><td>Maple Custody Trust (illustrative)</td><td>Cascade Custody (illustrative)</td><td class="r"><span class="up">9.4s</span></td><td><span class="hash">0x5e1c2b…</span></td></tr>
+          <tr><td><span class="mono">14:19:55</span></td><td><span class="ticker">tABP28</span> · 1,000</td><td>Northwind (illustrative) tCAD deposit</td><td class="r strong">C$ 102,410</td><td>Maple Custody Trust (illustrative)</td><td>Maple Custody Trust (illustrative)</td><td class="r"><span class="up">12.1s</span></td><td><span class="hash">0x9c44a3…</span></td></tr>
+          <tr><td><span class="mono">14:18:42</span></td><td><span class="ticker">tAUC</span> · 500</td><td>tCAD-MM (illustrative)</td><td class="r strong">C$ 48,090</td><td>Arctic Custody (illustrative)</td><td>Maple Custody Trust (illustrative)</td><td class="r"><span class="up">10.8s</span></td><td><span class="hash">0x2f81d7…</span></td></tr>
+          <tr><td><span class="mono">14:17:11</span></td><td><span class="ticker">tEDC25</span> · 200</td><td>tCAD-MM (illustrative)</td><td class="r strong">C$ 20,236</td><td>Cascade Custody (illustrative)</td><td>Maple Custody Trust (illustrative)</td><td class="r"><span class="up">13.2s</span></td><td><span class="hash">0xa3e5f1…</span></td></tr>
+          <tr><td><span class="mono">14:15:48</span></td><td><span class="ticker">tACP-VIII</span> · 30</td><td>tCAD-MM (illustrative)</td><td class="r strong">C$ 30,000</td><td>Maple Custody Trust (illustrative)</td><td>Maple Custody Trust (illustrative)</td><td class="r"><span class="up">11.0s</span></td><td><span class="hash">0x6b219a…</span></td></tr>
+          <tr><td><span class="mono">14:14:22</span></td><td><span class="ticker">tCRE-CGY1</span> · 100</td><td>Cascade (illustrative) tCAD deposit</td><td class="r strong">C$ 52,400</td><td>Cascade Custody (illustrative)</td><td>Cascade Custody (illustrative)</td><td class="r"><span class="up">14.6s</span></td><td><span class="hash">0xd8f02e…</span></td></tr>
+          <tr><td><span class="mono">14:12:55</span></td><td><span class="ticker">tPMP-A</span> · 5,000</td><td>tCAD-MM (illustrative)</td><td class="r strong">C$ 5,200</td><td>Arctic Custody (illustrative)</td><td>Arctic Custody (illustrative)</td><td class="r"><span class="up">9.1s</span></td><td><span class="hash">0x4a7e93…</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -142,42 +150,42 @@
       <div class="panel-h"><h3>Active settlement corridors</h3><span class="ph-meta">9 bank-custodian pairs</span></div>
       <div class="panel-b">
         <div class="corridor">
-          <div class="end"><span class="nm">RBC</span><span class="sub">Schedule I · Tier-1</span></div>
-          <div class="arr">⇄ <span class="status live">Live</span></div>
-          <div class="end r"><span class="nm">Tetra Trust</span><span class="sub">Tier-2 custody</span></div>
+          <div class="end"><span class="nm">Northwind (illustrative)</span><span class="sub">deposit-taking (illustrative) · Tier-1</span></div>
+          <div class="arr">⇄ <span class="status illustrative">Illustrative</span></div>
+          <div class="end r"><span class="nm">Maple Custody Trust (illustrative)</span><span class="sub">Tier-2 custody</span></div>
         </div>
         <div class="corridor">
-          <div class="end"><span class="nm">TD</span><span class="sub">Schedule I · Tier-1</span></div>
-          <div class="arr">⇄ <span class="status live">Live</span></div>
-          <div class="end r"><span class="nm">Tetra Trust</span><span class="sub">Tier-2 custody</span></div>
+          <div class="end"><span class="nm">TD</span><span class="sub">deposit-taking (illustrative) · Tier-1</span></div>
+          <div class="arr">⇄ <span class="status illustrative">Illustrative</span></div>
+          <div class="end r"><span class="nm">Maple Custody Trust (illustrative)</span><span class="sub">Tier-2 custody</span></div>
         </div>
         <div class="corridor">
-          <div class="end"><span class="nm">BMO</span><span class="sub">Schedule I · Tier-1</span></div>
-          <div class="arr">⇄ <span class="status live">Live</span></div>
-          <div class="end r"><span class="nm">Balance Trust</span><span class="sub">Tier-2 custody</span></div>
+          <div class="end"><span class="nm">Cascade (illustrative)</span><span class="sub">deposit-taking (illustrative) · Tier-1</span></div>
+          <div class="arr">⇄ <span class="status illustrative">Illustrative</span></div>
+          <div class="end r"><span class="nm">Cascade Custody (illustrative)</span><span class="sub">Tier-2 custody</span></div>
         </div>
         <div class="corridor">
-          <div class="end"><span class="nm">EDC</span><span class="sub">Crown corporation</span></div>
-          <div class="arr">⇄ <span class="status live">Live</span></div>
-          <div class="end r"><span class="nm">Tetra Trust</span><span class="sub">Tier-2 custody</span></div>
+          <div class="end"><span class="nm">Federal Crown Export Agency (illustrative)</span><span class="sub">Crown corporation</span></div>
+          <div class="arr">⇄ <span class="status illustrative">Illustrative</span></div>
+          <div class="end r"><span class="nm">Maple Custody Trust (illustrative)</span><span class="sub">Tier-2 custody</span></div>
         </div>
         <div class="corridor">
-          <div class="end"><span class="nm">Stablecorp · QCAD</span><span class="sub">Settlement asset issuer</span></div>
-          <div class="arr">⇄ <span class="status live">Live</span></div>
+          <div class="end"><span class="nm">QCorp (illustrative) · tCAD-MM (illustrative)</span><span class="sub">Settlement asset issuer</span></div>
+          <div class="arr">⇄ <span class="status illustrative">Illustrative</span></div>
           <div class="end r"><span class="nm">All custodians</span><span class="sub">Default cash leg</span></div>
         </div>
         <div class="corridor">
-          <div class="end"><span class="nm">CIBC</span><span class="sub">Schedule I · Tier-1</span></div>
+          <div class="end"><span class="nm">Granite (illustrative)</span><span class="sub">deposit-taking (illustrative) · Tier-1</span></div>
           <div class="arr">⇄ <span class="status pending">Onboarding</span></div>
-          <div class="end r"><span class="nm">Brane Trust</span><span class="sub">Tier-2 custody</span></div>
+          <div class="end r"><span class="nm">Arctic Custody (illustrative)</span><span class="sub">Tier-2 custody</span></div>
         </div>
         <div class="corridor">
-          <div class="end"><span class="nm">Scotiabank</span><span class="sub">Schedule I · Tier-1</span></div>
+          <div class="end"><span class="nm">Boreal Cooperative (illustrative)</span><span class="sub">deposit-taking (illustrative) · Tier-1</span></div>
           <div class="arr">⇄ <span class="status pending">Onboarding</span></div>
-          <div class="end r"><span class="nm">Tetra Trust</span><span class="sub">Tier-2 custody</span></div>
+          <div class="end r"><span class="nm">Maple Custody Trust (illustrative)</span><span class="sub">Tier-2 custody</span></div>
         </div>
         <div class="corridor">
-          <div class="end"><span class="nm">National Bank</span><span class="sub">Schedule I · Tier-1</span></div>
+          <div class="end"><span class="nm">Saint-Laurent Mutual (illustrative)</span><span class="sub">deposit-taking (illustrative) · Tier-1</span></div>
           <div class="arr">⇄ <span class="status warn">In discovery</span></div>
           <div class="end r"><span class="nm">Pending</span><span class="sub">—</span></div>
         </div>
@@ -186,7 +194,7 @@
 
     <!-- Custodian balances -->
     <div class="panel">
-      <div class="panel-h"><h3>Tetra Trust · custody balances</h3><span class="ph-meta">Snapshot 14:22 EST</span></div>
+      <div class="panel-h"><h3>Maple Custody Trust (illustrative) · custody balances</h3><span class="ph-meta">Snapshot 14:22 EST</span></div>
       <div class="panel-b">
         <div class="kv">
           <div class="k">Total assets under custody</div><div class="v" style="color:var(--brand);font-weight:800"><span class="mono">C$ 624,182,500</span></div>
@@ -195,7 +203,7 @@
           <div class="k">Private credit (tACP, tPMP)</div><div class="v"><span class="mono">C$ 168,240,000</span></div>
           <div class="k">Commodities (tAUC)</div><div class="v"><span class="mono">C$ 76,140,000</span></div>
           <div class="k">Real estate (tCRE)</div><div class="v"><span class="mono">C$ 28,180,000</span></div>
-          <div class="k">QCAD cash leg</div><div class="v"><span class="mono">C$ 21,562,500</span></div>
+          <div class="k">tCAD-MM (illustrative) cash leg</div><div class="v"><span class="mono">C$ 21,562,500</span></div>
         </div>
         <div class="cmp-strip" style="margin-top:14px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>Proof of reserves attested · last anchor 14:22 EST · auditor verified</div>
       </div>
@@ -209,11 +217,11 @@
       <table>
         <thead><tr><th>Counterparty</th><th>Asset class</th><th class="r">Trades</th><th class="r">Notional</th><th class="r">Net position</th><th>Reconciled</th></tr></thead>
         <tbody>
-          <tr><td><span class="nm">Bay Street Investments</span></td><td>Multi-asset</td><td class="r">38</td><td class="r">C$ 24,182,400</td><td class="r up">+ C$ 18,420,000</td><td><span class="status live">Auto</span></td></tr>
-          <tr><td><span class="nm">Alpha Capital</span></td><td>Private credit</td><td class="r">14</td><td class="r">C$ 12,800,000</td><td class="r dn">− C$ 12,800,000</td><td><span class="status live">Auto</span></td></tr>
-          <tr><td><span class="nm">Mercer Family Office</span></td><td>Multi-asset</td><td class="r">8</td><td class="r">C$ 4,520,000</td><td class="r up">+ C$ 4,520,000</td><td><span class="status live">Auto</span></td></tr>
-          <tr><td><span class="nm">Cascade Pension Plan</span></td><td>Sovereign · sub-sov</td><td class="r">22</td><td class="r">C$ 18,640,000</td><td class="r up">+ C$ 18,640,000</td><td><span class="status live">Auto</span></td></tr>
-          <tr><td><span class="nm">Athabasca Capital</span></td><td>Commodity · CRE</td><td class="r">11</td><td class="r">C$ 8,210,000</td><td class="r up">+ C$ 6,180,000</td><td><span class="status live">Auto</span></td></tr>
+          <tr><td><span class="nm">Bay Street Investments</span></td><td>Multi-asset</td><td class="r">38</td><td class="r">C$ 24,182,400</td><td class="r up">+ C$ 18,420,000</td><td><span class="status illustrative">Illustrative</span></td></tr>
+          <tr><td><span class="nm">Alpha Capital</span></td><td>Private credit</td><td class="r">14</td><td class="r">C$ 12,800,000</td><td class="r dn">− C$ 12,800,000</td><td><span class="status illustrative">Illustrative</span></td></tr>
+          <tr><td><span class="nm">Mercer Family Office</span></td><td>Multi-asset</td><td class="r">8</td><td class="r">C$ 4,520,000</td><td class="r up">+ C$ 4,520,000</td><td><span class="status illustrative">Illustrative</span></td></tr>
+          <tr><td><span class="nm">Cascade Pension Plan</span></td><td>Sovereign · sub-sov</td><td class="r">22</td><td class="r">C$ 18,640,000</td><td class="r up">+ C$ 18,640,000</td><td><span class="status illustrative">Illustrative</span></td></tr>
+          <tr><td><span class="nm">Athabasca Capital</span></td><td>Commodity · CRE</td><td class="r">11</td><td class="r">C$ 8,210,000</td><td class="r up">+ C$ 6,180,000</td><td><span class="status illustrative">Illustrative</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -232,6 +240,6 @@
   </div>
 </footer>
 
-<script src="/assets/4ormex-ui.js?v=11"></script>
+<script src="/assets/4ormex-ui.js?v=13"></script>
 </body>
 </html>

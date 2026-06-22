@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Marketplace · 4ormEx — Canadian institutional order book</title>
-<meta name="description" content="4ormEx Marketplace — institutional central limit order book for tokenized Canadian real-world assets. Atomic DvP. T+0 settlement." />
+<meta name="description" content="4ormEx Marketplace — institutional central limit order book for tokenized Canadian real-world assets. Delivery-versus-payment. T+0 settlement." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=11" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=13" />
 <style>
 /* ----- Marketplace-specific ----- */
 .market-strip{
@@ -153,15 +153,13 @@
     <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
     <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
     <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
-    <span class="ti"><span class="t">QCAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
     <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
     <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
     <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
     <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
-    <span class="ti"><span class="t">tRBCD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tTDD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">W-CAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">RVNSI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tPGV-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
     <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
     <!-- dup -->
     <span class="ti"><span class="t">tGCB</span><span class="p">C$ 99.82</span><span class="c u">▲ 0.03%</span></span>
@@ -170,15 +168,13 @@
     <span class="ti"><span class="t">tPMP-A</span><span class="p">C$ 1.0400</span><span class="c u">▲ 0.42%</span></span>
     <span class="ti"><span class="t">tAUC</span><span class="p">C$ 96.18</span><span class="c d">▼ 0.27%</span></span>
     <span class="ti"><span class="t">tCRE-CGY1</span><span class="p">C$ 524.00</span><span class="c u">▲ 1.12%</span></span>
-    <span class="ti"><span class="t">QCAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tCAD-MM (illustrative)</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
     <span class="ti"><span class="t">tEDC25</span><span class="p">C$ 101.18</span><span class="c u">▲ 0.07%</span></span>
     <span class="ti"><span class="t">tCRE-EDM2</span><span class="p">C$ 287.50</span><span class="c u">▲ 0.62%</span></span>
     <span class="ti"><span class="t">tAGL-SK1</span><span class="p">C$ 1,200.00</span><span class="c u">▲ 0.08%</span></span>
     <span class="ti"><span class="t">tHQI32</span><span class="p">C$ 99.91</span><span class="c d">▼ 0.04%</span></span>
-    <span class="ti"><span class="t">tRBCD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">tTDD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">W-CAD</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
-    <span class="ti"><span class="t">RVNSI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
+    <span class="ti"><span class="t">tNWD-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span>
+    <span class="ti"><span class="t">tPGV-R</span><span class="p">C$ 1.0000</span><span class="c u">▲ 0.00%</span></span><span class="ti"><span class="t">BSMI</span><span class="p">C$ 42.50/T</span><span class="c u">▲ 0.18%</span></span>
     <span class="ti"><span class="t">tCNFT-ALPHA</span><span class="p">NFT · #00214</span><span class="c u">verified</span></span>
   </div>
 </div>
@@ -202,7 +198,7 @@
     <section class="sb-group">
       <h6>Asset Classes</h6>
       <ul>
-        <li><a href="/bank-deposits.html">Tokenized Bank Deposits</a></li>
+        <li><a href="/bank-deposits.html">Tokenized Deposit Receipts</a></li>
         <li><a href="/stablecoins.html">Stablecoins</a></li>
         <li><a href="/corporate-nfts.html">Corporate NFTs <span class="new">New</span></a></li>
         <li><a href="/project-milestones.html">Project Milestones <span class="new">New</span></a></li>
@@ -237,7 +233,7 @@
     </section>
     <section class="sb-cta">
       <h6>For Issuers &amp; Banks</h6>
-      <p>Onboard a Canadian asset to the regulated rail or join the bank corridor.</p>
+      <p>Onboard a Canadian asset to the regulated rail or join the institution corridor.</p>
       <a class="start-btn" href="/tokenize.html">Register your asset →</a>
     </section>
   </aside>
@@ -249,7 +245,7 @@
       <div>
         <div class="ph-eye">02 · Marketplace</div>
         <h1>Central limit order book <span class="accent">· Canadian RWA</span></h1>
-        <p class="ph-lede">Real-time matching, depth-of-book transparency, and pre-trade compliance on every order. Cash leg settles in QCAD, bank-issued tokenized deposits, or W-CAD when available — T+0 atomic DvP, T+2 legacy compatibility.</p>
+        <p class="ph-lede">Real-time matching, depth-of-book transparency, and pre-trade compliance on every order. Cash leg settles in tCAD-MM (illustrative), institution-issued (illustrative) tokenized deposits, or wCAD-CB (external precedent · not 4ormEx) when available — T+0 delivery-versus-payment, T+2 legacy compatibility.</p>
       </div>
       <div class="ph-stats">
         <div class="ph-stat"><span class="ps-l">Listed instruments</span><span class="ps-v">23</span><span class="ps-d">+ 4 · 30d</span></div>
@@ -257,6 +253,14 @@
         <div class="ph-stat"><span class="ps-l">Median spread</span><span class="ps-v">2.0<span class="cur" style="margin-left:4px">bps</span></span><span class="ps-d">tighter · 30d</span></div>
       </div>
     </header>
+
+  <section class="card" style="border-left:3px solid #E7C76C;background:#FDFAF1;margin-bottom:24px;padding:22px 24px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5A0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><h4 style="margin:0;color:#7A5A0A;font-size:1rem">What 4ormEx is, and is not</h4></div>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0 0 10px"><strong>4ormEx is a design preview of a planned permissioned trading venue (Pillar 02) inside the future 4orm Finance regulated control plane.</strong> Today, 4ormEx is software. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed.</p>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0 0 10px"><strong>Operating a marketplace for securities is a registrable activity in Canada</strong> under National Instruments 21-101, 23-101, 24-102 and 31-103. 4ormEx intends to seek marketplace recognition and dealer registration before operating any live trading. Until that registration exists, no order, custody, deposit, or payment is being offered, accepted, or solicited through this site.</p>
+    <p style="font-size:.92rem;line-height:1.55;color:#3D2F0E;margin:0"><strong>Every figure, identifier, price, balance, hash, and counterparty shown here is simulated, fictional, or illustrative.</strong> Where real institutions are named, they are external precedents only and are not partners, counterparties, or integrations of 4ormEx. Nothing on this site is an offer to sell or solicitation to buy securities, crypto assets, deposits, or any financial instrument, and nothing on this site is financial, legal, tax, or investment advice. Questions: <a href="mailto:compliance@kcs-capital.com" style="color:#7A5A0A;font-weight:700">compliance@kcs-capital.com</a>.</p>
+  </section>
+
 
     <!-- Selected market strip -->
     <div class="market-strip" id="market-strip">
@@ -301,43 +305,38 @@
       </div>
 
       <div class="panel ticket tg-ticket">
-        <div class="panel-h"><h3>Place order</h3><span class="ph-meta">Pre-trade · on</span></div>
-        <div style="padding:10px 16px;background:var(--info-bg);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--info);font-weight:600">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4-1.5 8.5L12 22l-7.5-7.5L3 6z"/><path d="M9 12l2 2 4-4"/></svg>
-          NI 45-106 accredited · KYC valid · jurisdiction OK
+        <div class="panel-h"><h3>Order ticket (non-functional preview)</h3><span class="ph-meta">Illustrative</span></div>
+        <div style="padding:14px 16px;background:#FDF5E6;border-bottom:1px solid #E7C76C;display:flex;gap:10px;font-size:.82rem;color:#7A5A0A;font-weight:600;line-height:1.5">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          <span>Order entry disabled. 4ormEx is not a registered marketplace or dealer in any Canadian jurisdiction. No order will be sent, matched, or recorded. The interface below is a design preview only.</span>
         </div>
-        <div class="seg" role="tablist">
-          <button class="active buy" data-side="buy" type="button">Buy</button>
-          <button data-side="sell" type="button">Sell</button>
+        <div class="seg" role="tablist" aria-disabled="true" style="opacity:.45;pointer-events:none">
+          <button class="active buy" type="button" disabled>Buy</button>
+          <button type="button" disabled>Sell</button>
         </div>
-        <form class="form" id="ticket-form" autocomplete="off">
+        <div class="form" style="opacity:.55;pointer-events:none" aria-hidden="true">
           <div class="otabs">
-            <button type="button" data-type="limit" class="active">Limit</button>
-            <button type="button" data-type="market">Market</button>
-            <button type="button" data-type="stop">Stop</button>
+            <button type="button" class="active" disabled>Limit</button>
+            <button type="button" disabled>Market</button>
+            <button type="button" disabled>Stop</button>
           </div>
-          <label>Price (CAD)<input type="number" step="0.01" id="t-price" value="99.82" /></label>
-          <label>Quantity<input type="number" step="1" id="t-qty" value="10000" /></label>
+          <label>Price (CAD)<input type="text" value="—" disabled readonly /></label>
+          <label>Quantity<input type="text" value="—" disabled readonly /></label>
           <label>Time in force
-            <select id="t-tif">
-              <option>GTC · Good till cancelled</option>
-              <option>IOC · Immediate or cancel</option>
-              <option>FOK · Fill or kill</option>
-              <option>DAY · Good for day</option>
-            </select>
+            <select disabled><option>—</option></select>
           </label>
           <div class="summary">
-            <div class="r">Notional <strong>C$ <span id="t-notional">998,200.00</span></strong></div>
-            <div class="r">Est. fee (3 bps) <strong>C$ <span id="t-fee">299.46</span></strong></div>
-            <div class="r">Settlement <strong>T+0 · DvP atomic</strong></div>
-            <div class="r">Cash leg <strong>QCAD</strong></div>
+            <div class="r">Notional <strong>—</strong></div>
+            <div class="r">Est. fee <strong>—</strong></div>
+            <div class="r">Settlement <strong>Pillar 03 (platform level) · illustrative</strong></div>
+            <div class="r">Cash leg <strong>tCAD-MM (illustrative)</strong></div>
           </div>
-          <button class="submit buy" id="t-submit" type="submit">Buy 10,000 tGCB</button>
-          <div class="check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-            Pre-trade compliance passed · 5 checks
+          <button class="submit buy" type="button" disabled style="cursor:not-allowed;background:#9aa6ba">Order entry disabled</button>
+          <div class="check" style="color:var(--text-3)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            No order will be submitted. Design preview of the eventual interface only.
           </div>
-        </form>
+        </div>
       </div>
 
     </div>
@@ -388,11 +387,11 @@
     <div class="grid">
       <div class="brand-blk">
         <h5>4ormEx · The 4orm Exchange</h5>
-        <p>The institutional settlement and trading layer of 4orm Finance. Canadian-regulated rail for tokenized real-world assets. Sandbox preview · v0.1.</p>
+        <p>The trading venue (Pillar 02) of 4orm Finance. Canadian-regulated rail for tokenized real-world assets. Sandbox preview · v0.1.</p>
       </div>
       <div><h6>Exchange</h6><ul><li><a href="/">Market Overview</a></li><li><a href="/marketplace.html">Marketplace</a></li><li><a href="/issuer.html">Issuer portal</a></li><li><a href="/investor.html">Investor portal</a></li></ul></div>
       <div><h6>Operations</h6><ul><li><a href="/compliance.html">Compliance</a></li><li><a href="/settlement.html">Settlement</a></li><li><a href="/admin.html">Admin &amp; audit</a></li><li><a href="/tokenize.html">Tokenization wizard</a></li></ul></div>
-      <div><h6>4orm Finance</h6><ul><li><a href="https://4ormfinance.com">Main site</a></li><li><a href="https://4ormfinance.com/regulatory.html">Regulatory posture</a></li><li><a href="https://4ormfinance.com/#waitlist">Request access</a></li><li><a href="mailto:founders@kcs-capital.com">founders@kcs-capital.com</a></li></ul></div>
+      <div><h6>4orm Finance</h6><ul><li><a href="https://4ormfinance.com">Main site</a></li><li><a href="https://4ormfinance.com/regulatory.html">Regulatory posture</a></li><li><a href="https://4ormfinance.com/#waitlist">Request access</a></li><li><a href="mailto:compliance@kcs-capital.com">compliance@kcs-capital.com</a></li></ul></div>
     </div>
     <div class="lr"><div>© 2026 4orm Finance · 4orm Finance Holdings Inc.</div><div>Sandbox preview · simulated data only · not a live trading venue</div></div>
     <p class="disclaim">4orm Finance is an early-stage platform in development. 4ormEx is a sandbox-stage institutional preview environment, not a licensed exchange or dealer. All identifiers, hashes, prices and balances on these pages are simulated and do not represent live systems, real assets or real counterparties. Educational only; not an offer or solicitation of securities and not financial, legal or tax advice.</p>
@@ -403,19 +402,19 @@
 // Mock data
 const assets = [
   { tk:'tGCB',     nm:'Gov. of Canada T-Bill 90d', cls:'Sovereign',     px:99.82,  chg:+0.03, vol:'24.1M', tvl:'312.4M' },
-  { tk:'tABP28',   nm:'Province of Alberta Bond 2028', cls:'Sub-sovereign', px:102.41, chg:+0.18, vol:'11.7M', tvl:'186.2M' },
+  { tk:'tABP28',   nm:'Western Province (illustrative) Bond 2028', cls:'Sub-sovereign', px:102.41, chg:+0.18, vol:'11.7M', tvl:'186.2M' },
   { tk:'tACP-VII', nm:'Alpha Credit Pool VII',     cls:'Private credit', px:1041.20,chg:+4.12, vol:'8.3M',  tvl:'94.1M' },
-  { tk:'tPMP-A',   nm:'Pineapple Mortgage Pool A', cls:'Private credit', px:1.04,   chg:+0.42, vol:'8.3M',  tvl:'94.1M' },
-  { tk:'tAUC',     nm:'AuCan Gold Bullion · 1g',   cls:'Commodity',      px:96.18,  chg:-0.27, vol:'5.4M',  tvl:'128.7M' },
+  { tk:'tPMP-A',   nm:'Crestview Mortgage (illustrative) Mortgage Pool A', cls:'Private credit', px:1.04,   chg:+0.42, vol:'8.3M',  tvl:'94.1M' },
+  { tk:'tAUC',     nm:'Klondike Gold (illustrative) Gold Bullion · 1g',   cls:'Commodity',      px:96.18,  chg:-0.27, vol:'5.4M',  tvl:'128.7M' },
   { tk:'tCRE-CGY1',nm:'Calgary CRE Tower · Fractional', cls:'Real estate', px:524.00, chg:+1.12, vol:'3.1M',  tvl:'48.9M' },
-  { tk:'QCAD',     nm:'Stablecorp QCAD',           cls:'Stablecoin',     px:1.0000, chg:+0.00, vol:'42.6M', tvl:'82.3M' },
-  { tk:'tRBCD',    nm:'RBC Tokenized Deposit',     cls:'Bank deposit',   px:1.0000, chg:+0.00, vol:'18.4M', tvl:'54.0M' },
-  { tk:'tTDD',     nm:'TD Tokenized Deposit',      cls:'Bank deposit',   px:1.0000, chg:+0.00, vol:'14.2M', tvl:'41.2M' },
-  { tk:'tEDC25',   nm:'EDC Green Bond 2025',       cls:'Sov. agency',    px:101.18, chg:+0.07, vol:'1.6M',  tvl:'100.0M' },
-  { tk:'tHQI32',   nm:'Hydro-Québec Infra 2032',   cls:'Infrastructure', px:99.91,  chg:-0.04, vol:'1.2M',  tvl:'25.6M' },
+  { tk:'tCAD-MM (illustrative)',     nm:'QCorp (illustrative) tCAD-MM (illustrative)',           cls:'Stablecoin',     px:1.0000, chg:+0.00, vol:'42.6M', tvl:'82.3M' },
+  { tk:'tNWD-R',    nm:'Northwind (illustrative) Tokenized Deposit',     cls:'Bank deposit',   px:1.0000, chg:+0.00, vol:'18.4M', tvl:'54.0M' },
+  { tk:'tPGV-R',     nm:'TD Tokenized Deposit',      cls:'Bank deposit',   px:1.0000, chg:+0.00, vol:'14.2M', tvl:'41.2M' },
+  { tk:'tEDC25',   nm:'Federal Crown Export Agency (illustrative) Green Bond 2025',       cls:'Sov. agency',    px:101.18, chg:+0.07, vol:'1.6M',  tvl:'100.0M' },
+  { tk:'tHQI32',   nm:'Eastern Hydro Crown Corp (illustrative) Infra 2032',   cls:'Infrastructure', px:99.91,  chg:-0.04, vol:'1.2M',  tvl:'25.6M' },
   { tk:'tCRE-EDM2',nm:'Edmonton CRE Tower II',     cls:'Real estate',    px:287.50, chg:+0.62, vol:'1.9M',  tvl:'18.4M' },
   { tk:'tAGL-SK1', nm:'Saskatchewan Ag-Land Pool', cls:'Commodity',      px:1200.00,chg:+0.08, vol:'0.8M',  tvl:'12.8M' },
-  { tk:'RVNSI',    nm:'Raven Silica · per-ton',    cls:'Verified delivery', px:42.50, chg:+0.18, vol:'0.6M', tvl:'6.2M' },
+  { tk:'BSMI',    nm:'Boreal Silica Mining (illustrative) · per-ton',    cls:'Verified delivery', px:42.50, chg:+0.18, vol:'0.6M', tvl:'6.2M' },
 ];
 
 let active = assets[0]; let side = 'buy';
@@ -465,7 +464,7 @@ function renderHeader(){
   document.getElementById('mh-tvl').textContent = `C$ ${active.tvl}`;
   document.getElementById('book-ticker').textContent = active.tk;
   document.getElementById('trades-ticker').textContent = active.tk;
-  document.getElementById('t-price').value = fmtPx(active.px, active.px);
+  // Order ticket is non-functional in v14; no price field to update.
   updateSummary();
 }
 function genTrades(){
@@ -485,47 +484,14 @@ function renderTrades(){
   const trades = genTrades();
   $tb.innerHTML = trades.map(t=>{const tm = t.t.toTimeString().slice(0,8);const notional=(t.px*t.sz).toLocaleString('en-CA',{maximumFractionDigits:0});return `<tr><td>${tm}</td><td><span class="side ${t.sd}">${t.sd.toUpperCase()}</span></td><td class="r px ${t.sd==='buy'?'up':'dn'}">${fmtPx(t.px,active.px)}</td><td class="r">${t.sz.toLocaleString('en-CA')}</td><td class="r">C$ ${notional}</td><td><span class="hash">${t.hash}…</span></td></tr>`;}).join('');
 }
-const $price = document.getElementById('t-price');
-const $qty = document.getElementById('t-qty');
-const $not = document.getElementById('t-notional');
-const $fee = document.getElementById('t-fee');
-const $btn = document.getElementById('t-submit');
-function updateSummary(){
-  const px = parseFloat($price.value)||0; const qty = parseFloat($qty.value)||0;
-  const notional = px*qty;
-  $not.textContent = notional.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2});
-  $fee.textContent = (notional*0.0003).toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2});
-  $btn.textContent = `${side==='buy'?'Buy':'Sell'} ${qty.toLocaleString('en-CA')} ${active.tk}`;
-}
-$price.addEventListener('input', updateSummary);
-$qty.addEventListener('input', updateSummary);
-document.querySelectorAll('.ticket .seg button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.ticket .seg button').forEach(x=>x.classList.remove('active','buy','sell'));
-  b.classList.add('active', b.dataset.side); side = b.dataset.side;
-  $btn.classList.remove('buy','sell'); $btn.classList.add(side); updateSummary();
-}));
-document.querySelectorAll('.ticket .otabs button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.ticket .otabs button').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');
-  if(b.dataset.type==='market'){ $price.disabled = true; $price.value = active.px.toFixed(active.px<10?4:2); } else $price.disabled=false;
-  updateSummary();
-}));
-function pushAuditEvent(evt){ try{ const k='4ormex_audit_events'; const arr=JSON.parse(localStorage.getItem(k)||'[]'); arr.unshift(evt); localStorage.setItem(k,JSON.stringify(arr.slice(0,50))); }catch(e){} }
-document.getElementById('ticket-form').addEventListener('submit',(e)=>{
-  e.preventDefault();
-  const px = parseFloat($price.value); const qty = parseFloat($qty.value);
-  const notional = px*qty; const hash = '0x'+Math.random().toString(16).slice(2,10);
-  const tbody = document.getElementById('orders-body');
-  const row = document.createElement('tr');
-  row.innerHTML = `<td><span style="font-weight:800;color:var(--text)">${active.tk}</span></td><td class="side ${side}">${side.toUpperCase()}</td><td class="r">${fmtPx(px,active.px)}</td><td class="r">${qty.toLocaleString('en-CA')}</td><td class="r">0</td><td><span style="font-family:var(--font-sans);font-size:.62rem;background:var(--success-bg);color:var(--success);padding:2px 7px;border-radius:99px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Submitted</span></td><td><button class="btn ghost btn-sm">Cancel</button></td>`;
-  tbody.prepend(row);
-  pushAuditEvent({block:'#'+(18247400+Math.floor(Math.random()*200)),time:new Date().toTimeString().slice(0,8),eventType:'Order placed',eventSub:`CLOB ${side} · ${active.tk}`,actor:'Bay Street Investments',subject:`${qty.toLocaleString('en-CA')} @ ${fmtPx(px,active.px)} · C$ ${notional.toLocaleString('en-CA',{maximumFractionDigits:0})}`,hash:hash+'…',status:'live',statusLabel:'✓ Anchored'});
-});
+// v14 · order ticket is non-functional. No inputs, no submit handler, no
+// localStorage event push. The visible ticket UI is fully disabled in HTML.
+function updateSummary(){ /* no-op · ticket is non-functional */ }
 function renderAll(){ renderList(); renderHeader(); renderBook(); renderTrades(); }
 renderAll();
 setInterval(()=>{const drift=(Math.random()-0.5)*(active.px<10?0.0005:0.02); active.px=+(active.px+drift).toFixed(active.px<10?4:2); renderHeader(); renderBook();},4000);
 setInterval(()=>{renderTrades();},7000);
 </script>
-<script src="/assets/4ormex-ui.js?v=11"></script>
+<script src="/assets/4ormex-ui.js?v=13"></script>
 </body>
 </html>

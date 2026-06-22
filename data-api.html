@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=11" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=13" />
 </head>
 <body data-sidebar="data-api">
 <main class="pane">
@@ -15,49 +15,49 @@
     <div>
       <div class="ph-eye">Tools · Data API</div>
       <h1>Data API <span class='accent'>· programmatic access</span></h1>
-      <p class="ph-lede">REST and GraphQL endpoints into the live state of 4ormEx — assets, issuers, holders, settlements, audit log. Authentication via API key. Sandbox tier free for development; production tier requires institutional contract.</p>
+      <p class="ph-lede"><strong>API specification preview · not deployed.</strong> This page documents the eventual REST and GraphQL surface 4ormEx would offer once registered. No endpoint below is actually reachable, no API keys have been issued, and no live request is being served. Shown for design reference only.</p>
     </div>
     <div class="ph-stats">
-      <div class="ph-stat"><span class="ps-l">Endpoints live</span><span class="ps-v">47</span><span class="ps-d">REST + GraphQL</span></div>
-      <div class="ph-stat"><span class="ps-l">Requests · 24h</span><span class="ps-v">284K</span><span class="ps-d">▲ 18%</span></div>
-      <div class="ph-stat"><span class="ps-l">p95 latency</span><span class="ps-v">82ms</span><span class="ps-d">edge-cached reads</span></div>
+      <div class="ph-stat"><span class="ps-l">Endpoints (spec only)</span><span class="ps-v">47</span><span class="ps-d">not deployed</span></div>
+      <div class="ph-stat"><span class="ps-l">Requests</span><span class="ps-v">—</span><span class="ps-d">API not active</span></div>
+      <div class="ph-stat"><span class="ps-l">Status</span><span class="ps-v">demo</span><span class="ps-d">design preview</span></div>
     </div>
   </header>
   <section class="card" style="margin-bottom:24px"><h4>Endpoint reference · sample</h4>
   <table class="tbl"><thead><tr><th>Method</th><th>Endpoint</th><th>Returns</th><th>Tier</th></tr></thead><tbody>
   <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets</span></td><td>All listed assets · paginated</td><td><span class="pill s">Sandbox</span></td></tr>
   <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets/{ticker}</span></td><td>Single asset · full state</td><td><span class="pill s">Sandbox</span></td></tr>
-  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets/{ticker}/holders</span></td><td>Token holders · paginated</td><td><span class="pill b">Production</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets/{ticker}/holders</span></td><td>Token holders · paginated</td><td><span class="pill b">Demo · spec only</span></td></tr>
   <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/assets/{ticker}/orderbook</span></td><td>Live order book</td><td><span class="pill s">Sandbox</span></td></tr>
   <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/issuers/{id}</span></td><td>Issuer profile + Corporate NFT</td><td><span class="pill s">Sandbox</span></td></tr>
-  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/settlements/{tx}</span></td><td>Settlement record + receipt</td><td><span class="pill b">Production</span></td></tr>
-  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/audit</span></td><td>Anchored audit events · paginated</td><td><span class="pill b">Production</span></td></tr>
-  <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/orders</span></td><td>Place a CLOB order</td><td><span class="pill b">Production</span></td></tr>
-  <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/issuance</span></td><td>Submit a tokenization draft</td><td><span class="pill b">Production</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/settlements/{tx}</span></td><td>Settlement record + receipt</td><td><span class="pill b">Demo · spec only</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--success)">GET</span></td><td><span class="ticker">/v1/audit</span></td><td>Anchored audit events · paginated</td><td><span class="pill b">Demo · spec only</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/orders</span></td><td>Place a CLOB order</td><td><span class="pill b">Demo · spec only</span></td></tr>
+  <tr><td><span class="ticker" style="color:var(--brand)">POST</span></td><td><span class="ticker">/v1/issuance</span></td><td>Submit a tokenization draft</td><td><span class="pill b">Demo · spec only</span></td></tr>
   </tbody></table></section>
 
   <!-- Example request / response -->
   <section class="row2 equal" style="margin-bottom:24px">
     <div class="card">
-      <h4>Example · GET /v1/assets/tRBCD</h4>
-      <pre style="margin:0;font-family:var(--font-mono);font-size:.78rem;background:var(--navy-900);color:#FFD9A8;padding:16px;border-radius:8px;line-height:1.6;overflow:auto"><span style="color:#9CE6BD">curl</span> https://api.4ormex.com/v1/assets/tRBCD \
+      <h4>Example · GET /v1/assets/tNWD-R</h4>
+      <pre style="margin:0;font-family:var(--font-mono);font-size:.78rem;background:var(--navy-900);color:#FFD9A8;padding:16px;border-radius:8px;line-height:1.6;overflow:auto"><span style="color:#9CE6BD">curl</span> https://api.4ormex.com/v1/assets/tNWD-R \
   -H <span style="color:#fff">"Authorization: Bearer $4ORMEX_API_KEY"</span> \
   -H <span style="color:#fff">"Accept: application/json"</span></pre>
     </div>
     <div class="card">
       <h4>Response · 200 OK</h4>
       <pre style="margin:0;font-family:var(--font-mono);font-size:.74rem;background:var(--navy-900);color:#9CE6BD;padding:16px;border-radius:8px;line-height:1.55;overflow:auto">{
-  <span style="color:#FFD9A8">"ticker"</span>: <span style="color:#fff">"tRBCD"</span>,
-  <span style="color:#FFD9A8">"name"</span>: <span style="color:#fff">"RBC Tokenized Deposit"</span>,
+  <span style="color:#FFD9A8">"ticker"</span>: <span style="color:#fff">"tNWD-R"</span>,
+  <span style="color:#FFD9A8">"name"</span>: <span style="color:#fff">"Northwind (illustrative) Tokenized Deposit"</span>,
   <span style="color:#FFD9A8">"asset_class"</span>: <span style="color:#fff">"bank_deposit"</span>,
-  <span style="color:#FFD9A8">"issuer"</span>: <span style="color:#fff">"RBC Royal Bank"</span>,
+  <span style="color:#FFD9A8">"issuer"</span>: <span style="color:#fff">"Northwind Mutual (illustrative)"</span>,
   <span style="color:#FFD9A8">"jurisdiction"</span>: <span style="color:#fff">"CA-ON"</span>,
-  <span style="color:#FFD9A8">"underlying"</span>: <span style="color:#fff">"CDIC-eligible deposit"</span>,
+  <span style="color:#FFD9A8">"underlying"</span>: <span style="color:#fff">"[deposit-insurance status not represented] deposit"</span>,
   <span style="color:#FFD9A8">"supply"</span>: <span style="color:#fff">54000000.00</span>,
   <span style="color:#FFD9A8">"currency"</span>: <span style="color:#fff">"CAD"</span>,
   <span style="color:#FFD9A8">"last_price"</span>: <span style="color:#fff">1.0000</span>,
   <span style="color:#FFD9A8">"volume_24h"</span>: <span style="color:#fff">18412000.00</span>,
-  <span style="color:#FFD9A8">"status"</span>: <span style="color:#fff">"live"</span>,
+  <span style="color:#FFD9A8">"status"</span>: <span style="color:#fff">"illustrative"</span>,
   <span style="color:#FFD9A8">"compliance"</span>: {
     <span style="color:#FFD9A8">"osfi_group"</span>: <span style="color:#fff">"2"</span>,
     <span style="color:#FFD9A8">"ciro_tier"</span>: <span style="color:#fff">"1"</span>,
@@ -87,7 +87,7 @@
         <thead><tr><th>Tier</th><th>Reads / sec</th><th>Writes / sec</th><th>Concurrent</th></tr></thead>
         <tbody>
           <tr><td><span class="pill s">Sandbox</span></td><td>20</td><td>2</td><td>10</td></tr>
-          <tr><td><span class="pill b">Production · base</span></td><td>200</td><td>20</td><td>50</td></tr>
+          <tr><td><span class="pill b">Demo · spec only · base</span></td><td>200</td><td>20</td><td>50</td></tr>
           <tr><td><span class="pill v">Production · institutional</span></td><td>2,000</td><td>200</td><td>500</td></tr>
         </tbody>
       </table>
@@ -113,7 +113,7 @@
     </div>
   </section>
 </main>
-<script src="/assets/4ormex-chrome.js?v=11"></script>
-<script src="/assets/4ormex-ui.js?v=11"></script>
+<script src="/assets/4ormex-chrome.js?v=13"></script>
+<script src="/assets/4ormex-ui.js?v=13"></script>
 </body>
 </html>
