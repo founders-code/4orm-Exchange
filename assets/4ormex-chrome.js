@@ -22,6 +22,7 @@
         </label>
         <nav class="utility" aria-label="Primary">
           <a class="back" href="https://4ormfinance.com">← 4orm Finance</a>
+          <a class="topbar-cta-gold" href="/for-issuers.html">List an asset →</a>
           <a class="cta" href="https://4ormfinance.com/#waitlist">Request access</a>
         </nav>
       </div>
@@ -112,7 +113,10 @@
     </footer>`;
 
   function boot() {
-    document.body.insertAdjacentHTML('afterbegin', TOPBAR_HTML + PRODUCTNAV_HTML + TICKER_HTML);
+    // v15d · sidebar is the ONLY navigation. Productnav removed entirely.
+    // Top stays minimal (logo + search + utility) and ticker tape sits right
+    // below it. Asset class drilldown lives in the sidebar.
+    document.body.insertAdjacentHTML('afterbegin', TOPBAR_HTML + TICKER_HTML);
 
     const pane = document.querySelector('main.pane');
     if (pane) {
@@ -125,11 +129,6 @@
 
     document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
 
-    const product = document.body.dataset.product;
-    if (product) {
-      const link = document.querySelector(`.productnav a[data-product="${product}"]`);
-      if (link) link.classList.add('active');
-    }
     const sidebarKey = document.body.dataset.sidebar;
     if (sidebarKey) {
       const link = document.querySelector(`.sb-group a[data-key="${sidebarKey}"]`);

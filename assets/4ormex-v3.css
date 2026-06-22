@@ -81,8 +81,10 @@ a:hover{color:var(--brand-700)}
   border-bottom:1px solid var(--border);
 }
 .demo-banner ~ .topbar, body:has(.demo-banner) .topbar{top:var(--banner-h)}
-body:has(.demo-banner) .productnav{top:calc(var(--banner-h) + var(--topbar-h))}
 body:has(.demo-banner) .sidebar{top:calc(var(--banner-h) + var(--topbar-h) + 46px);max-height:calc(100vh - var(--banner-h) - var(--topbar-h) - 46px)}
+
+/* v15d · productnav removed entirely; sidebar is the only nav surface */
+.productnav{display:none !important}
 .topbar-inner{
   max-width:var(--maxw);margin:0 auto;padding:0 22px;height:100%;
   display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;
@@ -813,4 +815,27 @@ a.cta{
   border-radius:var(--r);
   padding:14px 18px;
   line-height:1.55;
+}
+
+/* v15d · topbar gold CTA (since productnav is gone, "List an asset" lives here) */
+.topbar .utility .topbar-cta-gold{
+  background:linear-gradient(180deg, var(--gold) 0%, var(--gold-2) 100%);
+  color:#15233F !important;
+  font-weight:800;
+  padding:7px 14px;
+  border-radius:99px;
+  text-decoration:none;
+  font-size:.78rem;
+  letter-spacing:-.005em;
+  border:1px solid var(--gold-2);
+  box-shadow:0 2px 6px rgba(196,154,58,.30), inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .15s ease, box-shadow .2s ease, background .15s ease;
+}
+.topbar .utility .topbar-cta-gold:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(196,154,58,.40), inset 0 1px 0 rgba(255,255,255,.45);
+  background:linear-gradient(180deg, #F1D17F 0%, var(--gold) 100%);
+}
+@media (max-width:780px){
+  .topbar .utility .topbar-cta-gold{font-size:.72rem;padding:6px 10px}
 }
