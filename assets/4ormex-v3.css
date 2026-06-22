@@ -90,8 +90,9 @@ body:has(.demo-banner) .sidebar{top:calc(var(--banner-h) + var(--topbar-h) + 46p
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);flex:none}
 .brand img{height:34px;width:auto}
 .brand .sub{
-  font-weight:600;font-size:.66rem;color:var(--text-3);letter-spacing:.18em;text-transform:uppercase;
-  padding-left:12px;border-left:1px solid var(--border);max-width:11ch;line-height:1.2;
+  font-weight:600;font-size:.7rem;color:var(--text-3);letter-spacing:.16em;text-transform:uppercase;
+  padding-left:14px;border-left:1px solid var(--border);line-height:1.2;
+  white-space:nowrap;
 }
 @media (max-width:860px){.brand .sub{display:none}}
 

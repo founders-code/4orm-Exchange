@@ -13,7 +13,7 @@
       <div class="topbar-inner">
         <a href="/" class="brand" aria-label="4ormEx home">
           <img src="/assets/4orm-logo.png" alt="4orm Finance" />
-          <span class="sub">4ormEx · Pillar 02 · Canadian RWA trading venue (design preview)</span>
+          <span class="sub">The Canadian RWA Exchange</span>
         </a>
         <label class="search" aria-label="Search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -21,9 +21,6 @@
           <span class="kbd">⌘ K</span>
         </label>
         <nav class="utility" aria-label="Primary">
-          <a href="/about.html">About</a>
-          <a href="/for-issuers.html">For issuers</a>
-          <a href="/data-api.html">Data API</a>
           <a class="back" href="https://4ormfinance.com">← 4orm Finance</a>
           <a class="cta" href="https://4ormfinance.com/#waitlist">Request access</a>
         </nav>

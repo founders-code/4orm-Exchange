@@ -9,9 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=15" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=16" />
 
 <style>
+/* Two-column hero: text left, snapshot panel right */
+.hp-hero{ display:grid; grid-template-columns:1.6fr 1fr; gap:32px; align-items:stretch; }
+@media (max-width:980px){ .hp-hero{ grid-template-columns:1fr; gap:22px; } }
+.hp-hero-left{ display:flex; flex-direction:column; }
+.hp-hero-right{ display:flex; flex-direction:column; gap:14px; }
+
 .hp-hero-eye{
   font-family:var(--font-mono);
   font-size:.72rem;
@@ -26,29 +32,71 @@
   padding:6px 12px;
   background:var(--gold-50);
   border-radius:99px;
+  align-self:flex-start;
 }
 .hp-hero-eye .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold-2); }
 .pane-head h1{
-  font-size:2.8rem;
+  font-size:2.6rem;
   font-weight:800;
   letter-spacing:-.035em;
   line-height:1.05;
   margin:0 0 16px;
   color:var(--text);
-  max-width:780px;
 }
 .pane-head h1 .accent{ color:var(--brand); }
 .pane-head p.lede{
-  font-size:1.04rem;
+  font-size:1rem;
   color:var(--text-2);
-  line-height:1.6;
+  line-height:1.55;
   margin:0;
-  max-width:680px;
 }
 @media (max-width:780px){
   .pane-head h1{ font-size:1.85rem; }
-  .pane-head p.lede{ font-size:.96rem; }
+  .pane-head p.lede{ font-size:.94rem; }
 }
+
+/* Right-side snapshot panel */
+.snapshot{
+  background:linear-gradient(180deg, var(--navy-700) 0%, var(--navy-800) 100%);
+  color:#fff;
+  border-radius:var(--r-lg);
+  padding:24px 24px 22px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  position:relative;
+  overflow:hidden;
+}
+.snapshot::after{
+  content:""; position:absolute; top:-40%; right:-20%; width:80%; height:80%;
+  background:radial-gradient(circle, rgba(231,199,108,.16) 0%, rgba(231,199,108,0) 60%);
+  pointer-events:none;
+}
+.snapshot .sn-eye{
+  font-family:var(--font-mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase;
+  color:#FFD9A8; font-weight:700;
+}
+.snapshot .sn-num{
+  font-size:3.4rem; font-weight:800; letter-spacing:-.04em; line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.snapshot .sn-num .cur{ font-size:.5em; color:rgba(255,255,255,.6); font-weight:600; vertical-align:0.4em; margin-right:6px; }
+.snapshot .sn-sub{
+  font-size:.85rem; line-height:1.5; color:rgba(255,255,255,.7); margin:0;
+}
+.snapshot .sn-mini-row{
+  display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;
+  border-top:1px solid rgba(255,255,255,.10); padding-top:14px;
+}
+.snapshot .sn-mini .l{
+  font-family:var(--font-mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(255,255,255,.55); font-weight:700; display:block;
+}
+.snapshot .sn-mini .v{
+  font-size:1rem; font-weight:800; color:#fff; margin-top:3px; display:block;
+  font-variant-numeric:tabular-nums;
+}
+.snapshot .sn-mini .v.warn{ color:#FFD9A8; }
 
 /* small "designed within" tag row */
 .designed-within{
@@ -99,24 +147,37 @@
 <main class="pane">
 
   <header class="pane-head">
-    <span class="hp-hero-eye"><span class="dot"></span>Pillar 02 · Trading venue · Design preview</span>
-    <h1>Canada's regulated <span class="accent">tokenized real-world asset</span> market, illustrated.</h1>
-    <p class="lede">4ormEx is the planned permissioned trading venue inside the 4orm Finance regulated control plane. This page shows the asset categories the venue is designed to support and what an institutional buyer or issuer would see once 4ormEx is registered. Today, every figure, identifier, counterparty and listing shown on this site is simulated and illustrative.</p>
-    <div class="designed-within">
-      <span class="tag"><span class="x">Designed within ·</span>CIRO perimeter</span>
-      <span class="tag"><span class="x">·</span>CSA framework</span>
-      <span class="tag"><span class="x">·</span>OSFI capital treatment reference</span>
-      <span class="tag"><span class="x">·</span>FINTRAC PCMLTFA</span>
-      <span class="tag" style="background:#FFF;border-color:#F0D78A;color:#7A5A0A"><span class="x">Status ·</span>not registered · no applications filed</span>
+    <div class="hp-hero">
+
+      <div class="hp-hero-left">
+        <span class="hp-hero-eye"><span class="dot"></span>Pillar 02 · Trading venue · Design preview</span>
+        <h1>Canada's regulated <span class="accent">tokenized real-world asset</span> market, illustrated.</h1>
+        <p class="lede">4ormEx is the planned permissioned trading venue inside the 4orm Finance regulated control plane. This page shows the asset categories the venue is designed to support and what an institutional buyer or issuer would see once 4ormEx is registered. Every figure, identifier, counterparty, and listing on this site is simulated and illustrative.</p>
+        <div class="designed-within" style="margin-top:18px">
+          <span class="tag"><span class="x">Designed within ·</span>CIRO perimeter</span>
+          <span class="tag"><span class="x">·</span>CSA framework</span>
+          <span class="tag"><span class="x">·</span>OSFI capital reference</span>
+          <span class="tag"><span class="x">·</span>FINTRAC PCMLTFA</span>
+          <span class="tag" style="background:#FFF;border-color:#F0D78A;color:#7A5A0A"><span class="x">Status ·</span>not registered · no applications filed</span>
+        </div>
+      </div>
+
+      <aside class="hp-hero-right" aria-label="Illustrative platform snapshot">
+        <div class="snapshot">
+          <span class="sn-eye">Illustrative · total on platform</span>
+          <div class="sn-num"><span class="cur">C$</span>1.42B</div>
+          <p class="sn-sub">Simulated total value across all ten illustrative asset categories. No real on-platform value exists.</p>
+          <div class="sn-mini-row">
+            <div class="sn-mini"><span class="l">Asset categories</span><span class="v">10</span></div>
+            <div class="sn-mini"><span class="l">Illustrative listings</span><span class="v">~70</span></div>
+            <div class="sn-mini"><span class="l">Applications filed</span><span class="v warn">0</span></div>
+            <div class="sn-mini"><span class="l">Live trading</span><span class="v warn">No</span></div>
+          </div>
+        </div>
+      </aside>
+
     </div>
   </header>
-
-  <!-- Big hero stat: illustrative total tokenized value across all classes -->
-  <section class="hero-stat" aria-label="Illustrative total tokenized value">
-    <div class="hs-eye">Illustrative · total Canadian RWA on platform</div>
-    <div class="hs-num"><span class="cur">C$</span>1.42B</div>
-    <p class="hs-sub">Simulated total value across all ten asset categories the venue is designed to support. No real on-platform value exists; every number on this site is illustrative. Updated never, because nothing is live yet.</p>
-  </section>
 
   <!-- Buyer / Issuer fork -->
   <section class="fork" aria-label="Choose your path">
@@ -311,7 +372,7 @@
 
 </main>
 
-<script src="/assets/4ormex-chrome.js?v=15"></script>
-<script src="/assets/4ormex-ui.js?v=15"></script>
+<script src="/assets/4ormex-chrome.js?v=16"></script>
+<script src="/assets/4ormex-ui.js?v=16"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var ACK_KEY = '4ormex_demo_ack';
+  var ACK_KEY = '4ormex_demo_ack_v15b';
 
   /* ---------- Persistent banner ---------- */
   function injectBanner() {
