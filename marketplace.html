@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=22" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=23" />
 <style>
 /* ----- Marketplace-specific ----- */
 .market-strip{
@@ -123,7 +123,7 @@
         <p class="ph-lede">Real-time matching, depth-of-book transparency, and pre-trade compliance on every order. Cash leg settles in tCAD-MM (illustrative), institution-issued (illustrative) tokenized deposits, or wCAD-CB (external precedent · not 4ormEx) when available — T+0 delivery-versus-payment, T+2 legacy compatibility.</p>
       </div>
       <div class="ph-stats">
-        <div class="ph-stat"><span class="ps-l">Listed instruments</span><span class="ps-v">23</span><span class="ps-d">+ 4 · 30d</span></div>
+        <div class="ph-stat"><span class="ps-l">Illustrative listings</span><span class="ps-v">23</span><span class="ps-d">+ 4 · 30d</span></div>
         <div class="ph-stat"><span class="ps-l">24h volume</span><span class="ps-v"><span class="cur">C$</span>168.4M</span><span class="ps-d">▲ 2.1%</span></div>
         <div class="ph-stat"><span class="ps-l">Median spread</span><span class="ps-v">2.0<span class="cur" style="margin-left:4px">bps</span></span><span class="ps-d">tighter · 30d</span></div>
       </div>
@@ -153,7 +153,7 @@
         <div class="ms-stat"><div class="lbl">24h Vol</div><div class="val" id="mh-vol">C$ 24.1M</div></div>
         <div class="ms-stat"><div class="lbl">TVL</div><div class="val" id="mh-tvl">C$ 312.4M</div></div>
       </div>
-      <div class="ms-actions"><span class="pill"><span class="dot"></span> Market open</span></div>
+      <div class="ms-actions"><span class="pill"><span class="dot"></span> Illustrative · not live</span></div>
     </div>
 
     <!-- Trading grid -->
@@ -165,7 +165,7 @@
       </div>
 
       <div class="panel tg-book">
-        <div class="panel-h"><h3>Order book · <span id="book-ticker">tGCB</span></h3><span class="ph-meta">CLOB · Live</span></div>
+        <div class="panel-h"><h3>Order book · <span id="book-ticker">tGCB</span> <span style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#7A5A0A;background:#FDF5E6;padding:2px 8px;border-radius:99px;margin-left:8px;font-weight:700">Phase 4 concept · not live</span></h3><span class="ph-meta">CLOB · illustrative (Phase 4 concept)</span></div>
         <div class="book-meta">
           <div class="bm"><div class="lbl">Best bid</div><div class="val up" id="best-bid">99.81</div></div>
           <div class="bm"><div class="lbl">Best ask</div><div class="val dn" id="best-ask">99.83</div></div>
@@ -351,7 +351,7 @@ renderAll();
 setInterval(()=>{const drift=(Math.random()-0.5)*(active.px<10?0.0005:0.02); active.px=+(active.px+drift).toFixed(active.px<10?4:2); renderHeader(); renderBook();},4000);
 setInterval(()=>{renderTrades();},7000);
 </script>
-<script src="/assets/4ormex-chrome.js?v=22"></script>
-<script src="/assets/4ormex-ui.js?v=22"></script>
+<script src="/assets/4ormex-chrome.js?v=23"></script>
+<script src="/assets/4ormex-ui.js?v=23"></script>
 </body>
 </html>
