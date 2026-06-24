@@ -63,10 +63,6 @@
       '<div class="nav-inner">' +
         '<a class="brand" href="/" aria-label="4ormEx home">' +
           '<img class="brand-logo" src="/assets/4orm-finance-logo.png" alt="4orm Finance" />' +
-          '<span class="brand-label">' +
-            '<span class="l1">4ormEx</span>' +
-            '<span class="l2">Pillar 02 · Trading</span>' +
-          '</span>' +
         '</a>' +
         '<nav class="nav-links" aria-label="Primary">' + links + '</nav>' +
         '<a class="nav-cta" href="https://4ormfinance.com/#waitlist">Request access ' +
@@ -104,10 +100,10 @@
           '<h3>Four surfaces. One perimeter. 4ormEx is one of them.</h3>' +
         '</div>' +
         '<div class="fam-grid">' +
-          '<a class="fam-card here" href="/"><span class="badge">You are here</span><h4>4ormEx</h4><p>Trading venue surface. Permissioned matching with settlement finality at commit.</p><span class="url">4ormex.com</span></a>' +
-          '<a class="fam-card" href="https://4ormfinance.com"><span class="badge">Main</span><h4>4orm Finance</h4><p>The neutral settlement layer. Six capabilities inside one perimeter.</p><span class="url">4ormfinance.com</span></a>' +
-          '<a class="fam-card" href="https://4ormedc.com"><span class="badge">Demo</span><h4>Demo Exchange</h4><p>Guided walkthrough of the settlement-layer mechanics on a simulated order.</p><span class="url">4ormedc.com</span></a>' +
-          '<a class="fam-card" href="https://kcs-capital.com"><span class="badge">Engineering</span><h4>KCS Capital</h4><p>The independent firm engineering 4orm Finance and 4ormEx. Founder-led.</p><span class="url">kcs-capital.com</span></a>' +
+          '<a class="fam-card here fc-ex" href="/"><span class="badge">You are here</span><h4>4ormEx</h4><p>Trading venue surface. Permissioned matching with settlement finality at commit.</p><span class="url">4ormex.com</span></a>' +
+          '<a class="fam-card fc-fin" href="https://4ormfinance.com"><span class="badge">Main</span><h4>4orm Finance</h4><p>The neutral settlement layer. Six capabilities inside one perimeter.</p><span class="url">4ormfinance.com</span></a>' +
+          '<a class="fam-card fc-demo" href="https://4ormedc.com"><span class="badge">Demo</span><h4>Demo Exchange</h4><p>Guided walkthrough of the settlement-layer mechanics on a simulated order.</p><span class="url">4ormedc.com</span></a>' +
+          '<a class="fam-card fc-kcs" href="https://kcs-capital.com"><span class="badge">Engineering</span><h4>KCS Capital</h4><p>The independent firm engineering 4orm Finance and 4ormEx. Founder-led.</p><span class="url">kcs-capital.com</span></a>' +
         '</div>' +
       '</div>';
     return s;

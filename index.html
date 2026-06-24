@@ -58,40 +58,171 @@
       </div>
     </section>
 
-    <section class="section tight">
-      <div class="wrap">
-        <div class="viz-card">
-          <div class="xprev-hdr">Illustrative venue view · simulated tickers · not a live market</div>
-          <div class="xprev-chart">
-            <svg width="100%" height="140" viewBox="0 0 600 140" preserveAspectRatio="none" aria-hidden="true">
-              <defs>
-                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#E7C76C" stop-opacity="0.15"/>
-                  <stop offset="1" stop-color="#E7C76C" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0,100 L50,88 L100,92 L150,70 L200,75 L250,55 L300,60 L350,42 L400,48 L450,30 L500,35 L550,22 L600,18 L600,140 L0,140 Z" fill="url(#chartFill)"/>
-              <path d="M0,100 L50,88 L100,92 L150,70 L200,75 L250,55 L300,60 L350,42 L400,48 L450,30 L500,35 L550,22 L600,18" fill="none" stroke="#E7C76C" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="xprev-depth">
-            <span style="height:18px"></span><span style="height:24px"></span><span style="height:14px"></span><span style="height:32px"></span><span style="height:20px"></span><span style="height:28px"></span><span style="height:16px"></span><span style="height:30px"></span><span style="height:22px"></span><span style="height:26px"></span><span style="height:12px"></span><span style="height:32px"></span>
-          </div>
-          <div class="xprev-book">
-            <div class="bid">
-              <div class="row"><span>GOVT-CA</span><span>99.42</span></div>
-              <div class="row"><span>CRED-MM</span><span>101.18</span></div>
-              <div class="row"><span>REIT-ON</span><span>48.75</span></div>
-            </div>
-            <div class="ask">
-              <div class="row"><span>GOVT-CA</span><span>99.48</span></div>
-              <div class="row"><span>CRED-MM</span><span>101.24</span></div>
-              <div class="row"><span>REIT-ON</span><span>48.82</span></div>
-            </div>
-          </div>
+<!-- Section 2 - Institutional dashboard preview (v17.2) -->
+<section class="section venue-preview-section">
+  <div class="wrap">
+    <div class="venue-card">
+
+      <div class="venue-statbar">
+        <div class="vs-left">
+          <span class="vs-tag">Illustrative venue view</span>
+          <span class="vs-pulse"></span>
+          <span class="vs-meta">Simulated · not a live market · for design preview only</span>
+        </div>
+        <div class="vs-right">
+          <span class="vs-time">14:32:18 ET</span>
+          <span class="vs-rule">|</span>
+          <span class="vs-pair">tGCB / CAD</span>
         </div>
       </div>
-    </section>
+
+      <div class="venue-mkt-head">
+        <div class="vmh-asset">
+          <span class="vmh-ticker">tGCB</span>
+          <span class="vmh-name">Government of Canada T-Bill · 90d</span>
+          <span class="vmh-chip">Sovereign</span>
+        </div>
+        <div class="vmh-price">
+          <span class="vmh-last">C$ 99.82</span>
+          <span class="vmh-chg up">▲ 0.18% · +0.18 24h</span>
+        </div>
+      </div>
+
+      <div class="venue-stats">
+        <div class="vstat"><span class="l">24h volume</span><span class="v">C$ 412.6M</span></div>
+        <div class="vstat"><span class="l">24h high</span><span class="v">99.84</span></div>
+        <div class="vstat"><span class="l">24h low</span><span class="v">99.74</span></div>
+        <div class="vstat"><span class="l">Spread</span><span class="v gold">C$ 0.02</span></div>
+        <div class="vstat"><span class="l">Settlement</span><span class="v">T+0 DvP</span></div>
+        <div class="vstat"><span class="l">Custody</span><span class="v">Qualified</span></div>
+      </div>
+
+      <div class="venue-grid">
+
+        <div class="venue-chart">
+          <div class="vc-head">
+            <span class="vc-tag">Price · 24h</span>
+            <span class="vc-times">
+              <span>1H</span>
+              <span class="on">24H</span>
+              <span>7D</span>
+              <span>1M</span>
+              <span>1Y</span>
+            </span>
+          </div>
+          <svg class="vc-svg" viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="vcArea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFD9A8" stop-opacity=".45"/>
+                <stop offset="100%" stop-color="#FFD9A8" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="vcLine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#B8860B"/>
+                <stop offset="100%" stop-color="#FFD9A8"/>
+              </linearGradient>
+              <filter id="vcGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <g opacity="0.45">
+              <line x1="0" y1="40" x2="520" y2="40" stroke="#C0C0C0" stroke-dasharray="2 4" stroke-width=".8"/>
+              <line x1="0" y1="90" x2="520" y2="90" stroke="#C0C0C0" stroke-dasharray="2 4" stroke-width=".8"/>
+              <line x1="0" y1="140" x2="520" y2="140" stroke="#C0C0C0" stroke-dasharray="2 4" stroke-width=".8"/>
+            </g>
+
+            <g font-family="JetBrains Mono, monospace" font-size="9" fill="#9AB6FF" letter-spacing=".05em">
+              <text x="525" y="44">99.86</text>
+              <text x="525" y="94">99.80</text>
+              <text x="525" y="144">99.74</text>
+            </g>
+
+            <path d="M0,135 C30,128 50,138 80,118 C115,98 140,110 170,98 C200,85 230,98 260,82 C290,68 320,82 350,66 C380,52 405,62 440,46 C470,32 500,40 520,32 L520,180 L0,180 Z" fill="url(#vcArea)"/>
+            <path d="M0,135 C30,128 50,138 80,118 C115,98 140,110 170,98 C200,85 230,98 260,82 C290,68 320,82 350,66 C380,52 405,62 440,46 C470,32 500,40 520,32" fill="none" stroke="url(#vcLine)" stroke-width="2.2" stroke-linecap="round"/>
+
+            <circle cx="520" cy="32" r="6" fill="#FFD9A8" filter="url(#vcGlow)"/>
+            <circle cx="520" cy="32" r="3" fill="#0A1228"/>
+
+            <g fill="#9AB6FF" opacity=".35">
+              <rect x="8"   y="200" width="14" height="14"/>
+              <rect x="32"  y="194" width="14" height="20"/>
+              <rect x="56"  y="188" width="14" height="26"/>
+              <rect x="80"  y="202" width="14" height="12"/>
+              <rect x="104" y="184" width="14" height="30"/>
+              <rect x="128" y="192" width="14" height="22"/>
+              <rect x="152" y="176" width="14" height="38"/>
+              <rect x="176" y="186" width="14" height="28"/>
+              <rect x="200" y="168" width="14" height="46"/>
+              <rect x="224" y="190" width="14" height="24"/>
+              <rect x="248" y="180" width="14" height="34"/>
+              <rect x="272" y="172" width="14" height="42"/>
+              <rect x="296" y="164" width="14" height="50"/>
+              <rect x="320" y="188" width="14" height="26"/>
+              <rect x="344" y="176" width="14" height="38"/>
+              <rect x="368" y="168" width="14" height="46"/>
+              <rect x="392" y="154" width="14" height="60"/>
+              <rect x="416" y="162" width="14" height="52"/>
+              <rect x="440" y="148" width="14" height="66"/>
+              <rect x="464" y="158" width="14" height="56"/>
+              <rect x="488" y="144" width="14" height="70"/>
+              <rect x="512" y="152" width="14" height="62"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="venue-book">
+          <div class="vb-head">
+            <span class="vb-tag">Order book · L2</span>
+            <span class="vb-meta">Top 3 levels</span>
+          </div>
+          <div class="vb-cols">
+            <span>Price (C$)</span>
+            <span>Size</span>
+            <span>Total</span>
+          </div>
+          <div class="vb-asks">
+            <div class="vb-row ask" style="--depth:38%"><span class="px">99.84</span><span class="sz">3,500</span><span class="tot">16,200</span></div>
+            <div class="vb-row ask" style="--depth:78%"><span class="px">99.83</span><span class="sz">7,200</span><span class="tot">12,700</span></div>
+            <div class="vb-row ask" style="--depth:55%"><span class="px">99.82</span><span class="sz">5,100</span><span class="tot">5,500</span></div>
+          </div>
+          <div class="vb-spread">
+            <div class="vb-spread-l">
+              <span class="lbl">Spread</span>
+              <span class="v">C$ 0.02 · 2 bp</span>
+            </div>
+            <div class="vb-spread-r">
+              <span class="lbl">Mid</span>
+              <span class="v">99.81</span>
+            </div>
+          </div>
+          <div class="vb-bids">
+            <div class="vb-row bid" style="--depth:90%"><span class="px">99.80</span><span class="sz">8,400</span><span class="tot">8,400</span></div>
+            <div class="vb-row bid" style="--depth:62%"><span class="px">99.79</span><span class="sz">5,720</span><span class="tot">14,120</span></div>
+            <div class="vb-row bid" style="--depth:41%"><span class="px">99.78</span><span class="sz">3,800</span><span class="tot">17,920</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="venue-trades">
+        <div class="vt-head">
+          <span class="vt-tag">Recent trades</span>
+          <span class="vt-meta">5 most recent · simulated</span>
+        </div>
+        <div class="vt-grid">
+          <div class="vt-row"><span class="t">14:32:18</span><span class="p up">99.82</span><span class="s">5,100</span><span class="side buy">BUY</span></div>
+          <div class="vt-row"><span class="t">14:32:14</span><span class="p up">99.81</span><span class="s">2,400</span><span class="side buy">BUY</span></div>
+          <div class="vt-row"><span class="t">14:32:07</span><span class="p dn">99.80</span><span class="s">3,800</span><span class="side sell">SELL</span></div>
+          <div class="vt-row"><span class="t">14:31:54</span><span class="p up">99.81</span><span class="s">1,200</span><span class="side buy">BUY</span></div>
+          <div class="vt-row"><span class="t">14:31:42</span><span class="p up">99.81</span><span class="s">6,400</span><span class="side buy">BUY</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <section class="section">
       <div class="wrap">
@@ -136,14 +267,38 @@
           <h2>One perimeter. Six capabilities. <span class="accent">4ormEx is Pillar 02.</span></h2>
           <p>The canonical ledger of record sits at the platform level. 4ormEx operates Trading. The other five capabilities run as siblings inside the same neutral settlement layer.</p>
         </div>
-        <div class="pill-chips">
-          <span class="pc"><span class="dot" style="background:var(--p1)"></span>Issuance</span>
-          <span class="pc here"><span class="dot" style="background:var(--p2)"></span>Trading</span>
-          <span class="pc"><span class="dot" style="background:var(--p3)"></span>Settlement</span>
-          <span class="pc"><span class="dot" style="background:var(--p4)"></span>Custody</span>
-          <span class="pc"><span class="dot" style="background:var(--p5)"></span>Reporting</span>
-          <span class="pc"><span class="dot" style="background:var(--p6)"></span>Supervision</span>
-        </div>
+        <div class="pillar-row">
+  <a class="prw p1" href="/settlement-layer">
+    <span class="prw-num">01</span>
+    <span class="prw-name">Issuance</span>
+    <span class="prw-line">Primary issuance, NI 45-106.</span>
+  </a>
+  <a class="prw p2 here" href="/settlement-layer">
+    <span class="prw-num">02</span>
+    <span class="prw-name">Trading</span>
+    <span class="prw-line">Permissioned matching. You are here.</span>
+  </a>
+  <a class="prw p3" href="/settlement-layer">
+    <span class="prw-num">03</span>
+    <span class="prw-name">Settlement</span>
+    <span class="prw-line">Delivery versus payment, T+0.</span>
+  </a>
+  <a class="prw p4" href="/settlement-layer">
+    <span class="prw-num">04</span>
+    <span class="prw-name">Custody</span>
+    <span class="prw-line">Qualified Canadian custodian.</span>
+  </a>
+  <a class="prw p5" href="/settlement-layer">
+    <span class="prw-num">05</span>
+    <span class="prw-name">Reporting</span>
+    <span class="prw-line">Derived from the ledger.</span>
+  </a>
+  <a class="prw p6" href="/settlement-layer">
+    <span class="prw-num">06</span>
+    <span class="prw-name">Supervision</span>
+    <span class="prw-line">Read-only regulator feed.</span>
+  </a>
+</div>
         <div class="section-cta">
           <a class="btn btn-ghost" href="/settlement-layer">Read the settlement layer <span class="arr">&rarr;</span></a>
         </div>
@@ -157,14 +312,80 @@
           <h2>Designed for Canadian capital. <span class="accent">All simulated.</span></h2>
           <p>Sovereign, sub-sovereign, private credit, real estate, commodities, carbon credits. Every figure shown is illustrative.</p>
         </div>
-        <div class="cat-chips">
-          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg></span>Sovereign <span class="val">C$ 312M</span></span>
-          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/></svg></span>Sub-sovereign <span class="val">C$ 248M</span></span>
-          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>Private credit <span class="val">C$ 187M</span></span>
-          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Real estate <span class="val">C$ 164M</span></span>
-          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg></span>Commodities <span class="val">C$ 142M</span></span>
-          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5-3 8-7 8-12a8 8 0 1 0-16 0c0 5 3 9 8 12z"/></svg></span>Carbon credits <span class="val">C$ 96M</span></span>
-        </div>
+        <div class="cls-mini-grid">
+  <a class="cls-mini p1" href="/asset-categories">
+    <div class="cm-head">
+      <span class="cm-cat">Sovereign</span>
+      <span class="cm-chg up">▲ 0.4%</span>
+    </div>
+    <span class="cm-name">Government of Canada</span>
+    <span class="cm-val"><span class="cur">C$</span>312M</span>
+    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+      <path d="M0,22 L12,20 L24,17 L36,18 L48,14 L60,12 L72,9 L84,8 L96,6 L108,5 L120,3"
+            fill="none" stroke="var(--p1-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <a class="cls-mini p2" href="/asset-categories">
+    <div class="cm-head">
+      <span class="cm-cat">Sub-sovereign</span>
+      <span class="cm-chg up">▲ 0.2%</span>
+    </div>
+    <span class="cm-name">Provincial &amp; Crown</span>
+    <span class="cm-val"><span class="cur">C$</span>248M</span>
+    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+      <path d="M0,22 L12,20 L24,21 L36,18 L48,16 L60,15 L72,14 L84,12 L96,11 L108,10 L120,8"
+            fill="none" stroke="var(--p2-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <a class="cls-mini p3" href="/asset-categories">
+    <div class="cm-head">
+      <span class="cm-cat">Private credit</span>
+      <span class="cm-chg up">▲ 1.1%</span>
+    </div>
+    <span class="cm-name">Middle-market pools</span>
+    <span class="cm-val"><span class="cur">C$</span>187M</span>
+    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+      <path d="M0,24 L12,21 L24,18 L36,19 L48,15 L60,12 L72,10 L84,8 L96,6 L108,4 L120,2"
+            fill="none" stroke="var(--p3-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <a class="cls-mini p4" href="/asset-categories">
+    <div class="cm-head">
+      <span class="cm-cat">Real estate</span>
+      <span class="cm-chg up">▲ 0.8%</span>
+    </div>
+    <span class="cm-name">REITs &amp; direct CRE</span>
+    <span class="cm-val"><span class="cur">C$</span>164M</span>
+    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+      <path d="M0,18 L12,17 L24,16 L36,17 L48,14 L60,13 L72,12 L84,12 L96,10 L108,8 L120,7"
+            fill="none" stroke="var(--p4-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <a class="cls-mini p5 dn" href="/asset-categories">
+    <div class="cm-head">
+      <span class="cm-cat">Commodities</span>
+      <span class="cm-chg dn">▼ 0.3%</span>
+    </div>
+    <span class="cm-name">Gold / ag / energy</span>
+    <span class="cm-val"><span class="cur">C$</span>142M</span>
+    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+      <path d="M0,8 L12,10 L24,9 L36,12 L48,14 L60,14 L72,17 L84,18 L96,20 L108,22 L120,23"
+            fill="none" stroke="var(--danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <a class="cls-mini p6" href="/asset-categories">
+    <div class="cm-head">
+      <span class="cm-cat">Carbon credits</span>
+      <span class="cm-chg up">▲ 2.4%</span>
+    </div>
+    <span class="cm-name">Compliance &amp; voluntary</span>
+    <span class="cm-val"><span class="cur">C$</span>96M</span>
+    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+      <path d="M0,24 L12,22 L24,20 L36,18 L48,14 L60,10 L72,8 L84,6 L96,5 L108,3 L120,2"
+            fill="none" stroke="var(--p6-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</div>
         <div class="section-cta">
           <a class="btn btn-ghost" href="/asset-categories">See the asset categories <span class="arr">&rarr;</span></a>
         </div>
