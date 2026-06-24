@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Delivery versus payment · how a trade settles · 4ormEx</title>
+  <meta name="description" content="Two legs and a custody confirmation. One write. One finality." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body data-page="dvp">
+  <div id="util-mount"></div>
+  <div id="legend-mount"></div>
+  <div id="nav-mount"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="hero-eye">
+          <span class="bar"></span>
+          <span class="txt">Delivery versus payment</span>
+        </div>
+        <h1>Two legs. One custody confirmation. <span class="accent">One write. One finality.</span></h1>
+        <p class="lede">Traditional settlement decouples the cash and asset legs by days. Delivery versus payment binds them: both legs and the custody record commit in the same write to the canonical ledger, or none does. No reconciliation. No counterparty risk window.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap">
+        <div class="split-grid">
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-n">1. Match</div>
+              <h3>Match</h3>
+              <p>The order book matches a bid and an ask. Eligibility for both counterparties was verified pre-trade. The matcher emits a settlement instruction containing the asset leg, the cash leg, and the custody confirmation.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-n">2. Commit</div>
+              <h3>Commit</h3>
+              <p>The settlement instruction is one transaction against the canonical ledger. The asset transfer, the cash transfer, and the custody record write together. There is no intermediate state.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-n">3. Finalize</div>
+              <h3>Finalize</h3>
+              <p>On commit, the trade is final. The supervisory feed sees the commit. The member firms see the commit. The regulator sees the commit. One record. One time.</p>
+            </div>
+          </div>
+          <div class="viz-card">
+            <div class="dvp-viz">
+              <div class="legs">
+                <div class="leg cash">Cash leg</div>
+                <div class="leg asset">Asset leg</div>
+              </div>
+              <svg width="100%" height="60" viewBox="0 0 200 60" aria-hidden="true">
+                <path class="flow-line" d="M50,5 L100,35" stroke="#FFD9A8" stroke-width="1.5" fill="none"/>
+                <path class="flow-line" d="M150,5 L100,35" stroke="#9AB6FF" stroke-width="1.5" fill="none"/>
+                <path class="flow-line" d="M100,55 L100,45" stroke="#7BE3B0" stroke-width="1.5" fill="none"/>
+              </svg>
+              <div class="core">
+                <h4>Settlement finality</h4>
+                <div class="sub">ALL-OR-NONE · canonical write · &#10003; T+0</div>
+              </div>
+              <span class="custody">Custody confirmation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-band">
+      <div class="wrap">
+        <div class="sh">
+          <h2>What DvP replaces.</h2>
+        </div>
+        <div class="cmp-grid">
+          <div class="cmp-col">
+            <h3>Before</h3>
+            <ul>
+              <li>Trade date T, settlement date T+1 or later.</li>
+              <li>Cash and asset move on separate systems on separate days.</li>
+              <li>Reconciliation between matched-but-not-settled records.</li>
+              <li>A counterparty-risk window between match and settlement.</li>
+              <li>A failed-trade workflow that exists because trades fail.</li>
+            </ul>
+          </div>
+          <div class="cmp-col">
+            <h3>With DvP at commit</h3>
+            <ul>
+              <li>Trade and settlement on the same write.</li>
+              <li>One system. One record. One time.</li>
+              <li>No reconciliation step. The match IS the settlement instruction.</li>
+              <li>No counterparty risk window. Either both legs commit, or neither does.</li>
+              <li>No failed-trade workflow at the layer level. A failed commit is a rolled-back transaction.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="cta-mount"></div>
+  <div id="fam-mount"></div>
+  <div id="footer-mount"></div>
+
+  <script src="/assets/chrome.js" defer></script>
+</body>
+</html>

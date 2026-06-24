@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Settlement finality · final at commit · 4ormEx</title>
+  <meta name="description" content="Finality is a property of the layer, not a property of speed." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body data-page="finality">
+  <div id="util-mount"></div>
+  <div id="legend-mount"></div>
+  <div id="nav-mount"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="hero-eye">
+          <span class="bar"></span>
+          <span class="txt">Settlement finality</span>
+        </div>
+        <h1>Final at commit. <span class="accent">Not eventually. Not probably.</span></h1>
+        <p class="lede">Settlement finality is a property of the layer, not a property of speed. A fast settlement is not the same as a final settlement. 4ormEx is designed so that the moment of match is the moment of commit, and the moment of commit is the moment of finality.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="wrap">
+        <div class="sh">
+          <h2>Finality is a property. Not a feature.</h2>
+          <p>Three things have to be true at the same time for a trade to be final.</p>
+        </div>
+        <div class="tile-grid c3">
+          <div class="tile">
+            <h3>1. The asset leg has transferred.</h3>
+            <p>The canonical ledger reflects the new holder of the token. The prior holder cannot transfer the same token again.</p>
+          </div>
+          <div class="tile">
+            <h3>2. The cash leg has transferred.</h3>
+            <p>The tokenized commercial-bank deposit is now the new holder's liability claim against the bank. The prior holder's claim is extinguished.</p>
+          </div>
+          <div class="tile">
+            <h3>3. The custody record has updated.</h3>
+            <p>The qualified Canadian custodian has acknowledged the new holding. Reporting, tax, and supervisory records derive from this acknowledgement.</p>
+          </div>
+        </div>
+        <p class="lede" style="margin-top:32px">If any of the three would fail, the commit does not happen, and none of the three legs change. There is no intermediate state where one leg has moved and the others have not.</p>
+      </div>
+    </section>
+
+    <section class="section section-band">
+      <div class="wrap">
+        <div class="sh">
+          <h2>The sequence.</h2>
+          <p>Three events. One outcome.</p>
+        </div>
+        <div class="seq-wrap">
+          <svg width="100%" height="120" viewBox="0 0 600 120" aria-label="Timeline: order placed, match and commit, supervisory feed">
+            <line x1="60" y1="60" x2="540" y2="60" stroke="#E3E9F2" stroke-width="2"/>
+            <circle cx="100" cy="60" r="14" fill="#2E6BF2"/>
+            <text x="100" y="95" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#46556E">T-1: order placed</text>
+            <circle cx="300" cy="60" r="18" fill="none" stroke="#E7C76C" stroke-width="3"/>
+            <circle cx="300" cy="60" r="14" fill="#2E6BF2"/>
+            <text x="300" y="30" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#142036" font-weight="700">T0: match + commit (final)</text>
+            <circle cx="500" cy="60" r="14" fill="#2E6BF2"/>
+            <text x="500" y="95" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#46556E">T+0: supervisory feed sees commit</text>
+          </svg>
+          <p class="seq-legend">T+0 is the settlement target. Finality is at commit, not at T+0 itself.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="sh">
+          <h2>Finality versus reconciliation.</h2>
+        </div>
+        <div class="cmp-grid">
+          <div class="cmp-col">
+            <h3>Reconciliation</h3>
+            <ul>
+              <li>Records on multiple systems.</li>
+              <li>A periodic process to reconcile them.</li>
+              <li>A window during which records disagree.</li>
+              <li>Errors discovered in arrears.</li>
+              <li>A reconciliation team and a reconciliation workflow.</li>
+            </ul>
+          </div>
+          <div class="cmp-col">
+            <h3>Finality at commit</h3>
+            <ul>
+              <li>One canonical record.</li>
+              <li>No reconciliation process required at the layer.</li>
+              <li>No window during which records disagree.</li>
+              <li>A failed commit fails the whole transaction.</li>
+              <li>No reconciliation team and no reconciliation workflow at the layer level.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="cta-mount"></div>
+  <div id="fam-mount"></div>
+  <div id="footer-mount"></div>
+
+  <script src="/assets/chrome.js" defer></script>
+</body>
+</html>

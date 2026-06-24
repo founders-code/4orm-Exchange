@@ -1,352 +1,181 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>4ormEx · Canadian RWA Market Overview · Pillar 02 trading venue</title>
-<meta name="description" content="4ormEx is a design preview of the planned permissioned trading venue (Pillar 02 of six) inside the 4orm Finance regulated control plane. Not registered with any regulator. All counterparties, prices, balances and identifiers shown are simulated and illustrative." />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=23" />
-
-<style>
-/* v15e · Redesigned full-bleed hero. The H1 is the whole hero, not a sidebar. */
-.pane-head{
-  background:linear-gradient(180deg, #FFFFFF 0%, #FAFAFC 60%, #F5F5F7 100%);
-  border:1px solid var(--border);
-  border-radius:var(--r-xl);
-  padding:48px 48px 44px;
-  box-shadow:var(--shadow-sm);
-  margin-bottom:28px;
-  position:relative;
-  overflow:hidden;
-}
-.pane-head::before{
-  content:""; position:absolute; top:-20%; right:-10%; width:520px; height:520px;
-  background:radial-gradient(circle, rgba(46,107,242,.08) 0%, rgba(46,107,242,0) 60%);
-  pointer-events:none;
-}
-.pane-head::after{
-  content:""; position:absolute; bottom:-30%; left:-10%; width:520px; height:520px;
-  background:radial-gradient(circle, rgba(231,199,108,.06) 0%, rgba(231,199,108,0) 60%);
-  pointer-events:none;
-}
-.pane-head > *{ position:relative; z-index:1; }
-
-.hp-hero-eye{
-  font-family:var(--font-mono);
-  font-size:.72rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--gold-ink);
-  font-weight:700;
-  margin-bottom:22px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:6px 12px;
-  background:var(--gold-50);
-  border:1px solid var(--gold-100);
-  border-radius:99px;
-}
-.hp-hero-eye .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold-2); }
-
-.pane-head h1{
-  font-size:clamp(2.4rem, 4.2vw, 3.6rem);
-  font-weight:800;
-  letter-spacing:-.04em;
-  line-height:1.02;
-  margin:0 0 22px;
-  color:var(--text);
-}
-.pane-head h1 .accent{ color:var(--brand); }
-.pane-head h1 .accent-gold{ color:var(--gold-2); }
-
-.pane-head p.lede{
-  font-size:1.12rem;
-  color:var(--text-2);
-  line-height:1.55;
-  margin:0;
-  max-width:780px;
-  font-weight:450;
-}
-
-.designed-within{
-  display:flex; flex-wrap:wrap; gap:8px; margin-top:28px;
-  padding-top:24px; border-top:1px solid var(--border);
-}
-
-@media (max-width:780px){
-  .pane-head{ padding:30px 22px; border-radius:var(--r-lg); }
-  .pane-head h1{ font-size:2rem; }
-  .pane-head p.lede{ font-size:1rem; }
-}
-
-/* small "designed within" tag row */
-.designed-within{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:22px;
-}
-.designed-within .tag{
-  font-family:var(--font-mono);
-  font-size:.66rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--text-3);
-  font-weight:700;
-  padding:5px 11px;
-  background:var(--surface-2);
-  border:1px solid var(--border);
-  border-radius:99px;
-}
-.designed-within .tag .x{ color:var(--text-4); margin-right:6px; }
-
-.sec-h{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  margin:8px 0 14px;
-}
-.sec-h h3{
-  margin:0;
-  font-size:1.1rem;
-  font-weight:800;
-  letter-spacing:-.015em;
-  color:var(--text);
-}
-.sec-h .meta{
-  font-family:var(--font-mono);
-  font-size:.7rem;
-  color:var(--text-3);
-  font-weight:600;
-  letter-spacing:.06em;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A neutral Canadian trading venue for tokenized assets · 4ormEx</title>
+  <meta name="description" content="4ormEx is the trading-venue surface inside the 4orm Finance neutral settlement layer. Design preview." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
+<body data-page="home">
+  <div id="util-mount"></div>
+  <div id="legend-mount"></div>
+  <div id="nav-mount"></div>
 
-<body data-product="market-overview">
-
-<main class="pane">
-
-  <!-- 1 · HERO (full-bleed, big H1) -->
-  <header class="pane-head">
-    <span class="hp-hero-eye"><span class="dot"></span>Pillar 02 · Trading venue · Design preview</span>
-    <h1>A design preview of Canada's <span class="accent">planned tokenized real-world asset</span> <span class="accent-gold">trading venue.</span></h1>
-    <p class="lede">4ormEx is the planned permissioned trading venue inside the 4orm Finance regulated control plane. This page shows the asset categories the venue is designed to support and what an institutional buyer or issuer would see once 4ormEx is registered. Every figure, identifier, counterparty and listing on this site is simulated and illustrative.</p>
-    <div class="designed-within">
-      <span class="tag"><span class="x">Designed within ·</span>CIRO perimeter</span>
-      <span class="tag"><span class="x">·</span>CSA framework</span>
-      <span class="tag"><span class="x">·</span>OSFI capital reference</span>
-      <span class="tag"><span class="x">·</span>FINTRAC PCMLTFA</span>
-      <span class="tag" style="background:#FFF;border-color:#F0D78A;color:#7A5A0A"><span class="x">Status ·</span>not registered · no applications filed</span>
-    </div>
-  </header>
-
-  <!-- 2 · ILLUSTRATIVE ASSET CATEGORIES (the 10-tile market grid) -->
-  <div class="sec-h">
-    <h3>Illustrative asset categories on the venue</h3>
-    <span class="meta">All values simulated · no real on-platform balance</span>
-  </div>
-
-  <section class="market-grid" aria-label="Asset class market grid">
-
-    <a class="mg-tile" href="/government-of-canada.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
-        <div>
-          <div class="mg-cat">Sovereign</div>
-          <div class="mg-name">Government of Canada</div>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-eye">
+          <span class="bar"></span>
+          <span class="txt">Pillar 02 / Trading / Design preview</span>
+        </div>
+        <h1>A neutral Canadian trading venue for tokenized assets, <span class="accent">with settlement finality at commit.</span></h1>
+        <p class="sub">Title, cash, and rules travel together. One write to the canonical ledger, or none.</p>
+        <p class="lede">4ormEx is the trading-venue surface inside the 4orm Finance neutral settlement layer. Permissioned matching, eligibility checked pre-trade, settlement on the same write as the match. Built inside the Canadian regulatory perimeter, not adjacent to it.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://4ormfinance.com/#waitlist">Request access
+            <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="/settlement-layer">See the settlement layer</a>
+          <a class="btn btn-ghost" href="/dvp">How a trade settles</a>
+        </div>
+        <div class="hero-stats">
+          <div class="ahs-card">
+            <div class="l">Asset categories</div>
+            <div class="v">6</div>
+            <div class="d">at venue launch · illustrative</div>
+          </div>
+          <div class="ahs-card">
+            <div class="l">Settlement target</div>
+            <div class="v gold">T+0</div>
+            <div class="d">delivery versus payment</div>
+          </div>
+          <div class="ahs-card">
+            <div class="l">Cash leg</div>
+            <div class="v blue">Bank token</div>
+            <div class="d">commercial-bank deposit</div>
+          </div>
+          <div class="ahs-card">
+            <div class="l">Eligibility</div>
+            <div class="v green">Pre-trade</div>
+            <div class="d">checked before match</div>
+          </div>
         </div>
       </div>
-      <div class="mg-val"><span class="cur">C$</span>312M</div>
-      <div class="mg-meta"><span class="chg">▲ 0.4%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,24 L12,22 L24,20 L36,21 L48,18 L60,16 L72,15 L84,13 L96,12 L108,10 L120,8" /></svg>
-    </a>
+    </section>
 
-    <a class="mg-tile" href="/provincial-sub-sovereign.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11l7-5 7 5v10M10 21v-7h4v7"/></svg></div>
-        <div>
-          <div class="mg-cat">Sub-sovereign</div>
-          <div class="mg-name">Provincial &amp; Crown Corp</div>
+    <section class="section tight">
+      <div class="wrap">
+        <div class="viz-card">
+          <div class="xprev-hdr">Illustrative venue view · simulated tickers · not a live market</div>
+          <div class="xprev-chart">
+            <svg width="100%" height="140" viewBox="0 0 600 140" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#E7C76C" stop-opacity="0.15"/>
+                  <stop offset="1" stop-color="#E7C76C" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,100 L50,88 L100,92 L150,70 L200,75 L250,55 L300,60 L350,42 L400,48 L450,30 L500,35 L550,22 L600,18 L600,140 L0,140 Z" fill="url(#chartFill)"/>
+              <path d="M0,100 L50,88 L100,92 L150,70 L200,75 L250,55 L300,60 L350,42 L400,48 L450,30 L500,35 L550,22 L600,18" fill="none" stroke="#E7C76C" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="xprev-depth">
+            <span style="height:18px"></span><span style="height:24px"></span><span style="height:14px"></span><span style="height:32px"></span><span style="height:20px"></span><span style="height:28px"></span><span style="height:16px"></span><span style="height:30px"></span><span style="height:22px"></span><span style="height:26px"></span><span style="height:12px"></span><span style="height:32px"></span>
+          </div>
+          <div class="xprev-book">
+            <div class="bid">
+              <div class="row"><span>GOVT-CA</span><span>99.42</span></div>
+              <div class="row"><span>CRED-MM</span><span>101.18</span></div>
+              <div class="row"><span>REIT-ON</span><span>48.75</span></div>
+            </div>
+            <div class="ask">
+              <div class="row"><span>GOVT-CA</span><span>99.48</span></div>
+              <div class="row"><span>CRED-MM</span><span>101.24</span></div>
+              <div class="row"><span>REIT-ON</span><span>48.82</span></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="mg-val"><span class="cur">C$</span>248M</div>
-      <div class="mg-meta"><span class="chg">▲ 0.2%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,26 L12,24 L24,25 L36,22 L48,21 L60,19 L72,20 L84,17 L96,15 L108,14 L120,12" /></svg>
-    </a>
+    </section>
 
-    <a class="mg-tile cat-credit" href="/private-credit.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h2"/></svg></div>
-        <div>
-          <div class="mg-cat">Private credit</div>
-          <div class="mg-name">Middle-market pools</div>
+    <section class="section">
+      <div class="wrap">
+        <div class="sh">
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">What 4ormEx is</span></div>
+          <h2>One trading surface. Title, cash, and rules <span class="accent">on one settlement layer.</span></h2>
+          <p>4ormEx is one of six capabilities inside the 4orm Finance neutral settlement layer. The Trading surface matches orders, checks eligibility pre-trade, and writes the asset leg, the cash leg, and the supervisory record in one commit. There is no separate clearing or settlement step.</p>
+        </div>
+        <div class="tile-grid c3">
+          <a class="tile" href="/asset-categories">
+            <div class="tile-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            </div>
+            <h3>Title</h3>
+            <p>Token transfers represent the legal interest. Registry on the canonical ledger is the record. No reconciliation against an external book.</p>
+            <span class="link">Asset categories <span class="arr">&rarr;</span></span>
+          </a>
+          <a class="tile gold" href="/dvp">
+            <div class="tile-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 10h8M8 14h8"/></svg>
+            </div>
+            <h3>Cash</h3>
+            <p>The cash leg is a tokenized commercial-bank deposit, issued by the bank under its own banking authorizations. 4orm takes no deposits and needs no banking licence.</p>
+            <span class="link">How DvP works <span class="arr">&rarr;</span></span>
+          </a>
+          <a class="tile" href="/what-we-do">
+            <div class="tile-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Rules</h3>
+            <p>Eligibility, jurisdiction, and limits are checked pre-trade. The supervisory feed is read-only and privacy-preserving. The venue is designed for the regulators it intends to answer to.</p>
+            <span class="link">What we do <span class="arr">&rarr;</span></span>
+          </a>
         </div>
       </div>
-      <div class="mg-val"><span class="cur">C$</span>187M</div>
-      <div class="mg-meta"><span class="chg">▲ 1.1%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,28 L12,26 L24,22 L36,24 L48,19 L60,17 L72,14 L84,15 L96,11 L108,9 L120,7" /></svg>
-    </a>
+    </section>
 
-    <a class="mg-tile cat-real-estate" href="/real-estate.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H10v7H4a1 1 0 0 1-1-1z"/></svg></div>
-        <div>
-          <div class="mg-cat">Real estate</div>
-          <div class="mg-name">Tokenized REITs &amp; CRE</div>
+    <section class="section section-band">
+      <div class="wrap">
+        <div class="sh">
+          <div class="eye">The settlement layer · six capabilities</div>
+          <h2>One perimeter. Six capabilities. <span class="accent">4ormEx is Pillar 02.</span></h2>
+          <p>The canonical ledger of record sits at the platform level. 4ormEx operates Trading. The other five capabilities run as siblings inside the same neutral settlement layer.</p>
+        </div>
+        <div class="pill-chips">
+          <span class="pc"><span class="dot" style="background:var(--p1)"></span>Issuance</span>
+          <span class="pc here"><span class="dot" style="background:var(--p2)"></span>Trading</span>
+          <span class="pc"><span class="dot" style="background:var(--p3)"></span>Settlement</span>
+          <span class="pc"><span class="dot" style="background:var(--p4)"></span>Custody</span>
+          <span class="pc"><span class="dot" style="background:var(--p5)"></span>Reporting</span>
+          <span class="pc"><span class="dot" style="background:var(--p6)"></span>Supervision</span>
+        </div>
+        <div class="section-cta">
+          <a class="btn btn-ghost" href="/settlement-layer">Read the settlement layer <span class="arr">&rarr;</span></a>
         </div>
       </div>
-      <div class="mg-val"><span class="cur">C$</span>164M</div>
-      <div class="mg-meta"><span class="chg">▲ 0.8%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,22 L12,21 L24,19 L36,20 L48,17 L60,16 L72,14 L84,15 L96,12 L108,11 L120,9" /></svg>
-    </a>
+    </section>
 
-    <a class="mg-tile" href="/commodities.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M8 10h8"/></svg></div>
-        <div>
-          <div class="mg-cat">Commodities</div>
-          <div class="mg-name">Gold · ag · energy</div>
+    <section class="section">
+      <div class="wrap">
+        <div class="sh">
+          <div class="eye">Six categories at launch · illustrative</div>
+          <h2>Designed for Canadian capital. <span class="accent">All simulated.</span></h2>
+          <p>Sovereign, sub-sovereign, private credit, real estate, commodities, carbon credits. Every figure shown is illustrative.</p>
+        </div>
+        <div class="cat-chips">
+          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg></span>Sovereign <span class="val">C$ 312M</span></span>
+          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/></svg></span>Sub-sovereign <span class="val">C$ 248M</span></span>
+          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>Private credit <span class="val">C$ 187M</span></span>
+          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Real estate <span class="val">C$ 164M</span></span>
+          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg></span>Commodities <span class="val">C$ 142M</span></span>
+          <span class="cat-chip"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5-3 8-7 8-12a8 8 0 1 0-16 0c0 5 3 9 8 12z"/></svg></span>Carbon credits <span class="val">C$ 96M</span></span>
+        </div>
+        <div class="section-cta">
+          <a class="btn btn-ghost" href="/asset-categories">See the asset categories <span class="arr">&rarr;</span></a>
         </div>
       </div>
-      <div class="mg-val"><span class="cur">C$</span>142M</div>
-      <div class="mg-meta"><span class="chg dn">▼ 0.3%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path class="dn" d="M0,12 L12,14 L24,13 L36,15 L48,18 L60,17 L72,19 L84,21 L96,20 L108,22 L120,24" /></svg>
-    </a>
+    </section>
+  </main>
 
-    <a class="mg-tile cat-carbon" href="/carbon-credits.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c4 4 6 8 6 12a6 6 0 0 1-12 0c0-4 2-8 6-12z"/><path d="M12 8v8"/></svg></div>
-        <div>
-          <div class="mg-cat">Carbon credits</div>
-          <div class="mg-name">Compliance &amp; voluntary</div>
-        </div>
-      </div>
-      <div class="mg-val"><span class="cur">C$</span>96M</div>
-      <div class="mg-meta"><span class="chg">▲ 2.4%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,30 L12,28 L24,26 L36,24 L48,22 L60,18 L72,16 L84,12 L96,10 L108,7 L120,5" /></svg>
-    </a>
+  <div id="cta-mount"></div>
+  <div id="fam-mount"></div>
+  <div id="footer-mount"></div>
 
-    <a class="mg-tile" href="/infrastructure.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-3 7 3v13M12 11v6"/></svg></div>
-        <div>
-          <div class="mg-cat">Infrastructure</div>
-          <div class="mg-name">Project finance &amp; P3</div>
-        </div>
-      </div>
-      <div class="mg-val"><span class="cur">C$</span>83M</div>
-      <div class="mg-meta"><span class="chg">▲ 0.5%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,24 L12,23 L24,22 L36,20 L48,21 L60,19 L72,18 L84,17 L96,16 L108,15 L120,14" /></svg>
-    </a>
-
-    <a class="mg-tile" href="/equities-cdr.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l5-6 5 4 8-10"/><path d="M21 12V6h-6"/></svg></div>
-        <div>
-          <div class="mg-cat">Equities (CDR-style)</div>
-          <div class="mg-name">Depositary receipts</div>
-        </div>
-      </div>
-      <div class="mg-val"><span class="cur">C$</span>74M</div>
-      <div class="mg-meta"><span class="chg">▲ 0.6%</span><span class="ago">30d simulated</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,26 L12,24 L24,25 L36,22 L48,23 L60,20 L72,21 L84,18 L96,16 L108,15 L120,13" /></svg>
-    </a>
-
-    <a class="mg-tile cat-settlement" href="/bank-deposits.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M7 10h.01M17 10h.01"/></svg></div>
-        <div>
-          <div class="mg-cat">Settlement asset</div>
-          <div class="mg-name">Tokenized Deposit Receipts</div>
-        </div>
-      </div>
-      <div class="mg-val"><span class="cur">C$</span>113M</div>
-      <div class="mg-meta"><span class="ago">Cash leg · no price chg</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,18 L120,18" style="stroke:#C49A3A" /></svg>
-    </a>
-
-    <a class="mg-tile cat-settlement" href="/stablecoins.html">
-      <div class="mg-head">
-        <div class="mg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10"/><path d="M9 9h6M9 15h6"/></svg></div>
-        <div>
-          <div class="mg-cat">Settlement asset</div>
-          <div class="mg-name">Cash Tokens (VRCA)</div>
-        </div>
-      </div>
-      <div class="mg-val"><span class="cur">C$</span>56M</div>
-      <div class="mg-meta"><span class="ago">Reserve-backed · cash leg</span></div>
-      <svg class="mg-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,18 L120,18" style="stroke:#C49A3A" /></svg>
-    </a>
-
-  </section>
-
-  <!-- 3 · ILLUSTRATIVE TOTAL CANADIAN RWA ON PLATFORM (the 1.42B stat) -->
-  <section class="hero-stat" aria-label="Illustrative total tokenized value">
-    <div class="hs-eye">Illustrative · total Canadian RWA on platform</div>
-    <div class="hs-num"><span class="cur">C$</span>1.42B</div>
-    <p class="hs-sub">Simulated total value across all ten asset categories the venue is designed to support. No real on-platform value exists; every number on this site is illustrative.</p>
-  </section>
-
-  <!-- 4 · BUYER / ISSUER FORK (Explore the marketplace · List your asset) -->
-  <section class="fork" aria-label="Choose your path">
-    <a class="fork-tile buyer" href="/marketplace.html">
-      <span class="fork-eye">For institutional buyers</span>
-      <h3 class="fork-h">Explore the marketplace</h3>
-      <p class="fork-desc">See what the trading floor would look like for accredited Canadian investors: order book, asset profiles, pre-trade compliance, custody handoff to Pillar 03. Order entry is non-functional.</p>
-      <span class="fork-arrow">Open the marketplace <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-    </a>
-    <a class="fork-tile issuer" href="/for-issuers.html">
-      <span class="fork-eye">For Canadian issuers</span>
-      <h3 class="fork-h">List your asset</h3>
-      <p class="fork-desc">Tokenize a Canadian real-world asset on a planned settlement venue. Four-step illustrative path from intake to listing: scoping call, KYB and CCO sign-off, tokenization, listing. Express interest only; no live applications are accepted.</p>
-      <span class="fork-arrow">Start the intake <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-    </a>
-  </section>
-
-  <!-- 5 · Top movers strip · illustrative -->
-  <section class="movers" aria-label="Top movers (illustrative)">
-    <h4>Top illustrative listings · 24h simulated</h4>
-    <div class="movers-grid">
-      <div class="mover">
-        <div class="m-tk">tCBC-ALB</div>
-        <div class="m-cat">Compliance carbon · provincial cap</div>
-        <div class="m-row"><span>C$ 38.50</span><span class="ch">▲ 2.4%</span></div>
-      </div>
-      <div class="mover">
-        <div class="m-tk">tPCR-VII</div>
-        <div class="m-cat">Private credit pool · senior secured</div>
-        <div class="m-row"><span>C$ 1,041.20</span><span class="ch">▲ 4.1%</span></div>
-      </div>
-      <div class="mover">
-        <div class="m-tk">tREIT-MF</div>
-        <div class="m-cat">Tokenized REIT · multi-family</div>
-        <div class="m-row"><span>C$ 26.40</span><span class="ch">▲ 0.4%</span></div>
-      </div>
-      <div class="mover">
-        <div class="m-tk">tCMR-AU</div>
-        <div class="m-cat">Commodity · gold-backed</div>
-        <div class="m-row"><span>C$ 96.18</span><span class="ch dn">▼ 0.3%</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What 4ormEx is, and is not -->
-  <section class="card" style="border-left:3px solid #E7C76C;background:#FDFAF1;margin-bottom:28px;padding:26px 28px">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A5A0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><h4 style="margin:0;color:#7A5A0A;font-size:1rem">What 4ormEx is, and is not</h4></div>
-    <p style="font-size:.94rem;line-height:1.6;color:#3D2F0E;margin:0 0 10px"><strong>4ormEx is a design preview of the planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance regulated control plane.</strong> Today, 4ormEx is software. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed.</p>
-    <p style="font-size:.94rem;line-height:1.6;color:#3D2F0E;margin:0 0 10px"><strong>Operating a marketplace for securities is a registrable activity in Canada</strong> under National Instruments 21-101, 23-101, 24-102 and 31-103. 4ormEx intends to seek marketplace recognition and dealer registration before operating any live trading. Until that registration exists, no order, custody, deposit, or payment is being offered, accepted, or solicited through this site.</p>
-    <p style="font-size:.94rem;line-height:1.6;color:#3D2F0E;margin:0"><strong>Every figure, identifier, price, balance, hash, and counterparty shown here is simulated and illustrative.</strong> No real institutions are named anywhere on this site; where an entity is referenced, it is described by category only. Nothing on this site is an offer to sell or solicitation to buy securities, crypto assets, deposits, or any financial instrument, and nothing on this site is financial, legal, tax, or investment advice. Questions: <a href="mailto:compliance@4ormfinance.com" style="color:#7A5A0A;font-weight:700">compliance@4ormfinance.com</a>.</p>
-  </section>
-
-</main>
-
-<script src="/assets/4ormex-chrome.js?v=23"></script>
-<script src="/assets/4ormex-ui.js?v=23"></script>
+  <script src="/assets/chrome.js" defer></script>
 </body>
 </html>
