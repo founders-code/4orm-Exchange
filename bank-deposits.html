@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=19" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=22" />
 <style>
 .chart-card{margin-bottom:24px}
 .chart-card .chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:14px;flex-wrap:wrap}
@@ -34,7 +34,7 @@
     <div>
       <div class="ph-eye">Asset Class · 01</div>
       <h1>Tokenized deposit receipts <span class="accent">· Canadian deposit-taking (illustrative)</span></h1>
-      <p class="ph-lede">Tokenized deposits issued by Canadian deposit-taking (illustrative) banks against [deposit-insurance status not represented] underlying deposits, redeemable 1:1 to bank CAD. The cash leg of the institutional rail — settles with finality against any tokenized asset on 4ormEx, with T+0 finality. Subject to OSFI Group 2 capital treatment under the October 2025 framework.</p>
+      <p class="ph-lede">Tokenized deposits issued by Canadian deposit-taking (illustrative) banks against [deposit-insurance status not represented] underlying deposits, redeemable 1:1 to bank CAD. The cash leg of the institutional rail — would settle by delivery-versus-payment against tokenized assets in the designed venue. Subject to OSFI Group 2 capital treatment under the October 2025 framework.</p>
     </div>
     <div class="ph-stats">
       <div class="ph-stat"><span class="ps-l">In circulation</span><span class="ps-v"><span class="cur">C$</span>113.8M</span><span class="ps-d">▲ 4.1% · 30d</span></div>
@@ -42,6 +42,11 @@
       <div class="ph-stat"><span class="ps-l">Median redemption</span><span class="ps-v">12<span class="cur" style="margin-left:4px">s</span></span><span class="ps-d">delivery-versus-payment</span></div>
     </div>
   </header>
+
+  <section class="card" style="border-left:3px solid #E7C76C;background:#FDFAF1;margin-bottom:24px;padding:18px 22px">
+    <p style="font-size:.86rem;line-height:1.55;color:#3D2F0E;margin:0"><strong>4ormEx is a design preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance regulated control plane.</strong> It is not a registered marketplace, dealer, exchange, or bank in any Canadian jurisdiction; no applications have been filed. Every figure, identifier, counterparty and listing on this page is simulated and illustrative. Operating a marketplace for securities is a registrable activity in Canada under NI 21-101, 23-101, 24-102, and 31-103. Questions: <a href="mailto:compliance@4ormfinance.com" style="color:#7A5A0A;font-weight:700">compliance@4ormfinance.com</a>.</p>
+  </section>
+
 
   <!-- KPIs -->
   <section class="kpis">
@@ -87,8 +92,8 @@
   <section class="row2 equal">
     <div class="card info-card">
       <h4>What is a tokenized deposit receipt?</h4>
-      <p>A tokenized deposit receipt is a permissioned token issued 1:1 against a Canadian dollar held at a deposit-taking institution (illustrative). It moves on the 4orm-EVM permissioned network with the same legal characteristics as the underlying deposit — [deposit insurance not represented] applies at the bank, and redemption is atomic. Unlike a stablecoin, the underlying is a regulated bank liability, not a money-market fund or commercial-paper basket.</p>
-      <p>On 4ormEx the tokenized deposit is the default cash leg for atomic delivery-versus-payment. Buyers and sellers settle in tokenized CAD at T+0 instead of waiting for CDS T+2. The token IS the payment — there's no separate wire to reconcile.</p>
+      <p>A tokenized deposit receipt is a permissioned token issued 1:1 against a Canadian dollar held at a deposit-taking institution (illustrative). It moves on the 4orm-EVM permissioned network with the same legal characteristics as the underlying deposit — [deposit insurance not represented] applies at the bank, and redemption is by delivery-versus-payment (illustrative). Unlike a stablecoin, the underlying is a regulated bank liability, not a money-market fund or commercial-paper basket.</p>
+      <p>On 4ormEx the tokenized deposit is the designed cash leg for delivery-versus-payment. Buyers and sellers settle in tokenized CAD at T+0 instead of waiting for CDS T+2. The token IS the payment — there's no separate wire to reconcile.</p>
       <div class="cmp-strip ok" style="display:inline-flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>[deposit-insurance status not represented] at the issuing bank · OSFI Group 2 compliant</div>
     </div>
     <div class="card info-card">
@@ -109,7 +114,7 @@
 
 </main>
 
-<script src="/assets/4ormex-chrome.js?v=19"></script>
+<script src="/assets/4ormex-chrome.js?v=22"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 (function(){
@@ -137,6 +142,6 @@
   data.datasets.forEach(d=>{ const li=document.createElement('span'); li.className='li'; li.innerHTML=`<span class="sw" style="background:${d.borderColor}"></span>${d.label}`; legend.appendChild(li); });
 })();
 </script>
-<script src="/assets/4ormex-ui.js?v=19"></script>
+<script src="/assets/4ormex-ui.js?v=22"></script>
 </body>
 </html>

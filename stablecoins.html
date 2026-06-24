@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/4ormex-v3.css?v=19" />
+<link rel="stylesheet" href="/assets/4ormex-v3.css?v=22" />
 <style>
 .chart-card{margin-bottom:24px}
 .chart-card .chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:14px;flex-wrap:wrap}
@@ -48,6 +48,11 @@
     </div>
   </header>
 
+  <section class="card" style="border-left:3px solid #E7C76C;background:#FDFAF1;margin-bottom:24px;padding:18px 22px">
+    <p style="font-size:.86rem;line-height:1.55;color:#3D2F0E;margin:0"><strong>4ormEx is a design preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance regulated control plane.</strong> It is not a registered marketplace, dealer, exchange, or bank in any Canadian jurisdiction; no applications have been filed. Every figure, identifier, counterparty and listing on this page is simulated and illustrative. Operating a marketplace for securities is a registrable activity in Canada under NI 21-101, 23-101, 24-102, and 31-103. Questions: <a href="mailto:compliance@4ormfinance.com" style="color:#7A5A0A;font-weight:700">compliance@4ormfinance.com</a>.</p>
+  </section>
+
+
   <section class="kpis">
     <div class="kpi"><div class="label">Total in circulation</div><div class="v"><span class="cur">C$</span>168.4M</div><div class="delta">▲ 2.12% · 30d</div></div>
     <div class="kpi"><div class="label">Issuers</div><div class="v">4</div><div class="delta neutral">+ designed for future</div></div>
@@ -72,9 +77,9 @@
       <tbody>
         <tr><td><span class="ticker">tCAD-MM (illustrative)</span><span class="sub">VRCA issuer (illustrative) tCAD-MM (illustrative)</span></td><td>VRCA issuer (illustrative) (Qualified Canadian custodian (illustrative))</td><td><span class="pill b">CAD</span></td><td>Money-market reserves</td><td class="r price">C$ 82.3M</td><td class="r price">C$ 42.6M</td><td><span class="stat illustrative"><span class="d"></span>Illustrative</span></td></tr>
         <tr><td><span class="ticker">wCAD-CB (external precedent · not 4ormEx)</span><span class="sub">BoC wholesale CBDC</span></td><td>Bank of Canada</td><td><span class="pill b">CAD</span></td><td>Central deposit receipt</td><td class="r price">—</td><td class="r price">—</td><td><span class="stat illustrative"><span class="d"></span>Project Samara (external precedent · not 4ormEx)</span></td></tr>
-        <tr><td><span class="ticker">USDC</span><span class="sub">Circle USDC</span></td><td>Circle Internet</td><td><span class="pill n">USD</span></td><td>T-Bills + cash</td><td class="r price">C$ 24.1M</td><td class="r price">C$ 8.4M</td><td><span class="stat illustrative"><span class="d"></span>Illustrative · cross-border</span></td></tr>
-        <tr><td><span class="ticker">EURC</span><span class="sub">Circle EURC</span></td><td>Circle Internet</td><td><span class="pill n">EUR</span></td><td>T-Bills + cash</td><td class="r price">C$ 3.6M</td><td class="r price">C$ 1.2M</td><td><span class="stat illustrative"><span class="d"></span>Illustrative · cross-border</span></td></tr>
-        <tr><td><span class="ticker">USDP</span><span class="sub">Paxos USDP</span></td><td>Paxos Trust</td><td><span class="pill n">USD</span></td><td>T-Bills + cash</td><td class="r price">C$ 1.4M</td><td class="r price">C$ 0.2M</td><td><span class="stat illustrative"><span class="d"></span>Illustrative</span></td></tr>
+        <tr><td><span class="ticker">tUSD-R</span><span class="sub">USD reserve token (illustrative)</span></td><td>USD reserve issuer (illustrative)</td><td><span class="pill n">USD</span></td><td>T-Bills + cash</td><td class="r price">C$ 24.1M</td><td class="r price">C$ 8.4M</td><td><span class="stat illustrative"><span class="d"></span>Illustrative · cross-border</span></td></tr>
+        <tr><td><span class="ticker">tEUR-R</span><span class="sub">EUR reserve token (illustrative)</span></td><td>EUR reserve issuer (illustrative)</td><td><span class="pill n">EUR</span></td><td>T-Bills + cash</td><td class="r price">C$ 3.6M</td><td class="r price">C$ 1.2M</td><td><span class="stat illustrative"><span class="d"></span>Illustrative · cross-border</span></td></tr>
+        <tr><td><span class="ticker">tUSD-T</span><span class="sub">USD trust token (illustrative)</span></td><td>USD trust issuer (illustrative)</td><td><span class="pill n">USD</span></td><td>T-Bills + cash</td><td class="r price">C$ 1.4M</td><td class="r price">C$ 0.2M</td><td><span class="stat illustrative"><span class="d"></span>Illustrative</span></td></tr>
       </tbody>
     </table>
   </section>
@@ -97,19 +102,19 @@
         <div class="k">Default cash leg</div><div class="v">tCAD-MM (illustrative)</div>
         <div class="k">Bank-corridor leg</div><div class="v">tNWD-R / tPGV-R / tCSC-R</div>
         <div class="k">Wholesale leg</div><div class="v">wCAD-CB (external precedent · not 4ormEx) (when live)</div>
-        <div class="k">Cross-border</div><div class="v">USDC / EURC</div>
+        <div class="k">Cross-border</div><div class="v">USD/EUR reserve tokens (illustrative)</div>
         <div class="k">Settlement finality</div><div class="v">T+0 · DvP</div>
         <div class="k">Reserve attestation</div><div class="v">Monthly · (independent valuator TBD)</div>
-        <div class="k">CIRO custody</div><div class="v">Tier 1 (Tetra)</div>
+        <div class="k">CIRO custody</div><div class="v">Tier 1 qualified Canadian custodian (illustrative)</div>
         <div class="k">OSFI treatment</div><div class="v">Group 1b (fiat-backed)</div>
       </div>
-      <p style="margin-top:14px;font-size:.78rem;color:var(--text-3);line-height:1.55">Issuers choose the cash leg at mint time. Most Canadian-domestic offerings default to tCAD-MM (illustrative) for liquidity; institution-issued (illustrative) offerings often prefer their own tokenized deposit for vertical capture; cross-border issuances use USDC. wCAD-CB (external precedent · not 4ormEx) becomes the wholesale settlement asset of last resort when Bank of Canada productionizes Project Samara (external precedent · not 4ormEx).</p>
+      <p style="margin-top:14px;font-size:.78rem;color:var(--text-3);line-height:1.55">Issuers choose the cash leg at mint time. Most Canadian-domestic offerings default to tCAD-MM (illustrative) for liquidity; institution-issued (illustrative) offerings often prefer their own tokenized deposit for vertical capture; cross-border issuances use a USD reserve token (illustrative). wCAD-CB (external precedent · not 4ormEx) becomes the wholesale settlement asset of last resort when Bank of Canada productionizes Project Samara (external precedent · not 4ormEx).</p>
     </div>
   </section>
 
 </main>
 
-<script src="/assets/4ormex-chrome.js?v=19"></script>
+<script src="/assets/4ormex-chrome.js?v=22"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 (function(){
@@ -120,9 +125,9 @@
   const usdp = [0.4,0.5,0.6,0.7,0.8,0.9,1,1.05,1.1,1.15,1.2,1.25,1.3,1.32,1.34,1.36,1.38,1.39,1.4,1.4,1.4,1.4,1.4,1.4];
   const data = { labels, datasets:[
     { label:'tCAD-MM (illustrative)',  data:qcad, backgroundColor:'rgba(46,107,242,0.78)', borderColor:'#2E6BF2', borderWidth:1.5, pointRadius:0, fill:'origin', tension:.32 },
-    { label:'USDC',  data:usdc, backgroundColor:'rgba(231,199,108,0.78)', borderColor:'#E7C76C', borderWidth:1.5, pointRadius:0, fill:'-1', tension:.32 },
-    { label:'EURC',  data:eurc, backgroundColor:'rgba(123,77,190,0.78)', borderColor:'#7B4DBE', borderWidth:1.5, pointRadius:0, fill:'-1', tension:.32 },
-    { label:'USDP',  data:usdp, backgroundColor:'rgba(14,138,95,0.78)',  borderColor:'#0E8A5F', borderWidth:1.5, pointRadius:0, fill:'-1', tension:.32 },
+    { label:'tUSD-R (illustrative)',  data:usdc, backgroundColor:'rgba(231,199,108,0.78)', borderColor:'#E7C76C', borderWidth:1.5, pointRadius:0, fill:'-1', tension:.32 },
+    { label:'tEUR-R (illustrative)',  data:eurc, backgroundColor:'rgba(123,77,190,0.78)', borderColor:'#7B4DBE', borderWidth:1.5, pointRadius:0, fill:'-1', tension:.32 },
+    { label:'tUSD-T (illustrative)',  data:usdp, backgroundColor:'rgba(14,138,95,0.78)',  borderColor:'#0E8A5F', borderWidth:1.5, pointRadius:0, fill:'-1', tension:.32 },
   ]};
   new Chart(document.getElementById('scChart'),{ type:'line', data, options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
     plugins:{ legend:{display:false}, tooltip:{ backgroundColor:'#0B1220', titleColor:'#FFD9A8', bodyColor:'#fff', padding:10, cornerRadius:8, callbacks:{ label:(c)=>` ${c.dataset.label}: C$ ${c.parsed.y.toFixed(1)}M`, footer:(items)=>{const tot=items.reduce((s,i)=>s+i.parsed.y,0); return `Total: C$ ${tot.toFixed(1)}M`;} } } },
@@ -132,6 +137,6 @@
   data.datasets.forEach(d=>{ const li=document.createElement('span'); li.className='li'; li.innerHTML=`<span class="sw" style="background:${d.borderColor}"></span>${d.label}`; legend.appendChild(li); });
 })();
 </script>
-<script src="/assets/4ormex-ui.js?v=19"></script>
+<script src="/assets/4ormex-ui.js?v=22"></script>
 </body>
 </html>
