@@ -41,7 +41,7 @@
   --p3:#7BE3B0;  --p3-deep:#0E8A5F;
   --p4:#C8B0EF;  --p4-deep:#7C5CC6;
   --p5:#FFC57A;  --p5-deep:#E08B2C;
-  --p6:#9AB6FF;  --p6-deep:#4A6BC4;
+  --p6:#FFB1B1;  --p6-deep:#E08585;
 
   --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
@@ -203,6 +203,13 @@ p{margin:0}
   -webkit-text-fill-color:transparent;
 }
 .brand-mark .orm{color:#fff; font-weight:800}
+/* v17.1 - brand logo image in the nav */
+.brand-logo{
+  height:38px; width:auto;
+  display:block;
+  object-fit:contain;
+}
+@media (max-width:980px){.brand-logo{height:32px}}
 .brand-label{display:flex; flex-direction:column; line-height:1.1}
 .brand-label .l1{font-weight:800; font-size:1.05rem; letter-spacing:-.01em; color:var(--text)}
 .brand-label .l2{font-family:var(--font-mono); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-3); margin-top:2px}
@@ -307,6 +314,11 @@ p{margin:0}
 .ahs-card .v.blue{color:var(--brand-700)}
 .ahs-card .v .cur{font-size:.55em; color:var(--text-3); font-weight:550; margin-right:3px}
 .ahs-card .d{font-family:var(--font-mono); font-size:.7rem; color:var(--text-3); margin-top:6px; font-weight:550}
+/* v17.1 - sprinkle per-pillar accents on the hero stat row */
+.hero-stats .ahs-card:nth-child(1){border-top:3px solid var(--p1)}
+.hero-stats .ahs-card:nth-child(2){border-top:3px solid var(--p2)}
+.hero-stats .ahs-card:nth-child(3){border-top:3px solid var(--p3)}
+.hero-stats .ahs-card:nth-child(4){border-top:3px solid var(--p5)}
 @media (max-width:980px){.hero-stats{grid-template-columns:repeat(2, 1fr)}}
 
 /* Tiles (white cards) */
@@ -333,6 +345,10 @@ a.tile:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:
 .tile p{font-size:.95rem; color:var(--text-2); line-height:1.55}
 .tile .link{margin-top:6px; display:inline-flex; align-items:center; gap:6px; font-size:.86rem; font-weight:650; color:var(--brand-700)}
 .tile:hover .link .arr{transform:translateX(4px)}
+/* v17.1 - sprinkle per-pillar accents on the home tile grid */
+.tile-grid.c3 .tile:nth-child(1){border-top:3px solid var(--p4)}
+.tile-grid.c3 .tile:nth-child(2){border-top:3px solid var(--p1)}
+.tile-grid.c3 .tile:nth-child(3){border-top:3px solid var(--p6)}
 
 /* Two-column posture cards */
 .as-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:38px}
@@ -420,6 +436,13 @@ a.tile:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:
 .cls.dn .spark path:not(.fill){stroke:var(--danger)}
 .cls.dn .spark path.fill{fill:var(--danger); opacity:.04; stroke:none}
 .cls .stat-chip{display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:3px 10px; border-radius:99px; font-family:var(--font-mono); font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; background:var(--surface-2); color:var(--text-3); border:1px solid var(--border); width:fit-content}
+/* v17.1 - sprinkle per-pillar accents on the asset category grid */
+.classes-grid .cls:nth-child(1){border-top:3px solid var(--p1)}
+.classes-grid .cls:nth-child(2){border-top:3px solid var(--p2)}
+.classes-grid .cls:nth-child(3){border-top:3px solid var(--p3)}
+.classes-grid .cls:nth-child(4){border-top:3px solid var(--p4)}
+.classes-grid .cls:nth-child(5){border-top:3px solid var(--p5)}
+.classes-grid .cls:nth-child(6){border-top:3px solid var(--p6)}
 
 /* Pillar inline chips (home teaser) */
 .pill-chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:24px}
@@ -534,6 +557,80 @@ a.tile:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:
 .section-cta{margin-top:28px}
 a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 .nav-links a:focus-visible{background:var(--brand-50)}
+
+/* ============================================================
+   Six-pillar capability grid - WHITE-BASE variant (v17.1)
+   Replaces the dark variant when .cp-section-light is on the section.
+   ============================================================ */
+.cp-section-light{background:var(--bg); color:var(--text)}
+.cp-section-light .sh h2{color:var(--text)}
+.cp-section-light .sh p{color:var(--text-2)}
+.cp-section-light .s-eye{color:var(--brand-700)}
+.cp-section-light .s-eye .tick{background:var(--brand)}
+.cp-section-light .s-eye .dot{background:var(--gold)}
+
+.cp-grid-light{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-top:50px}
+@media (max-width:980px){.cp-grid-light{grid-template-columns:repeat(2, 1fr)}}
+@media (max-width:620px){.cp-grid-light{grid-template-columns:1fr}}
+
+.cp-light{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-top-width:3px;
+  border-radius:var(--r-lg);
+  padding:28px 26px 22px;
+  display:flex; flex-direction:column; gap:10px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.cp-light:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
+.cp-light .num{
+  position:static;
+  font-family:var(--font-mono); font-size:.72rem; font-weight:800;
+  letter-spacing:.16em; text-transform:uppercase; color:inherit;
+  margin-bottom:2px;
+}
+.cp-light .ico{
+  width:0; height:0; padding:0; border:none; background:none; display:none;
+}
+.cp-light h3{font-size:1.18rem; font-weight:750; letter-spacing:-.02em; line-height:1.25; color:var(--text); margin-top:2px}
+.cp-light p{font-size:.94rem; color:var(--text-2); line-height:1.55}
+.cp-light .owns{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-mono); font-size:.72rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  border-top:1px dashed var(--border);
+  padding-top:14px; margin-top:auto; color:inherit;
+}
+.cp-light .owns .dot{width:7px; height:7px; border-radius:50%; box-shadow:none; background:currentColor}
+.cp-light .more{display:none}
+
+.cp-light.p1{border-top-color:var(--p1); color:var(--p1-deep)}
+.cp-light.p1 .num,.cp-light.p1 .owns{color:var(--p1-deep)}
+.cp-light.p2{border-top-color:var(--p2); color:var(--p2-deep)}
+.cp-light.p2 .num,.cp-light.p2 .owns{color:var(--p2-deep)}
+.cp-light.p3{border-top-color:var(--p3); color:var(--p3-deep)}
+.cp-light.p3 .num,.cp-light.p3 .owns{color:var(--p3-deep)}
+.cp-light.p4{border-top-color:var(--p4); color:var(--p4-deep)}
+.cp-light.p4 .num,.cp-light.p4 .owns{color:var(--p4-deep)}
+.cp-light.p5{border-top-color:var(--p5); color:var(--p5-deep)}
+.cp-light.p5 .num,.cp-light.p5 .owns{color:var(--p5-deep)}
+.cp-light.p6{border-top-color:var(--p6); color:var(--p6-deep)}
+.cp-light.p6 .num,.cp-light.p6 .owns{color:var(--p6-deep)}
+
+.cp-light.here{
+  box-shadow:0 0 0 1px var(--p2), 0 14px 38px rgba(46,107,242,.16);
+  border-color:var(--p2);
+  border-top-color:var(--p2);
+}
+.cp-light.here .here-tag{
+  position:absolute; top:-12px; left:24px;
+  font-family:var(--font-mono); font-size:.62rem; letter-spacing:.18em; font-weight:800;
+  text-transform:uppercase;
+  background:var(--brand); color:#fff;
+  padding:5px 11px; border-radius:99px;
+}
 
 /* ============================================================
    Disclaimer gate modal (first-visit compliance gate)

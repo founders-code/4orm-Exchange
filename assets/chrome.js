@@ -62,7 +62,7 @@
     nav.innerHTML =
       '<div class="nav-inner">' +
         '<a class="brand" href="/" aria-label="4ormEx home">' +
-          '<span class="brand-mark"><span class="four">4</span><span class="orm">E</span></span>' +
+          '<img class="brand-logo" src="/assets/4orm-finance-logo.png" alt="4orm Finance" />' +
           '<span class="brand-label">' +
             '<span class="l1">4ormEx</span>' +
             '<span class="l2">Pillar 02 · Trading</span>' +
