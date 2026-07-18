@@ -37,7 +37,7 @@
           '<a href="https://4ormfinance.com">4orm Finance</a>' +
           '<a href="#" class="here">4ormEx</a>' +
           '<a href="https://4ormedc.com">Demo</a>' +
-          '<a href="https://data.4ormfinance.com">Data Room</a>' +
+          '<a href="https://4ormdr.com">Data Room</a>' +
           '<a href="https://kcs-capital.com">KCS Capital</a>' +
         '</div>' +
         '<span class="util-waitlist"><span class="ring"></span>Raise · open to accredited investors</span>' +
@@ -96,13 +96,13 @@
     s.innerHTML =
       '<div class="wrap">' +
         '<div class="sh">' +
-          '<div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The 4orm family</span></div>' +
+          '<div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The 4orm Finance family</span></div>' +
           '<h3>Three surfaces. One perimeter. 4ormEx is one of them.</h3>' +
         '</div>' +
         '<div class="fam-grid">' +
-          '<a class="fam-card here fc-ex" href="/"><span class="badge">You are here</span><h4>4ormEx</h4><p>Trading venue surface. Permissioned matching with settlement finality at commit.</p><span class="url">4ormex.com</span></a>' +
-          '<a class="fam-card fc-fin" href="https://4ormfinance.com"><span class="badge">Main</span><h4>4orm Finance</h4><p>The neutral settlement layer. Six capabilities inside one perimeter.</p><span class="url">4ormfinance.com</span></a>' +
-          '<a class="fam-card fc-data" href="https://data.4ormfinance.com"><span class="badge">Data room</span><h4>4orm Data Room</h4><p>Documents, disclosures, and reference material for accredited investors and diligence teams.</p><span class="url">data.4ormfinance.com</span></a>' +
+          '<a class="fam-card here fc-ex" href="/"><span class="badge">You are here</span><h4>4ormEx</h4><p>Institutional trading venue surface. Permissioned matching with settlement finality at commit.</p><span class="url">4ormex.com</span></a>' +
+          '<a class="fam-card fc-data" href="https://4ormdr.com"><span class="badge">01 · Data Room</span><h4>4orm Data Room <span class="ext">↗</span></h4><p>Vetted access for institutional and accredited investors. Documents, disclosures, diligence.</p><span class="url">4ormdr.com</span></a>' +
+          '<a class="fam-card fc-fin" href="https://4ormfinance.com"><span class="badge">02 · Neutral Layer</span><h4>4orm Finance <span class="ext">↗</span></h4><p>The neutral, Canadian-dollar settlement layer. Six embedded capabilities inside one perimeter.</p><span class="url">4ormfinance.com</span></a>' +
         '</div>' +
       '</div>';
     return s;
@@ -114,7 +114,16 @@
     f.innerHTML =
       '<div class="wrap">' +
         '<div class="footer-grid">' +
-          '<div><h5>4ormEx</h5><p>Pillar 02 of the 4orm Finance neutral settlement layer. A planned permissioned trading venue, engineered by KCS Capital. Pre-registration.</p></div>' +
+          '<div>' +
+            '<h5>4ormEx</h5>' +
+            '<p>Institutional trading venue surface inside the 4orm Finance neutral settlement layer. Engineered by KCS Capital. Incorporated in Alberta.</p>' +
+            '<div class="foot-contact">' +
+              '<div class="fc-lbl">Get in touch</div>' +
+              '<a href="mailto:office@4ormfinance.com">office@4ormfinance.com</a>' +
+              '<a href="https://4ormdr.com">www.4ormdr.com</a>' +
+              '<span class="fc-addr">Unit 400, 718 8 Ave SW, Calgary, AB</span>' +
+            '</div>' +
+          '</div>' +
           '<div><h6>Surface</h6><ul>' +
             '<li><a href="/what-we-do">What we do</a></li>' +
             '<li><a href="/settlement-layer">The settlement layer</a></li>' +
@@ -125,7 +134,7 @@
           '<div><h6>4orm Finance</h6><ul>' +
             '<li><a href="https://4ormfinance.com">Main site</a></li>' +
             '<li><a href="https://4ormedc.com">Demo Exchange</a></li>' +
-            '<li><a href="https://data.4ormfinance.com">Data Room</a></li>' +
+            '<li><a href="https://4ormdr.com">Data Room</a></li>' +
           '</ul></div>' +
           '<div><h6>Contact</h6><ul>' +
             '<li><a href="https://4ormfinance.com/#waitlist">Request access</a></li>' +
@@ -134,14 +143,13 @@
           '</ul></div>' +
         '</div>' +
         '<div class="legal-block">' +
-          '<p><strong>Design preview.</strong> 4ormEx is an early-stage software preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance neutral settlement layer. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed. No services are offered, solicited, or available to any person.</p>' +
-          '<p><strong>Intended regulatory alignment.</strong> The venue is being designed with intended alignment to NI 21-101 (Marketplace Operation), NI 23-101 (Trading Rules), NI 24-102 (Clearing Agency Requirements), and NI 31-103 (Registration Requirements), subject to required regulatory approvals. Operating a marketplace for securities in Canada is a registrable activity. 4orm Trust Co is a proposed entity; until established, third-party qualified custody applies.</p>' +
-          '<p><strong>No real institutions.</strong> All identifiers, prices, balances, hashes, counterparties, tickers, and listings shown anywhere on this site are simulated and illustrative. No real institutions are named as counterparties or partners. 4orm Finance is informed by, but not a participant in, the Bank of Canada\'s Project Samara experiment (Staff Analytical Paper 2026-8) and the CSA Project Tokenization initiative.</p>' +
-          '<p><strong>Cash leg.</strong> 4orm takes no deposits, touches no CDIC funds, and needs no banking or trust licence. The deposit token is the bank\'s liability, issued under the bank\'s own banking authorizations.</p>' +
-          '<p><strong>Not advice; not an offer.</strong> Nothing on this site is an offer to sell or solicitation to buy securities, crypto assets, deposits, or any financial instrument, and nothing on this site is financial, legal, tax, or investment advice. Forward-looking statements reflect current intent only and are not guarantees of future outcomes. Questions: <a href="mailto:compliance@4ormfinance.com">compliance@4ormfinance.com</a>.</p>' +
+          '<p><strong>Accredited investors only.</strong> The securities referenced on this website are being offered only to "accredited investors" as defined in National Instrument 45-106. This is not an offer to sell or a solicitation of an offer to buy securities in any jurisdiction where such offer is not permitted. No securities regulatory authority has assessed the merits of any securities described on this website. 4ormEx is an early-stage software preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance neutral settlement layer. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed. No services are offered, solicited, or available to any person.</p>' +
+          '<p><strong>Forward-looking statements.</strong> This website contains forward-looking statements within the meaning of applicable Canadian securities laws, including statements about the planned 4ormEx trading venue, its intended regulatory alignment with National Instruments 21-101, 23-101, 24-102, and 31-103, and its planned integration with the 4orm Finance neutral settlement layer. These statements are based on assumptions current as of the date stated and are subject to material risks and uncertainties, including the receipt of required regulatory approvals. Actual results may differ materially. 4orm Trust Co is a proposed entity; until established, third-party qualified custody applies.</p>' +
+          '<p><strong>No affiliation or endorsement.</strong> References to third-party companies, regulators, and initiatives are for market-context and educational purposes only and do not imply any partnership, endorsement, or affiliation. All third-party names and trademarks are the property of their respective owners. 4orm Finance and 4ormEx are not affiliated with the Bank of Canada, OSFI, the CSA (or its members including OSC, AMF, BCSC, ASC), CIRO, FINTRAC, or any other regulator. No regulator has reviewed, endorsed, or approved 4orm Finance, 4ormEx, or any securities described on this website. 4orm Finance is informed by, but not a participant in, the Bank of Canada\'s Project Samara experiment (Staff Analytical Paper 2026-8) and the CSA Project Tokenization initiative. All identifiers, prices, balances, hashes, counterparties, tickers, and listings shown anywhere on this site are simulated and illustrative.</p>' +
+          '<p><strong>FINTRAC.</strong> 4orm Finance will register with FINTRAC as required prior to commencing regulated activity. FINTRAC registration is not an endorsement. Questions: <a href="mailto:compliance@4ormfinance.com">compliance@4ormfinance.com</a>.</p>' +
         '</div>' +
         '<div class="copy-row">' +
-          '<span>© 2026 4orm Finance Holdings Inc.</span>' +
+          '<span>© 2026 4orm Finance · Calgary, AB</span>' +
           '<span>Engineered by KCS Capital · independent</span>' +
         '</div>' +
       '</div>';

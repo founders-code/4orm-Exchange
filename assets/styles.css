@@ -973,11 +973,16 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid var(--
 .cls-mini.p5{border-top-color:var(--p5)}
 .cls-mini.p6{border-top-color:var(--p6)}
 
-/* Family block per-property accents (v17.3) */
+/* Family block per-property accents (v18) */
 .fam-card{border-top:3px solid var(--border)}
 .fam-card.fc-ex{border-top-color:var(--gold)}
-.fam-card.fc-fin{border-top-color:var(--brand)}
-.fam-card.fc-data{border-top-color:var(--p3)}
+.fam-card.fc-data{border-top-color:var(--brand)}
+.fam-card.fc-fin{border-top-color:var(--p2)}
+.fam-card h4 .ext{
+  font-size:.72em; color:var(--brand-700); font-weight:600;
+  margin-left:4px; display:inline-block; transform:translateY(-1px);
+}
+.fam-card.here h4 .ext{color:var(--gold-ink)}
 
 /* ============================================================
    Disclaimer gate modal (first-visit compliance gate)
@@ -1013,3 +1018,24 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid var(--
 .gate-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
 .gate-actions .btn-primary{flex:1; justify-content:center; padding:14px 20px}
 @media (max-width:520px){.gate-card{padding:28px 24px 22px}}
+
+/* Footer contact block (v18 - matches parent) */
+.foot-contact{
+  display:flex; flex-direction:column; gap:4px;
+  margin-top:18px; padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.foot-contact .fc-lbl{
+  font-family:var(--font-mono); font-size:.64rem; font-weight:800;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--gold-dark); margin-bottom:6px;
+}
+.foot-contact a{
+  font-size:.86rem; color:rgba(255,255,255,.78); font-weight:500;
+  text-decoration:none; padding:2px 0;
+}
+.foot-contact a:hover{color:#fff}
+.foot-contact .fc-addr{
+  font-size:.82rem; color:rgba(255,255,255,.6); line-height:1.55;
+  margin-top:2px;
+}
