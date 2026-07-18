@@ -64,7 +64,7 @@
           '<img class="brand-logo" src="/assets/4orm-finance-logo.png" alt="4orm Finance" />' +
         '</a>' +
         '<nav class="nav-links" aria-label="Primary">' + links + '</nav>' +
-        '<a class="nav-cta" href="https://4ormfinance.com/#waitlist">Request access ' +
+        '<a class="nav-cta" href="https://4ormdr.com">Request Access to Data Room ' +
           '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
         '</a>' +
       '</div>';
@@ -230,7 +230,10 @@
   }
 
   /* ---------- Mount sequence ---------- */
-  mount('util-mount', buildUtil());
+  /* Util bar removed per v20.1 - the top cross-site strip is not shown.
+     The buildUtil() function is kept in this file so it can be re-enabled
+     later by uncommenting the line below. */
+  // mount('util-mount', buildUtil());
   mount('legend-mount', buildLegend());
   mount('nav-mount', buildNav());
   mount('cta-mount', buildCTA());
