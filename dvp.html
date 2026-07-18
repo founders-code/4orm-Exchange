@@ -63,35 +63,34 @@
     <section class="section">
       <div class="wrap">
         <div class="sh">
-          <h2>What DvP replaces.</h2>
+          <h2>The value of <span class="accent">DvP.</span></h2>
+          <p>DvP is a property of the settlement layer, not a workflow. When the asset leg, the cash leg, and the supervisory record commit in the same write to the canonical ledger, four things become impossible.</p>
         </div>
 
-        <div class="as-grid">
-          <div class="as-card isnot">
-            <div class="as-head">
-              <h3>Before</h3>
-            </div>
-            <ul class="as-list">
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>Trade date T, settlement date T+1 or later.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>Cash and asset move on separate systems on separate days.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>Reconciliation between matched-but-not-settled records.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>A counterparty-risk window between match and settlement.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>A failed-trade workflow that exists because trades fail.</span></li>
-            </ul>
+        <div class="tile-grid c2" style="grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:38px">
+          <div class="tile">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <h3>No counterparty risk window.</h3>
+            <p>There is no moment where one party has paid and the other has not yet delivered. Both legs commit as one write, or neither commits at all.</p>
           </div>
-          <div class="as-card is">
-            <div class="as-head">
-              <h3>With DvP at commit</h3>
-            </div>
-            <ul class="as-list">
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>Trade and settlement on the same write.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>One system. One record. One time.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>No reconciliation step. The match IS the settlement instruction.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>No counterparty risk window. Either both legs commit, or neither does.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>No failed-trade workflow at the layer level. A failed commit is a rolled-back transaction.</span></li>
-            </ul>
+          <div class="tile">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg></div>
+            <h3>No half-settled state.</h3>
+            <p>Either all three legs (asset, cash, custody) finalize together, or nothing changes. There is no intermediate condition to reason about, unwind, or report separately.</p>
+          </div>
+          <div class="tile gold">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+            <h3>No reconciliation between systems.</h3>
+            <p>There is one canonical record. There is nothing to reconcile between a trading book, a settlement book, and a custody book. Regulators, member firms, and investors all read from the same source.</p>
+          </div>
+          <div class="tile">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l4 4L20 4"/></svg></div>
+            <h3>No failed-trade workflow at the layer level.</h3>
+            <p>A failed commit is a rolled-back transaction, not a stuck trade waiting on a manual rescue. The workflow that exists in legacy settlement because trades fail simply has nothing to grip on to.</p>
           </div>
         </div>
+
+        <p style="margin-top:32px; color:var(--text-2); font-size:.95rem; line-height:1.6; max-width:52em">This is the design choice that makes settlement finality a property of the layer, not a property of speed. A fast settlement is not the same as a final settlement. DvP at commit gives you both.</p>
       </div>
     </section>
 
