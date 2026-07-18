@@ -1,5 +1,5 @@
-/* 4ormEx · v17 chrome injector
-   Builds util bar, preview legend, nav, closing CTA, family block, footer.
+/* 4ormEx · v20 chrome injector
+   Builds util bar, preview legend, nav, closing CTA, family block, footer, gate.
    Pure DOM. No dependencies. Runs after DOMContentLoaded (defer).
 */
 (function(){
@@ -36,7 +36,6 @@
         '<div class="util-links">' +
           '<a href="https://4ormfinance.com">4orm Finance</a>' +
           '<a href="#" class="here">4ormEx</a>' +
-          '<a href="https://4ormedc.com">Demo</a>' +
           '<a href="https://4ormdr.com">Data Room</a>' +
           '<a href="https://kcs-capital.com">KCS Capital</a>' +
         '</div>' +
@@ -45,7 +44,7 @@
     return bar;
   }
 
-  /* ---------- Preview legend ---------- */
+  /* ---------- Preview legend (audience-restriction strip) ---------- */
   function buildLegend(){
     var s = el('div', {class:'preview-legend'});
     s.innerHTML = '<strong>Accredited investors only.</strong> This site is a design preview of a planned permissioned trading venue. Not an offering of securities.';
@@ -90,7 +89,7 @@
     return s;
   }
 
-  /* ---------- Family block ---------- */
+  /* ---------- Family block (3 cards, parent-aligned) ---------- */
   function buildFam(){
     var s = el('section', {class:'fam'});
     s.innerHTML =
@@ -100,15 +99,30 @@
           '<h3>Three surfaces. One perimeter. 4ormEx is one of them.</h3>' +
         '</div>' +
         '<div class="fam-grid">' +
-          '<a class="fam-card here fc-ex" href="/"><span class="badge">You are here</span><h4>4ormEx</h4><p>Institutional trading venue surface. Permissioned matching with settlement finality at commit.</p><span class="url">4ormex.com</span></a>' +
-          '<a class="fam-card fc-data" href="https://4ormdr.com"><span class="badge">01 · Data Room</span><h4>4orm Data Room <span class="ext">↗</span></h4><p>Vetted access for institutional and accredited investors. Documents, disclosures, diligence.</p><span class="url">4ormdr.com</span></a>' +
-          '<a class="fam-card fc-fin" href="https://4ormfinance.com"><span class="badge">02 · Neutral Layer</span><h4>4orm Finance <span class="ext">↗</span></h4><p>The neutral, Canadian-dollar settlement layer. Six embedded capabilities inside one perimeter.</p><span class="url">4ormfinance.com</span></a>' +
+          '<a class="fam-card here fc-ex" href="/">' +
+            '<span class="badge">You are here</span>' +
+            '<h4>4ormEx</h4>' +
+            '<p>Institutional trading venue surface. Permissioned matching with settlement finality at commit.</p>' +
+            '<span class="url">4ormex.com</span>' +
+          '</a>' +
+          '<a class="fam-card fc-data" href="https://4ormdr.com">' +
+            '<span class="badge">01 · Data Room</span>' +
+            '<h4>4orm Data Room <span class="ext">↗</span></h4>' +
+            '<p>Vetted access for institutional and accredited investors. Documents, disclosures, diligence.</p>' +
+            '<span class="url">4ormdr.com</span>' +
+          '</a>' +
+          '<a class="fam-card fc-fin" href="https://4ormfinance.com">' +
+            '<span class="badge">02 · Neutral Layer</span>' +
+            '<h4>4orm Finance <span class="ext">↗</span></h4>' +
+            '<p>The neutral, Canadian-dollar settlement layer. Six embedded capabilities inside one perimeter.</p>' +
+            '<span class="url">4ormfinance.com</span>' +
+          '</a>' +
         '</div>' +
       '</div>';
     return s;
   }
 
-  /* ---------- Footer + legal ---------- */
+  /* ---------- Footer + legal (v18 parent-aligned) ---------- */
   function buildFooter(){
     var f = el('footer', {class:'footer'});
     f.innerHTML =
@@ -133,7 +147,6 @@
           '</ul></div>' +
           '<div><h6>4orm Finance</h6><ul>' +
             '<li><a href="https://4ormfinance.com">Main site</a></li>' +
-            '<li><a href="https://4ormedc.com">Demo Exchange</a></li>' +
             '<li><a href="https://4ormdr.com">Data Room</a></li>' +
           '</ul></div>' +
           '<div><h6>Contact</h6><ul>' +
@@ -142,12 +155,17 @@
             '<li><a href="/legal">Privacy &amp; cookies</a></li>' +
           '</ul></div>' +
         '</div>' +
+
         '<div class="legal-block">' +
           '<p><strong>Accredited investors only.</strong> The securities referenced on this website are being offered only to "accredited investors" as defined in National Instrument 45-106. This is not an offer to sell or a solicitation of an offer to buy securities in any jurisdiction where such offer is not permitted. No securities regulatory authority has assessed the merits of any securities described on this website. 4ormEx is an early-stage software preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance neutral settlement layer. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed. No services are offered, solicited, or available to any person.</p>' +
-          '<p><strong>Forward-looking statements.</strong> This website contains forward-looking statements within the meaning of applicable Canadian securities laws, including statements about the planned 4ormEx trading venue, its intended regulatory alignment with National Instruments 21-101, 23-101, 24-102, and 31-103, and its planned integration with the 4orm Finance neutral settlement layer. These statements are based on assumptions current as of the date stated and are subject to material risks and uncertainties, including the receipt of required regulatory approvals. Actual results may differ materially. 4orm Trust Co is a proposed entity; until established, third-party qualified custody applies.</p>' +
+
+          '<p><strong>Forward-looking statements.</strong> This website contains forward-looking statements within the meaning of applicable Canadian securities laws, including statements about the planned 4ormEx trading venue, its intended regulatory alignment with the Alberta Securities Commission as primary regulator and the required National Instruments (21-101, 23-101, 24-102, 31-103), and its planned integration with the 4orm Finance neutral settlement layer. These statements are based on assumptions current as of the date stated and are subject to material risks and uncertainties, including the receipt of required regulatory approvals. Actual results may differ materially. 4orm Trust Co is a proposed entity; until established, third-party qualified custody applies.</p>' +
+
           '<p><strong>No affiliation or endorsement.</strong> References to third-party companies, regulators, and initiatives are for market-context and educational purposes only and do not imply any partnership, endorsement, or affiliation. All third-party names and trademarks are the property of their respective owners. 4orm Finance and 4ormEx are not affiliated with the Bank of Canada, OSFI, the CSA (or its members including OSC, AMF, BCSC, ASC), CIRO, FINTRAC, or any other regulator. No regulator has reviewed, endorsed, or approved 4orm Finance, 4ormEx, or any securities described on this website. 4orm Finance is informed by, but not a participant in, the Bank of Canada\'s Project Samara experiment (Staff Analytical Paper 2026-8) and the CSA Project Tokenization initiative. All identifiers, prices, balances, hashes, counterparties, tickers, and listings shown anywhere on this site are simulated and illustrative.</p>' +
+
           '<p><strong>FINTRAC.</strong> 4orm Finance will register with FINTRAC as required prior to commencing regulated activity. FINTRAC registration is not an endorsement. Questions: <a href="mailto:compliance@4ormfinance.com">compliance@4ormfinance.com</a>.</p>' +
         '</div>' +
+
         '<div class="copy-row">' +
           '<span>© 2026 4orm Finance · Calgary, AB</span>' +
           '<span>Engineered by KCS Capital · independent</span>' +
@@ -156,66 +174,62 @@
     return f;
   }
 
-/* ---------- Disclaimer gate (first-visit, session-scoped) ---------- */
-function buildGate(){
-  if(sessionStorage.getItem('4ormex.gate.ack') === '1') return null;
+  /* ---------- Disclaimer gate (first-visit, session-scoped) ---------- */
+  function buildGate(){
+    if(sessionStorage.getItem('4ormex.gate.ack') === '1') return null;
 
-  var g = el('div', {
-    class:'gate',
-    role:'dialog',
-    'aria-modal':'true',
-    'aria-labelledby':'gate-title'
-  });
-  g.innerHTML =
-    '<div class="gate-card">' +
-      '<span class="gate-eye"><span class="dot"></span>Design preview · acknowledge to continue</span>' +
-      '<h3 id="gate-title">4ormEx is a design preview. Not a registered venue.</h3>' +
-      '<p>4ormEx is an early-stage software preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance neutral settlement layer.</p>' +
-      '<p><strong>It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction.</strong> No applications have been filed. No services are offered, solicited, or available.</p>' +
-      '<p>Every figure, ticker, identifier, counterparty, and listing shown anywhere on this site is simulated and illustrative.</p>' +
-      '<div class="gate-actions">' +
-        '<button class="btn btn-primary" id="gate-ack" type="button">I understand. Continue.</button>' +
-      '</div>' +
-    '</div>';
-
-  // Block scroll while gate is up
-  document.documentElement.style.overflow = 'hidden';
-  document.body.style.overflow = 'hidden';
-
-  // Wire up acknowledge and trap focus
-  setTimeout(function(){
-    var btn = g.querySelector('#gate-ack');
-    if(!btn) return;
-    btn.addEventListener('click', function(){
-      sessionStorage.setItem('4ormex.gate.ack', '1');
-      g.style.opacity = '0';
-      g.style.transition = 'opacity .25s ease-out';
-      setTimeout(function(){
-        if(g.parentNode) g.parentNode.removeChild(g);
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-      }, 250);
+    var g = el('div', {
+      class:'gate',
+      role:'dialog',
+      'aria-modal':'true',
+      'aria-labelledby':'gate-title'
     });
-    btn.focus();
-  }, 0);
+    g.innerHTML =
+      '<div class="gate-card">' +
+        '<span class="gate-eye"><span class="dot"></span>Design preview · acknowledge to continue</span>' +
+        '<h3 id="gate-title">4ormEx is a design preview. Not a registered venue.</h3>' +
+        '<p>4ormEx is an early-stage software preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance neutral settlement layer.</p>' +
+        '<p><strong>It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction.</strong> No applications have been filed. No services are offered, solicited, or available.</p>' +
+        '<p>Every figure, ticker, identifier, counterparty, and listing shown anywhere on this site is simulated and illustrative.</p>' +
+        '<div class="gate-actions">' +
+          '<button class="btn btn-primary" id="gate-ack" type="button">I understand. Continue.</button>' +
+        '</div>' +
+      '</div>';
 
-  // Trap Tab inside the gate
-  g.addEventListener('keydown', function(e){
-    if(e.key === 'Tab'){
-      e.preventDefault();
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(function(){
       var btn = g.querySelector('#gate-ack');
-      if(btn) btn.focus();
-    }
-    // Block Escape - there is no close action
-    if(e.key === 'Escape'){
-      e.preventDefault();
-    }
-  });
+      if(!btn) return;
+      btn.addEventListener('click', function(){
+        sessionStorage.setItem('4ormex.gate.ack', '1');
+        g.style.opacity = '0';
+        g.style.transition = 'opacity .25s ease-out';
+        setTimeout(function(){
+          if(g.parentNode) g.parentNode.removeChild(g);
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
+        }, 250);
+      });
+      btn.focus();
+    }, 0);
 
-  return g;
-}
+    g.addEventListener('keydown', function(e){
+      if(e.key === 'Tab'){
+        e.preventDefault();
+        var btn = g.querySelector('#gate-ack');
+        if(btn) btn.focus();
+      }
+      if(e.key === 'Escape'){
+        e.preventDefault();
+      }
+    });
 
-  /* ---------- Mount ---------- */
+    return g;
+  }
+
+  /* ---------- Mount sequence ---------- */
   mount('util-mount', buildUtil());
   mount('legend-mount', buildLegend());
   mount('nav-mount', buildNav());
@@ -223,7 +237,6 @@ function buildGate(){
   mount('fam-mount', buildFam());
   mount('footer-mount', buildFooter());
 
-  /* Gate goes last so it stacks on top of everything else */
-var gate = buildGate();
-if(gate) document.body.appendChild(gate);
+  var gate = buildGate();
+  if(gate) document.body.appendChild(gate);
 })();

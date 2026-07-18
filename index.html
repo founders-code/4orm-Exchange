@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>A neutral Canadian trading venue for tokenized assets · 4ormEx</title>
-  <meta name="description" content="4ormEx is the trading-venue surface inside the 4orm Finance neutral settlement layer. Design preview." />
+  <title>Canada's neutral settlement layer for tokenized finance · 4ormEx</title>
+  <meta name="description" content="4ormEx is the institutional trading surface (Pillar 02) inside the 4orm Finance neutral settlement layer. Design preview." />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,22 +17,25 @@
   <div id="nav-mount"></div>
 
   <main>
-    <section class="hero">
+
+    <!-- HERO (v20 layer-first) -->
+    <section class="section hero hero-white">
       <div class="wrap">
         <div class="hero-eye">
           <span class="bar"></span>
           <span class="txt">Pillar 02 / Trading / Design preview</span>
         </div>
-        <h1>A neutral Canadian trading venue for tokenized assets, <span class="accent">with settlement finality at commit.</span></h1>
-        <p class="sub">Title, cash, and rules travel together. One write to the canonical ledger, or none.</p>
-        <p class="lede">4ormEx is the trading-venue surface inside the 4orm Finance neutral settlement layer. Permissioned matching, eligibility checked pre-trade, settlement on the same write as the match. Built inside the Canadian regulatory perimeter, not adjacent to it.</p>
+
+        <h1>Canada's <span class="accent">neutral settlement layer</span> for tokenized finance.</h1>
+
+        <p class="lede">Canada's tokenized economy needs one neutral settlement layer, denominated in Canadian dollars, trusted by banks and issuers alike. 4ormEx is Pillar 02 on that layer, the institutional trading surface.</p>
+
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://4ormfinance.com/#waitlist">Request access
-            <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
+          <a class="btn btn-primary" href="https://4ormfinance.com/#waitlist">Request access <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           <a class="btn btn-ghost" href="/settlement-layer">See the settlement layer</a>
           <a class="btn btn-ghost" href="/dvp">How a trade settles</a>
         </div>
+
         <div class="hero-stats">
           <div class="ahs-card">
             <div class="l">Asset categories</div>
@@ -58,274 +61,263 @@
       </div>
     </section>
 
-<!-- Section 2 - The Solution / One enterprise layer (v19, adapted from 4ormfinance.com) -->
-<section class="section solution-section">
-  <div class="wrap">
+    <!-- SOLUTION (v19, adapted from parent) -->
+    <section class="section solution-section">
+      <div class="wrap">
 
-    <div class="sh">
-      <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The Solution</span></div>
-      <h2>One enterprise layer where everything <span class="accent">settles with finality.</span></h2>
-      <p class="lede">4orm Finance settles title, the cash leg, and the rules together, as one event, in Canadian dollars. It connects every tokenized project to every bank, so issuers get liquidity and can offload, and any token movement clears through one regulated venue instead of a dozen disconnected ones. <strong>4ormEx is Pillar 02 on this layer</strong> - the institutional trading surface where accredited Canadian investors match orders inside the perimeter.</p>
-    </div>
-
-    <!-- Sub-block A: How value moves (flow diagram) -->
-    <div class="hvm">
-      <div class="hvm-eye">How value moves</div>
-      <div class="hvm-flow">
-        <div class="hvm-card">
-          <div class="hvm-label">Issuers &amp; assets</div>
-          <div class="hvm-body">Real estate, mortgages, private credit, bonds, commodities, funds.</div>
+        <div class="sh">
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The Solution</span></div>
+          <h2>One enterprise layer where everything <span class="accent">settles with finality.</span></h2>
+          <p class="lede">4orm Finance settles title, the cash leg, and the rules together, as one event, in Canadian dollars. It connects every tokenized project to every bank, so issuers get liquidity and can offload, and any token movement clears through one regulated venue instead of a dozen disconnected ones. <strong>4ormEx is Pillar 02 on this layer</strong> - the institutional trading surface where accredited Canadian investors match orders inside the perimeter.</p>
         </div>
 
-        <div class="hvm-arrow" aria-hidden="true">
-          <svg viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2,10 L34,10 M28,4 L34,10 L28,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="hvm">
+          <div class="hvm-eye">How value moves</div>
+          <div class="hvm-flow">
+            <div class="hvm-card">
+              <div class="hvm-label">Issuers &amp; assets</div>
+              <div class="hvm-body">Real estate, mortgages, private credit, bonds, commodities, funds.</div>
+            </div>
+
+            <div class="hvm-arrow" aria-hidden="true">
+              <svg viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2,10 L34,10 M28,4 L34,10 L28,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="hvm-card hvm-mid">
+              <span class="hvm-tag">4ormEx sits here</span>
+              <div class="hvm-label">4orm settlement layer</div>
+              <div class="hvm-body">Title + cash leg + rules settle as one, with finality, in CAD.</div>
+            </div>
+
+            <div class="hvm-arrow" aria-hidden="true">
+              <svg viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2,10 L34,10 M28,4 L34,10 L28,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="hvm-card">
+              <div class="hvm-label">Banks &amp; liquidity</div>
+              <div class="hvm-body">Canadian banks and credit unions provide the cash leg and offload venue.</div>
+            </div>
+          </div>
+          <p class="hvm-note">The bank issues and holds the tokenized deposit. 4orm takes no deposits and needs no banking licence.</p>
         </div>
 
-        <div class="hvm-card hvm-mid">
-          <span class="hvm-tag">4ormEx sits here</span>
-          <div class="hvm-label">4orm settlement layer</div>
-          <div class="hvm-body">Title + cash leg + rules settle as one, with finality, in CAD.</div>
+        <div class="safe">
+          <div class="safe-eye">Built to be safe to adopt</div>
+          <div class="safe-grid">
+            <div class="safe-card">
+              <h3>Starts as a read-only module</h3>
+              <p>It sits beside a bank's existing systems, touches no funds, and proves settlement finality on a single tokenized deposit inside a supervised sandbox. The smallest thing that is both real and safe to run.</p>
+            </div>
+            <div class="safe-card">
+              <h3>Compliance native, Canadian hosted</h3>
+              <p>Permissioned ERC-3643 tokens carry identity and transfer controls. Hyperledger Besu now, with a path to 4orm Native Chain, hosted in Canada.</p>
+            </div>
+            <div class="safe-card">
+              <h3>Regulated from day one</h3>
+              <p>Alberta Securities Commission as primary regulator, engaged through the Alberta Financial Regulatory Sandbox, with a phased CIRO custody pathway.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="hvm-arrow" aria-hidden="true">
-          <svg viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2,10 L34,10 M28,4 L34,10 L28,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="earn">
+          <div class="earn-eye">Five ways it earns</div>
+          <div class="earn-row">
+            <div class="earn-card">
+              <span class="earn-num">01</span>
+              <h4>Settlement</h4>
+              <p>Delivery versus payment finality between institutions.</p>
+            </div>
+            <div class="earn-card">
+              <span class="earn-num">02</span>
+              <h4>Issuance</h4>
+              <p>Compliant tokenization on the ERC-3643 standard.</p>
+            </div>
+            <div class="earn-card">
+              <span class="earn-num">03</span>
+              <h4>Custody &amp; registry</h4>
+              <p>Asset lifecycle, records, and institution-facing controls.</p>
+            </div>
+            <div class="earn-card here">
+              <span class="earn-here">This surface</span>
+              <span class="earn-num">04</span>
+              <h4>Trading</h4>
+              <p>Institutional secondary market via 4ormEx.</p>
+            </div>
+            <div class="earn-card">
+              <span class="earn-num">05</span>
+              <h4>Platform SaaS</h4>
+              <p>Recurring APIs and integration per institution.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="hvm-card">
-          <div class="hvm-label">Banks &amp; liquidity</div>
-          <div class="hvm-body">Canadian banks and credit unions provide the cash leg and offload venue.</div>
-        </div>
       </div>
-      <p class="hvm-note">The bank issues and holds the tokenized deposit. 4orm takes no deposits and needs no banking licence.</p>
-    </div>
+    </section>
 
-    <!-- Sub-block B: Built to be safe to adopt (3 cards) -->
-    <div class="safe">
-      <div class="safe-eye">Built to be safe to adopt</div>
-      <div class="safe-grid">
-        <div class="safe-card">
-          <h3>Starts as a read-only module</h3>
-          <p>It sits beside a bank's existing systems, touches no funds, and proves settlement finality on a single tokenized deposit inside a supervised sandbox. The smallest thing that is both real and safe to run.</p>
-        </div>
-        <div class="safe-card">
-          <h3>Compliance native, Canadian hosted</h3>
-          <p>Permissioned ERC-3643 tokens carry identity and transfer controls. Hyperledger Besu now, with a path to 4orm Native Chain, hosted in Canada.</p>
-        </div>
-        <div class="safe-card">
-          <h3>Regulated from day one</h3>
-          <p>Alberta Securities Commission as primary regulator, engaged through the Alberta Financial Regulatory Sandbox, with a phased CIRO custody pathway.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sub-block C: Five ways it earns -->
-    <div class="earn">
-      <div class="earn-eye">Five ways it earns</div>
-      <div class="earn-row">
-        <div class="earn-card">
-          <span class="earn-num">01</span>
-          <h4>Settlement</h4>
-          <p>Delivery versus payment finality between institutions.</p>
-        </div>
-        <div class="earn-card">
-          <span class="earn-num">02</span>
-          <h4>Issuance</h4>
-          <p>Compliant tokenization on the ERC-3643 standard.</p>
-        </div>
-        <div class="earn-card">
-          <span class="earn-num">03</span>
-          <h4>Custody &amp; registry</h4>
-          <p>Asset lifecycle, records, and institution-facing controls.</p>
-        </div>
-        <div class="earn-card here">
-          <span class="earn-here">This surface</span>
-          <span class="earn-num">04</span>
-          <h4>Trading</h4>
-          <p>Institutional secondary market via 4ormEx.</p>
-        </div>
-        <div class="earn-card">
-          <span class="earn-num">05</span>
-          <h4>Platform SaaS</h4>
-          <p>Recurring APIs and integration per institution.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    <section class="section">
+    <!-- WHAT WE DO (3 tiles) -->
+    <section id="what" class="section">
       <div class="wrap">
         <div class="sh">
           <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">What 4ormEx is</span></div>
           <h2>One trading surface. Title, cash, and rules <span class="accent">on one settlement layer.</span></h2>
           <p>4ormEx is one of six capabilities inside the 4orm Finance neutral settlement layer. The Trading surface matches orders, checks eligibility pre-trade, and writes the asset leg, the cash leg, and the supervisory record in one commit. There is no separate clearing or settlement step.</p>
         </div>
+
         <div class="tile-grid c3">
-          <a class="tile" href="/asset-categories">
-            <div class="tile-ico" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-            </div>
+          <div class="tile">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 7h18M3 17h18"/><circle cx="18" cy="7" r="2.2" fill="currentColor"/><circle cx="6" cy="17" r="2.2" fill="currentColor"/></svg></div>
             <h3>Title</h3>
             <p>Token transfers represent the legal interest. Registry on the canonical ledger is the record. No reconciliation against an external book.</p>
-            <span class="link">Asset categories <span class="arr">&rarr;</span></span>
-          </a>
-          <a class="tile gold" href="/dvp">
-            <div class="tile-ico" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 10h8M8 14h8"/></svg>
-            </div>
+            <a href="/asset-categories" class="link">Asset categories <span class="arr">→</span></a>
+          </div>
+          <div class="tile gold">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18M3 16h18"/><path d="M8 4l-4 4 4 4M16 12l4 4-4 4"/></svg></div>
             <h3>Cash</h3>
             <p>The cash leg is a tokenized commercial-bank deposit, issued by the bank under its own banking authorizations. 4orm takes no deposits and needs no banking licence.</p>
-            <span class="link">How DvP works <span class="arr">&rarr;</span></span>
-          </a>
-          <a class="tile" href="/what-we-do">
-            <div class="tile-ico" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
+            <a href="/dvp" class="link">How DvP works <span class="arr">→</span></a>
+          </div>
+          <div class="tile">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 4v6c0 5-4 8-9 9-5-1-9-4-9-9V7l9-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
             <h3>Rules</h3>
             <p>Eligibility, jurisdiction, and limits are checked pre-trade. The supervisory feed is read-only and privacy-preserving. The venue is designed for the regulators it intends to answer to.</p>
-            <span class="link">What we do <span class="arr">&rarr;</span></span>
-          </a>
+            <a href="/what-we-do" class="link">What we do <span class="arr">→</span></a>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- SETTLEMENT-LAYER TEASER (numbered pillar row) -->
     <section class="section section-band">
       <div class="wrap">
         <div class="sh">
-          <div class="eye">The settlement layer · six capabilities</div>
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The settlement layer · six capabilities</span></div>
           <h2>One perimeter. Six capabilities. <span class="accent">4ormEx is Pillar 02.</span></h2>
           <p>The canonical ledger of record sits at the platform level. 4ormEx operates Trading. The other five capabilities run as siblings inside the same neutral settlement layer.</p>
         </div>
+
         <div class="pillar-row">
-  <a class="prw p1" href="/settlement-layer">
-    <span class="prw-num">01</span>
-    <span class="prw-name">Issuance</span>
-    <span class="prw-line">Primary issuance, NI 45-106.</span>
-  </a>
-  <a class="prw p2 here" href="/settlement-layer">
-    <span class="prw-num">02</span>
-    <span class="prw-name">Trading</span>
-    <span class="prw-line">Permissioned matching. You are here.</span>
-  </a>
-  <a class="prw p3" href="/settlement-layer">
-    <span class="prw-num">03</span>
-    <span class="prw-name">Settlement</span>
-    <span class="prw-line">Delivery versus payment, T+0.</span>
-  </a>
-  <a class="prw p4" href="/settlement-layer">
-    <span class="prw-num">04</span>
-    <span class="prw-name">Custody</span>
-    <span class="prw-line">Qualified Canadian custodian.</span>
-  </a>
-  <a class="prw p5" href="/settlement-layer">
-    <span class="prw-num">05</span>
-    <span class="prw-name">Reporting</span>
-    <span class="prw-line">Derived from the ledger.</span>
-  </a>
-  <a class="prw p6" href="/settlement-layer">
-    <span class="prw-num">06</span>
-    <span class="prw-name">Supervision</span>
-    <span class="prw-line">Read-only regulator feed.</span>
-  </a>
-</div>
-        <div class="section-cta">
-          <a class="btn btn-ghost" href="/settlement-layer">Read the settlement layer <span class="arr">&rarr;</span></a>
+          <a class="prw p1" href="/settlement-layer">
+            <span class="prw-num">01</span>
+            <span class="prw-name">Issuance</span>
+            <span class="prw-line">Primary issuance, NI 45-106.</span>
+          </a>
+          <a class="prw p2 here" href="/settlement-layer">
+            <span class="prw-num">02</span>
+            <span class="prw-name">Trading</span>
+            <span class="prw-line">Permissioned matching. You are here.</span>
+          </a>
+          <a class="prw p3" href="/settlement-layer">
+            <span class="prw-num">03</span>
+            <span class="prw-name">Settlement</span>
+            <span class="prw-line">Delivery versus payment, T+0.</span>
+          </a>
+          <a class="prw p4" href="/settlement-layer">
+            <span class="prw-num">04</span>
+            <span class="prw-name">Custody</span>
+            <span class="prw-line">Qualified Canadian custodian.</span>
+          </a>
+          <a class="prw p5" href="/settlement-layer">
+            <span class="prw-num">05</span>
+            <span class="prw-name">Reporting</span>
+            <span class="prw-line">Derived from the ledger.</span>
+          </a>
+          <a class="prw p6" href="/settlement-layer">
+            <span class="prw-num">06</span>
+            <span class="prw-name">Supervision</span>
+            <span class="prw-line">Read-only regulator feed.</span>
+          </a>
         </div>
+
+        <p style="margin-top:24px"><a class="btn btn-ghost" href="/settlement-layer">Read the settlement layer <span class="arr">→</span></a></p>
       </div>
     </section>
 
+    <!-- ASSET CATEGORIES TEASER (mini cards) -->
     <section class="section">
       <div class="wrap">
         <div class="sh">
-          <div class="eye">Six categories at launch · illustrative</div>
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">Six categories at launch · illustrative</span></div>
           <h2>Designed for Canadian capital. <span class="accent">All simulated.</span></h2>
           <p>Sovereign, sub-sovereign, private credit, real estate, commodities, carbon credits. Every figure shown is illustrative.</p>
         </div>
+
         <div class="cls-mini-grid">
-  <a class="cls-mini p1" href="/asset-categories">
-    <div class="cm-head">
-      <span class="cm-cat">Sovereign</span>
-      <span class="cm-chg up">▲ 0.4%</span>
-    </div>
-    <span class="cm-name">Government of Canada</span>
-    <span class="cm-val"><span class="cur">C$</span>312M</span>
-    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-      <path d="M0,22 L12,20 L24,17 L36,18 L48,14 L60,12 L72,9 L84,8 L96,6 L108,5 L120,3"
-            fill="none" stroke="var(--p1-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <a class="cls-mini p2" href="/asset-categories">
-    <div class="cm-head">
-      <span class="cm-cat">Sub-sovereign</span>
-      <span class="cm-chg up">▲ 0.2%</span>
-    </div>
-    <span class="cm-name">Provincial &amp; Crown</span>
-    <span class="cm-val"><span class="cur">C$</span>248M</span>
-    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-      <path d="M0,22 L12,20 L24,21 L36,18 L48,16 L60,15 L72,14 L84,12 L96,11 L108,10 L120,8"
-            fill="none" stroke="var(--p2-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <a class="cls-mini p3" href="/asset-categories">
-    <div class="cm-head">
-      <span class="cm-cat">Private credit</span>
-      <span class="cm-chg up">▲ 1.1%</span>
-    </div>
-    <span class="cm-name">Middle-market pools</span>
-    <span class="cm-val"><span class="cur">C$</span>187M</span>
-    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-      <path d="M0,24 L12,21 L24,18 L36,19 L48,15 L60,12 L72,10 L84,8 L96,6 L108,4 L120,2"
-            fill="none" stroke="var(--p3-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <a class="cls-mini p4" href="/asset-categories">
-    <div class="cm-head">
-      <span class="cm-cat">Real estate</span>
-      <span class="cm-chg up">▲ 0.8%</span>
-    </div>
-    <span class="cm-name">REITs &amp; direct CRE</span>
-    <span class="cm-val"><span class="cur">C$</span>164M</span>
-    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-      <path d="M0,18 L12,17 L24,16 L36,17 L48,14 L60,13 L72,12 L84,12 L96,10 L108,8 L120,7"
-            fill="none" stroke="var(--p4-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <a class="cls-mini p5 dn" href="/asset-categories">
-    <div class="cm-head">
-      <span class="cm-cat">Commodities</span>
-      <span class="cm-chg dn">▼ 0.3%</span>
-    </div>
-    <span class="cm-name">Gold / ag / energy</span>
-    <span class="cm-val"><span class="cur">C$</span>142M</span>
-    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-      <path d="M0,8 L12,10 L24,9 L36,12 L48,14 L60,14 L72,17 L84,18 L96,20 L108,22 L120,23"
-            fill="none" stroke="var(--danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <a class="cls-mini p6" href="/asset-categories">
-    <div class="cm-head">
-      <span class="cm-cat">Carbon credits</span>
-      <span class="cm-chg up">▲ 2.4%</span>
-    </div>
-    <span class="cm-name">Compliance &amp; voluntary</span>
-    <span class="cm-val"><span class="cur">C$</span>96M</span>
-    <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-      <path d="M0,24 L12,22 L24,20 L36,18 L48,14 L60,10 L72,8 L84,6 L96,5 L108,3 L120,2"
-            fill="none" stroke="var(--p6-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-</div>
-        <div class="section-cta">
-          <a class="btn btn-ghost" href="/asset-categories">See the asset categories <span class="arr">&rarr;</span></a>
+          <a class="cls-mini p1" href="/asset-categories">
+            <div class="cm-head">
+              <span class="cm-cat">Sovereign</span>
+              <span class="cm-chg up">▲ 0.4%</span>
+            </div>
+            <span class="cm-name">Government of Canada</span>
+            <span class="cm-val"><span class="cur">C$</span>312M</span>
+            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,22 L12,20 L24,17 L36,18 L48,14 L60,12 L72,9 L84,8 L96,6 L108,5 L120,3" fill="none" stroke="var(--p1-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="cls-mini p2" href="/asset-categories">
+            <div class="cm-head">
+              <span class="cm-cat">Sub-sovereign</span>
+              <span class="cm-chg up">▲ 0.2%</span>
+            </div>
+            <span class="cm-name">Provincial &amp; Crown</span>
+            <span class="cm-val"><span class="cur">C$</span>248M</span>
+            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,22 L12,20 L24,21 L36,18 L48,16 L60,15 L72,14 L84,12 L96,11 L108,10 L120,8" fill="none" stroke="var(--p2-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="cls-mini p3" href="/asset-categories">
+            <div class="cm-head">
+              <span class="cm-cat">Private credit</span>
+              <span class="cm-chg up">▲ 1.1%</span>
+            </div>
+            <span class="cm-name">Middle-market pools</span>
+            <span class="cm-val"><span class="cur">C$</span>187M</span>
+            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,24 L12,21 L24,18 L36,19 L48,15 L60,12 L72,10 L84,8 L96,6 L108,4 L120,2" fill="none" stroke="var(--p3-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="cls-mini p4" href="/asset-categories">
+            <div class="cm-head">
+              <span class="cm-cat">Real estate</span>
+              <span class="cm-chg up">▲ 0.8%</span>
+            </div>
+            <span class="cm-name">REITs &amp; direct CRE</span>
+            <span class="cm-val"><span class="cur">C$</span>164M</span>
+            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,18 L12,17 L24,16 L36,17 L48,14 L60,13 L72,12 L84,12 L96,10 L108,8 L120,7" fill="none" stroke="var(--p4-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="cls-mini p5 dn" href="/asset-categories">
+            <div class="cm-head">
+              <span class="cm-cat">Commodities</span>
+              <span class="cm-chg dn">▼ 0.3%</span>
+            </div>
+            <span class="cm-name">Gold / ag / energy</span>
+            <span class="cm-val"><span class="cur">C$</span>142M</span>
+            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,8 L12,10 L24,9 L36,12 L48,14 L60,14 L72,17 L84,18 L96,20 L108,22 L120,23" fill="none" stroke="var(--danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="cls-mini p6" href="/asset-categories">
+            <div class="cm-head">
+              <span class="cm-cat">Carbon credits</span>
+              <span class="cm-chg up">▲ 2.4%</span>
+            </div>
+            <span class="cm-name">Compliance &amp; voluntary</span>
+            <span class="cm-val"><span class="cur">C$</span>96M</span>
+            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
+              <path d="M0,24 L12,22 L24,20 L36,18 L48,14 L60,10 L72,8 L84,6 L96,5 L108,3 L120,2" fill="none" stroke="var(--p6-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
+
+        <p style="margin-top:24px"><a class="btn btn-ghost" href="/asset-categories">See the asset categories <span class="arr">→</span></a></p>
       </div>
     </section>
+
   </main>
 
   <div id="cta-mount"></div>
