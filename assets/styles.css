@@ -985,6 +985,148 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid var(--
 .fam-card.here h4 .ext{color:var(--gold-ink)}
 
 /* ============================================================
+   Solution section (v19, from 4ormfinance.com pattern)
+   ============================================================ */
+.solution-section{padding:88px 0 96px; background:var(--bg)}
+.solution-section .sh{margin-bottom:56px}
+.solution-section .sh h2{max-width:24em}
+.solution-section .sh p{max-width:52em}
+.solution-section .sh p strong{color:var(--brand-700); font-weight:750}
+
+/* --- Sub-block A: How value moves --- */
+.hvm{margin-bottom:64px}
+.hvm-eye,.safe-eye,.earn-eye{
+  font-family:var(--font-mono); font-size:.7rem; font-weight:800;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--brand-700); margin-bottom:20px;
+  display:inline-flex; align-items:center; gap:9px;
+}
+.hvm-eye::before,.safe-eye::before,.earn-eye::before{
+  content:""; display:inline-block; width:18px; height:2px; background:var(--brand);
+}
+.hvm-flow{
+  display:grid; grid-template-columns:1fr auto 1fr auto 1fr;
+  align-items:stretch; gap:0;
+}
+@media (max-width:900px){
+  .hvm-flow{grid-template-columns:1fr; gap:14px}
+  .hvm-arrow{transform:rotate(90deg); justify-self:center; padding:2px 0}
+}
+.hvm-card{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:24px 22px 22px;
+  display:flex; flex-direction:column; gap:8px;
+  box-shadow:var(--shadow-sm);
+  min-height:150px;
+}
+.hvm-card.hvm-mid{
+  border-color:var(--brand);
+  box-shadow:0 0 0 1px var(--brand), 0 16px 40px rgba(46,107,242,.16);
+  background:linear-gradient(180deg, rgba(46,107,242,.06) 0%, var(--surface) 100%);
+}
+.hvm-tag{
+  position:absolute; top:-12px; left:20px;
+  font-family:var(--font-mono); font-size:.62rem; letter-spacing:.18em;
+  text-transform:uppercase; font-weight:800;
+  background:var(--brand); color:#fff;
+  padding:5px 11px; border-radius:99px;
+}
+.hvm-label{
+  font-family:var(--font-sans); font-weight:800; font-size:1.06rem;
+  letter-spacing:-.01em; color:var(--text);
+}
+.hvm-body{
+  font-size:.94rem; line-height:1.55; color:var(--text-2);
+}
+.hvm-arrow{
+  display:flex; align-items:center; justify-content:center;
+  color:var(--brand); padding:0 14px; min-width:60px;
+}
+.hvm-arrow svg{width:40px; height:20px; display:block}
+.hvm-note{
+  margin-top:18px; padding:14px 18px;
+  background:var(--bg-2); border-left:3px solid var(--gold);
+  border-radius:var(--r-xs);
+  font-size:.9rem; color:var(--text-2); line-height:1.55;
+}
+
+/* --- Sub-block B: Built to be safe to adopt --- */
+.safe{margin-bottom:64px}
+.safe-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+}
+@media (max-width:900px){.safe-grid{grid-template-columns:1fr}}
+.safe-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:26px 26px 24px;
+  box-shadow:var(--shadow-sm);
+  display:flex; flex-direction:column; gap:10px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.safe-card:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--brand-100)}
+.safe-card h3{
+  font-size:1.08rem; font-weight:750; letter-spacing:-.01em;
+  color:var(--text); line-height:1.25;
+}
+.safe-card p{
+  font-size:.92rem; line-height:1.6; color:var(--text-2);
+}
+
+/* --- Sub-block C: Five ways it earns --- */
+.earn{margin-bottom:0}
+.earn-row{
+  display:grid; grid-template-columns:repeat(5, 1fr); gap:12px;
+}
+@media (max-width:1080px){.earn-row{grid-template-columns:repeat(3, 1fr)}}
+@media (max-width:640px){.earn-row{grid-template-columns:repeat(2, 1fr)}}
+@media (max-width:420px){.earn-row{grid-template-columns:1fr}}
+.earn-card{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-top-width:3px;
+  border-top-color:var(--border);
+  border-radius:var(--r);
+  padding:20px 18px 18px;
+  box-shadow:var(--shadow-sm);
+  display:flex; flex-direction:column; gap:6px;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.earn-card:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
+.earn-num{
+  font-family:var(--font-mono); font-size:.72rem; font-weight:800;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--text-3);
+}
+.earn-card h4{
+  font-size:1.02rem; font-weight:750; letter-spacing:-.01em;
+  color:var(--text); line-height:1.2;
+  margin-top:2px;
+}
+.earn-card p{
+  font-size:.84rem; line-height:1.5; color:var(--text-2);
+}
+.earn-card.here{
+  border-top-color:var(--brand);
+  box-shadow:0 0 0 1px var(--brand), 0 12px 28px rgba(46,107,242,.16);
+  background:linear-gradient(180deg, rgba(46,107,242,.05) 0%, var(--surface) 100%);
+}
+.earn-card.here .earn-num{color:var(--brand-700)}
+.earn-card.here h4{color:var(--brand-700)}
+.earn-here{
+  position:absolute; top:-12px; left:16px;
+  font-family:var(--font-mono); font-size:.6rem; letter-spacing:.18em;
+  text-transform:uppercase; font-weight:800;
+  background:var(--brand); color:#fff;
+  padding:5px 10px; border-radius:99px;
+}
+
+/* ============================================================
    Disclaimer gate modal (first-visit compliance gate)
    ============================================================ */
 .gate{
