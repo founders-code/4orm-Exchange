@@ -61,7 +61,7 @@
     nav.innerHTML =
       '<div class="nav-inner">' +
         '<a class="brand" href="/" aria-label="4ormEx home">' +
-          '<img class="brand-logo" src="/assets/4orm-finance-logo.png" alt="4orm Finance" />' +
+          '<img class="brand-logo" src="/assets/4ormex-logo.png" alt="4ormEx - 4orm Finance" />' +
         '</a>' +
         '<nav class="nav-links" aria-label="Primary">' + links + '</nav>' +
         '<a class="nav-cta" href="https://4ormdr.com">Request Access to Data Room ' +
