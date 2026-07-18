@@ -351,8 +351,122 @@ p{margin:0}
 .hero-stats .ahs-card:nth-child(4){border-top:3px solid var(--p5)}
 
 /* ============================================================
-   Solution section (v19, adapted from parent's "The Solution" block)
+   Solution section (parent-verbatim structure with animated diagram)
+   Dark background matches the parent site's .sec.dark treatment.
    ============================================================ */
+.solution-section.dark{padding:96px 0 104px}
+.sol-eyebrow{
+  font-family:var(--font-mono); font-size:.7rem; font-weight:800;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gold-dark);
+  display:inline-block; margin-bottom:16px;
+}
+.sol-h{
+  color:#fff; font-size:clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight:750; letter-spacing:-.02em; line-height:1.15;
+  max-width:22em;
+}
+.sol-sub{
+  color:#fff; font-size:clamp(1.1rem, 1.6vw, 1.3rem);
+  font-weight:600; margin:18px 0 0; max-width:36em; line-height:1.4;
+}
+.sol-lede{
+  color:rgba(255,255,255,.76); font-size:1.02rem; line-height:1.6;
+  margin:14px 0 0; max-width:44em;
+}
+.sol-subhead{
+  font-family:var(--font-mono); font-size:.7rem; font-weight:800;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:#9AB6FF;
+  display:inline-flex; align-items:center; gap:10px;
+  margin:48px 0 18px;
+}
+.sol-subhead::before{
+  content:""; display:inline-block; width:22px; height:2px;
+  background:#9AB6FF;
+}
+
+/* Animated DvP scene (verbatim from parent) */
+.dvp-scene{
+  background:linear-gradient(135deg, #0A1128 0%, #0F1B32 100%);
+  border:1px solid rgba(154,182,255,.18);
+  border-radius:var(--r-xl);
+  padding:32px 24px;
+  overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+.dvp-svg{width:100%; height:auto; display:block; max-width:900px; margin:0 auto}
+.dvp-note{
+  text-align:center; font-size:13px; color:#8A97AD;
+  margin-top:16px; font-family:var(--font-mono); letter-spacing:.04em;
+}
+
+/* Built to be safe to adopt - 3 cards on dark */
+.sol-grid-3{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+}
+@media (max-width:900px){.sol-grid-3{grid-template-columns:1fr}}
+.sol-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r-lg);
+  padding:26px 26px 24px;
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.sol-card:hover{transform:translateY(-3px); border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.07)}
+.sol-card h3{
+  color:#fff; font-size:1.08rem; font-weight:750;
+  letter-spacing:-.01em; line-height:1.25; margin-bottom:10px;
+}
+.sol-card p{
+  color:#9FB0CC; font-size:.92rem; line-height:1.6;
+}
+
+/* Five ways it earns - streams row */
+.streams{
+  display:grid; grid-template-columns:repeat(5, 1fr); gap:12px;
+}
+@media (max-width:1080px){.streams{grid-template-columns:repeat(3, 1fr)}}
+@media (max-width:640px){.streams{grid-template-columns:repeat(2, 1fr)}}
+@media (max-width:420px){.streams{grid-template-columns:1fr}}
+.stream{
+  position:relative;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);
+  border-top:3px solid rgba(154,182,255,.4);
+  border-radius:var(--r);
+  padding:20px 18px 18px;
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.stream:hover{transform:translateY(-3px); border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.07)}
+.stream .sn{
+  font-family:var(--font-mono); font-size:.72rem; font-weight:800;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:#9AB6FF;
+}
+.stream .st{
+  color:#fff; font-size:1.02rem; font-weight:750;
+  letter-spacing:-.01em; line-height:1.2; margin-top:4px;
+}
+.stream .sd{
+  color:#9FB0CC; font-size:.84rem; line-height:1.5; margin-top:6px;
+}
+.stream.is-here{
+  border-top-color:#7BE3B0;
+  background:linear-gradient(180deg, rgba(123,227,176,.10) 0%, rgba(255,255,255,.05) 100%);
+  box-shadow:0 0 0 1px rgba(123,227,176,.5), 0 12px 28px rgba(123,227,176,.15);
+}
+.stream.is-here .sn{color:#7BE3B0}
+.stream.is-here .st{color:#fff}
+.stream.is-here .sh-tag{
+  position:absolute; top:-12px; left:16px;
+  font-family:var(--font-mono); font-size:.6rem; letter-spacing:.18em;
+  text-transform:uppercase; font-weight:800;
+  background:#7BE3B0; color:#0B1220;
+  padding:5px 10px; border-radius:99px;
+}
+
+/* Retire the old .solution-section (light) style */
 .solution-section{padding:88px 0 96px; background:var(--bg)}
 .solution-section .sh{margin-bottom:56px}
 .solution-section .sh h2{max-width:24em}

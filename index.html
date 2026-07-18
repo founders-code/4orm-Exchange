@@ -61,98 +61,123 @@
       </div>
     </section>
 
-    <!-- SOLUTION (v19, adapted from parent) -->
-    <section class="section solution-section">
+    <!-- SOLUTION (parent-verbatim structure with animated DvP diagram) -->
+    <section class="section solution-section dark" id="solution">
       <div class="wrap">
 
-        <div class="sh">
-          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The Solution</span></div>
-          <h2>One enterprise layer where everything <span class="accent">settles with finality.</span></h2>
-          <p class="lede">4orm Finance settles title, the cash leg, and the rules together, as one event, in Canadian dollars. It connects every tokenized project to every bank, so issuers get liquidity and can offload, and any token movement clears through one regulated venue instead of a dozen disconnected ones. <strong>4ormEx is Pillar 02 on this layer</strong> - the institutional trading surface where accredited Canadian investors match orders inside the perimeter.</p>
+        <span class="sol-eyebrow">The Solution</span>
+        <h2 class="sol-h">One enterprise layer where everything settles with finality.</h2>
+
+        <p class="sol-sub">A neutral Canadian trading venue for tokenized assets, with settlement finality at commit.</p>
+
+        <p class="sol-lede">Title, cash, and rules travel together. One write to the canonical ledger, or none. 4ormEx is the trading-venue surface inside the 4orm Finance neutral settlement layer. Permissioned matching, eligibility checked pre-trade, settlement on the same write as the match. Built inside the Canadian regulatory perimeter, not adjacent to it.</p>
+
+        <div class="sol-subhead">Delivery versus payment, animated</div>
+
+        <div class="dvp-scene">
+          <svg class="dvp-svg" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="asset-glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AB6FF" stop-opacity="0"/><stop offset=".5" stop-color="#9AB6FF" stop-opacity=".55"/><stop offset="1" stop-color="#9AB6FF" stop-opacity="0"/></linearGradient>
+              <linearGradient id="cash-glow" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#7BE3B0" stop-opacity="0"/><stop offset=".5" stop-color="#7BE3B0" stop-opacity=".55"/><stop offset="1" stop-color="#7BE3B0" stop-opacity="0"/></linearGradient>
+              <radialGradient id="commit-pulse" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#7BE3B0" stop-opacity=".55"/><stop offset="1" stop-color="#7BE3B0" stop-opacity="0"/></radialGradient>
+            </defs>
+
+            <!-- Left column: ISSUERS -->
+            <g transform="translate(60 100)">
+              <text x="0" y="-20" font-family="JetBrains Mono,monospace" font-size="11" font-weight="800" letter-spacing=".14em" fill="#9AB6FF">ISSUERS</text>
+              <g transform="translate(0 0)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 8)"><rect x="0" y="4" width="14" height="14" fill="#9AB6FF"/><polygon points="0,4 7,-2 14,4" fill="#9AB6FF"/><rect x="4" y="8" width="6" height="10" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Real estate</text></g>
+              <g transform="translate(0 46)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 8)"><rect x="0" y="0" width="18" height="18" rx="1" fill="#9AB6FF"/><line x1="4" y1="4" x2="14" y2="4" stroke="#0B1220" stroke-width="1.5"/><line x1="4" y1="9" x2="14" y2="9" stroke="#0B1220" stroke-width="1.5"/><line x1="4" y1="14" x2="14" y2="14" stroke="#0B1220" stroke-width="1.5"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Bonds</text></g>
+              <g transform="translate(0 92)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 8)"><circle cx="9" cy="9" r="8" fill="#9AB6FF"/><text x="9" y="13" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="10" fill="#0B1220">%</text></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Credit</text></g>
+              <g transform="translate(0 138)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 10)"><polygon points="0,14 9,0 18,14" fill="#F5D06B"/><rect x="1" y="14" width="16" height="4" fill="#B58A28"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Bullion</text></g>
+            </g>
+
+            <!-- Right column: BANKS / LIQUIDITY -->
+            <g transform="translate(720 100)">
+              <text x="120" y="-20" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="11" font-weight="800" letter-spacing=".14em" fill="#7BE3B0">BANKS &amp; LIQUIDITY</text>
+              <g transform="translate(0 0)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 8)"><polygon points="0,6 9,0 18,6" fill="#7BE3B0"/><rect x="1" y="6" width="16" height="12" fill="#7BE3B0"/><rect x="4" y="10" width="2" height="6" fill="#0B1220"/><rect x="8" y="10" width="2" height="6" fill="#0B1220"/><rect x="12" y="10" width="2" height="6" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Canadian bank</text></g>
+              <g transform="translate(0 46)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 8)"><path d="M9 0 L18 4 L18 12 Q18 18 9 20 Q0 18 0 12 L0 4 Z" fill="#7BE3B0"/><circle cx="9" cy="10" r="2" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Custodian</text></g>
+              <g transform="translate(0 92)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 6)"><circle cx="9" cy="9" r="9" fill="#7BE3B0"/><path d="M4 7 Q9 4 14 7 M4 10 Q9 7 14 10" stroke="#0B1220" stroke-width="1.4" fill="none"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Credit union</text></g>
+              <g transform="translate(0 138)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 8)"><path d="M0 12 L9 4 L18 12 L18 18 L0 18 Z" fill="#7BE3B0"/><rect x="7" y="4" width="4" height="4" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Pension</text></g>
+            </g>
+
+            <!-- TWO LANES -->
+            <rect x="190" y="118" width="510" height="30" rx="15" fill="rgba(154,182,255,.06)" stroke="rgba(154,182,255,.18)"/>
+            <rect x="190" y="192" width="510" height="30" rx="15" fill="rgba(123,227,176,.06)" stroke="rgba(123,227,176,.18)"/>
+
+            <text x="200" y="112" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing=".12em" fill="#9AB6FF" font-weight="700">TITLE / ASSET LEG &rarr;</text>
+            <text x="690" y="242" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing=".12em" fill="#7BE3B0" font-weight="700">&larr; CASH LEG (TOKENIZED DEPOSIT)</text>
+
+            <!-- animated asset tokens flowing left to right -->
+            <g fill="#9AB6FF">
+              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" path="M195 133 L695 133"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" repeatCount="indefinite"/></circle>
+              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="1.3s" path="M195 133 L695 133"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="1.3s" repeatCount="indefinite"/></circle>
+              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="2.6s" path="M195 133 L695 133"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="2.6s" repeatCount="indefinite"/></circle>
+            </g>
+            <!-- animated cash tokens flowing right to left -->
+            <g fill="#7BE3B0">
+              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" path="M695 207 L195 207"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" repeatCount="indefinite"/></circle>
+              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="1.3s" path="M695 207 L195 207"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="1.3s" repeatCount="indefinite"/></circle>
+              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="2.6s" path="M695 207 L195 207"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="2.6s" repeatCount="indefinite"/></circle>
+            </g>
+
+            <!-- CENTER 4ORM COMMIT hub -->
+            <g transform="translate(445 170)">
+              <circle r="65" fill="url(#commit-pulse)">
+                <animate attributeName="r" values="55;80;55" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <rect x="-72" y="-52" width="144" height="104" rx="14" fill="#0F1A30" stroke="#7BE3B0" stroke-width="2"/>
+              <text y="-28" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="16" fill="#fff">4ORM</text>
+              <text y="-14" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" letter-spacing=".14em" fill="#7BE3B0">COMMIT AS ONE</text>
+              <g transform="translate(-56 0)">
+                <rect x="0" y="0" width="112" height="14" rx="3" fill="rgba(154,182,255,.16)" stroke="rgba(154,182,255,.4)"/>
+                <text x="6" y="10" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#9AB6FF" font-weight="700">TITLE</text>
+                <text x="106" y="10" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#9AB6FF">&#10003;</text>
+              </g>
+              <g transform="translate(-56 18)">
+                <rect x="0" y="0" width="112" height="14" rx="3" fill="rgba(123,227,176,.16)" stroke="rgba(123,227,176,.4)"/>
+                <text x="6" y="10" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#7BE3B0" font-weight="700">CASH</text>
+                <text x="106" y="10" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#7BE3B0">&#10003;</text>
+              </g>
+              <g transform="translate(-56 36)">
+                <rect x="0" y="0" width="112" height="14" rx="3" fill="rgba(245,208,107,.16)" stroke="rgba(245,208,107,.4)"/>
+                <text x="6" y="10" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#F5D06B" font-weight="700">RULES</text>
+                <text x="106" y="10" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#F5D06B">&#10003;</text>
+              </g>
+            </g>
+
+            <text x="450" y="290" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">All three commit together in the same block, or nothing settles.</text>
+            <text x="450" y="308" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing=".12em" fill="#9FB0CC">DELIVERY VERSUS PAYMENT &middot; T+0 &middot; CANADIAN DOLLARS</text>
+          </svg>
         </div>
 
-        <div class="hvm">
-          <div class="hvm-eye">How value moves</div>
-          <div class="hvm-flow">
-            <div class="hvm-card">
-              <div class="hvm-label">Issuers &amp; assets</div>
-              <div class="hvm-body">Real estate, mortgages, private credit, bonds, commodities, funds.</div>
-            </div>
+        <p class="dvp-note">The bank issues and holds the tokenized deposit. 4orm takes no deposits and needs no banking licence.</p>
 
-            <div class="hvm-arrow" aria-hidden="true">
-              <svg viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2,10 L34,10 M28,4 L34,10 L28,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
+        <div class="sol-subhead" style="margin-top:52px">Built to be safe to adopt</div>
 
-            <div class="hvm-card hvm-mid">
-              <span class="hvm-tag">4ormEx sits here</span>
-              <div class="hvm-label">4orm settlement layer</div>
-              <div class="hvm-body">Title + cash leg + rules settle as one, with finality, in CAD.</div>
-            </div>
-
-            <div class="hvm-arrow" aria-hidden="true">
-              <svg viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2,10 L34,10 M28,4 L34,10 L28,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-
-            <div class="hvm-card">
-              <div class="hvm-label">Banks &amp; liquidity</div>
-              <div class="hvm-body">Canadian banks and credit unions provide the cash leg and offload venue.</div>
-            </div>
+        <div class="sol-grid-3">
+          <div class="sol-card">
+            <h3>Starts as a read-only module</h3>
+            <p>It sits beside a bank's existing systems, touches no funds, and proves settlement finality on a single tokenized deposit inside a supervised sandbox. The smallest thing that is both real and safe to run.</p>
           </div>
-          <p class="hvm-note">The bank issues and holds the tokenized deposit. 4orm takes no deposits and needs no banking licence.</p>
-        </div>
-
-        <div class="safe">
-          <div class="safe-eye">Built to be safe to adopt</div>
-          <div class="safe-grid">
-            <div class="safe-card">
-              <h3>Starts as a read-only module</h3>
-              <p>It sits beside a bank's existing systems, touches no funds, and proves settlement finality on a single tokenized deposit inside a supervised sandbox. The smallest thing that is both real and safe to run.</p>
-            </div>
-            <div class="safe-card">
-              <h3>Compliance native, Canadian hosted</h3>
-              <p>Permissioned ERC-3643 tokens carry identity and transfer controls. Hyperledger Besu now, with a path to 4orm Native Chain, hosted in Canada.</p>
-            </div>
-            <div class="safe-card">
-              <h3>Regulated from day one</h3>
-              <p>Alberta Securities Commission as primary regulator, engaged through the Alberta Financial Regulatory Sandbox, with a phased CIRO custody pathway.</p>
-            </div>
+          <div class="sol-card">
+            <h3>Compliance native, Canadian hosted</h3>
+            <p>Permissioned ERC-3643 tokens carry identity and transfer controls. Hyperledger Besu now, with a path to 4orm Native Chain, hosted in Canada.</p>
+          </div>
+          <div class="sol-card">
+            <h3>Regulated from day one</h3>
+            <p>Alberta Securities Commission as primary regulator, engaged through the Alberta Financial Regulatory Sandbox, with a phased CIRO custody pathway.</p>
           </div>
         </div>
 
-        <div class="earn">
-          <div class="earn-eye">Five ways it earns</div>
-          <div class="earn-row">
-            <div class="earn-card">
-              <span class="earn-num">01</span>
-              <h4>Settlement</h4>
-              <p>Delivery versus payment finality between institutions.</p>
-            </div>
-            <div class="earn-card">
-              <span class="earn-num">02</span>
-              <h4>Issuance</h4>
-              <p>Compliant tokenization on the ERC-3643 standard.</p>
-            </div>
-            <div class="earn-card">
-              <span class="earn-num">03</span>
-              <h4>Custody &amp; registry</h4>
-              <p>Asset lifecycle, records, and institution-facing controls.</p>
-            </div>
-            <div class="earn-card here">
-              <span class="earn-here">This surface</span>
-              <span class="earn-num">04</span>
-              <h4>Trading</h4>
-              <p>Institutional secondary market via 4ormEx.</p>
-            </div>
-            <div class="earn-card">
-              <span class="earn-num">05</span>
-              <h4>Platform SaaS</h4>
-              <p>Recurring APIs and integration per institution.</p>
-            </div>
-          </div>
+        <div class="sol-subhead" style="margin-top:52px">Five ways it earns</div>
+
+        <div class="streams">
+          <div class="stream"><div class="sn">01</div><div class="st">Settlement</div><div class="sd">Delivery versus payment finality between institutions</div></div>
+          <div class="stream"><div class="sn">02</div><div class="st">Issuance</div><div class="sd">Compliant tokenization on the ERC-3643 standard</div></div>
+          <div class="stream"><div class="sn">03</div><div class="st">Custody &amp; registry</div><div class="sd">Asset lifecycle, records, and institution-facing controls</div></div>
+          <div class="stream is-here"><div class="sh-tag">This surface</div><div class="sn">04</div><div class="st">Trading</div><div class="sd">Institutional secondary market via 4ormEx</div></div>
+          <div class="stream"><div class="sn">05</div><div class="st">Platform SaaS</div><div class="sd">Recurring APIs and integration per institution</div></div>
         </div>
 
       </div>
