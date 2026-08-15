@@ -14,9 +14,10 @@
 
   var BRAND_NAME = '4orm Finance';
 
-  /* Drop a transparent PNG at /assets/logo.png and flip USE_LOGO to true.
-     Until then the nav renders a typographic wordmark so nothing is broken. */
-  var USE_LOGO = false;
+  /* logo.png is the 4orm Finance lockup: blue mark, white wordmark,
+     transparent background, so it sits correctly on the black nav.
+     Set USE_LOGO to false to fall back to the typographic wordmark. */
+  var USE_LOGO = true;
   var LOGO_SRC = '/assets/logo.png';
 
   var NAV_LINKS = [

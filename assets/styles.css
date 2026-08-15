@@ -182,7 +182,7 @@ p{margin:0}
   position:sticky; top:0; z-index:100;
   background:#0B1220;
   border-bottom:1px solid rgba(255,255,255,.08);
-  min-height:136px;
+  min-height:104px;
   display:flex; align-items:center;
   box-shadow:0 4px 24px rgba(0,0,0,.18);
 }
@@ -191,7 +191,9 @@ p{margin:0}
   display:flex; align-items:center; gap:24px;
 }
 .brand{display:inline-flex; align-items:center; flex:0 0 auto; padding:8px 0}
-.brand-logo{height:120px; width:auto; display:block; object-fit:contain}
+/* The lockup is a horizontal wordmark (roughly 2.4:1), not a square mark,
+   so it is sized by height and the nav is sized to suit. */
+.brand-logo{height:64px; width:auto; display:block; object-fit:contain}
 
 /* Wordmark fallback, used until a transparent logo.png is dropped in.
    The nav carries .nav--word in that state so it is not sized for a 120px logo. */
@@ -228,9 +230,9 @@ p{margin:0}
 .nav-cta:hover{background:var(--brand-600); border-color:var(--brand-600); transform:translateY(-1px); box-shadow:0 8px 22px rgba(46,107,242,.45); color:#fff}
 
 @media (max-width:1240px){
-  .brand-logo{height:100px}
+  .brand-logo{height:56px}
   .brand-word .bw-main{font-size:2.1rem}
-  .nav{min-height:120px}
+  .nav{min-height:92px}
   .nav.nav--word{min-height:88px}
   .nav-inner{gap:16px}
   .nav-links{gap:2px}
@@ -240,7 +242,7 @@ p{margin:0}
 /* Below 980px the links move to their own scrollable row under the brand,
    rather than disappearing. Five links do not need a hamburger. */
 @media (max-width:1080px){
-  .brand-logo{height:64px}
+  .brand-logo{height:48px}
   .brand-word .bw-main{font-size:1.7rem}
   .brand-word .bw-sub{font-size:.54rem; letter-spacing:.18em}
   .nav{min-height:0; padding:12px 0 0}
