@@ -1,20 +1,58 @@
-/* 4ormEx · v20 chrome injector
-   Builds util bar, preview legend, nav, closing CTA, family block, footer, gate.
+/* Chrome injector - shared page furniture for 4ormex.com.
+   Builds the preview legend, nav, closing CTA, family block and footer.
    Pure DOM. No dependencies. Runs after DOMContentLoaded (defer).
+
+   Disclosure rule for this surface: this site shows WHAT the platform
+   produces. It does not describe HOW any of it is produced. Keep it that way.
 */
 (function(){
   'use strict';
 
-  var page = document.body.getAttribute('data-page') || 'home';
+  /* ========================================================
+     CONFIG
+     ======================================================== */
+
+  var BRAND_NAME = '4orm Finance';
+
+  /* Drop a transparent PNG at /assets/logo.png and flip USE_LOGO to true.
+     Until then the nav renders a typographic wordmark so nothing is broken. */
+  var USE_LOGO = false;
+  var LOGO_SRC = '/assets/logo.png';
 
   var NAV_LINKS = [
-    { label:'Home',                 href:'/',                    slug:'home' },
-    { label:'What we do',           href:'/what-we-do',          slug:'what-we-do' },
-    { label:'The settlement layer', href:'/settlement-layer',    slug:'settlement-layer' },
-    { label:'Asset categories',     href:'/asset-categories',    slug:'asset-categories' },
-    { label:'DvP',                  href:'/dvp',                 slug:'dvp' },
-    { label:'Finality',             href:'/finality',            slug:'finality' }
+    { label:'Home',                 href:'/',                     slug:'home' },
+    { label:'The duty',             href:'/the-duty',             slug:'the-duty' },
+    { label:'The platform',         href:'/platform',             slug:'platform' },
+    { label:'Inside the platform',  href:'/inside-the-platform',  slug:'screens' },
+    { label:'Contact',              href:'/contact',              slug:'contact' }
   ];
+
+  var CTA_LABEL = 'Request a walkthrough';
+  var CTA_HREF  = '/contact';
+
+  var LEGEND_HTML = '<strong>Platform preview.</strong> Every screen and figure on this site is drawn for illustration. Not a live environment.';
+
+  /* The investor data room is deliberately NOT linked or named here. A public
+     buyer page has no reason to advertise the address of a confidential
+     document set. Do not add it back. */
+  var FAMILY_EYEBROW = 'Two 4orm surfaces';
+  var FAMILY_HEADLINE = 'One company. Two places it shows up.';
+  var FAMILY_CARDS = [
+    { cls:'fc-b', href:'https://www.4ormfinance.com', badge:'01 / The company',
+      name:'4orm Finance', url:'4ormfinance.com', ext:true,
+      body:'Who we are, what we are building and why now. The company surface.' },
+    { cls:'here fc-a', href:'/', badge:'You are here',
+      name:'Platform preview', url:'4ormex.com',
+      body:'What the platform produces, drawn rather than photographed.' }
+  ];
+
+  var CONTACT_EMAIL = 'office@4ormfinance.com';
+
+  /* ========================================================
+     Helpers
+     ======================================================== */
+
+  var page = document.body.getAttribute('data-page') || 'home';
 
   function el(tag, attrs, html){
     var n = document.createElement(tag);
@@ -28,218 +66,174 @@
     if(m) m.replaceWith(node);
   }
 
-  /* ---------- Util bar ---------- */
-  function buildUtil(){
-    var bar = el('div', {class:'util'});
-    bar.innerHTML =
-      '<div class="util-inner">' +
-        '<div class="util-links">' +
-          '<a href="https://4ormfinance.com">4orm Finance</a>' +
-          '<a href="#" class="here">4ormEx</a>' +
-          '<a href="https://4ormdr.com">Data Room</a>' +
-          '<a href="https://kcs-capital.com">KCS Capital</a>' +
-        '</div>' +
-        '<span class="util-waitlist"><span class="ring"></span>Raise · open to accredited investors</span>' +
-      '</div>';
-    return bar;
-  }
+  var ARROW = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
 
-  /* ---------- Preview legend (audience-restriction strip) ---------- */
+  /* ========================================================
+     Preview legend
+     ======================================================== */
   function buildLegend(){
     var s = el('div', {class:'preview-legend'});
-    s.innerHTML = '<strong>Accredited investors only.</strong> This site is a design preview of a planned permissioned trading venue. Not an offering of securities.';
+    s.innerHTML = LEGEND_HTML;
     return s;
   }
 
-  /* ---------- Nav ---------- */
+  /* ========================================================
+     Nav
+     ======================================================== */
   function buildNav(){
-    var nav = el('header', {class:'nav'});
+    var nav = el('header', {class:'nav' + (USE_LOGO ? '' : ' nav--word')});
+
+    var mark = USE_LOGO
+      ? '<img class="brand-logo" src="' + LOGO_SRC + '" alt="' + BRAND_NAME + '" />'
+      : '<span class="brand-word">' +
+          '<span class="bw-main">4<em>orm</em></span>' +
+          '<span class="bw-sub">Platform preview</span>' +
+        '</span>';
+
     var links = NAV_LINKS.map(function(l){
-      var active = (l.slug === page) ? ' is-active' : '';
-      return '<a href="' + l.href + '" data-page="' + l.slug + '" class="' + active.trim() + '">' + l.label + '</a>';
+      var active = (l.slug === page) ? ' class="is-active"' : '';
+      return '<a href="' + l.href + '" data-page="' + l.slug + '"' + active + '>' + l.label + '</a>';
     }).join('');
+
     nav.innerHTML =
       '<div class="nav-inner">' +
-        '<a class="brand" href="/" aria-label="4ormEx home">' +
-          '<img class="brand-logo" src="/assets/4ormex-logo.png" alt="4ormEx - 4orm Finance" />' +
-        '</a>' +
+        '<a class="brand" href="/" aria-label="' + BRAND_NAME + ' home">' + mark + '</a>' +
         '<nav class="nav-links" aria-label="Primary">' + links + '</nav>' +
-        '<a class="nav-cta" href="https://4ormdr.com">Request Access to Data Room ' +
-          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-        '</a>' +
+        '<a class="nav-cta" href="' + CTA_HREF + '">' + CTA_LABEL + ' ' + ARROW + '</a>' +
       '</div>';
     return nav;
   }
 
-  /* ---------- Closing CTA ---------- */
+  /* ========================================================
+     Closing CTA
+     ======================================================== */
   function buildCTA(){
-    var s = el('section', {class:'iw-cta', id:'access'});
+    var s = el('section', {class:'iw-cta', id:'walkthrough'});
     s.innerHTML =
       '<div class="wrap">' +
-        '<span class="stamp"><span class="pulse"></span>Pre-registration · accredited investors</span>' +
-        '<h2>Inside the regulatory perimeter. <span class="accent">Built quietly. Open by invitation.</span></h2>' +
-        '<p>Access to 4ormEx is by request, restricted to accredited investors. The waitlist supports the parallel 4orm Finance raise. No services are offered, solicited, or available.</p>' +
+        '<span class="stamp"><span class="pulse"></span>The duty is live today</span>' +
+        '<h2>See it against your own morning. <span class="accent">Bring a date and a balance.</span></h2>' +
+        '<p>A walkthrough runs about thirty minutes. We open the screens, you pick a day, and we show what the record for that day looks like when an examiner asks about it eighteen months later.</p>' +
         '<div class="iw-btns">' +
-          '<a class="btn btn-primary" href="https://4ormfinance.com/#waitlist">Request access ' +
-            '<svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-          '</a>' +
-          '<a class="btn btn-ghost" href="/settlement-layer">Read the architecture</a>' +
+          '<a class="btn btn-primary" href="' + CTA_HREF + '">' + CTA_LABEL + ' ' + ARROW + '</a>' +
+          '<a class="btn btn-ghost" href="/inside-the-platform">Look at the screens first</a>' +
         '</div>' +
       '</div>';
     return s;
   }
 
-  /* ---------- Family block (3 cards, parent-aligned) ---------- */
+  /* ========================================================
+     Family block
+     ======================================================== */
   function buildFam(){
     var s = el('section', {class:'fam'});
+    var cards = FAMILY_CARDS.map(function(c){
+      var ext = c.ext ? ' <span class="ext">&#8599;</span>' : '';
+      var rel = c.ext ? ' target="_blank" rel="noopener"' : '';
+      return '<a class="fam-card ' + c.cls + '" href="' + c.href + '"' + rel + '>' +
+               '<span class="badge">' + c.badge + '</span>' +
+               '<h4>' + c.name + ext + '</h4>' +
+               '<p>' + c.body + '</p>' +
+               '<span class="url">' + c.url + '</span>' +
+             '</a>';
+    }).join('');
     s.innerHTML =
       '<div class="wrap">' +
         '<div class="sh">' +
-          '<div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The 4orm Finance family</span></div>' +
-          '<h3>Three surfaces. One perimeter. 4ormEx is one of them.</h3>' +
+          '<div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">' + FAMILY_EYEBROW + '</span></div>' +
+          '<h3>' + FAMILY_HEADLINE + '</h3>' +
         '</div>' +
-        '<div class="fam-grid">' +
-          '<a class="fam-card here fc-ex" href="/">' +
-            '<span class="badge">You are here</span>' +
-            '<h4>4ormEx</h4>' +
-            '<p>Institutional trading venue surface. Permissioned matching with settlement finality at commit.</p>' +
-            '<span class="url">4ormex.com</span>' +
-          '</a>' +
-          '<a class="fam-card fc-data" href="https://4ormdr.com">' +
-            '<span class="badge">01 · Data Room</span>' +
-            '<h4>4orm Data Room <span class="ext">↗</span></h4>' +
-            '<p>Vetted access for institutional and accredited investors. Documents, disclosures, diligence.</p>' +
-            '<span class="url">4ormdr.com</span>' +
-          '</a>' +
-          '<a class="fam-card fc-fin" href="https://4ormfinance.com">' +
-            '<span class="badge">02 · Neutral Layer</span>' +
-            '<h4>4orm Finance <span class="ext">↗</span></h4>' +
-            '<p>The neutral, Canadian-dollar settlement layer. Six embedded capabilities inside one perimeter.</p>' +
-            '<span class="url">4ormfinance.com</span>' +
-          '</a>' +
-        '</div>' +
+        '<div class="fam-grid' + (FAMILY_CARDS.length === 2 ? ' c2' : '') + '">' + cards + '</div>' +
       '</div>';
     return s;
   }
 
-  /* ---------- Footer + legal (v18 parent-aligned) ---------- */
+  /* ========================================================
+     Footer
+     ======================================================== */
   function buildFooter(){
     var f = el('footer', {class:'footer'});
+    var year = new Date().getFullYear();
+
     f.innerHTML =
       '<div class="wrap">' +
         '<div class="footer-grid">' +
           '<div>' +
-            '<h5>4ormEx</h5>' +
-            '<p>Institutional trading venue surface inside the 4orm Finance neutral settlement layer. Engineered by KCS Capital. Incorporated in Alberta.</p>' +
+            '<h5>' + BRAND_NAME + '</h5>' +
+            '<p>Software that performs the daily proof a company owes when it holds money belonging to somebody else, keeps that proof, and produces it when it is asked for. An Alberta company.</p>' +
             '<div class="foot-contact">' +
               '<div class="fc-lbl">Get in touch</div>' +
-              '<a href="mailto:office@4ormfinance.com">office@4ormfinance.com</a>' +
-              '<a href="https://4ormdr.com">www.4ormdr.com</a>' +
-              '<span class="fc-addr">Unit 400, 718 8 Ave SW, Calgary, AB</span>' +
+              '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>' +
+              '<a href="https://www.4ormfinance.com" target="_blank" rel="noopener">www.4ormfinance.com</a>' +
+              '<span class="fc-addr">Alberta, Canada</span>' +
             '</div>' +
           '</div>' +
-          '<div><h6>Surface</h6><ul>' +
-            '<li><a href="/what-we-do">What we do</a></li>' +
-            '<li><a href="/settlement-layer">The settlement layer</a></li>' +
-            '<li><a href="/asset-categories">Asset categories</a></li>' +
-            '<li><a href="/dvp">DvP</a></li>' +
-            '<li><a href="/finality">Finality</a></li>' +
+          '<div><h6>This site</h6><ul>' +
+            NAV_LINKS.slice(1).map(function(l){
+              return '<li><a href="' + l.href + '">' + l.label + '</a></li>';
+            }).join('') +
           '</ul></div>' +
-          '<div><h6>4orm Finance</h6><ul>' +
-            '<li><a href="https://4ormfinance.com">Main site</a></li>' +
-            '<li><a href="https://4ormdr.com">Data Room</a></li>' +
+          '<div><h6>The four parts</h6><ul>' +
+            '<li><a href="/platform#safeguard">Safeguard</a></li>' +
+            '<li><a href="/platform#comply">Comply</a></li>' +
+            '<li><a href="/platform#trust">Trust</a></li>' +
+            '<li><a href="/platform#recall">Recall</a></li>' +
           '</ul></div>' +
-          '<div><h6>Contact</h6><ul>' +
-            '<li><a href="https://4ormfinance.com/#waitlist">Request access</a></li>' +
-            '<li><a href="mailto:compliance@4ormfinance.com">compliance@4ormfinance.com</a></li>' +
-            '<li><a href="/legal">Privacy &amp; cookies</a></li>' +
+          '<div><h6>Elsewhere</h6><ul>' +
+            '<li><a href="https://www.4ormfinance.com" target="_blank" rel="noopener">The company</a></li>' +
+            '<li><a href="' + CTA_HREF + '">' + CTA_LABEL + '</a></li>' +
+            '<li><a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a></li>' +
           '</ul></div>' +
         '</div>' +
 
         '<div class="legal-block">' +
-          '<p><strong>Accredited investors only.</strong> The securities referenced on this website are being offered only to "accredited investors" as defined in National Instrument 45-106. This is not an offer to sell or a solicitation of an offer to buy securities in any jurisdiction where such offer is not permitted. No securities regulatory authority has assessed the merits of any securities described on this website. 4ormEx is an early-stage software preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance neutral settlement layer. It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction. No applications have been filed. No services are offered, solicited, or available to any person.</p>' +
-
-          '<p><strong>Forward-looking statements.</strong> This website contains forward-looking statements within the meaning of applicable Canadian securities laws, including statements about the planned 4ormEx trading venue, its intended regulatory alignment with the Alberta Securities Commission as primary regulator and the required National Instruments (21-101, 23-101, 24-102, 31-103), and its planned integration with the 4orm Finance neutral settlement layer. These statements are based on assumptions current as of the date stated and are subject to material risks and uncertainties, including the receipt of required regulatory approvals. Actual results may differ materially. 4orm Trust Co is a proposed entity; until established, third-party qualified custody applies.</p>' +
-
-          '<p><strong>No affiliation or endorsement.</strong> References to third-party companies, regulators, and initiatives are for market-context and educational purposes only and do not imply any partnership, endorsement, or affiliation. All third-party names and trademarks are the property of their respective owners. 4orm Finance and 4ormEx are not affiliated with the Bank of Canada, OSFI, the CSA (or its members including OSC, AMF, BCSC, ASC), CIRO, FINTRAC, or any other regulator. No regulator has reviewed, endorsed, or approved 4orm Finance, 4ormEx, or any securities described on this website. 4orm Finance is informed by, but not a participant in, the Bank of Canada\'s Project Samara experiment (Staff Analytical Paper 2026-8) and the CSA Project Tokenization initiative. All identifiers, prices, balances, hashes, counterparties, tickers, and listings shown anywhere on this site are simulated and illustrative.</p>' +
-
-          '<p><strong>FINTRAC.</strong> 4orm Finance will register with FINTRAC as required prior to commencing regulated activity. FINTRAC registration is not an endorsement. Questions: <a href="mailto:compliance@4ormfinance.com">compliance@4ormfinance.com</a>.</p>' +
+          '<p><strong>Illustrative screens.</strong> Every screen, balance, name, timestamp and figure shown on this site is drawn for illustration. They are not screenshots of a live system, they do not describe any real firm, and no figure on this site is taken from a customer.</p>' +
+          '<p><strong>Not advice.</strong> Nothing on this site is legal, compliance, accounting, tax or investment advice, and nothing here is an offer to sell or a solicitation to buy securities. A firm subject to the Retail Payment Activities Act, the Proceeds of Crime (Money Laundering) and Terrorist Financing Act or a provincial real estate act should take its own advice on what those statutes require of it.</p>' +
+          '<p><strong>No affiliation.</strong> 4orm Finance is an independent company. It is not affiliated with, endorsed by, sponsored by, acting for or approved by the Bank of Canada, FINTRAC, OSFI, the Canadian Securities Administrators, any provincial regulator or any other public body named anywhere on this site. Those bodies are named only to identify the statutes and published requirements this software is built to serve.</p>' +
+          '<p><strong>Intellectual property.</strong> Patent applications pending. This site describes what the platform produces. It does not describe how any of it is produced, and the underlying design is confidential and shown only under a written agreement.</p>' +
+          '<p><strong>Sources.</strong> Statutory dates and penalty ceilings cited on this site are drawn from the Bank of Canada retail payments pages, the Retail Payment Activities Act and the Retail Payment Activities Regulations SOR/2023-229, and from Bill C-12 as it came into force on 26 March 2026. Readers should confirm all of them against the current published text before relying on any of them.</p>' +
         '</div>' +
 
         '<div class="copy-row">' +
-          '<span>© 2026 4orm Finance · Calgary, AB</span>' +
-          '<span>Engineered by KCS Capital · independent</span>' +
+          '<span>&#169; ' + year + ' ' + BRAND_NAME + ' &#183; Alberta, Canada</span>' +
+          '<span>Platform preview &#183; illustrative throughout</span>' +
         '</div>' +
       '</div>';
     return f;
   }
 
-  /* ---------- Disclaimer gate (first-visit, session-scoped) ---------- */
-  function buildGate(){
-    if(sessionStorage.getItem('4ormex.gate.ack') === '1') return null;
-
-    var g = el('div', {
-      class:'gate',
-      role:'dialog',
-      'aria-modal':'true',
-      'aria-labelledby':'gate-title'
-    });
-    g.innerHTML =
-      '<div class="gate-card">' +
-        '<span class="gate-eye"><span class="dot"></span>Design preview · acknowledge to continue</span>' +
-        '<h3 id="gate-title">4ormEx is a design preview. Not a registered venue.</h3>' +
-        '<p>4ormEx is an early-stage software preview of a planned permissioned trading venue (Pillar 02 of six) inside the future 4orm Finance neutral settlement layer.</p>' +
-        '<p><strong>It is not a registered marketplace, dealer, exchange, money services business, or bank in any Canadian jurisdiction.</strong> No applications have been filed. No services are offered, solicited, or available.</p>' +
-        '<p>Every figure, ticker, identifier, counterparty, and listing shown anywhere on this site is simulated and illustrative.</p>' +
-        '<div class="gate-actions">' +
-          '<button class="btn btn-primary" id="gate-ack" type="button">I understand. Continue.</button>' +
-        '</div>' +
-      '</div>';
-
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-
-    setTimeout(function(){
-      var btn = g.querySelector('#gate-ack');
-      if(!btn) return;
-      btn.addEventListener('click', function(){
-        sessionStorage.setItem('4ormex.gate.ack', '1');
-        g.style.opacity = '0';
-        g.style.transition = 'opacity .25s ease-out';
-        setTimeout(function(){
-          if(g.parentNode) g.parentNode.removeChild(g);
-          document.documentElement.style.overflow = '';
-          document.body.style.overflow = '';
-        }, 250);
-      });
-      btn.focus();
-    }, 0);
-
-    g.addEventListener('keydown', function(e){
-      if(e.key === 'Tab'){
-        e.preventDefault();
-        var btn = g.querySelector('#gate-ack');
-        if(btn) btn.focus();
-      }
-      if(e.key === 'Escape'){
-        e.preventDefault();
-      }
-    });
-
-    return g;
-  }
-
-  /* ---------- Mount sequence ---------- */
-  /* Util bar removed per v20.1 - the top cross-site strip is not shown.
-     The buildUtil() function is kept in this file so it can be re-enabled
-     later by uncommenting the line below. */
-  // mount('util-mount', buildUtil());
+  /* ========================================================
+     Mount
+     ======================================================== */
   mount('legend-mount', buildLegend());
-  mount('nav-mount', buildNav());
-  mount('cta-mount', buildCTA());
-  mount('fam-mount', buildFam());
+  mount('nav-mount',    buildNav());
+  mount('cta-mount',    buildCTA());
+  mount('fam-mount',    buildFam());
   mount('footer-mount', buildFooter());
 
-  var gate = buildGate();
-  if(gate) document.body.appendChild(gate);
+  /* ========================================================
+     App mock - five-screen switcher on /inside-the-platform
+     Presentation only. No data, no logic, no method.
+     ======================================================== */
+  (function initAppMock(){
+    var app = document.querySelector('[data-app-mock]');
+    if(!app) return;
+
+    var rails = app.querySelectorAll('.rail-btn');
+    var panes = app.querySelectorAll('.app-pane');
+
+    function show(key){
+      Array.prototype.forEach.call(rails, function(b){
+        b.classList.toggle('on', b.getAttribute('data-screen') === key);
+      });
+      Array.prototype.forEach.call(panes, function(p){
+        p.classList.toggle('on', p.getAttribute('data-pane') === key);
+      });
+    }
+
+    Array.prototype.forEach.call(rails, function(b){
+      b.addEventListener('click', function(){ show(b.getAttribute('data-screen')); });
+    });
+  })();
+
 })();

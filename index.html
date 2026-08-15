@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Canada's neutral settlement layer for tokenized finance · 4ormEx</title>
-  <meta name="description" content="4ormEx is the institutional trading surface (Pillar 02) inside the 4orm Finance neutral settlement layer. Design preview." />
+  <title>4orm Finance &#183; Platform preview</title>
+  <meta name="description" content="A Canadian payment firm has to know, at the end of every day, how much it holds for each of its customers. 4orm keeps that record, checks it against the account, and produces it when an examiner asks. Illustrative platform preview." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="4orm Finance &#183; Platform preview" />
+  <meta property="og:description" content="The proof that falls every morning. Performed, kept, and ready to hand over." />
+  <meta property="og:type" content="website" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,334 +16,229 @@
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body data-page="home">
-  <div id="util-mount"></div>
   <div id="legend-mount"></div>
   <div id="nav-mount"></div>
 
   <main>
 
-    <!-- HERO (v20 layer-first) -->
-    <section class="section hero hero-white">
+    <!-- ============================ HERO ============================ -->
+    <section class="section hero">
       <div class="wrap">
         <div class="hero-eye">
           <span class="bar"></span>
-          <span class="txt">Pillar 02 / Trading / Design preview</span>
+          <span class="txt">4orm Finance &#183; platform preview</span>
         </div>
 
-        <h1>Canada's <span class="accent">neutral settlement layer</span> for tokenized finance.</h1>
+        <h1>The proof that falls every morning. <span class="accent">Performed, kept, and ready to hand over.</span></h1>
 
-        <p class="lede">Canada's tokenized economy needs one neutral settlement layer, denominated in Canadian dollars, trusted by banks and issuers alike. 4ormEx is Pillar 02 on that layer, the institutional trading surface.</p>
+        <p class="lede">A Canadian payment firm has to know, at the end of every day, how much of the money it holds belongs to each of its customers, and it has to produce that evidence whenever it is asked for. 4orm keeps that record, checks it against the account the money sits in, and builds the examiner's pack on demand. We never touch the money.</p>
 
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://4ormfinance.com/#waitlist">Request access <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          <a class="btn btn-ghost" href="/settlement-layer">See the settlement layer</a>
-          <a class="btn btn-ghost" href="/dvp">How a trade settles</a>
+          <a class="btn btn-primary" href="/inside-the-platform">See the five screens <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a class="btn btn-ghost" href="/the-duty">Read the duty</a>
+          <a class="btn btn-ghost" href="/platform">The three parts</a>
         </div>
 
         <div class="hero-stats">
           <div class="ahs-card">
-            <div class="l">Asset categories</div>
-            <div class="v">6</div>
-            <div class="d">at venue launch · illustrative</div>
+            <div class="l">Duty in force since</div>
+            <div class="v blue">8 Sep 2025</div>
+            <div class="d">Retail Payment Activities Act</div>
           </div>
           <div class="ahs-card">
-            <div class="l">Settlement target</div>
-            <div class="v gold">T+0</div>
-            <div class="d">delivery versus payment</div>
+            <div class="l">End-of-day records a year</div>
+            <div class="v gold">365</div>
+            <div class="d">one for every end user, weekends included</div>
           </div>
           <div class="ahs-card">
-            <div class="l">Cash leg</div>
-            <div class="v blue">Bank token</div>
-            <div class="d">commercial-bank deposit</div>
+            <div class="l">Ceiling, very serious breach</div>
+            <div class="v"><span class="cur">CA$</span>10M</div>
+            <div class="d">charged per breach, not per year</div>
           </div>
           <div class="ahs-card">
-            <div class="l">Eligibility</div>
-            <div class="v green">Pre-trade</div>
-            <div class="d">checked before match</div>
+            <div class="l">First independent review</div>
+            <div class="v green">8 Sep 2028</div>
+            <div class="d">reads three years of records back</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOLUTION (parent-verbatim structure with animated DvP diagram) -->
-    <section class="section solution-section dark" id="solution">
+    <!-- ============================ FIVE SCREENS (dark) ============================ -->
+    <section class="section dark">
       <div class="wrap">
+        <div class="sub-eye">The whole platform</div>
+        <h2>One page. Five screens. <span class="accent">The entire duty sits on it.</span></h2>
+        <p class="lede" style="margin-top:18px">The person who carries this work at a forty person payment firm opens one page, not eleven folders and a shared drive. On a normal morning four of the five screens are read only. The fifth takes one click.</p>
 
-        <span class="sol-eyebrow">The Solution</span>
-        <h2 class="sol-h">One enterprise layer where everything settles with finality.</h2>
-
-        <p class="sol-sub">A neutral Canadian trading venue for tokenized assets, with settlement finality at commit.</p>
-
-        <p class="sol-lede">Title, cash, and rules travel together. One write to the canonical ledger, or none. 4ormEx is the trading-venue surface inside the 4orm Finance neutral settlement layer. Permissioned matching, eligibility checked pre-trade, settlement on the same write as the match. Built inside the Canadian regulatory perimeter, not adjacent to it.</p>
-
-        <div class="sol-subhead">Delivery versus payment, animated</div>
-
-        <div class="dvp-scene">
-          <svg class="dvp-svg" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="asset-glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AB6FF" stop-opacity="0"/><stop offset=".5" stop-color="#9AB6FF" stop-opacity=".55"/><stop offset="1" stop-color="#9AB6FF" stop-opacity="0"/></linearGradient>
-              <linearGradient id="cash-glow" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#7BE3B0" stop-opacity="0"/><stop offset=".5" stop-color="#7BE3B0" stop-opacity=".55"/><stop offset="1" stop-color="#7BE3B0" stop-opacity="0"/></linearGradient>
-              <radialGradient id="commit-pulse" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#7BE3B0" stop-opacity=".55"/><stop offset="1" stop-color="#7BE3B0" stop-opacity="0"/></radialGradient>
-            </defs>
-
-            <!-- Left column: ISSUERS -->
-            <g transform="translate(60 100)">
-              <text x="0" y="-20" font-family="JetBrains Mono,monospace" font-size="11" font-weight="800" letter-spacing=".14em" fill="#9AB6FF">ISSUERS</text>
-              <g transform="translate(0 0)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 8)"><rect x="0" y="4" width="14" height="14" fill="#9AB6FF"/><polygon points="0,4 7,-2 14,4" fill="#9AB6FF"/><rect x="4" y="8" width="6" height="10" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Real estate</text></g>
-              <g transform="translate(0 46)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 8)"><rect x="0" y="0" width="18" height="18" rx="1" fill="#9AB6FF"/><line x1="4" y1="4" x2="14" y2="4" stroke="#0B1220" stroke-width="1.5"/><line x1="4" y1="9" x2="14" y2="9" stroke="#0B1220" stroke-width="1.5"/><line x1="4" y1="14" x2="14" y2="14" stroke="#0B1220" stroke-width="1.5"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Bonds</text></g>
-              <g transform="translate(0 92)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 8)"><circle cx="9" cy="9" r="8" fill="#9AB6FF"/><text x="9" y="13" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="10" fill="#0B1220">%</text></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Credit</text></g>
-              <g transform="translate(0 138)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(154,182,255,.08)" stroke="rgba(154,182,255,.35)"/><g transform="translate(10 10)"><polygon points="0,14 9,0 18,14" fill="#F5D06B"/><rect x="1" y="14" width="16" height="4" fill="#B58A28"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Bullion</text></g>
-            </g>
-
-            <!-- Right column: BANKS / LIQUIDITY -->
-            <g transform="translate(720 100)">
-              <text x="120" y="-20" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="11" font-weight="800" letter-spacing=".14em" fill="#7BE3B0">BANKS &amp; LIQUIDITY</text>
-              <g transform="translate(0 0)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 8)"><polygon points="0,6 9,0 18,6" fill="#7BE3B0"/><rect x="1" y="6" width="16" height="12" fill="#7BE3B0"/><rect x="4" y="10" width="2" height="6" fill="#0B1220"/><rect x="8" y="10" width="2" height="6" fill="#0B1220"/><rect x="12" y="10" width="2" height="6" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Canadian bank</text></g>
-              <g transform="translate(0 46)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 8)"><path d="M9 0 L18 4 L18 12 Q18 18 9 20 Q0 18 0 12 L0 4 Z" fill="#7BE3B0"/><circle cx="9" cy="10" r="2" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Custodian</text></g>
-              <g transform="translate(0 92)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 6)"><circle cx="9" cy="9" r="9" fill="#7BE3B0"/><path d="M4 7 Q9 4 14 7 M4 10 Q9 7 14 10" stroke="#0B1220" stroke-width="1.4" fill="none"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Credit union</text></g>
-              <g transform="translate(0 138)"><rect x="0" y="0" width="120" height="34" rx="8" fill="rgba(123,227,176,.08)" stroke="rgba(123,227,176,.35)"/><g transform="translate(10 8)"><path d="M0 12 L9 4 L18 12 L18 18 L0 18 Z" fill="#7BE3B0"/><rect x="7" y="4" width="4" height="4" fill="#0B1220"/></g><text x="35" y="21" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fff">Pension</text></g>
-            </g>
-
-            <!-- TWO LANES -->
-            <rect x="190" y="118" width="510" height="30" rx="15" fill="rgba(154,182,255,.06)" stroke="rgba(154,182,255,.18)"/>
-            <rect x="190" y="192" width="510" height="30" rx="15" fill="rgba(123,227,176,.06)" stroke="rgba(123,227,176,.18)"/>
-
-            <text x="200" y="112" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing=".12em" fill="#9AB6FF" font-weight="700">TITLE / ASSET LEG &rarr;</text>
-            <text x="690" y="242" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing=".12em" fill="#7BE3B0" font-weight="700">&larr; CASH LEG (TOKENIZED DEPOSIT)</text>
-
-            <!-- animated asset tokens flowing left to right -->
-            <g fill="#9AB6FF">
-              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" path="M195 133 L695 133"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" repeatCount="indefinite"/></circle>
-              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="1.3s" path="M195 133 L695 133"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="1.3s" repeatCount="indefinite"/></circle>
-              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="2.6s" path="M195 133 L695 133"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="2.6s" repeatCount="indefinite"/></circle>
-            </g>
-            <!-- animated cash tokens flowing right to left -->
-            <g fill="#7BE3B0">
-              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" path="M695 207 L195 207"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" repeatCount="indefinite"/></circle>
-              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="1.3s" path="M695 207 L195 207"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="1.3s" repeatCount="indefinite"/></circle>
-              <circle r="6"><animateMotion dur="4s" repeatCount="indefinite" begin="2.6s" path="M695 207 L195 207"/><animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.05;.5;.95;1" dur="4s" begin="2.6s" repeatCount="indefinite"/></circle>
-            </g>
-
-            <!-- CENTER 4ORM COMMIT hub -->
-            <g transform="translate(445 170)">
-              <circle r="65" fill="url(#commit-pulse)">
-                <animate attributeName="r" values="55;80;55" dur="2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <rect x="-72" y="-52" width="144" height="104" rx="14" fill="#0F1A30" stroke="#7BE3B0" stroke-width="2"/>
-              <text y="-28" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="16" fill="#fff">4ORM</text>
-              <text y="-14" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8.5" letter-spacing=".14em" fill="#7BE3B0">COMMIT AS ONE</text>
-              <g transform="translate(-56 0)">
-                <rect x="0" y="0" width="112" height="14" rx="3" fill="rgba(154,182,255,.16)" stroke="rgba(154,182,255,.4)"/>
-                <text x="6" y="10" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#9AB6FF" font-weight="700">TITLE</text>
-                <text x="106" y="10" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#9AB6FF">&#10003;</text>
-              </g>
-              <g transform="translate(-56 18)">
-                <rect x="0" y="0" width="112" height="14" rx="3" fill="rgba(123,227,176,.16)" stroke="rgba(123,227,176,.4)"/>
-                <text x="6" y="10" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#7BE3B0" font-weight="700">CASH</text>
-                <text x="106" y="10" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#7BE3B0">&#10003;</text>
-              </g>
-              <g transform="translate(-56 36)">
-                <rect x="0" y="0" width="112" height="14" rx="3" fill="rgba(245,208,107,.16)" stroke="rgba(245,208,107,.4)"/>
-                <text x="6" y="10" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#F5D06B" font-weight="700">RULES</text>
-                <text x="106" y="10" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#F5D06B">&#10003;</text>
-              </g>
-            </g>
-
-            <text x="450" y="290" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fff">All three commit together in the same block, or nothing settles.</text>
-            <text x="450" y="308" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing=".12em" fill="#9FB0CC">DELIVERY VERSUS PAYMENT &middot; T+0 &middot; CANADIAN DOLLARS</text>
-          </svg>
-        </div>
-
-        <p class="dvp-note">The bank issues and holds the tokenized deposit. 4orm takes no deposits and needs no banking licence.</p>
-
-        <div class="sol-subhead" style="margin-top:40px">Built to be safe to adopt</div>
-
-        <div class="sol-grid-3">
-          <div class="sol-card">
-            <h3>Starts as a read-only module</h3>
-            <p>It sits beside a bank's existing systems, touches no funds, and proves settlement finality on a single tokenized deposit inside a supervised sandbox. The smallest thing that is both real and safe to run.</p>
+        <div class="sub-eye" style="margin-top:38px">The five, and the question each one answers</div>
+        <div class="screen-row">
+          <div class="screen-card">
+            <div class="sn">01</div>
+            <div class="st">Today</div>
+            <div class="sd">Is anything late?</div>
           </div>
-          <div class="sol-card">
-            <h3>Compliance native, Canadian hosted</h3>
-            <p>Permissioned ERC-3643 tokens carry identity and transfer controls. Hyperledger Besu now, with a path to 4orm Native Chain, hosted in Canada.</p>
+          <div class="screen-card">
+            <div class="sn">02</div>
+            <div class="st">Money</div>
+            <div class="sd">Did yesterday balance?</div>
           </div>
-          <div class="sol-card">
-            <h3>Regulated from day one</h3>
-            <p>Alberta Securities Commission as primary regulator, engaged through the Alberta Financial Regulatory Sandbox, with a phased CIRO custody pathway.</p>
+          <div class="screen-card">
+            <div class="sn">03</div>
+            <div class="st">Proof</div>
+            <div class="sd">Where is the paper?</div>
+          </div>
+          <div class="screen-card">
+            <div class="sn">04</div>
+            <div class="st">Filings</div>
+            <div class="sd">Is the report ready?</div>
+          </div>
+          <div class="screen-card">
+            <div class="sn">05</div>
+            <div class="st">Exam pack</div>
+            <div class="sd">What does an examiner get?</div>
           </div>
         </div>
 
-        <div class="sol-subhead" style="margin-top:40px">Five ways it earns</div>
-
-        <div class="streams">
-          <div class="stream"><div class="sn">01</div><div class="st">Settlement</div><div class="sd">Delivery versus payment finality between institutions</div></div>
-          <div class="stream"><div class="sn">02</div><div class="st">Issuance</div><div class="sd">Compliant tokenization on the ERC-3643 standard</div></div>
-          <div class="stream"><div class="sn">03</div><div class="st">Custody &amp; registry</div><div class="sd">Asset lifecycle, records, and institution-facing controls</div></div>
-          <div class="stream is-here"><div class="sh-tag">This surface</div><div class="sn">04</div><div class="st">Trading</div><div class="sd">Institutional secondary market via 4ormEx</div></div>
-          <div class="stream"><div class="sn">05</div><div class="st">Platform SaaS</div><div class="sd">Recurring APIs and integration per institution</div></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WHAT WE DO (3 tiles) -->
-    <section id="what" class="section">
-      <div class="wrap">
-        <div class="sh">
-          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">What 4ormEx is</span></div>
-          <h2>One trading surface. Title, cash, and rules <span class="accent">on one settlement layer.</span></h2>
-          <p>4ormEx is one of six capabilities inside the 4orm Finance neutral settlement layer. The Trading surface matches orders, checks eligibility pre-trade, and writes the asset leg, the cash leg, and the supervisory record in one commit. There is no separate clearing or settlement step.</p>
-        </div>
-
-        <div class="tile-grid c3">
-          <div class="tile">
-            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 7h18M3 17h18"/><circle cx="18" cy="7" r="2.2" fill="currentColor"/><circle cx="6" cy="17" r="2.2" fill="currentColor"/></svg></div>
-            <h3>Title</h3>
-            <p>Token transfers represent the legal interest. Registry on the canonical ledger is the record. No reconciliation against an external book.</p>
-            <a href="/asset-categories" class="link">Asset categories <span class="arr">→</span></a>
-          </div>
-          <div class="tile gold">
-            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18M3 16h18"/><path d="M8 4l-4 4 4 4M16 12l4 4-4 4"/></svg></div>
-            <h3>Cash</h3>
-            <p>The cash leg is a tokenized commercial-bank deposit, issued by the bank under its own banking authorizations. 4orm takes no deposits and needs no banking licence.</p>
-            <a href="/dvp" class="link">How DvP works <span class="arr">→</span></a>
-          </div>
-          <div class="tile">
-            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 4v6c0 5-4 8-9 9-5-1-9-4-9-9V7l9-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-            <h3>Rules</h3>
-            <p>Eligibility, jurisdiction, and limits are checked pre-trade. The supervisory feed is read-only and privacy-preserving. The venue is designed for the regulators it intends to answer to.</p>
-            <a href="/what-we-do" class="link">What we do <span class="arr">→</span></a>
-          </div>
+        <div style="margin-top:34px">
+          <a class="btn btn-ghost" href="/inside-the-platform">Open the screens <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- SETTLEMENT-LAYER TEASER (numbered pillar row) -->
-    <section class="section section-band">
-      <div class="wrap">
-        <div class="sh">
-          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The settlement layer · six capabilities</span></div>
-          <h2>One perimeter. Six capabilities. <span class="accent">4ormEx is Pillar 02.</span></h2>
-          <p>The canonical ledger of record sits at the platform level. 4ormEx operates Trading. The other five capabilities run as siblings inside the same neutral settlement layer.</p>
-        </div>
-
-        <div class="pillar-row">
-          <a class="prw p1" href="/settlement-layer">
-            <span class="prw-num">01</span>
-            <span class="prw-name">Issuance</span>
-            <span class="prw-line">Primary issuance, NI 45-106.</span>
-          </a>
-          <a class="prw p2 here" href="/settlement-layer">
-            <span class="prw-num">02</span>
-            <span class="prw-name">Trading</span>
-            <span class="prw-line">Permissioned matching. You are here.</span>
-          </a>
-          <a class="prw p3" href="/settlement-layer">
-            <span class="prw-num">03</span>
-            <span class="prw-name">Settlement</span>
-            <span class="prw-line">Delivery versus payment, T+0.</span>
-          </a>
-          <a class="prw p4" href="/settlement-layer">
-            <span class="prw-num">04</span>
-            <span class="prw-name">Custody</span>
-            <span class="prw-line">Qualified Canadian custodian.</span>
-          </a>
-          <a class="prw p5" href="/settlement-layer">
-            <span class="prw-num">05</span>
-            <span class="prw-name">Reporting</span>
-            <span class="prw-line">Derived from the ledger.</span>
-          </a>
-          <a class="prw p6" href="/settlement-layer">
-            <span class="prw-num">06</span>
-            <span class="prw-name">Supervision</span>
-            <span class="prw-line">Read-only regulator feed.</span>
-          </a>
-        </div>
-
-        <p style="margin-top:24px"><a class="btn btn-ghost" href="/settlement-layer">Read the settlement layer <span class="arr">→</span></a></p>
-      </div>
-    </section>
-
-    <!-- ASSET CATEGORIES TEASER (mini cards) -->
+    <!-- ============================ THREE PARTS ============================ -->
     <section class="section">
       <div class="wrap">
         <div class="sh">
-          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">Six categories at launch · illustrative</span></div>
-          <h2>Designed for Canadian capital. <span class="accent">All simulated.</span></h2>
-          <p>Sovereign, sub-sovereign, private credit, real estate, commodities, carbon credits. Every figure shown is illustrative.</p>
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">Four parts</span></div>
+          <h2>Four parts of one platform. <span class="accent">Every one of them on the same five screens.</span></h2>
+          <p>The parts are named for the duty they carry, not for a module in a diagram. A firm can buy the first on its own.</p>
         </div>
 
-        <div class="cls-mini-grid">
-          <a class="cls-mini p1" href="/asset-categories">
-            <div class="cm-head">
-              <span class="cm-cat">Sovereign</span>
-              <span class="cm-chg up">▲ 0.4%</span>
-            </div>
-            <span class="cm-name">Government of Canada</span>
-            <span class="cm-val"><span class="cur">C$</span>312M</span>
-            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-              <path d="M0,22 L12,20 L24,17 L36,18 L48,14 L60,12 L72,9 L84,8 L96,6 L108,5 L120,3" fill="none" stroke="var(--p1-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        <div class="tile-grid c4">
+          <a class="tile" href="/platform#safeguard">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.2c0 4.6-3.4 7.7-8 9.3-4.6-1.6-8-4.7-8-9.3V6.5L12 3z"/><path d="M9 12l2.2 2.2L15.5 9.6"/></svg></div>
+            <span class="kicker">Part one</span>
+            <h3>Safeguard</h3>
+            <p>The daily record of whose money is whose, and the check that none of it is missing. The first thing a firm buys, because it is the easiest thing to buy.</p>
+            <span class="link">What it produces <span class="arr">&#8594;</span></span>
           </a>
-          <a class="cls-mini p2" href="/asset-categories">
-            <div class="cm-head">
-              <span class="cm-cat">Sub-sovereign</span>
-              <span class="cm-chg up">▲ 0.2%</span>
-            </div>
-            <span class="cm-name">Provincial &amp; Crown</span>
-            <span class="cm-val"><span class="cur">C$</span>248M</span>
-            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-              <path d="M0,22 L12,20 L24,21 L36,18 L48,16 L60,15 L72,14 L84,12 L96,11 L108,10 L120,8" fill="none" stroke="var(--p2-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <a class="tile gold" href="/platform#comply">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v4.5H19"/><path d="M9.5 12.5h6M9.5 16h4"/></svg></div>
+            <span class="kicker">Part two</span>
+            <h3>Comply</h3>
+            <p>Everything else the same law asks for. The written framework, the testing, the notice that falls due inside forty eight hours, and the report owed every 31 March.</p>
+            <span class="link">What it produces <span class="arr">&#8594;</span></span>
           </a>
-          <a class="cls-mini p3" href="/asset-categories">
-            <div class="cm-head">
-              <span class="cm-cat">Private credit</span>
-              <span class="cm-chg up">▲ 1.1%</span>
-            </div>
-            <span class="cm-name">Middle-market pools</span>
-            <span class="cm-val"><span class="cur">C$</span>187M</span>
-            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-              <path d="M0,24 L12,21 L24,18 L36,19 L48,15 L60,12 L72,10 L84,8 L96,6 L108,4 L120,2" fill="none" stroke="var(--p3-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <a class="tile mint" href="/platform#trust">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 4l9 6.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></svg></div>
+            <span class="kicker">Part three</span>
+            <h3>Trust</h3>
+            <p>The same platform pointed at a second regulator. Property brokerages hold deposits and rent in trust accounts and owe a monthly reconciliation on them.</p>
+            <span class="link">What it produces <span class="arr">&#8594;</span></span>
           </a>
-          <a class="cls-mini p4" href="/asset-categories">
-            <div class="cm-head">
-              <span class="cm-cat">Real estate</span>
-              <span class="cm-chg up">▲ 0.8%</span>
-            </div>
-            <span class="cm-name">REITs &amp; direct CRE</span>
-            <span class="cm-val"><span class="cur">C$</span>164M</span>
-            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-              <path d="M0,18 L12,17 L24,16 L36,17 L48,14 L60,13 L72,12 L84,12 L96,10 L108,8 L120,7" fill="none" stroke="var(--p4-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a class="cls-mini p5 dn" href="/asset-categories">
-            <div class="cm-head">
-              <span class="cm-cat">Commodities</span>
-              <span class="cm-chg dn">▼ 0.3%</span>
-            </div>
-            <span class="cm-name">Gold / ag / energy</span>
-            <span class="cm-val"><span class="cur">C$</span>142M</span>
-            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-              <path d="M0,8 L12,10 L24,9 L36,12 L48,14 L60,14 L72,17 L84,18 L96,20 L108,22 L120,23" fill="none" stroke="var(--danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a class="cls-mini p6" href="/asset-categories">
-            <div class="cm-head">
-              <span class="cm-cat">Carbon credits</span>
-              <span class="cm-chg up">▲ 2.4%</span>
-            </div>
-            <span class="cm-name">Compliance &amp; voluntary</span>
-            <span class="cm-val"><span class="cur">C$</span>96M</span>
-            <svg class="cm-spark" viewBox="0 0 120 28" preserveAspectRatio="none">
-              <path d="M0,24 L12,22 L24,20 L36,18 L48,14 L60,10 L72,8 L84,6 L96,5 L108,3 L120,2" fill="none" stroke="var(--p6-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <a class="tile lav" href="/platform#recall">
+            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M16.2 16.2L21 21"/><path d="M11 8v3.2l2.2 1.3"/></svg></div>
+            <span class="kicker">Part four</span>
+            <h3>Recall</h3>
+            <p>A regulator asks about a week three years ago. You get the file back the same day, instead of three weeks of somebody rebuilding a year from memory.</p>
+            <span class="link">What it produces <span class="arr">&#8594;</span></span>
           </a>
         </div>
+      </div>
+    </section>
 
-        <p style="margin-top:24px"><a class="btn btn-ghost" href="/asset-categories">See the asset categories <span class="arr">→</span></a></p>
+    <!-- ============================ WHAT IT REPLACES ============================ -->
+    <section class="section section-band">
+      <div class="wrap">
+        <div class="sh">
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The work today</span></div>
+          <h2>None of this is new work. <span class="accent">All of it is being done by hand.</span></h2>
+          <p>At almost every firm that carries the duty, each of these five jobs falls to one person who has another job as well.</p>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Screen</th>
+                <th>What it answers</th>
+                <th>What it replaces today</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="k">Today</td>
+                <td>Whether anything is late</td>
+                <td>A wall calendar, a reminder in somebody's phone, and hoping.</td>
+              </tr>
+              <tr>
+                <td class="k">Money</td>
+                <td>Whether yesterday balanced</td>
+                <td>A spreadsheet with a tab for each day, built by somebody who has since left.</td>
+              </tr>
+              <tr>
+                <td class="k">Proof</td>
+                <td>Where the paper is</td>
+                <td>Eleven folders on a shared drive and an email trail.</td>
+              </tr>
+              <tr>
+                <td class="k">Filings</td>
+                <td>Whether the report is ready</td>
+                <td>Three weeks in March rebuilding the year from memory.</td>
+              </tr>
+              <tr>
+                <td class="k">Exam pack</td>
+                <td>What an examiner receives</td>
+                <td>A person with other work assembling a box for an examiner.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <p>A record made on the morning it happened is worth something to an examiner. <span class="gold-key">A record built in March out of memory is not.</span></p>
+          <div class="src">The first independent review reads three years back</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ DISCLOSURE POSTURE ============================ -->
+    <section class="section">
+      <div class="wrap">
+        <div class="sh">
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">Before you read on</span></div>
+          <h2>What this site shows, <span class="accent">and what it deliberately does not.</span></h2>
+          <p>We would rather say this plainly on the way in than have you wonder about it on the way out.</p>
+        </div>
+
+        <div class="as-grid">
+          <div class="as-card is">
+            <div class="as-head">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-7"/></svg>
+              <h3>What is on this site</h3>
+            </div>
+            <ul class="as-list">
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>The <strong>five screens</strong>, and the question each one answers.</span></li>
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>An <strong>illustrative dashboard</strong>, drawn rather than photographed, with every figure in it invented for the picture.</span></li>
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>The <strong>public law</strong>: what it requires, when it started, and what breaking it costs.</span></li>
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>The <strong>things we refuse to build</strong>, stated before anyone has to ask.</span></li>
+            </ul>
+          </div>
+
+          <div class="as-card isnot">
+            <div class="as-head">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+              <h3>What is not on this site</h3>
+            </div>
+            <ul class="as-list">
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>How any of it works.</strong> Patent applications are pending and the design is confidential.</span></li>
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>A real customer.</strong> No balance, name or timestamp on this site belongs to anybody.</span></li>
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>A live environment.</strong> Nothing on this site is connected to anything. No system, account or record shown here is real.</span></li>
+              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>Advice.</strong> What the statutes require of your firm is a question for your own counsel.</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 

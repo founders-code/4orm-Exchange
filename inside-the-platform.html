@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inside the platform &#183; 4orm Finance</title>
+  <meta name="description" content="An illustrative look at the five screens on a normal Tuesday morning at a forty person payment firm. Drawn rather than photographed. Every figure invented for the picture." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body data-page="screens">
+  <div id="legend-mount"></div>
+  <div id="nav-mount"></div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="hero-eye">
+          <span class="bar"></span>
+          <span class="txt">Inside the platform</span>
+        </div>
+        <h1>Tuesday, 4 August. A forty person firm. <span class="accent">This is the whole morning.</span></h1>
+        <p class="lede">Two questions decide a normal day: is anything late, and did yesterday balance. Four of the five screens are read only when the answers are good. Move between them below.</p>
+        <div style="margin-top:22px">
+          <span class="illus-tag">Illustration &#183; every figure invented for this picture</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ THE APP ============================ -->
+    <section class="section tight" style="padding-top:8px">
+      <div class="wrap">
+
+        <div class="app" data-app-mock>
+          <div class="app-chrome">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <div class="addr">4orm &#183; safeguarding &#183; illustrative</div>
+            <div style="width:46px"></div>
+          </div>
+
+          <div class="app-body">
+
+            <!-- left rail -->
+            <div class="app-rail">
+              <div class="rail-head">
+                <span class="rh-day">Tuesday, 4 August</span>
+                <span class="rh-firm">A forty person firm</span>
+              </div>
+
+              <button class="rail-btn on warn" type="button" data-screen="today">
+                <span class="rb-dot"></span>
+                <span class="rb-txt">
+                  <span class="rb-name">Today</span>
+                  <span class="rb-state">One thing to do</span>
+                </span>
+              </button>
+              <button class="rail-btn" type="button" data-screen="money">
+                <span class="rb-dot"></span>
+                <span class="rb-txt">
+                  <span class="rb-name">Money</span>
+                  <span class="rb-state">Yesterday balanced</span>
+                </span>
+              </button>
+              <button class="rail-btn" type="button" data-screen="proof">
+                <span class="rb-dot"></span>
+                <span class="rb-txt">
+                  <span class="rb-name">Proof</span>
+                  <span class="rb-state">Nothing to do</span>
+                </span>
+              </button>
+              <button class="rail-btn" type="button" data-screen="filings">
+                <span class="rb-dot"></span>
+                <span class="rb-txt">
+                  <span class="rb-name">Filings</span>
+                  <span class="rb-state">Nothing to do</span>
+                </span>
+              </button>
+              <button class="rail-btn" type="button" data-screen="pack">
+                <span class="rb-dot"></span>
+                <span class="rb-txt">
+                  <span class="rb-name">Exam pack</span>
+                  <span class="rb-state">Nothing to do</span>
+                </span>
+              </button>
+            </div>
+
+            <!-- ============ PANE: TODAY ============ -->
+            <div class="app-pane on" data-pane="today">
+              <div class="pane-head">
+                <div>
+                  <h3>Today</h3>
+                  <p>Tuesday, 4 August 2026. Everything that falls due, on one list.</p>
+                </div>
+                <span class="pill wait"><i></i>One thing to do</span>
+              </div>
+
+              <div class="wlist">
+                <div class="witem due">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Incident notice</span>
+                    <span class="wi-meta">Due today &#183; waiting on a person</span>
+                  </span>
+                </div>
+                <div class="witem done">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Daily money check, Monday 3 August</span>
+                    <span class="wi-meta">Complete &#183; signed by A. Chen</span>
+                  </span>
+                </div>
+                <div class="witem done">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Risk and incident framework, annual read over</span>
+                    <span class="wi-meta">Completed 11 June 2026 &#183; next due 11 June 2027</span>
+                  </span>
+                </div>
+                <div class="witem">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Annual return to the Bank of Canada</span>
+                    <span class="wi-meta">Opens 1 January 2027 &#183; due 31 March 2027</span>
+                  </span>
+                </div>
+                <div class="witem">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Independent review of the framework</span>
+                    <span class="wi-meta">Due 8 September 2028 &#183; reads three years back</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============ PANE: MONEY ============ -->
+            <div class="app-pane" data-pane="money">
+              <div class="pane-head">
+                <div>
+                  <h3>Money</h3>
+                  <p>The check on Monday 3 August.</p>
+                </div>
+                <span class="pill ok"><i></i>Balanced</span>
+              </div>
+
+              <div class="bal">
+                <div class="bal-row">
+                  <span class="bl">What the firm says it holds for customers</span>
+                  <span class="bv">$4,182,340.00</span>
+                </div>
+                <div class="bal-row">
+                  <span class="bl">What the bank says is in the account</span>
+                  <span class="bv">$4,182,340.00</span>
+                </div>
+                <div class="bal-row gap">
+                  <span class="bl">Gap</span>
+                  <span class="bv">$0.00</span>
+                </div>
+              </div>
+
+              <div class="bal-foot">
+                <span>No shortfall and nothing unexplained</span>
+                <span>Signed by A. Chen</span>
+              </div>
+
+              <div class="wlist" style="margin-top:24px">
+                <div class="witem done">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">The result was put in front of a person to read and sign</span>
+                    <span class="wi-meta">The software carries the work &#183; the person carries the authority</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============ PANE: PROOF ============ -->
+            <div class="app-pane" data-pane="proof">
+              <div class="pane-head">
+                <div>
+                  <h3>Proof</h3>
+                  <p>The paper the statute asks for, each piece with an owner and a date.</p>
+                </div>
+                <span class="pill idle"><i></i>Nothing to do</span>
+              </div>
+
+              <div class="dlist">
+                <div class="ditem">
+                  <span class="dt">Risk and incident framework</span>
+                  <span class="dm">Current &#183; read over 11 Jun 2026</span>
+                </div>
+                <div class="ditem">
+                  <span class="dt">Test plan</span>
+                  <span class="dm">Current &#183; last reviewed 1 Apr 2026</span>
+                </div>
+                <div class="ditem">
+                  <span class="dt">Test results, quarter to 30 Jun 2026</span>
+                  <span class="dm">Eight tests &#183; eight results held</span>
+                </div>
+                <div class="ditem">
+                  <span class="dt">Legal view on the safeguarding account</span>
+                  <span class="dm">Dated 14 Nov 2025 &#183; review due 14 Nov 2026</span>
+                </div>
+                <div class="ditem">
+                  <span class="dt">Incident file, July 2026</span>
+                  <span class="dm">Notice filed 22 Jul 2026 &#183; closed</span>
+                </div>
+                <div class="ditem">
+                  <span class="dt">Money laundering framework</span>
+                  <span class="dm">Current &#183; effectiveness check due 2027</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============ PANE: FILINGS ============ -->
+            <div class="app-pane" data-pane="filings">
+              <div class="pane-head">
+                <div>
+                  <h3>Filings</h3>
+                  <p>Everything sent to a regulator, and the receipt kept beside it.</p>
+                </div>
+                <span class="pill idle"><i></i>Nothing to do</span>
+              </div>
+
+              <div class="wlist">
+                <div class="witem">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v4.5H19"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Annual report, year to 31 December 2026</span>
+                    <span class="wi-meta">Portal opens 1 Jan 2027 &#183; due 31 Mar 2027 &#183; filled from the record</span>
+                  </span>
+                </div>
+                <div class="witem done">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Incident notice, July 2026</span>
+                    <span class="wi-meta">Filed 22 Jul 2026 &#183; receipt held</span>
+                  </span>
+                </div>
+                <div class="witem done">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Significant change notice</span>
+                    <span class="wi-meta">Filed 9 Jun 2026 &#183; five days ahead of the change &#183; receipt held</span>
+                  </span>
+                </div>
+                <div class="witem">
+                  <span class="wi-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>
+                  <span class="wi-txt">
+                    <span class="wi-name">Independent review report</span>
+                    <span class="wi-meta">Due 8 Sep 2028 &#183; covers 8 Sep 2025 onward</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============ PANE: EXAM PACK ============ -->
+            <div class="app-pane" data-pane="pack">
+              <div class="pane-head">
+                <div>
+                  <h3>Exam pack</h3>
+                  <p>An examiner asks. This is what goes back, and who signs it.</p>
+                </div>
+                <span class="pill idle"><i></i>Nothing to do</span>
+              </div>
+
+              <div class="pack">
+                <div class="fld" style="margin-bottom:18px">
+                  <label>What the examiner asked for</label>
+                  <div class="box quote">Please provide your safeguarding records for the period 1 January to 30 June 2026, including evidence of the end of day amounts held for each end user.</div>
+                </div>
+
+                <div class="pack-row">
+                  <div class="fld">
+                    <label>From</label>
+                    <div class="box">01 Jan 2026</div>
+                  </div>
+                  <div class="fld">
+                    <label>To</label>
+                    <div class="box">30 Jun 2026</div>
+                  </div>
+                  <div class="fld" style="flex:2 1 220px">
+                    <label>Duty</label>
+                    <div class="box">Daily safeguarding check</div>
+                  </div>
+                  <span class="btn btn-primary" style="flex:0 0 auto">Build pack</span>
+                </div>
+
+                <div class="pack-out">
+                  <div class="pack-line">
+                    <span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                    <span>Daily results for every day in the range</span>
+                    <span class="pn">181 days</span>
+                  </div>
+                  <div class="pack-line">
+                    <span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                    <span>Named signature against each result</span>
+                    <span class="pn">181 signatures</span>
+                  </div>
+                  <div class="pack-line">
+                    <span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                    <span>The framework and test plan, as the examiner asks for them</span>
+                    <span class="pn">included</span>
+                  </div>
+                  <div class="pack-line">
+                    <span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                    <span>Test results falling inside the range</span>
+                    <span class="pn">16 results</span>
+                  </div>
+                  <div class="pack-line">
+                    <span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                    <span>Incident files opened or closed inside the range</span>
+                    <span class="pn">1 file</span>
+                  </div>
+                  <div class="pack-line">
+                    <span class="pk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+                    <span>Index, so the examiner is not reading a folder</span>
+                    <span class="pn">1 index</span>
+                  </div>
+                </div>
+
+                <div class="pack-sign">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                  <span>Nothing composed, nothing added. A named person reads and signs before it leaves.</span>
+                </div>
+              </div>
+
+              <p style="font-size:.86rem; color:var(--text-3); line-height:1.6; margin-top:20px; max-width:52em">
+                Everything above already existed before the examiner asked. Recall finds it. It does not write records, edit them, or fill a gap with something that reads like a record.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="app-note">
+            Illustration. The screens are drawn rather than photographed and every figure, name and timestamp in them is invented for this picture.<br />
+            The left rail moves between screens. Nothing else on this drawing is interactive.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================ HOW TO READ IT ============================ -->
+    <section class="section section-band">
+      <div class="wrap">
+        <div class="sh">
+          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">How to read the drawing</span></div>
+          <h2>Take the shape seriously. <span class="accent">Take the numbers as invented.</span></h2>
+          <p>What is worth reading above is the shape of the morning: one list, one comparison, one signature, and a pack that can be cut by date. Everything with a digit in it was made up for the picture.</p>
+        </div>
+
+        <div class="cp-grid-light">
+          <div class="cp-light p2">
+            <span class="num">01</span>
+            <h3>Drawn, not photographed</h3>
+            <p>These are not screenshots of a running system. They are a drawing of what the finished screens are being built to show, which is a different claim and we would rather make the honest one.</p>
+            <span class="owns"><span class="dot"></span>A drawing, and labelled as one</span>
+          </div>
+          <div class="cp-light p5">
+            <span class="num">02</span>
+            <h3>Every figure invented</h3>
+            <p>The balance, the firm, the names, the timestamps and the counts are all made up for this page. Nothing here comes from a customer, and no customer has been asked to lend a screen.</p>
+            <span class="owns"><span class="dot"></span>No real firm appears here</span>
+          </div>
+          <div class="cp-light p3">
+            <span class="num">03</span>
+            <h3>No method shown</h3>
+            <p>How the platform does this is the part of the business being protected. Patent applications are pending. That work is shown in a walkthrough under a written agreement, and not on a public page.</p>
+            <span class="owns"><span class="dot"></span>Shown under agreement</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p>Five screens is a promise, not a starting point. <span class="gold-key">Ask us again at the twentieth customer,</span> because that is when the answer stops being cheap.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="cta-mount"></div>
+  <div id="fam-mount"></div>
+  <div id="footer-mount"></div>
+
+  <script src="/assets/chrome.js" defer></script>
+</body>
+</html>
