@@ -375,17 +375,17 @@ p{margin:0}
 .hero h1 .acc,
 .hero .hdeck .acc{color:var(--blue-dp)}
 
-.hs.first{padding-top:140px}
+.hs.first{padding-top:158px}
 
 /* Brandmark above the headline. This is the supplied dark-wordmark asset
    for light grounds (assets/logo-onlight.png), cropped to its artwork and
    otherwise untouched. The nav keeps the white-wordmark file, which is a
    different asset and is not interchangeable with this one. */
-.brandmark{display:flex; justify-content:center; margin-bottom:44px}
-.brandmark img{height:46px; width:auto; display:block}
+.brandmark{display:flex; justify-content:center; margin-bottom:58px}
+.brandmark img{height:92px; width:auto; display:block}
 @media (max-width:720px){
-  .brandmark{margin-bottom:30px}
-  .brandmark img{height:32px}
+  .brandmark{margin-bottom:36px}
+  .brandmark img{height:60px}
 }
 .hero .hk{font-size:13px}
 
