@@ -3,7 +3,7 @@
 (function(){
   'use strict';
 
-  var V='20260902-13', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
+  var V='20260902-16', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
   var NAV=[{t:'Overview',h:'/',s:'home'},{t:'The record',h:'/the-record',s:'record'},{t:'Industries',h:'/industries',s:'industries'}];
   var CTA_T='Book a walkthrough', CTA_H='mailto:office@4ormfinance.com?subject=Transaction%20Integrity%20walkthrough';
   var LOGO='/assets/logo.png?v='+V;
@@ -22,7 +22,7 @@
       '<a class="nav-brand" href="/" aria-label="4orm Finance home"><img src="'+LOGO+'" alt="4orm Finance" width="58" height="26" /></a>'+
       '<nav class="nav-links" aria-label="Primary">'+NAV.map(function(l){
         return '<a href="'+l.h+'"'+(l.s===PAGE?' class="on"':'')+'>'+esc(l.t)+'</a>';}).join('')+'</nav>'+
-      '<a class="nav-cta" href="'+CTA_H+'">'+esc(CTA_T)+AR+'</a></div>';
+      '<a class="nav-cta" href="'+CTA_H+'">'+esc(CTA_T)+'<span class="cir">'+AR+'</span></a></div>';
     return n;
   })());
 

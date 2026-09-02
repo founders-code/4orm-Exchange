@@ -107,39 +107,64 @@ p{margin:0}
 .hb .ar{transition:transform .2s var(--ease)}
 .hb:hover .ar{transform:translateX(3px)}
 
-/* ---------- nav: translucent dark pill with the real logo ---------- */
-.nav{position:sticky; top:20px; z-index:90; padding:0 30px; margin-top:20px}
+/* ---------- nav ----------
+   Matched to www.4ormfinance.com. The important part is that the pill
+   HUGS ITS CONTENT and centres, rather than stretching to the page
+   width, which left the CTA marooned at the far right.
+     .nav      fixed row, top 18px, justify-content:center
+     .nav-in   padding 8px 8px 8px 20px, gap 8px, radius 999px
+     links     13.5px / 550, padding 9px 15px, gap 2px
+     cta       13.5px / 650, padding 9px 9px 9px 20px, 26px arrow chip
+   -------------------------------------------------------------- */
+.nav{position:sticky; top:18px; z-index:90; padding:0 20px; margin-top:18px;
+  display:flex; justify-content:center}
 .nav-in{
-  max-width:1180px; margin:0 auto;
   background:rgba(11,18,32,.82);
-  -webkit-backdrop-filter:saturate(180%) blur(20px);
-  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(22px);
+  backdrop-filter:saturate(180%) blur(22px);
+  border:1px solid rgba(255,255,255,.10);
   border-radius:999px; padding:8px 8px 8px 20px;
-  display:flex; align-items:center; gap:16px;
-  box-shadow:0 18px 46px rgba(11,18,32,.22);
+  display:flex; align-items:center; gap:8px;
+  box-shadow:0 18px 46px rgba(11,18,32,.28);
 }
-.nav-brand{display:flex; align-items:center; flex:0 0 auto; padding:5px 0}
-.nav-brand img{height:26px; width:auto}
-.nav-links{display:flex; gap:2px; align-items:center; flex:1 1 auto; justify-content:center}
+.nav-brand{display:flex; align-items:center; gap:11px; padding-right:8px; flex:0 0 auto}
+.nav-brand img{height:26px; width:auto; display:block}
+.nav-links{display:flex; gap:2px; align-items:center}
 .nav-links a{
-  font-size:13.4px; font-weight:550; color:rgba(255,255,255,.74);
+  font-size:13.5px; font-weight:550; color:rgba(255,255,255,.82);
   padding:9px 15px; border-radius:999px; white-space:nowrap;
-  transition:background .2s var(--ease), color .2s var(--ease);
+  transition:background .5s var(--spring), color .3s var(--ease);
 }
-.nav-links a:hover{background:rgba(255,255,255,.10); color:#fff}
+.nav-links a:hover{background:rgba(255,255,255,.09); color:#fff}
 .nav-links a.on{background:#fff; color:#101827; font-weight:650}
 .nav-cta{
   flex:0 0 auto; background:var(--blue); color:#fff;
-  padding:10px 19px; border-radius:999px; font-size:13.4px; font-weight:650;
-  display:inline-flex; align-items:center; gap:7px; white-space:nowrap;
+  padding:9px 9px 9px 20px; border-radius:999px; font-size:13.5px; font-weight:650;
+  display:inline-flex; align-items:center; gap:10px; white-space:nowrap;
+  box-shadow:0 10px 26px rgba(46,107,242,.34);
   transition:background .2s var(--ease), transform .22s var(--spring);
 }
-.nav-cta:hover{background:var(--blue-lt); color:#fff; transform:translateY(-1px)}
-@media (max-width:1040px){
-  .nav-in{flex-wrap:wrap; border-radius:26px; padding:12px 14px}
-  .nav-links{order:3; flex:1 0 100%; justify-content:flex-start; overflow-x:auto; padding-top:8px; scrollbar-width:none}
+.nav-cta:hover{background:var(--blue-lt); color:#fff}
+.nav-cta:active{transform:scale(.975)}
+/* the arrow sits in its own chip, as it does on the company site */
+.nav-cta .cir{width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.20);
+  display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+  transition:transform .6s var(--spring)}
+.nav-cta:hover .cir{transform:translate(3px,-1px) scale(1.06)}
+.nav-cta .cir .ar{width:13px; height:13px}
+/* Below 760 the pill can no longer hug three links plus a CTA on one
+   line, so it becomes a full-width bar and the links scroll. */
+@media (max-width:760px){
+  .nav{padding:0 16px}
+  .nav-in{width:100%; flex-wrap:wrap; border-radius:24px; padding:10px 10px 10px 16px; gap:8px}
+  .nav-brand{padding-right:0}
+  .nav-brand img{height:22px}
+  .nav-links{order:3; flex:1 0 100%; justify-content:flex-start; overflow-x:auto; scrollbar-width:none}
   .nav-links::-webkit-scrollbar{display:none}
-  .nav-cta{margin-left:auto}
+  .nav-links a{font-size:12.8px; padding:7px 12px}
+  .nav-cta{margin-left:auto; font-size:12.6px; padding:7px 7px 7px 15px; gap:8px; box-shadow:none}
+  .nav-cta .cir{width:22px; height:22px}
+  .nav-cta .cir .ar{width:12px; height:12px}
 }
 
 /* ---------- split ---------- */
@@ -346,7 +371,7 @@ p{margin:0}
 .hero h1{font-size:clamp(30px,3.7vw,52px); font-weight:750; letter-spacing:-.04em;
   line-height:1.06; max-width:26ch; margin:0 auto; text-wrap:balance}
 .hero .hsub{font-size:clamp(16px,1.45vw,20px); line-height:1.6; letter-spacing:-.012em;
-  max-width:60ch}
+  max-width:60ch; margin-top:34px}
 
 .hs.first{padding-top:132px}
 .hero .hk{font-size:13px; margin-bottom:32px}
@@ -357,9 +382,24 @@ p{margin:0}
 
 /* Deck: the second statement, under the headline. Held in the body tone
    rather than blue so it supports the H1 instead of competing with it. */
-.hero .hdeck{font-size:clamp(19px,1.85vw,26px); font-weight:700; letter-spacing:-.028em;
-  line-height:1.28; color:var(--tx-2); max-width:46ch; margin:36px auto 0; text-align:center}
+/* Deck: a bridge line, not a second headline. At 26px under a 52px H1 it
+   read as a rival head and the hero turned into one wall of centred prose.
+   Held to 22px/650 it reads as support, separated from the lede by weight
+   and colour rather than by size alone. */
+.hero .hdeck{font-size:clamp(18px,1.55vw,22px); font-weight:650; letter-spacing:-.022em;
+  line-height:1.34; color:var(--tx-2); max-width:46ch; margin:30px auto 0; text-align:center}
 .hero .hdeck span{display:block}
+
+/* Board caption: introduces the supervision board below, so it sits a
+   step under the strap. Same blue, smaller, one line, more air above it
+   so it belongs to the board and not to the hero copy. */
+.hero .hboardcap{font-size:clamp(15px,1.3vw,18px); font-weight:700; letter-spacing:-.02em;
+  line-height:1.5; color:var(--blue-dp); margin:72px auto 0; text-align:center}
+
+/* Strap: one line, so it closes the hero instead of adding a third
+   paragraph. Sized to hold on a single line at 1180px. */
+.hero .hstrap{font-size:clamp(17px,1.5vw,21px); font-weight:700; letter-spacing:-.024em;
+  line-height:1.5; color:var(--blue-dp); max-width:none; margin:38px auto 0; text-align:center}
 
 /* WHAT and WHY carry the emphasis. Caps inside a lowercase paragraph need
    a touch of tracking and weight to read as deliberate. */
@@ -368,5 +408,10 @@ p{margin:0}
 @media (max-width:720px){
   .hs.first{padding-top:100px}
   .hero .hk{font-size:11px; margin-bottom:22px}
+  /* let the deck flow at phone widths; the forced break orphans a word */
   .hero .hdeck{margin-top:26px}
+  .hero .hdeck span{display:inline}
+  .hero .hsub{margin-top:26px}
+  .hero .hstrap{margin-top:30px}
+  .hero .hboardcap{margin-top:48px}
 }
