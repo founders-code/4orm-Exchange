@@ -331,3 +331,11 @@ p{margin:0}
 /* Two-sentence headline: break between the sentences, not mid-clause,
    so the accent starts its own line instead of orphaning a word. */
 .hero h1 .acc{display:block}
+
+/* Hero lede one step up the scale, and the hero block lifted toward the nav. */
+.hero .hsub{font-size:21px; line-height:1.58; max-width:36em}
+.hs.first{padding-top:150px}
+@media (max-width:720px){
+  .hero .hsub{font-size:18.5px}
+  .hs.first{padding-top:104px}
+}
