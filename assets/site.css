@@ -327,3 +327,7 @@ p{margin:0}
 
 /* accent must lift on the dark ground, #1B4ABE is unreadable on #07090D */
 .hs.dark .acc{color:#8FB3FF}
+
+/* Two-sentence headline: break between the sentences, not mid-clause,
+   so the accent starts its own line instead of orphaning a word. */
+.hero h1 .acc{display:block}

@@ -3,7 +3,7 @@
 (function(){
   'use strict';
 
-  var V='20260902', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
+  var V='20260902-2', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
   var NAV=[{t:'Overview',h:'/',s:'home'},{t:'The record',h:'/the-record',s:'record'},{t:'Industries',h:'/industries',s:'industries'}];
   var CTA_T='Book a walkthrough', CTA_H='mailto:office@4ormfinance.com?subject=Transaction%20Integrity%20walkthrough';
   var LOGO='/assets/logo.png?v='+V;
@@ -34,7 +34,7 @@
       '<h2 class="hh" style="max-width:18em;margin:0 auto">Pick a deal that closed last year. <span class="acc">We will show you what comes back.</span></h2>'+
       '<p class="hsub center">No data leaves your office to do this. You describe a file, we open the same screens a principal broker uses, and you see what an examiner would receive if they asked about it eighteen months from now.</p>'+
       '<div class="hbtns"><a class="hb hb-p" href="'+CTA_H+'">'+esc(CTA_T)+AR+'</a>'+
-      '<a class="hb hb-g" href="/the-record">See what a file returns</a></div></div>';
+      '<a class="hb hb-g" href="/the-record">See what a complete file looks like</a></div></div>';
     return s;
   })());
 
