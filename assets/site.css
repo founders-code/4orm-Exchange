@@ -333,26 +333,33 @@ p{margin:0}
 .hero h1 .acc{display:block}
 
 /* ------------------------------------------------------------------
-   Hero block. One consolidated set of rules, desktop then phone.
-   Kicker sits high and reads at 13px; the headline carries air above
-   and below it; deck and lede step down the scale beneath it.
+   Hero block, matched to the company home page at www.4ormfinance.com.
+   Headline and lede carry that page's exact rules, so a visitor moving
+   between the two sites sees one typographic system:
+
+     .lh1    clamp(30px, 3.7vw, 52px)  / 1.06 / -.04em  / 750
+     .llede  clamp(16px, 1.45vw, 20px) / 1.60 / -.012em / 400
+
+   Every hero on this site uses them, so all three pages match each
+   other and match the company site.
    ------------------------------------------------------------------ */
+.hero h1{font-size:clamp(30px,3.7vw,52px); font-weight:750; letter-spacing:-.04em;
+  line-height:1.06; max-width:26ch; margin:0 auto; text-wrap:balance}
+.hero .hsub{font-size:clamp(16px,1.45vw,20px); line-height:1.6; letter-spacing:-.012em;
+  max-width:60ch}
+
 .hs.first{padding-top:132px}
 .hero .hk{font-size:13px; margin-bottom:32px}
 
-/* Two-sentence headline: break between the sentences, not mid-clause,
-   so the accent starts its own line instead of orphaning a word. */
+/* Two-sentence headline: break between the sentences, not mid-clause.
+   The company site does the same with .hero h1 .b. */
 .hero h1 .acc{display:block}
 
 /* Deck: the second statement, under the headline. Held in the body tone
    rather than blue so it supports the H1 instead of competing with it. */
-.hero .hdeck{font-size:25px; font-weight:700; letter-spacing:-.028em; line-height:1.28;
-  color:var(--tx-2); max-width:26em; margin:48px auto 0; text-align:center}
+.hero .hdeck{font-size:clamp(19px,1.85vw,26px); font-weight:700; letter-spacing:-.028em;
+  line-height:1.28; color:var(--tx-2); max-width:46ch; margin:36px auto 0; text-align:center}
 .hero .hdeck span{display:block}
-
-/* Lede. 32em is the width that rags evenly at this size rather than
-   dropping the closing clause onto a stub line. */
-.hero .hsub{font-size:18.5px; line-height:1.62; max-width:32em}
 
 /* WHAT and WHY carry the emphasis. Caps inside a lowercase paragraph need
    a touch of tracking and weight to read as deliberate. */
@@ -361,6 +368,5 @@ p{margin:0}
 @media (max-width:720px){
   .hs.first{padding-top:100px}
   .hero .hk{font-size:11px; margin-bottom:22px}
-  .hero .hdeck{font-size:20px; margin-top:32px}
-  .hero .hsub{font-size:17px}
+  .hero .hdeck{margin-top:26px}
 }
