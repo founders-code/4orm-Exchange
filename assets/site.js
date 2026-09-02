@@ -3,7 +3,7 @@
 (function(){
   'use strict';
 
-  var V='20260902-2', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
+  var V='20260902-3', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
   var NAV=[{t:'Overview',h:'/',s:'home'},{t:'The record',h:'/the-record',s:'record'},{t:'Industries',h:'/industries',s:'industries'}];
   var CTA_T='Book a walkthrough', CTA_H='mailto:office@4ormfinance.com?subject=Transaction%20Integrity%20walkthrough';
   var LOGO='/assets/logo.png?v='+V;
