@@ -371,20 +371,21 @@ p{margin:0}
   line-height:1.06; color:var(--tx); max-width:min(38ch,100%);
   margin:0 auto; text-align:center; text-wrap:balance;
 }
-.hero .hdeck{margin-top:18px}
+.hero .hdeck{margin-top:26px}
 .hero h1 .acc,
 .hero .hdeck .acc{color:var(--blue-dp)}
 
-.hs.first{padding-top:96px}
+.hs.first{padding-top:150px}
 .hero .hk{font-size:13px}
 
 /* The lede sits in its own quiet card, so it reads as a note beside the
    headline rather than a third statement competing with it. */
 .hero .hledebox{
-  max-width:min(68ch,100%); margin:30px auto 0;
+  max-width:min(68ch,100%); margin:68px auto 0;
   background:#fff; border:1px solid var(--border); border-radius:22px;
   padding:20px 34px; box-shadow:0 18px 44px -30px rgba(16,32,64,.30);
 }
+.hero .hledebox + .hbtns{margin-top:52px}
 .hero .hledebox p{
   font-size:17px; line-height:1.62; letter-spacing:-.008em;
   color:var(--tx-2); margin:0; text-align:center;
@@ -393,12 +394,13 @@ p{margin:0}
 
 /* Board caption: introduces the supervision board below. */
 .hero .hboardcap{font-size:clamp(15px,1.3vw,18px); font-weight:700; letter-spacing:-.02em;
-  line-height:1.5; color:var(--blue-dp); margin:46px auto 0; text-align:center}
+  line-height:1.5; color:var(--blue-dp); margin:58px auto 0; text-align:center}
 
 @media (max-width:720px){
   .hs.first{padding-top:100px}
   .hero .hdeck{margin-top:20px}
   .hero .hledebox{margin-top:28px; padding:20px 22px; border-radius:18px}
-  .hero .hledebox p{font-size:15.5px}
+  .hero .hledebox + .hbtns{margin-top:52px}
+.hero .hledebox p{font-size:15.5px}
   .hero .hboardcap{margin-top:36px}
 }
