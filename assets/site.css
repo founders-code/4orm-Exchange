@@ -333,9 +333,20 @@ p{margin:0}
 .hero h1 .acc{display:block}
 
 /* Hero lede one step up the scale, and the hero block lifted toward the nav. */
-.hero .hsub{font-size:21px; line-height:1.58; max-width:36em}
+.hero .hsub{font-size:21px; line-height:1.58; max-width:32em}
 .hs.first{padding-top:150px}
 @media (max-width:720px){
   .hero .hsub{font-size:18.5px}
   .hs.first{padding-top:104px}
 }
+
+/* WHAT and WHY carry the emphasis in the hero lede. Caps in a lowercase
+   paragraph need a touch of tracking and weight to read as deliberate. */
+.hero .hsub .acc{font-weight:700; letter-spacing:.012em}
+
+/* Hero deck: the second statement, sitting under the headline. Held in the
+   body tone rather than blue so it supports the H1 instead of competing. */
+.hero .hdeck{font-size:30px; font-weight:700; letter-spacing:-.028em; line-height:1.28;
+  color:var(--tx-2); max-width:26em; margin:26px auto 0; text-align:center}
+.hero .hdeck span{display:block}
+@media (max-width:720px){ .hero .hdeck{font-size:22px; margin-top:20px} }
