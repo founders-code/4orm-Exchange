@@ -375,8 +375,24 @@ p{margin:0}
 .hero h1 .acc,
 .hero .hdeck .acc{color:var(--blue-dp)}
 
-.hs.first{padding-top:150px}
+.hs.first{padding-top:140px}
+
+/* Brandmark above the headline. This is the supplied dark-wordmark asset
+   for light grounds (assets/logo-onlight.png), cropped to its artwork and
+   otherwise untouched. The nav keeps the white-wordmark file, which is a
+   different asset and is not interchangeable with this one. */
+.brandmark{display:flex; justify-content:center; margin-bottom:44px}
+.brandmark img{height:46px; width:auto; display:block}
+@media (max-width:720px){
+  .brandmark{margin-bottom:30px}
+  .brandmark img{height:32px}
+}
 .hero .hk{font-size:13px}
+
+/* Text-only heroes (The record, Industries) keep the company lede spec.
+   The home page uses the card below instead. */
+.hero .hsub{font-size:clamp(16px,1.45vw,20px); line-height:1.6; letter-spacing:-.012em;
+  max-width:min(72ch,100%); margin:34px auto 0}
 
 /* The lede sits in its own quiet card, so it reads as a note beside the
    headline rather than a third statement competing with it. */
