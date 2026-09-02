@@ -58,7 +58,11 @@ button{font:inherit;color:inherit}
 .hwrap{max-width:1180px; margin:0 auto; padding:0 30px}
 .hs{padding:140.8px 0; position:relative}
 .hs.first{padding-top:217.6px}
-.hs.follows{padding-top:0}
+/* With the kicker gone from the hero, the gap between a text-only hero
+   and the control it introduces read as dead space. Pull the control up
+   so it sits with the copy that sends you to it. */
+.hs.follows{padding-top:0; margin-top:-76px}
+@media (max-width:720px){ .hs.follows{margin-top:-40px} }
 .hs.band{background:var(--bg-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
 .hs.dark{background:#07090D; color:#fff}
 .hs.dark .hh,.hs.dark h1,.hs.dark h3,.hs.dark h4{color:#fff}
@@ -368,13 +372,18 @@ p{margin:0}
    Every hero on this site uses them, so all three pages match each
    other and match the company site.
    ------------------------------------------------------------------ */
+/* Widened from 26ch so the headline sets in three lines instead of four.
+   Every line saved up here pulls the supervision board up into view. */
 .hero h1{font-size:clamp(30px,3.7vw,52px); font-weight:750; letter-spacing:-.04em;
-  line-height:1.06; max-width:26ch; margin:0 auto; text-wrap:balance}
+  line-height:1.06; max-width:min(36ch,100%); margin:0 auto; text-wrap:balance}
 .hero .hsub{font-size:clamp(16px,1.45vw,20px); line-height:1.6; letter-spacing:-.012em;
-  max-width:60ch; margin-top:34px}
+  max-width:min(78ch,100%); margin-top:24px}
 
-.hs.first{padding-top:132px}
-.hero .hk{font-size:13px; margin-bottom:32px}
+/* The hero opens on the headline. No label above it, the way the company
+   landing page opens. .hero .hk is kept for the illustration note that
+   sits under the board. */
+.hs.first{padding-top:118px}
+.hero .hk{font-size:13px}
 
 /* Two-sentence headline: break between the sentences, not mid-clause.
    The company site does the same with .hero h1 .b. */
@@ -387,19 +396,19 @@ p{margin:0}
    Held to 22px/650 it reads as support, separated from the lede by weight
    and colour rather than by size alone. */
 .hero .hdeck{font-size:clamp(18px,1.55vw,22px); font-weight:650; letter-spacing:-.022em;
-  line-height:1.34; color:var(--tx-2); max-width:46ch; margin:30px auto 0; text-align:center}
+  line-height:1.34; color:var(--tx-2); max-width:min(62ch,100%); margin:22px auto 0; text-align:center}
 .hero .hdeck span{display:block}
 
 /* Board caption: introduces the supervision board below, so it sits a
    step under the strap. Same blue, smaller, one line, more air above it
    so it belongs to the board and not to the hero copy. */
 .hero .hboardcap{font-size:clamp(15px,1.3vw,18px); font-weight:700; letter-spacing:-.02em;
-  line-height:1.5; color:var(--blue-dp); margin:72px auto 0; text-align:center}
+  line-height:1.5; color:var(--blue-dp); margin:34px auto 0; text-align:center}
 
 /* Strap: one line, so it closes the hero instead of adding a third
    paragraph. Sized to hold on a single line at 1180px. */
 .hero .hstrap{font-size:clamp(17px,1.5vw,21px); font-weight:700; letter-spacing:-.024em;
-  line-height:1.5; color:var(--blue-dp); max-width:none; margin:38px auto 0; text-align:center}
+  line-height:1.5; color:var(--blue-dp); max-width:none; margin:28px auto 0; text-align:center}
 
 /* WHAT and WHY carry the emphasis. Caps inside a lowercase paragraph need
    a touch of tracking and weight to read as deliberate. */
