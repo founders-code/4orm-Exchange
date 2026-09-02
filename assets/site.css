@@ -357,70 +357,48 @@ p{margin:0}
 /* accent must lift on the dark ground, #1B4ABE is unreadable on #07090D */
 .hs.dark .acc{color:#8FB3FF}
 
-/* Two-sentence headline: break between the sentences, not mid-clause,
-   so the accent starts its own line instead of orphaning a word. */
-.hero h1 .acc{display:block}
-
 /* ------------------------------------------------------------------
    Hero block, matched to the company home page at www.4ormfinance.com.
-   Headline and lede carry that page's exact rules, so a visitor moving
-   between the two sites sees one typographic system:
 
      .lh1    clamp(30px, 3.7vw, 52px)  / 1.06 / -.04em  / 750
-     .llede  clamp(16px, 1.45vw, 20px) / 1.60 / -.012em / 400
 
-   Every hero on this site uses them, so all three pages match each
-   other and match the company site.
+   Both hero statements are set at that size, so the headline reads as
+   one block of two sentences. The payoff words carry the blue.
    ------------------------------------------------------------------ */
-/* Widened from 26ch so the headline sets in three lines instead of four.
-   Every line saved up here pulls the supervision board up into view. */
-.hero h1{font-size:clamp(30px,3.7vw,52px); font-weight:750; letter-spacing:-.04em;
-  line-height:1.06; max-width:min(36ch,100%); margin:0 auto; text-wrap:balance}
-.hero .hsub{font-size:clamp(16px,1.45vw,20px); line-height:1.6; letter-spacing:-.012em;
-  max-width:min(78ch,100%); margin-top:24px}
+.hero h1,
+.hero .hdeck{
+  font-size:clamp(30px,3.7vw,52px); font-weight:750; letter-spacing:-.04em;
+  line-height:1.06; color:var(--tx); max-width:min(38ch,100%);
+  margin:0 auto; text-align:center; text-wrap:balance;
+}
+.hero .hdeck{margin-top:18px}
+.hero h1 .acc,
+.hero .hdeck .acc{color:var(--blue-dp)}
 
-/* The hero opens on the headline. No label above it, the way the company
-   landing page opens. .hero .hk is kept for the illustration note that
-   sits under the board. */
-.hs.first{padding-top:118px}
+.hs.first{padding-top:96px}
 .hero .hk{font-size:13px}
 
-/* Two-sentence headline: break between the sentences, not mid-clause.
-   The company site does the same with .hero h1 .b. */
-.hero h1 .acc{display:block}
+/* The lede sits in its own quiet card, so it reads as a note beside the
+   headline rather than a third statement competing with it. */
+.hero .hledebox{
+  max-width:min(68ch,100%); margin:30px auto 0;
+  background:#fff; border:1px solid var(--border); border-radius:22px;
+  padding:20px 34px; box-shadow:0 18px 44px -30px rgba(16,32,64,.30);
+}
+.hero .hledebox p{
+  font-size:17px; line-height:1.62; letter-spacing:-.008em;
+  color:var(--tx-2); margin:0; text-align:center;
+}
+.hero .hledebox .acc{font-weight:700; letter-spacing:.012em; color:var(--blue-dp)}
 
-/* Deck: the second statement, under the headline. Held in the body tone
-   rather than blue so it supports the H1 instead of competing with it. */
-/* Deck: a bridge line, not a second headline. At 26px under a 52px H1 it
-   read as a rival head and the hero turned into one wall of centred prose.
-   Held to 22px/650 it reads as support, separated from the lede by weight
-   and colour rather than by size alone. */
-.hero .hdeck{font-size:clamp(18px,1.55vw,22px); font-weight:650; letter-spacing:-.022em;
-  line-height:1.34; color:var(--tx-2); max-width:min(62ch,100%); margin:22px auto 0; text-align:center}
-.hero .hdeck span{display:block}
-
-/* Board caption: introduces the supervision board below, so it sits a
-   step under the strap. Same blue, smaller, one line, more air above it
-   so it belongs to the board and not to the hero copy. */
+/* Board caption: introduces the supervision board below. */
 .hero .hboardcap{font-size:clamp(15px,1.3vw,18px); font-weight:700; letter-spacing:-.02em;
-  line-height:1.5; color:var(--blue-dp); margin:34px auto 0; text-align:center}
-
-/* Strap: one line, so it closes the hero instead of adding a third
-   paragraph. Sized to hold on a single line at 1180px. */
-.hero .hstrap{font-size:clamp(17px,1.5vw,21px); font-weight:700; letter-spacing:-.024em;
-  line-height:1.5; color:var(--blue-dp); max-width:none; margin:28px auto 0; text-align:center}
-
-/* WHAT and WHY carry the emphasis. Caps inside a lowercase paragraph need
-   a touch of tracking and weight to read as deliberate. */
-.hero .hsub .acc{font-weight:700; letter-spacing:.012em}
+  line-height:1.5; color:var(--blue-dp); margin:46px auto 0; text-align:center}
 
 @media (max-width:720px){
   .hs.first{padding-top:100px}
-  .hero .hk{font-size:11px; margin-bottom:22px}
-  /* let the deck flow at phone widths; the forced break orphans a word */
-  .hero .hdeck{margin-top:26px}
-  .hero .hdeck span{display:inline}
-  .hero .hsub{margin-top:26px}
-  .hero .hstrap{margin-top:30px}
-  .hero .hboardcap{margin-top:48px}
+  .hero .hdeck{margin-top:20px}
+  .hero .hledebox{margin-top:28px; padding:20px 22px; border-radius:18px}
+  .hero .hledebox p{font-size:15.5px}
+  .hero .hboardcap{margin-top:36px}
 }
