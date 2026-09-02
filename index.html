@@ -1,258 +1,162 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>4orm Finance &#183; Platform preview</title>
-  <meta name="description" content="A Canadian payment firm has to know, at the end of every day, how much it holds for each of its customers. 4orm keeps that record, checks it against the account, and produces it when an examiner asks. Illustrative platform preview." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="4orm Finance &#183; Platform preview" />
-  <meta property="og:description" content="The proof that falls every morning. Performed, kept, and ready to hand over." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-  <meta name="theme-color" content="#0B1220" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/styles.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Transaction Integrity &#183; 4orm Finance</title>
+<meta name="description" content="See which files are complete today, not at the annual review. Transaction Integrity builds the record of why a recommendation suited a customer, from the systems your firm already runs." />
+<meta property="og:title" content="Transaction Integrity &#183; 4orm Finance" />
+<meta property="og:description" content="See which files are complete today, not at the annual review." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#101827" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/site.css?v=20260902" />
 </head>
 <body data-page="home">
-  <div id="legend-mount"></div>
-  <div id="nav-mount"></div>
+<div id="nav-mount"></div>
 
-  <main>
+<main>
 
-    <!-- ============================ HERO ============================ -->
-    <section class="section hero">
-      <div class="wrap">
-        <div class="hero-eye">
-          <span class="bar"></span>
-          <span class="txt">4orm Finance &#183; platform preview</span>
+  <!-- ============ HERO + THE OPERABLE OBJECT ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="kick">For the regulated firm</span>
+      <h1>See which files are complete today, not at the annual review.</h1>
+      <p class="lede">Your people carry the duty and your firm carries the liability. What is missing is rarely effort. It is the record showing why the recommendation suited that customer. Transaction Integrity assembles that record from the systems you already run.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="mailto:office@4ormfinance.com?subject=Transaction%20Integrity%20walkthrough">Book a walkthrough <svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="btn btn-g" href="/the-record">See what a file returns</a>
+      </div>
+
+      <div class="board" data-board>
+        <div class="board-top">
+          <div>
+            <div class="t">Supervision</div>
+            <div class="sub" data-board-count>&nbsp;</div>
+          </div>
+          <div class="seg" style="margin-left:auto" role="tablist" aria-label="Filter files">
+            <button type="button" data-act="filter" data-k="all" aria-selected="true">All files</button>
+            <button type="button" data-act="filter" data-k="att" aria-selected="false">Needs attention</button>
+            <button type="button" data-act="filter" data-k="ok" aria-selected="false">Complete</button>
+          </div>
         </div>
-
-        <h1>The proof that falls every morning. <span class="accent">Performed, kept, and ready to hand over.</span></h1>
-
-        <p class="lede">A Canadian payment firm has to know, at the end of every day, how much of the money it holds belongs to each of its customers, and it has to produce that evidence whenever it is asked for. 4orm keeps that record, checks it against the account the money sits in, and builds the examiner's pack on demand. We never touch the money.</p>
-
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="/inside-the-platform">See the five screens <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          <a class="btn btn-ghost" href="/the-duty">Read the duty</a>
-          <a class="btn btn-ghost" href="/platform">The four parts</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="ahs-card">
-            <div class="l">Duty in force since</div>
-            <div class="v blue">8 Sep 2025</div>
-            <div class="d">Retail Payment Activities Act</div>
-          </div>
-          <div class="ahs-card">
-            <div class="l">End-of-day records a year</div>
-            <div class="v gold">365</div>
-            <div class="d">one for every end user, weekends included</div>
-          </div>
-          <div class="ahs-card">
-            <div class="l">Ceiling, very serious breach</div>
-            <div class="v"><span class="cur">CA$</span>10M</div>
-            <div class="d">charged per breach, not per year</div>
-          </div>
-          <div class="ahs-card">
-            <div class="l">First independent review</div>
-            <div class="v green">8 Sep 2028</div>
-            <div class="d">reads three years of records back</div>
-          </div>
+        <div class="board-body">
+          <div class="board-list" data-board-list role="listbox" aria-label="Files"></div>
+          <div class="board-detail" data-board-detail></div>
         </div>
       </div>
-    </section>
+      <p class="lbl" style="margin-top:14px">Illustration &#183; every file, name, agent and date on this screen is invented</p>
+    </div>
+  </section>
 
-    <!-- ============================ FIVE SCREENS (dark) ============================ -->
-    <section class="section dark">
-      <div class="wrap">
-        <div class="sub-eye">The whole platform</div>
-        <h2>One page. Five screens. <span class="accent">The entire duty sits on it.</span></h2>
-        <p class="lede" style="margin-top:18px">The person who carries this work at a forty person payment firm opens one page, not eleven folders and a shared drive. On a normal morning four of the five screens are read only. The fifth takes one click.</p>
+  <!-- ============ THE SEQUENCE ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="kick">What happens, in order</span>
+        <h2>The record is written while the work is being done.</h2>
+        <p class="lede">Not assembled afterwards from an inbox, a drive and somebody who has since left. These four steps happen in this order, on every file, without anyone stopping to do paperwork.</p>
+      </div>
+      <div class="flow">
+        <div class="fl rv"><span class="n">01</span><h4>Captured</h4><p>What the customer wanted, what was known that day, which options were considered, what was recommended and the reason for it.</p></div>
+        <div class="fl rv"><span class="n">02</span><h4>Joined</h4><p>Each fact is joined to its source, the decision to the facts it rested on, and any later change to the decision it changed.</p></div>
+        <div class="fl rv"><span class="n">03</span><h4>Surfaced</h4><p>An incomplete file appears on the board the day it happens, across everyone acting in the name of the firm.</p></div>
+        <div class="fl rv"><span class="n">04</span><h4>Produced</h4><p>When a reviewer, a regulator or a complaint asks, the file is produced on request rather than reconstructed.</p></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="sub-eye" style="margin-top:38px">The five, and the question each one answers</div>
-        <div class="screen-row">
-          <div class="screen-card">
-            <div class="sn">01</div>
-            <div class="st">Today</div>
-            <div class="sd">Is anything late?</div>
-          </div>
-          <div class="screen-card">
-            <div class="sn">02</div>
-            <div class="st">Money</div>
-            <div class="sd">Did yesterday balance?</div>
-          </div>
-          <div class="screen-card">
-            <div class="sn">03</div>
-            <div class="st">Proof</div>
-            <div class="sd">Where is the paper?</div>
-          </div>
-          <div class="screen-card">
-            <div class="sn">04</div>
-            <div class="st">Filings</div>
-            <div class="sd">Is the report ready?</div>
-          </div>
-          <div class="screen-card">
-            <div class="sn">05</div>
-            <div class="st">Exam pack</div>
-            <div class="sd">What does an examiner get?</div>
-          </div>
+  <!-- ============ TIMELINE ============ -->
+  <section class="sec band">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="kick g">One deal, from first call to complaint</span>
+        <h2>The evidence was being created the whole time.</h2>
+        <p class="lede">Nobody set out to build a file. This is one renewal, and the record it left behind without anyone doing extra work.</p>
+      </div>
+      <div class="tl">
+        <div class="tl-i rv"><div class="tl-w">Day 1</div><div class="tl-c"><h4>The first conversation</h4><p>The borrower says the payment matters more than the rate, and that they may move within three years. Both are captured as stated, on the day they were said.</p></div></div>
+        <div class="tl-i rv"><div class="tl-w">Day 1</div><div class="tl-c"><h4>What was known then</h4><p>Income, the existing term, the penalty position and the rate environment on that date. Later this is what separates a reasonable recommendation from one that only looks wrong in hindsight.</p></div></div>
+        <div class="tl-i rv"><div class="tl-w">Day 3</div><div class="tl-c"><h4>Three options, two declined</h4><p>The alternatives that were considered, and the reason each was set aside. This is the part that is almost never written down anywhere the firm owns.</p></div></div>
+        <div class="tl-i rv"><div class="tl-w">Day 4</div><div class="tl-c"><h4>The recommendation, with its reason</h4><p>A five year fixed, chosen for the payment certainty the borrower asked for, with the prepayment terms disclosed and acknowledged.</p></div></div>
+        <div class="tl-i rv"><div class="tl-w">Day 26</div><div class="tl-c"><h4>Something changes</h4><p>The borrower changes employer. The recommendation is re-checked against the new circumstances, and the check is dated against what was known before, so the two are never confused.</p></div></div>
+        <div class="tl-i rv"><div class="tl-w">Month 19</div><div class="tl-c"><h4>A complaint arrives</h4><p>The borrower says they were never told about the penalty. The file already holds the disclosure, the acknowledgement, the date and the person. Nobody spends a week rebuilding a year from memory.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT IT NEVER DOES ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="kick">Where the line sits</span>
+        <h2>We do not replace the relationship, and we never take the judgement.</h2>
+        <p class="lede">These are refusals rather than a roadmap. They are the questions a compliance officer asks in the second meeting, so we would rather answer them in the first.</p>
+      </div>
+      <div class="softs">
+        <div class="soft rv">
+          <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.2c0 4.6-3.4 7.7-8 9.3-4.6-1.6-8-4.7-8-9.3V6.5L12 3z"/></svg></div>
+          <h3>It never decides</h3>
+          <p>The platform does not determine whether a recommendation is suitable. It creates the context and the evidence that let the customer, the professional and the firm demonstrate why it was. The professional keeps the recommendation.</p>
         </div>
-
-        <div style="margin-top:34px">
-          <a class="btn btn-ghost" href="/inside-the-platform">Open the screens <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <div class="soft g rv">
+          <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5h18M6.5 8.5V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v2.5M5 8.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5"/></svg></div>
+          <h3>It never holds money</h3>
+          <p>No client funds pass through it and none are ever held. The platform sits beside the money, never in front of it, and it produces the record rather than the transaction.</p>
+        </div>
+        <div class="soft rv">
+          <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v4.5H19M9.5 13h6M9.5 16.5h4"/></svg></div>
+          <h3>It never performs your review</h3>
+          <p>4orm does not perform, conduct or sign an independent review. It produces the material the review runs on. The reviewer stays independent and the firm keeps the duty and the signature.</p>
         </div>
       </div>
-    </section>
-
-    <!-- ============================ THREE PARTS ============================ -->
-    <section class="section">
-      <div class="wrap">
-        <div class="sh">
-          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">Four parts</span></div>
-          <h2>Four parts of one platform. <span class="accent">Every one of them on the same five screens.</span></h2>
-          <p>The parts are named for the duty they carry, not for a module in a diagram. A firm can buy the first on its own.</p>
-        </div>
-
-        <div class="tile-grid c4">
-          <a class="tile" href="/platform#safeguard">
-            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5v5.2c0 4.6-3.4 7.7-8 9.3-4.6-1.6-8-4.7-8-9.3V6.5L12 3z"/><path d="M9 12l2.2 2.2L15.5 9.6"/></svg></div>
-            <span class="kicker">Part one</span>
-            <h3>Safeguard</h3>
-            <p>The daily record of whose money is whose, and the check that none of it is missing. The first thing a firm buys, because it is the easiest thing to buy.</p>
-            <span class="link">What it produces <span class="arr">&#8594;</span></span>
-          </a>
-          <a class="tile gold" href="/platform#comply">
-            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v4.5H19"/><path d="M9.5 12.5h6M9.5 16h4"/></svg></div>
-            <span class="kicker">Part two</span>
-            <h3>Comply</h3>
-            <p>Everything else the same law asks for. The written framework, the testing, the notice that falls due inside forty eight hours, and the report owed every 31 March.</p>
-            <span class="link">What it produces <span class="arr">&#8594;</span></span>
-          </a>
-          <a class="tile mint" href="/platform#trust">
-            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 4l9 6.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></svg></div>
-            <span class="kicker">Part three</span>
-            <h3>Trust</h3>
-            <p>The same platform pointed at a second regulator. Property brokerages hold deposits and rent in trust accounts and owe a monthly reconciliation on them.</p>
-            <span class="link">What it produces <span class="arr">&#8594;</span></span>
-          </a>
-          <a class="tile lav" href="/platform#recall">
-            <div class="tile-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M16.2 16.2L21 21"/><path d="M11 8v3.2l2.2 1.3"/></svg></div>
-            <span class="kicker">Part four</span>
-            <h3>Recall</h3>
-            <p>A regulator asks about a week three years ago. You get the file back the same day, instead of three weeks of somebody rebuilding a year from memory.</p>
-            <span class="link">What it produces <span class="arr">&#8594;</span></span>
-          </a>
-        </div>
+      <div class="note rv">
+        <p><b>A missing record is not proof that anybody did anything wrong,</b> and this platform never says it is. A recommendation can be right and still be impossible to demonstrate. That is a record failure, and it is the one thing here that gets solved.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============================ WHAT IT REPLACES ============================ -->
-    <section class="section section-band">
-      <div class="wrap">
-        <div class="sh">
-          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">The work today</span></div>
-          <h2>None of this is new work. <span class="accent">All of it is being done by hand.</span></h2>
-          <p>At almost every firm that carries the duty, each of these five jobs falls to one person who has another job as well.</p>
-        </div>
-
-        <div class="tbl-wrap">
-          <table class="tbl">
-            <thead>
-              <tr>
-                <th>Screen</th>
-                <th>What it answers</th>
-                <th>What it replaces today</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="k">Today</td>
-                <td>Whether anything is late</td>
-                <td>A wall calendar, a reminder in somebody's phone, and hoping.</td>
-              </tr>
-              <tr>
-                <td class="k">Money</td>
-                <td>Whether yesterday balanced</td>
-                <td>A spreadsheet with a tab for each day, built by somebody who has since left.</td>
-              </tr>
-              <tr>
-                <td class="k">Proof</td>
-                <td>Where the paper is</td>
-                <td>Eleven folders on a shared drive and an email trail.</td>
-              </tr>
-              <tr>
-                <td class="k">Filings</td>
-                <td>Whether the report is ready</td>
-                <td>Three weeks in March rebuilding the year from memory.</td>
-              </tr>
-              <tr>
-                <td class="k">Exam pack</td>
-                <td>What an examiner receives</td>
-                <td>A person with other work assembling a box for an examiner.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="callout">
-          <p>A record made on the morning it happened is worth something to an examiner. <span class="gold-key">A record built in March out of memory is not.</span></p>
-          <div class="src">The first independent review reads three years back</div>
-        </div>
+  <!-- ============ THE FINDINGS ============ -->
+  <section class="sec band">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="kick">Why this is being asked for now</span>
+        <h2>The test is no longer whether a form was completed.</h2>
+        <p class="lede">It is whether the file shows why the decision suited that customer. Supervisors have measured how often it cannot, and these are their own published findings on the files they selected.</p>
       </div>
-    </section>
-
-    <!-- ============================ DISCLOSURE POSTURE ============================ -->
-    <section class="section">
-      <div class="wrap">
-        <div class="sh">
-          <div class="s-eye"><span class="tick"></span><span class="dot"></span><span class="txt">Before you read on</span></div>
-          <h2>What this site shows, <span class="accent">and what it deliberately does not.</span></h2>
-          <p>We would rather say this plainly on the way in than have you wonder about it on the way out.</p>
-        </div>
-
-        <div class="as-grid">
-          <div class="as-card is">
-            <div class="as-head">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-7"/></svg>
-              <h3>What is on this site</h3>
-            </div>
-            <ul class="as-list">
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>The <strong>five screens</strong>, and the question each one answers.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>An <strong>illustrative dashboard</strong>, drawn rather than photographed, with every figure in it invented for the picture.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>The <strong>public law</strong>: what it requires, when it started, and what breaking it costs.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span>The <strong>things we refuse to build</strong>, stated before anyone has to ask.</span></li>
-            </ul>
-          </div>
-
-          <div class="as-card isnot">
-            <div class="as-head">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
-              <h3>What is not on this site</h3>
-            </div>
-            <ul class="as-list">
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>How any of it works.</strong> Patent applications are pending and the design is confidential.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>A real customer.</strong> No balance, name or timestamp on this site belongs to anybody.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>A live environment.</strong> Nothing on this site is connected to anything. No system, account or record shown here is real.</span></li>
-              <li><svg class="bullet" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg><span><strong>Advice.</strong> What the statutes require of your firm is a question for your own counsel.</span></li>
-            </ul>
-          </div>
-        </div>
+      <div class="bignums">
+        <div class="bn rv"><div class="v">100%</div><div class="k">of reviewed mortgage files carried no documented suitability assessment</div><div class="src">FSRA supervision plan 2025-26</div></div>
+        <div class="bn g rv"><div class="v">73%</div><div class="k">short on disclosure of material risks</div><div class="src">FSRA supervision plan 2025-26</div></div>
+        <div class="bn g rv"><div class="v">65%</div><div class="k">short on relationship and conflict disclosure</div><div class="src">FSRA supervision plan 2025-26</div></div>
+        <div class="bn r rv"><div class="v">+88%</div><div class="k">rise in complaints opened in one year, 2,878 in 2025</div><div class="src">RECO 2025</div></div>
       </div>
-    </section>
+      <div class="note rv">
+        <p><b>Read these accurately.</b> The finding is not that every mortgage was unsuitable. It is that the file could not demonstrate the assessment at all. These are targeted findings on selected files and they are not a measure of the whole market.</p>
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <!-- ============ INDUSTRIES TEASER ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="kick">The same shape, four markets</span>
+        <h2>Establish the need, weigh the options, recommend with a reason, disclose what matters, keep a record somebody else can re-perform.</h2>
+        <p class="lede">That duty is the same in mortgage brokering, automotive finance, insurance and lending. The words change, the regulator changes, and the shape of the work does not.</p>
+      </div>
+      <div class="hero-cta rv" style="margin-top:0">
+        <a class="btn btn-p" href="/industries">See it by industry <svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="btn btn-g" href="/the-record">What an examination receives</a>
+      </div>
+    </div>
+  </section>
 
-  <div id="cta-mount"></div>
-  <div id="fam-mount"></div>
-  <div id="footer-mount"></div>
+</main>
 
-  <script src="/assets/chrome.js" defer></script>
+<div id="close-mount"></div>
+<div id="foot-mount"></div>
+<script src="/assets/site.js?v=20260902" defer></script>
 </body>
 </html>
