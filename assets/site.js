@@ -1,11 +1,11 @@
-/* 4orm Transaction Integrity, the firm surface.
+/* 4orm Intelligence, the firm surface.
    Every file, name, figure and date below is invented for illustration. */
 (function(){
   'use strict';
 
-  var V='20260902-30', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
+  var V='20261002-2', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
   var NAV=[{t:'Overview',h:'/',s:'home'},{t:'The record',h:'/the-record',s:'record'},{t:'Industries',h:'/industries',s:'industries'}];
-  var CTA_T='Book a walkthrough', CTA_H='mailto:office@4ormfinance.com?subject=Transaction%20Integrity%20walkthrough';
+  var CTA_T='Book a walkthrough', CTA_H='mailto:office@4ormfinance.com?subject=4orm%20Intelligence%20walkthrough';
   var LOGO='/assets/logo.png?v='+V;
   var AR='<svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
 
@@ -43,7 +43,7 @@
     var f=el('footer','site-foot'), yr=new Date().getFullYear();
     f.innerHTML='<div class="hwrap"><div class="foot-g">'+
       '<div><img src="'+LOGO+'" alt="4orm Finance" width="58" height="26" />'+
-      '<p>Transaction Integrity is the commercial platform for the regulated firm. It builds the record of what happened in a consequential consumer financial transaction, from the systems the firm already runs. A Calgary software company.</p></div>'+
+      '<p>4orm Intelligence supports people through major financial decisions and connects what they share into the tools the business already runs. The firm gets the context, the reasoning and the linked evidence while the work is live, instead of reconstructing it later. A Calgary software company.</p></div>'+
       '<div><h6>This surface</h6><ul>'+NAV.map(function(l){return '<li><a href="'+l.h+'">'+esc(l.t)+'</a></li>';}).join('')+'</ul></div>'+
       '<div><h6>The company</h6><ul>'+
         '<li><a href="https://www.4ormfinance.com" target="_blank" rel="noopener">4ormfinance.com</a></li>'+

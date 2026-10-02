@@ -406,6 +406,8 @@ p{margin:0}
   font-size:17px; line-height:1.62; letter-spacing:-.008em;
   color:var(--tx-2); margin:0; text-align:center;
 }
+/* The statement runs as two beats, consumer then business. */
+.hero .hledebox p + p{margin-top:15px}
 .hero .hledebox .acc{font-weight:700; letter-spacing:.012em; color:var(--blue-dp)}
 
 /* Board caption: introduces the supervision board below. */
