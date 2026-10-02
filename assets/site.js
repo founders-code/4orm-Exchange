@@ -3,9 +3,9 @@
 (function(){
   'use strict';
 
-  var V='20261002-2', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
+  var V='20261002-3', PAGE=document.body.getAttribute('data-page')||'home', DOT='\u00B7';
   var NAV=[{t:'Overview',h:'/',s:'home'},{t:'The record',h:'/the-record',s:'record'},{t:'Industries',h:'/industries',s:'industries'}];
-  var CTA_T='Book a walkthrough', CTA_H='mailto:office@4ormfinance.com?subject=4orm%20Intelligence%20walkthrough';
+  var CTA_T='Book a walkthrough', CTA_H='mailto:chad@4ormfinance.com?subject=4orm%20Intelligence%20walkthrough';
   var LOGO='/assets/logo.png?v='+V;
   var AR='<svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
 
@@ -50,7 +50,7 @@
         '<li><a href="https://www.4ormfinance.com/the-standard" target="_blank" rel="noopener">The standard</a></li>'+
         '<li><a href="https://www.4ormfinance.com/privacy" target="_blank" rel="noopener">Privacy</a></li></ul></div>'+
       '<div><h6>Talk to us</h6><ul><li><a href="'+CTA_H+'">'+esc(CTA_T)+'</a></li>'+
-        '<li><a href="mailto:office@4ormfinance.com">office@4ormfinance.com</a></li></ul></div>'+
+        '<li><a href="mailto:chad@4ormfinance.com">chad@4ormfinance.com</a></li></ul></div>'+
       '</div><div class="foot-legal">'+
       '<p><b>Illustrative throughout.</b> Every file, name, borrower, agent, date and figure shown on this site is invented for illustration. They are not screenshots of a live system, they do not describe any real firm or any real person, and no figure on this site is taken from a customer.</p>'+
       '<p><b>What the platform does not do.</b> It never holds or moves client money. It never decides whether a recommendation is suitable. It never gives financial advice, and it never performs, conducts or signs an independent review. The professional keeps the recommendation, the firm keeps the duty, and the reviewer stays independent.</p>'+
